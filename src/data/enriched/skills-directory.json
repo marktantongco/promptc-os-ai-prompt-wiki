@@ -7,7 +7,9 @@
     "install": "npx skills add 21st-dev/registry --skill 21st-dev-components",
     "canonical": true,
     "notes": "Use the canonical 21st-dev/registry. Avoid serafimcloud/21st and 21st-dev/agent-elements forks. API key goes in .env.local as TWENTYFIRST_API_KEY (or API_KEY_21ST), referenced by name in code, never by value. Update .env.local + git-crypt if you commit secrets.",
-    "env": ["TWENTYFIRST_API_KEY=an_sk_..."],
+    "env": [
+      "TWENTYFIRST_API_KEY=an_sk_..."
+    ],
     "use_for": "Sidebar dashboards, notchatbot UIs, animated registration, magic URLs, blob cursors."
   },
   {
@@ -251,5 +253,236 @@
     "notes": "Create, modify, benchmark custom skills. Use to package your own patterns as installable skills.",
     "env": [],
     "use_for": "Skill development, team skill sharing."
+  },
+  {
+    "id": "ralph-skills",
+    "name": "Ralph Skills",
+    "category": "Workflow",
+    "source": "claudepluginhub: snarktank/ralph",
+    "install": "npx claudepluginhub snarktank/ralph --plugin ralph-skills",
+    "canonical": false,
+    "notes": "Workflow automation skill from the ClaudePluginHub community marketplace.",
+    "env": [],
+    "use_for": "Reusable workflow patterns."
+  },
+  {
+    "id": "prd-driven-context-engineering",
+    "name": "PRD-Driven Context Engineering",
+    "category": "Product",
+    "source": "claudepluginhub: mattgierhart/prd-driven-context-engineering",
+    "install": "npx claudepluginhub mattgierhart/prd-driven-context-engineering --plugin prd-ce",
+    "canonical": false,
+    "notes": "Engineering context from PRDs — keeps code aligned to product requirements.",
+    "env": [],
+    "use_for": "PRD-to-code traceability, scope discipline."
+  },
+  {
+    "id": "prd-specialist",
+    "name": "PRD Specialist",
+    "category": "Product",
+    "source": "claudepluginhub: ananddtyagi/claude-code-marketplace",
+    "install": "npx claudepluginhub ananddtyagi/claude-code-marketplace --plugin prd-specialist",
+    "canonical": false,
+    "notes": "Specialized PRD-writing agent.",
+    "env": [],
+    "use_for": "Drafting PRDs from briefs."
+  },
+  {
+    "id": "product-forge",
+    "name": "Product Forge",
+    "category": "Product",
+    "source": "claudepluginhub: jpoutrin/product-forge",
+    "install": "npx claudepluginhub jpoutrin/product-forge --plugin product-design",
+    "canonical": false,
+    "notes": "Product design patterns and decision frameworks.",
+    "env": [],
+    "use_for": "Product shape, MVP scoping."
+  },
+  {
+    "id": "prd-builder",
+    "name": "PRD Builder",
+    "category": "Product",
+    "source": "claudepluginhub: mwguerra/claude-code-plugins",
+    "install": "npx claudepluginhub mwguerra/claude-code-plugins --plugin prd-builder",
+    "canonical": false,
+    "notes": "Constructs PRDs section-by-section.",
+    "env": [],
+    "use_for": "Structured PRD generation."
+  },
+  {
+    "id": "ai-pm-copilot",
+    "name": "AI PM Copilot",
+    "category": "Product",
+    "source": "claudepluginhub: slgoodrich/agents",
+    "install": "npx claudepluginhub slgoodrich/agents --plugin ai-pm-copilot",
+    "canonical": false,
+    "notes": "AI project manager copilot — sprint planning, status, risk tracking.",
+    "env": [],
+    "use_for": "PM tasks, async standups."
+  },
+  {
+    "id": "pm-execution",
+    "name": "PM Execution",
+    "category": "Product",
+    "source": "claudepluginhub: phuryn/pm-skills",
+    "install": "npx claudepluginhub phuryn/pm-skills --plugin pm-execution",
+    "canonical": false,
+    "notes": "Execution-layer PM skills — task breakdown, dependency mapping.",
+    "env": [],
+    "use_for": "PM execution discipline."
+  },
+  {
+    "id": "nanobot",
+    "name": "Nanobot",
+    "category": "Automation",
+    "source": "skillsllm.com/skill/nanobot",
+    "install": "skillsllm.com/skill/nanobot",
+    "canonical": false,
+    "notes": "Lightweight autonomous nano-agent framework.",
+    "env": [],
+    "use_for": "Simple agent loops, task delegation."
+  },
+  {
+    "id": "headroomlabs",
+    "name": "AI Headroom",
+    "category": "Evaluation",
+    "source": "skillsllm.com/skill/headroomlabs-ai-headroom",
+    "install": "skillsllm.com/skill/headroomlabs-ai-headroom",
+    "canonical": false,
+    "notes": "Headroom evaluation — measures how much improvement room an AI output has.",
+    "env": [],
+    "use_for": "LLM eval, quality scoring."
+  },
+  {
+    "id": "parallel-agent-skills",
+    "name": "Parallel Agent Skills",
+    "category": "Workflow",
+    "source": "github.com/parallel-web/parallel-agent-skills",
+    "install": "github.com/parallel-web/parallel-agent-skills",
+    "canonical": false,
+    "notes": "Skills for parallel multi-agent orchestration — run agents concurrently on subtasks.",
+    "env": [],
+    "use_for": "Parallel research, fan-out workloads."
+  },
+  {
+    "id": "volces-web-search",
+    "name": "Volces Web Search",
+    "category": "Research",
+    "source": "skills.volces.com",
+    "install": "npx skills add skills.volces.com --skill byted-web-search",
+    "canonical": false,
+    "notes": "Bytedance/Volces web search skill — alternative search backend.",
+    "env": [],
+    "use_for": "Search diversity, fallback when other search APIs rate-limit."
+  },
+  {
+    "id": "volces-agent-browser",
+    "name": "Volces Agent Browser",
+    "category": "Automation",
+    "source": "skills.volces.com",
+    "install": "npx skills add skills.volces.com --skill agent-browser",
+    "canonical": false,
+    "notes": "Bytedance/Volces browser automation skill — alternative to agent-browser CLI.",
+    "env": [],
+    "use_for": "Headless browsing, scraping."
+  },
+  {
+    "id": "halt-web-search",
+    "name": "Halt-Catch-Fire Web Search",
+    "category": "Research",
+    "source": "halt-catch-fire/skills",
+    "install": "npx skills add halt-catch-fire/skills --skill web-search",
+    "canonical": false,
+    "notes": "Community web-search skill variant.",
+    "env": [],
+    "use_for": "Search with different rate limits / caching."
+  },
+  {
+    "id": "agent-reach",
+    "name": "Agent Reach",
+    "category": "Outreach",
+    "source": "skillsllm.com/skill/agent-reach",
+    "install": "skillsllm.com/skill/agent-reach",
+    "canonical": false,
+    "notes": "Outreach and distribution agent — automate email/DM sequences.",
+    "env": [],
+    "use_for": "Cold outreach, lead gen."
+  },
+  {
+    "id": "superpowers",
+    "name": "Superpowers",
+    "category": "Meta",
+    "source": "skillsllm.com/skill/superpowers",
+    "install": "skillsllm.com/skill/superpowers",
+    "canonical": false,
+    "notes": "Agentic skills framework & software development methodology. 235k★ on GitHub. The most-starred skill on SkillsLLM.",
+    "env": [],
+    "use_for": "End-to-end agentic dev workflow."
+  },
+  {
+    "id": "cc-switch",
+    "name": "CC Switch",
+    "category": "Tooling",
+    "source": "cc-switch",
+    "install": "cc-switch",
+    "canonical": false,
+    "notes": "Claude Code config switcher — swap between skill profiles.",
+    "env": [],
+    "use_for": "Multi-project skill management."
+  },
+  {
+    "id": "addyosmani-agent-skills",
+    "name": "Addy Osmani Agent Skills",
+    "category": "Engineering",
+    "source": "skillsllm.com/skill/addyosmani-agent-skills",
+    "install": "skillsllm.com/skill/addyosmani-agent-skills",
+    "canonical": false,
+    "notes": "Production-grade engineering skills for AI coding agents. 68.6k★ on GitHub.",
+    "env": [],
+    "use_for": "Code quality, refactor patterns, perf."
+  },
+  {
+    "id": "rtk",
+    "name": "RTK",
+    "category": "Tooling",
+    "source": "github.com/rtk-ai/rtk",
+    "install": "github.com/rtk-ai/rtk",
+    "canonical": false,
+    "notes": "CLI proxy that reduces LLM token consumption 60-90% on common dev commands. Single Rust binary, zero dependencies.",
+    "env": [],
+    "use_for": "Cost reduction on agentic dev workflows."
+  },
+  {
+    "id": "icm",
+    "name": "ICM",
+    "category": "Workflow",
+    "source": "github.com/rtk-ai/icm",
+    "install": "github.com/rtk-ai/icm",
+    "canonical": false,
+    "notes": "RTK-ai companion — iterative context management.",
+    "env": [],
+    "use_for": "Context window optimization."
+  },
+  {
+    "id": "grit",
+    "name": "Grit",
+    "category": "Workflow",
+    "source": "github.com/rtk-ai/grit",
+    "install": "github.com/rtk-ai/grit",
+    "canonical": false,
+    "notes": "RTK-ai companion — persistence/retry layer for agent loops.",
+    "env": [],
+    "use_for": "Agent failure recovery."
+  },
+  {
+    "id": "claude-code-best-practice",
+    "name": "Claude Code Best Practice",
+    "category": "Convention",
+    "source": "skillsllm.com/skill/claude-code-best-practice",
+    "install": "skillsllm.com/skill/claude-code-best-practice",
+    "canonical": false,
+    "notes": "Codified best practices for Claude Code usage.",
+    "env": [],
+    "use_for": "Onboarding, team conventions."
   }
 ]

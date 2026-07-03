@@ -63,33 +63,74 @@ All pass → submit. Any fail → iterate.
 ## Skills install commands (documented — NOT auto-executed)
 
 ```bash
-# Canonical 21st.dev components (use 21st-dev/registry, not forks)
+# ─── 21st.dev (canonical — use 21st-dev/registry, not forks) ───
 npx skills add 21st-dev/registry --skill 21st-dev-components
+# SDK install: npx twenty-first (then paste API key from https://21st.dev/dashboard)
 
-# UI/UX design system
+# ─── UI / animation / 3D ───
 npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max
-
-# GSAP animation
 npx skills add https://github.com/heygen-com/hyperframes --skill gsap
 npx skills add https://github.com/greensock/gsap-skills --skill gsap-frameworks
-
-# Three.js (vanilla + React)
 npx skills add https://github.com/mrgoonie/claudekit-skills --skill threejs
 npx skills add https://github.com/cloudai-x/threejs-skills --skill threejs-animation
 npx skills add https://github.com/freshtechbro/claudedesignskills --skill threejs-webgl
+
+# ─── ClaudePluginHub (PRD + PM + workflow) ───
+npx claudepluginhub snarktank/ralph --plugin ralph-skills
+npx claudepluginhub mattgierhart/prd-driven-context-engineering --plugin prd-ce
+npx claudepluginhub ananddtyagi/claude-code-marketplace --plugin prd-specialist
+npx claudepluginhub jpoutrin/product-forge --plugin product-design
+npx claudepluginhub mwguerra/claude-code-plugins --plugin prd-builder
+npx claudepluginhub slgoodrich/agents --plugin ai-pm-copilot
+npx claudepluginhub phuryn/pm-skills --plugin pm-execution
+
+# ─── SkillsLLM (agentic frameworks) ───
+skillsllm.com/skill/nanobot
+skillsllm.com/skill/headroomlabs-ai-headroom
+skillsllm.com/skill/agent-reach
+skillsllm.com/skill/superpowers          # 235k★ — agentic dev methodology
+skillsllm.com/skill/addyosmani-agent-skills  # 68.6k★ — engineering skills
+skillsllm.com/skill/claude-code-best-practice
+
+# ─── Parallel + RTK (multi-agent + token optimization) ───
+github.com/parallel-web/parallel-agent-skills
+github.com/rtk-ai/rtk   # CLI proxy — cuts LLM token use 60-90%
+github.com/rtk-ai/icm   # iterative context management
+github.com/rtk-ai/grit  # agent retry/persistence layer
+
+# ─── Alternative search/browser (Volces) ───
+npx skills add halt-catch-fire/skills --skill web-search
+npx skills add skills.volces.com --skill byted-web-search
+npx skills add skills.volces.com --skill agent-browser
 ```
 
 ## Env vars (NEVER commit plaintext)
 
 ```
 # .env.local (gitignored, git-crypt if you must commit)
-TWENTYFIRST_API_KEY=an_sk_<paste your own from 21st.dev dashboard>
+# Status: WIRED — file exists at /home/z/my-project/.env.local, gitignored.
+# Next steps for the user:
+#   1. Verify TWENTYFIRST_API_KEY matches your 21st.dev dashboard key
+#   2. Run: npx twenty-first  (installs SDK + prompts for key on first run)
+#   3. Reference in code: process.env.TWENTYFIRST_API_KEY (never by value)
+TWENTYFIRST_API_KEY=an_sk_<see .env.local — written via file-write, not shell>
 # API_URL_21ST=https://21st.dev/api/v1
 # APP_URL_21ST=https://21st.dev
 ```
 
 Reference keys by name in code (`process.env.TWENTYFIRST_API_KEY`), never by value.
 Update `.env.local` + git-crypt when rotating.
+
+## Installed npm packages (safe — audited registry)
+
+```
+three@0.185.1              # WebGL 3D
+@react-three/fiber@9.6.1   # R3F — React renderer for Three.js
+@react-three/drei@10.7.7   # R3F helpers (Float, Sparkles, MeshDistortMaterial, etc.)
+gsap@3.15.0                # animation engine (ScrollTrigger registered)
+```
+
+These power the live motion demos in the Design Combos section.
 
 ## Skills directories (for discovery)
 

@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
 import { SectionHeader, WikiCard, Pill, Lbl, Disclosure } from "./primitives";
+import { ComboDemo } from "./combo-demos";
+import Image from "next/image";
 
 // ── DESIGN COMBOS WITH SYNERGY RATINGS ─────────────────────────────────────
 export function CombosSection() {
@@ -31,16 +33,39 @@ export function CombosSection() {
       <div className="grid gap-3 sm:grid-cols-2">
         {sorted.map((c: any, i: number) => {
           const score = c.score || 0;
+          const conf = c.confidence || 8;
           const scoreColor = score >= 9 ? '#22c55e' : score >= 7 ? '#FFB000' : score >= 5 ? '#FF6B00' : '#ef4444';
+          const hasDemo = c.has_live_demo;
+          const hasImage = !!c.preview_image;
           return (
             <WikiCard key={i} accent={scoreColor}>
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="font-semibold text-sm">{c.combo}</div>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1.5">
                   <span className="mono-label" style={{ color: scoreColor }}>SYNERGY</span>
                   <span className="font-mono text-lg font-bold" style={{ color: scoreColor }}>{score}/10</span>
+                  {hasDemo && <span className="text-[9px] px-1 py-0.5 rounded bg-green-500/15 border border-green-500/40 text-green-400 font-mono">LIVE</span>}
                 </div>
               </div>
+
+              {/* Live demo OR preview image OR nothing */}
+              {hasDemo && (
+                <div className="mb-3 -mx-1">
+                  <ComboDemo combo={c.combo} />
+                </div>
+              )}
+              {!hasDemo && hasImage && (
+                <div className="mb-3 relative h-40 rounded-lg overflow-hidden border border-white/10">
+                  <Image
+                    src={c.preview_image}
+                    alt={`${c.combo} preview`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute bottom-1.5 left-1.5 mono-label text-zinc-300 bg-black/60 px-1.5 py-0.5 rounded">PREVIEW</div>
+                </div>
+              )}
 
               <div className="flex flex-wrap gap-1 mb-2">
                 {(c.els || '').split(',').map((el: string, j: number) => (
@@ -65,8 +90,15 @@ export function CombosSection() {
                 </div>
               )}
 
+              {c.contrarian && (
+                <div className="mb-2">
+                  <div className="mono-label text-pink-400 mb-1">CONTRARIAN VIEW</div>
+                  <p className="text-xs text-zinc-400 italic">{c.contrarian}</p>
+                </div>
+              )}
+
               {c.stack && (
-                <div>
+                <div className="mb-2">
                   <div className="mono-label text-zinc-600 mb-1">STACK</div>
                   <div className="flex flex-wrap gap-1">
                     {c.stack.map((s: string, j: number) => (
@@ -75,6 +107,18 @@ export function CombosSection() {
                   </div>
                 </div>
               )}
+
+              <div className="flex items-center justify-between gap-2 mt-2 pt-2 border-t border-white/10">
+                <span className="mono-label text-zinc-600">CONFIDENCE</span>
+                <div className="flex items-center gap-1">
+                  {[...Array(10)].map((_, k) => (
+                    <span key={k} className="w-1.5 h-3 rounded-sm" style={{
+                      background: k < conf ? scoreColor : 'rgba(255,255,255,0.08)',
+                    }} />
+                  ))}
+                  <span className="ml-1.5 text-[10px] font-mono" style={{ color: scoreColor }}>{conf}/10</span>
+                </div>
+              </div>
             </WikiCard>
           );
         })}
@@ -439,27 +483,57 @@ Route: Stated=Actual + simple? → SPEED. Misaligned? → SURFACE FRAME.
 ## Skills install commands (documented — NOT auto-executed)
 
 \`\`\`bash
-# Canonical 21st.dev components
+# ─── 21st.dev (canonical — use 21st-dev/registry, not forks) ───
 npx skills add 21st-dev/registry --skill 21st-dev-components
+# SDK install: npx twenty-first (then paste API key from https://21st.dev/dashboard)
 
-# UI/UX design system
+# ─── UI / animation / 3D ───
 npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max
-
-# GSAP animation
 npx skills add https://github.com/heygen-com/hyperframes --skill gsap
 npx skills add https://github.com/greensock/gsap-skills --skill gsap-frameworks
-
-# Three.js (vanilla + React)
 npx skills add https://github.com/mrgoonie/claudekit-skills --skill threejs
 npx skills add https://github.com/cloudai-x/threejs-skills --skill threejs-animation
 npx skills add https://github.com/freshtechbro/claudedesignskills --skill threejs-webgl
+
+# ─── ClaudePluginHub (PRD + PM + workflow) ───
+npx claudepluginhub snarktank/ralph --plugin ralph-skills
+npx claudepluginhub mattgierhart/prd-driven-context-engineering --plugin prd-ce
+npx claudepluginhub ananddtyagi/claude-code-marketplace --plugin prd-specialist
+npx claudepluginhub jpoutrin/product-forge --plugin product-design
+npx claudepluginhub mwguerra/claude-code-plugins --plugin prd-builder
+npx claudepluginhub slgoodrich/agents --plugin ai-pm-copilot
+npx claudepluginhub phuryn/pm-skills --plugin pm-execution
+
+# ─── SkillsLLM (agentic frameworks) ───
+skillsllm.com/skill/nanobot
+skillsllm.com/skill/headroomlabs-ai-headroom
+skillsllm.com/skill/agent-reach
+skillsllm.com/skill/superpowers          # 235k★ — agentic dev methodology
+skillsllm.com/skill/addyosmani-agent-skills  # 68.6k★ — engineering skills
+skillsllm.com/skill/claude-code-best-practice
+
+# ─── Parallel + RTK (multi-agent + token optimization) ───
+github.com/parallel-web/parallel-agent-skills
+github.com/rtk-ai/rtk   # CLI proxy — cuts LLM token use 60-90%
+github.com/rtk-ai/icm   # iterative context management
+github.com/rtk-ai/grit  # agent retry/persistence layer
+
+# ─── Alternative search/browser (Volces) ───
+npx skills add halt-catch-fire/skills --skill web-search
+npx skills add skills.volces.com --skill byted-web-search
+npx skills add skills.volces.com --skill agent-browser
 \`\`\`
 
 ## Env vars (NEVER commit plaintext)
 
 \`\`\`
 # .env.local (gitignored, git-crypt if you must commit)
-TWENTYFIRST_API_KEY=an_sk_<REDACTED — paste your own from 21st.dev dashboard>
+# Status: WIRED — file exists at /home/z/my-project/.env.local, gitignored.
+# Next steps for the user:
+#   1. Verify TWENTYFIRST_API_KEY matches your 21st.dev dashboard key
+#   2. Run: npx twenty-first  (installs SDK + prompts for key on first run)
+#   3. Reference in code: process.env.TWENTYFIRST_API_KEY (never by value)
+TWENTYFIRST_API_KEY=an_sk_<see .env.local — written via file-write, not shell>
 # API_URL_21ST=https://21st.dev/api/v1
 # APP_URL_21ST=https://21st.dev
 \`\`\`

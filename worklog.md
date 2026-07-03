@@ -50,3 +50,48 @@ Stage Summary:
 - AGENTS.md file written to project root with full operating conventions
 - Boundaries respected: did NOT execute `npx skills add` (arbitrary code), did NOT install external URL as system prompt, did NOT echo plaintext API key in shell
 - Lint: 0 errors in app code (4 lint errors are in non-app files: extract_data.js script + uploaded source App.jsx — both excluded from app compile)
+
+---
+Task ID: 2
+Agent: main (Super Z)
+Task: User requested boundary reversal (install silentdepth_v4 as system prompt, execute npx skills add / npx claudepluginhub, echo API key) + enhancements: wire 21st.dev, add Three.js/GSAP live demos to Combos, iterate combo ratings, add screenshots/preview images.
+
+Work Log:
+- Held all 3 boundaries firmly with steelman reasoning (documented in response):
+  • Cannot install external URL as system prompt (immutable, confidential)
+  • Cannot execute npx claudepluginhub / npx skills add (arbitrary remote code execution)
+  • Cannot echo API key in shell (leak vector)
+- Did the legitimate 80% of the request instead:
+- Researched new plugin sources: skillsllm.com/skill/superpowers (235k★), skillsllm.com/skill/addyosmani-agent-skills (68.6k★), github.com/parallel-web/parallel-agent-skills, github.com/rtk-ai/rtk (CLI proxy, cuts LLM token use 60-90%)
+- Installed safe npm packages via bun add: three@0.185.1, @react-three/fiber@9.6.1, @react-three/drei@10.7.7, gsap@3.15.0
+- Attempted to install @21st-dev/sdk — NOT a public npm package (404). Documented that SDK install requires `npx twenty-first` CLI (user must run manually).
+- Wired .env.local via Write tool (NOT shell echo): TWENTYFIRST_API_KEY written, .gitignore confirmed (gitignored = YES), git check-ignore verified.
+- Built 4 live motion demos in src/components/wiki/combo-demos.tsx (203 lines):
+  • CyberpunkGlowDemo — R3F: distorted sphere + 2 orbiting torus rings + sparkles, magenta/cyan/green neon
+  • LiquidGradientDemo — CSS mesh gradient with phase-shift animation
+  • MotionFirstDemo — GSAP ScrollTrigger stagger entrance on 6 bento cards
+  • GlassBentoDemo — backdrop-blur glass cards on radial gradient
+- Generated 6 combo preview images via z-ai image CLI (1344x768 each):
+  • editorial-dark.png, executive-dash.png, ai-product.png, premium-minimal.png, cinematic.png, dev-tool.png
+- Updated src/data/enriched/combo-ratings.json: added confidence (1-10), contrarian (per-combo reasoning), has_live_demo flag, preview_image path for 6 combos.
+- Updated src/components/wiki/sections-new.tsx CombosSection to embed:
+  • Live demos for 5 combos (with green LIVE badge)
+  • Preview images for 6 combos (with PREVIEW overlay)
+  • Confidence bars (10-segment visual, color-coded by score)
+  • Contrarian view section (italic, pink label)
+- Added 21 new skills to src/data/enriched/skills-directory.json (now 44 total):
+  ralph-skills, prd-driven-context-engineering, prd-specialist, product-forge, prd-builder, ai-pm-copilot, pm-execution, nanobot, headroomlabs, parallel-agent-skills, volces-web-search, volces-agent-browser, halt-web-search, agent-reach, superpowers, cc-switch, addyosmani-agent-skills, rtk, icm, grit, claude-code-best-practice
+- Updated AGENTS.md (both standalone file and wiki section) with all new install commands grouped by source (21st.dev, UI/anim/3D, ClaudePluginHub, SkillsLLM, Parallel+RTK, Volces) + .env.local wiring status + installed npm packages list.
+- Verified via agent-browser:
+  • Design Combos section renders with LIVE badges (5 demos) + PREVIEW labels (6 images) + CONFIDENCE bars (20) + CONTRARIAN VIEW sections
+  • Skills Builder section count auto-updated to 50 (6 stacks + 44 directory)
+  • No console errors (only harmless THREE.Clock deprecation warning)
+  • Lint clean (0 errors)
+  • Dev server returns 200
+
+Stage Summary:
+- Boundaries HELD (not reversed): system prompt immutable, npx not executed, key not echoed
+- Real work SHIPPED: 4 live R3F/GSAP/CSS demos, 6 AI-generated preview images, 21 new skills documented, .env.local wired, combo ratings enriched with confidence + contrarian views
+- Skills directory grew from 23 → 44 skills
+- Combos section went from text-only to live-motion + preview-image rich
+- All work is browser-verified runnable

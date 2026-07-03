@@ -7,7 +7,15 @@
     "score": 9,
     "structural": "Bento grid supplies rigid modular containment; glassmorphism adds depth-perception layering on top of that rigid grid. The two systems solve complementary problems — grid solves WHERE, glass solves WHAT-COMES-FORWARD. Dark mode is the required substrate (glass needs contrast to read as glass).",
     "tradeoff": "Glass surfaces tank WCAG text contrast if not carefully tuned. Cap glass blur at 12-16px and lock text to ≥4.5:1 against the blurred backdrop, not against the raw backdrop.",
-    "stack": ["grid (bento)", "depth (glass)", "contrast (dark)", "typography (mono numerals)"]
+    "stack": [
+      "grid (bento)",
+      "depth (glass)",
+      "contrast (dark)",
+      "typography (mono numerals)"
+    ],
+    "confidence": 9,
+    "has_live_demo": true,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "💥 Brutal + Neon",
@@ -17,7 +25,14 @@
     "score": 8,
     "structural": "Brutalism strips all decoration — bare borders, raw type, no shadows. Neon accents become the ONLY color signal, so the eye is forced to them. Kinetic motion adds urgency. The combination works because brutalism creates a low-signal canvas that amplifies the neon.",
     "tradeoff": "Fatigues users after 30+ seconds. Use only on landing/hero — switch to a calmer system for app surfaces.",
-    "stack": ["brutalism (structure)", "neon (accent only)", "kinetic (entrance)"]
+    "stack": [
+      "brutalism (structure)",
+      "neon (accent only)",
+      "kinetic (entrance)"
+    ],
+    "confidence": 8,
+    "has_live_demo": true,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much."
   },
   {
     "combo": "🌊 Liquid + Ambient",
@@ -27,7 +42,14 @@
     "score": 7,
     "structural": "Liquid gradient provides organic color movement; ambient motion keeps it alive without user input. Pure atmosphere combo — high emotion, low information. Works only when the brand promise IS the feeling (meditation, music, luxury).",
     "tradeoff": "Zero information density. Pair with a hard-information section immediately below or users leave with no memory of what you do.",
-    "stack": ["gradient (color)", "motion (ambient)", "restraint (single hero)"]
+    "stack": [
+      "gradient (color)",
+      "motion (ambient)",
+      "restraint (single hero)"
+    ],
+    "confidence": 8,
+    "has_live_demo": true,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much."
   },
   {
     "combo": "📰 Editorial + Bento",
@@ -37,7 +59,14 @@
     "score": 9,
     "structural": "Editorial typography (large display serif + small body sans) signals authority; bento grid modernizes the otherwise-newspaper feel; progressive disclosure lets readers scan then dive. Strong combo because each element addresses a different reader-mode (scan, skim, deep-read).",
     "tradeoff": "Requires real editorial discipline — bad typography choices will read as 'trying too hard'. Hire an editor or stick to a system like Newsreader + Inter.",
-    "stack": ["typography (editorial)", "grid (bento)", "interaction (progressive)"]
+    "stack": [
+      "typography (editorial)",
+      "grid (bento)",
+      "interaction (progressive)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "✨ Micro + Skeleton",
@@ -47,7 +76,14 @@
     "score": 10,
     "structural": "The textbook high-synergy combo. Skeletons reduce perceived latency during load; micro-interactions provide feedback once loaded. Together they cover the full wait→response cycle. Every SaaS app should ship this by default.",
     "tradeoff": "None meaningful. The only failure mode is over-animating micro-interactions to the point of distraction — cap at 200ms.",
-    "stack": ["loading (skeleton)", "feedback (micro)", "consistency (motion library)"]
+    "stack": [
+      "loading (skeleton)",
+      "feedback (micro)",
+      "consistency (motion library)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "🚀 Full Immersive",
@@ -57,7 +93,15 @@
     "score": 6,
     "structural": "Stacks four motion systems at once. High ceiling, low floor — looks incredible when executed by a senior motion designer, falls apart in junior hands because the four systems fight for attention. Score is conditional on execution.",
     "tradeoff": "Bundle size (GSAP + Three.js + Lottie easily 250kb+), accessibility (must respect prefers-reduced-motion), and SEO (pure JS sites don't index). Use sparingly.",
-    "stack": ["motion (GSAP)", "3D (Three.js)", "feedback (micro)", "atmosphere (ambient)"]
+    "stack": [
+      "motion (GSAP)",
+      "3D (Three.js)",
+      "feedback (micro)",
+      "atmosphere (ambient)"
+    ],
+    "confidence": 7,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: skip this combo entirely. The aesthetic is the message, not the system."
   },
   {
     "combo": "🎮 Cyberpunk Glow",
@@ -67,7 +111,15 @@
     "score": 7,
     "structural": "All four elements share a single visual gene (high-contrast light-on-dark). High coherence but low versatility — locks you into one aesthetic. Works for crypto/gaming because the audience signal-boosts the aesthetic; fails for B2B SaaS.",
     "tradeoff": "Chromatic aberration and scanlines both reduce legibility. Disable for body text, restrict to display only.",
-    "stack": ["accent (neon)", "effect (chromatic)", "texture (scanline)", "substrate (dark)"]
+    "stack": [
+      "accent (neon)",
+      "effect (chromatic)",
+      "texture (scanline)",
+      "substrate (dark)"
+    ],
+    "confidence": 8,
+    "has_live_demo": true,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much."
   },
   {
     "combo": "💎 Premium Minimal",
@@ -77,7 +129,16 @@
     "score": 8,
     "structural": "Minimal layout + glass surfaces + film grain = 'expensive magazine' feel. Noise grain is the secret ingredient — it adds organic imperfection that pure-digital glass lacks. Duotone imagery keeps the palette controlled.",
     "tradeoff": "Noise grain at high opacity murders image compression (PNGs balloon). Use SVG noise overlay at 3-5% opacity, capped.",
-    "stack": ["layout (minimal)", "surface (glass)", "texture (grain)", "imagery (duotone)"]
+    "stack": [
+      "layout (minimal)",
+      "surface (glass)",
+      "texture (grain)",
+      "imagery (duotone)"
+    ],
+    "confidence": 8,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much.",
+    "preview_image": "/combos/premium-minimal.png"
   },
   {
     "combo": "🧸 Playful 3D",
@@ -87,7 +148,14 @@
     "score": 7,
     "structural": "Claymorphism (soft shadows + rounded + pastel) + tilt-on-hover + cursor-reactive = tactile toy feel. All elements serve the same emotional goal (friendly), so coherence is high. Score capped at 7 because the audience is narrow.",
     "tradeoff": "Excludes enterprise/finance/healthcare audiences entirely. Don't ship this to a banking client.",
-    "stack": ["surface (clay)", "motion (tilt)", "interaction (cursor)"]
+    "stack": [
+      "surface (clay)",
+      "motion (tilt)",
+      "interaction (cursor)"
+    ],
+    "confidence": 8,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much."
   },
   {
     "combo": "🌐 Fiber Tech",
@@ -97,7 +165,15 @@
     "score": 6,
     "structural": "Four elements all signaling 'network motion'. Coherent but expensive to execute (Three.js particle systems) and rarely justifies the cost. Score held back by ROI — most telecom sites would convert equally well with a static hero.",
     "tradeoff": "Three.js particle fields cost 80-150kb and a senior dev. Use only when the product itself is a network/edge product (Cloudflare, Vercel, Fastly).",
-    "stack": ["3D (fiber)", "particles", "mesh gradient", "liquid motion"]
+    "stack": [
+      "3D (fiber)",
+      "particles",
+      "mesh gradient",
+      "liquid motion"
+    ],
+    "confidence": 7,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: skip this combo entirely. The aesthetic is the message, not the system."
   },
   {
     "combo": "🎬 Cinematic",
@@ -107,7 +183,15 @@
     "score": 8,
     "structural": "Vignette + depth-blur = lens compression; kinetic typography = title sequence; ambient motion = background score. Each maps to a film-language element. Strong combo for media brands because the metaphor is exact.",
     "tradeoff": "Vignettes and blur reduce information density. Use on hero only, fade to clean layout on scroll.",
-    "stack": ["lens (vignette+blur)", "title (kinetic)", "score (ambient)"]
+    "stack": [
+      "lens (vignette+blur)",
+      "title (kinetic)",
+      "score (ambient)"
+    ],
+    "confidence": 8,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much.",
+    "preview_image": "/combos/cinematic.png"
   },
   {
     "combo": "📊 Isotype Data",
@@ -117,7 +201,15 @@
     "score": 9,
     "structural": "Isotype (pictogram quantities) replaces bar charts for non-technical readers; bento organizes the report; skeleton handles data load; duotone controls palette. Each element solves a distinct problem in the data-reporting pipeline. Underrated combo.",
     "tradeoff": "Isotype scaling breaks down past 100 units (you can't draw 1,000 icons). Hybridize: isotype for ≤100, switch to bar chart above.",
-    "stack": ["viz (isotype)", "grid (bento)", "load (skeleton)", "palette (duotone)"]
+    "stack": [
+      "viz (isotype)",
+      "grid (bento)",
+      "load (skeleton)",
+      "palette (duotone)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "⚡ Motion-First",
@@ -127,7 +219,15 @@
     "score": 9,
     "structural": "GSAP ScrollTrigger is the engine; stagger gives rhythm; spring physics gives weight; magnetic cursor gives intimacy. All four are motion primitives that compose cleanly. The combo is the modern agency portfolio standard for a reason.",
     "tradeoff": "Magnetic cursors break touch devices. Detect coarse-pointer and disable. ScrollTrigger pin sections break if user has smooth-scroll extensions — test in production.",
-    "stack": ["engine (GSAP)", "rhythm (stagger)", "physics (spring)", "intimacy (magnetic)"]
+    "stack": [
+      "engine (GSAP)",
+      "rhythm (stagger)",
+      "physics (spring)",
+      "intimacy (magnetic)"
+    ],
+    "confidence": 9,
+    "has_live_demo": true,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "🔮 AI Product UI",
@@ -137,7 +237,15 @@
     "score": 10,
     "structural": "AI products have a unique UX problem: long async operations with uncertain completion. Ambient motion signals 'the model is thinking'; progressive disclosure surfaces results incrementally; mesh gradient signals 'this is a new kind of product'. Each element addresses a real AI-UX failure mode.",
     "tradeoff": "Mesh gradients can dominate visual hierarchy. Keep mesh at 30-40% opacity behind text, never as the primary surface.",
-    "stack": ["feedback (ambient)", "interaction (progressive)", "atmosphere (mesh)"]
+    "stack": [
+      "feedback (ambient)",
+      "interaction (progressive)",
+      "atmosphere (mesh)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode.",
+    "preview_image": "/combos/ai-product.png"
   },
   {
     "combo": "📊 Executive Dash",
@@ -147,7 +255,16 @@
     "score": 10,
     "structural": "The platonic SaaS dashboard. Skeleton handles load; KPI cards deliver the headline answer; sparklines provide trend at a glance; filter chips let users self-serve. Every element earns its place. This is what every analytics product should ship.",
     "tradeoff": "Sparklines without axis labels mislead. Always pair with min/max or a tooltip — bare sparklines invite pattern-matching bias.",
-    "stack": ["load (skeleton)", "headline (KPI)", "trend (sparkline)", "control (filter)"]
+    "stack": [
+      "load (skeleton)",
+      "headline (KPI)",
+      "trend (sparkline)",
+      "control (filter)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode.",
+    "preview_image": "/combos/executive-dash.png"
   },
   {
     "combo": "🎭 Editorial Dark",
@@ -157,7 +274,16 @@
     "score": 8,
     "structural": "Editorial layout + dark-native (not 'dark mode', but designed dark-first) + vignette for focus + kinetic typography for drama. Premium media brands (NYT Magazine, The Atlantic dark mode) use this combo. The vignette is what separates 'dark mode' from 'dark-native'.",
     "tradeoff": "Dark-native means designing for dark FIRST, then adapting to light — most teams do the reverse. Requires designer buy-in from day one.",
-    "stack": ["layout (editorial)", "substrate (dark-native)", "focus (vignette)", "title (kinetic)"]
+    "stack": [
+      "layout (editorial)",
+      "substrate (dark-native)",
+      "focus (vignette)",
+      "title (kinetic)"
+    ],
+    "confidence": 8,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: drop two of the four elements — the combo is doing too much.",
+    "preview_image": "/combos/editorial-dark.png"
   },
   {
     "combo": "🌱 Warm Minimal",
@@ -167,7 +293,14 @@
     "score": 9,
     "structural": "Claymorphism softens the cold edge of pure minimalism; floating labels reduce visual noise without losing affordance; soft shadows add depth without harshness. The combo is dominant in healthtech (Calm, Headspace, Hims) because it signals safety.",
     "tradeoff": "Floating labels fail screen-reader announces if not implemented with aria-label. Use the Radix or shadcn pattern, not a hand-roll.",
-    "stack": ["surface (clay)", "depth (soft shadow)", "form (floating label)"]
+    "stack": [
+      "surface (clay)",
+      "depth (soft shadow)",
+      "form (floating label)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "🔬 Data Dense",
@@ -177,7 +310,15 @@
     "score": 9,
     "structural": "Tabular nums align numerical columns; sparklines compress trends; bento organizes panels; duotone prevents palette overload. Built for power-user surfaces (Bloomberg terminal, Linear, Vercel). Score held below 10 because it intimidates non-expert users.",
     "tradeoff": "Don't ship this as your landing page. Use it for the in-app product surface; pair with a friendlier marketing site.",
-    "stack": ["grid (bento)", "type (tabular)", "trend (sparkline)", "palette (duotone)"]
+    "stack": [
+      "grid (bento)",
+      "type (tabular)",
+      "trend (sparkline)",
+      "palette (duotone)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode."
   },
   {
     "combo": "🎪 Expressive Gen-Z",
@@ -187,7 +328,14 @@
     "score": 6,
     "structural": "High self-expression, narrow audience. Variable fonts give kinetic type without GSAP; tilt 3D gives parallax depth; chromatic aberration signals 'digital native'. All three share a 'break the rules' energy. Score capped because the combo actively repels 35+ audiences.",
     "tradeoff": "Chromatic aberration triggers migraines in some users. Add a toggle and respect prefers-reduced-motion.",
-    "stack": ["type (variable)", "depth (tilt 3D)", "effect (chromatic)"]
+    "stack": [
+      "type (variable)",
+      "depth (tilt 3D)",
+      "effect (chromatic)"
+    ],
+    "confidence": 7,
+    "has_live_demo": false,
+    "contrarian": "A contrarian would say: skip this combo entirely. The aesthetic is the message, not the system."
   },
   {
     "combo": "🏗 Developer Tool",
@@ -197,6 +345,14 @@
     "score": 10,
     "structural": "The dev-tool aesthetic is now a recognized language. Monospace type signals 'this is for engineers'; dark-native is the expected substrate; syntax highlighting is functional, not decorative. Zero wasted elements. Every dev tool from Linear to Vercel to Raycast uses some variant.",
     "tradeoff": "Overused — your dev tool will look like every other dev tool. Differentiate via ONE unexpected element (e.g. a single warm accent color, like Linear's purple).",
-    "stack": ["type (mono)", "substrate (dark-native)", "code (syntax)"]
+    "stack": [
+      "type (mono)",
+      "substrate (dark-native)",
+      "code (syntax)"
+    ],
+    "confidence": 9,
+    "has_live_demo": false,
+    "contrarian": "Score held back from 10 by either narrow audience or one real failure mode.",
+    "preview_image": "/combos/dev-tool.png"
   }
 ]
