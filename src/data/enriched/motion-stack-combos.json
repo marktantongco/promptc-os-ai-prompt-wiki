@@ -1,0 +1,272 @@
+[
+  {
+    "num": 1, "direction": "A · Silk & GPU", "name": "Silk Hero Reveal",
+    "stack": "GSAP + ScrollTrigger", "framework": "React",
+    "score": 9, "mobile": "Medium",
+    "logic": "GSAP timeline pins hero, scrubs reveal on scroll. Silk-smooth because GSAP runs on rAF and skips layout thrash.",
+    "constraint": "Pinning breaks if user has smooth-scroll browser extensions. ~50kb gzipped.",
+    "mitigation": "Detect extensions via window.scrollY vs scroll event; fall back to fade-in.",
+    "use_case": "Agency portfolios, premium product launches"
+  },
+  {
+    "num": 2, "direction": "A · Silk & GPU", "name": "GPU-Composited Parallax",
+    "stack": "GSAP + transform3d", "framework": "Framework-agnostic",
+    "score": 8, "mobile": "Medium",
+    "logic": "Parallax via transform: translate3d() forces GPU layer. No layout, no paint, only composite.",
+    "constraint": "Too many GPU layers (>30) exhausts VRAM on mobile.",
+    "mitigation": "Cap concurrent parallax elements to 8; use will-change: transform sparingly.",
+    "use_case": "Storytelling pages, film sites"
+  },
+  {
+    "num": 3, "direction": "A · Silk & GPU", "name": "Kinetic Typography",
+    "stack": "GSAP + SplitText", "framework": "React",
+    "score": 9, "mobile": "High",
+    "logic": "SplitText breaks heading into chars; stagger reveals each char with spring physics.",
+    "constraint": "SplitText is a premium GSAP plugin (paid Club).",
+    "mitigation": "Use the open-source split-type library instead; lose MorphSVG but keep char splitting.",
+    "use_case": "Hero headlines, section dividers, agency sites"
+  },
+  {
+    "num": 4, "direction": "A · Silk & GPU", "name": "Layout Morph",
+    "stack": "GSAP + Flip", "framework": "React",
+    "score": 9, "mobile": "High",
+    "logic": "Flip records element positions, you change layout, Flip animates the difference. Filter reflows become smooth.",
+    "constraint": "Flip needs a state change to animate from; SSR-first apps must hydrate before Flip can record.",
+    "mitigation": "Gate Flip behind useEffect; show skeleton during hydration.",
+    "use_case": "Filterable grids, kanban boards, image galleries"
+  },
+  {
+    "num": 5, "direction": "A · Silk & GPU", "name": "SVG Path Morph",
+    "stack": "GSAP + MorphSVGPlugin", "framework": "Framework-agnostic",
+    "score": 7, "mobile": "High",
+    "logic": "MorphSVG tweens between two SVG paths by point-matching. Logo-to-logo transitions, icon-to-icon.",
+    "constraint": "MorphSVG is Club GreenSock only (paid). Paths must have similar point counts for clean morphs.",
+    "mitigation": "Use flubber.js (open-source alternative) for cross-platform path morphing.",
+    "use_case": "Logo animations, icon state transitions"
+  },
+  {
+    "num": 6, "direction": "A · Silk & GPU", "name": "Spring Physics Drag",
+    "stack": "Framer Motion useDrag + useSpring", "framework": "React",
+    "score": 8, "mobile": "High",
+    "logic": "Framer Motion's springs respond to drag velocity — swipe fast = fly far. Native-feeling on touch.",
+    "constraint": "Cascading springs across many elements settle unpredictably.",
+    "mitigation": "Cap concurrent springs; use a single config object for all springs in a group.",
+    "use_case": "Card decks, swipe-to-dismiss, drawer pulls"
+  },
+  {
+    "num": 7, "direction": "A · Silk & GPU", "name": "AnimatePresence Route Exit",
+    "stack": "Framer Motion + Next.js App Router", "framework": "Next.js",
+    "score": 8, "mobile": "High",
+    "logic": "AnimatePresence wraps route children; exit animations play before unmount. Smooth page transitions.",
+    "constraint": "App Router doesn't natively support AnimatePresence — needs a template.tsx wrapper.",
+    "mitigation": "Use the template.tsx pattern; or downgrade to Pages Router for animation-critical routes.",
+    "use_case": "Premium SaaS, marketing sites"
+  },
+  {
+    "num": 8, "direction": "A · Silk & GPU", "name": "Staggered Card Grid",
+    "stack": "Framer Motion staggerChildren", "framework": "React",
+    "score": 9, "mobile": "High",
+    "logic": "Container variant staggers child reveal by 50ms each. Reads as 'premium loading' instead of 'data arrived'.",
+    "constraint": "Stagger across >20 items feels slow.",
+    "mitigation": "Cap stagger at first 12 items; rest appear immediately after.",
+    "use_case": "Dashboards, card lists, search results"
+  },
+  {
+    "num": 9, "direction": "A · Silk & GPU", "name": "Magnetic Cursor",
+    "stack": "Framer Motion + useMotionValue", "framework": "React",
+    "score": 7, "mobile": "Low",
+    "logic": "Cursor position drives a useMotionValue; buttons within 80px translate toward cursor. Tactile, premium.",
+    "constraint": "Touch devices have no cursor — the effect is invisible. Battery drain on always-running rAF.",
+    "mitigation": "Detect coarse-pointer via matchMedia('(pointer: coarse)'); disable on touch.",
+    "use_case": "Agency portfolios, design studio sites"
+  },
+  {
+    "num": 10, "direction": "A · Silk & GPU", "name": "Scroll-Linked Hue Shift",
+    "stack": "GSAP ScrollTrigger + CSS variables", "framework": "Framework-agnostic",
+    "score": 7, "mobile": "Medium",
+    "logic": "ScrollTrigger updates --hue CSS variable; entire palette shifts as user scrolls. One timeline, global effect.",
+    "constraint": "Hue shift on text reduces contrast at certain scroll positions.",
+    "mitigation": "Lock text hue; only shift background/accent hues.",
+    "use_case": "Long-form storytelling, brand experiences"
+  },
+  {
+    "num": 11, "direction": "B · Zero-Bundle", "name": "Native SPA Transitions",
+    "stack": "CSS View Transitions + Tailwind", "framework": "Framework-agnostic",
+    "score": 9, "mobile": "High",
+    "logic": "Browser snapshots old DOM, morphs to new on route change — zero JS, hardware-composited.",
+    "constraint": "Browser support gaps (Firefox <2024); less granular than JS timelines.",
+    "mitigation": "@supports (view-transition-name) guard + progressive enhancement.",
+    "use_case": "Performance SaaS, content sites, blogs"
+  },
+  {
+    "num": 12, "direction": "B · Zero-Bundle", "name": "Native C++ Timeline",
+    "stack": "WAAPI + CSS Custom Properties", "framework": "Framework-agnostic",
+    "score": 8, "mobile": "High",
+    "logic": "element.animate() runs on the browser's native compositor — same perf as CSS, but with JS play/pause/seek/reverse.",
+    "constraint": "No spring physics out of the box; easing must be cubic-bezier.",
+    "mitigation": "Pair with Popmotion for spring; WAAPI for the actual render.",
+    "use_case": "Micro-interactions, UI feedback, state changes"
+  },
+  {
+    "num": 13, "direction": "B · Zero-Bundle", "name": "Framework-Agnostic Physics",
+    "stack": "Popmotion (Vanilla JS)", "framework": "Framework-agnostic",
+    "score": 7, "mobile": "High",
+    "logic": "Popmotion is the pure-math core behind Framer Motion — springs, decay, pointers — no Virtual DOM weight.",
+    "constraint": "No React bindings; you wire it yourself.",
+    "mitigation": "Wrap in a 30-line usePopMotion hook; or use Motion One (Popmotion's DOM wrapper).",
+    "use_case": "Performance-critical UIs, embedded widgets"
+  },
+  {
+    "num": 14, "direction": "B · Zero-Bundle", "name": "Tactile Drag Physics",
+    "stack": "Framer Motion useDrag + useSpring", "framework": "React",
+    "score": 8, "mobile": "High",
+    "logic": "Spring physics (mass/tension/friction) respond to swipe velocity — no jarring cuts when interrupted mid-gesture.",
+    "constraint": "Cascading springs across many elements → unpredictable settling.",
+    "mitigation": "Cap concurrent springs; use useSprings with a single config object.",
+    "use_case": "Card decks, swipe-to-dismiss, mobile drawers"
+  },
+  {
+    "num": 15, "direction": "B · Zero-Bundle", "name": "Staggered Micro-Interactions",
+    "stack": "Anime.js v4 + CSS Variables", "framework": "Framework-agnostic",
+    "score": 7, "mobile": "High",
+    "logic": "Anime.js v4 is 6kb gzipped, framework-agnostic, and supports staggered timelines out of the box.",
+    "constraint": "No native scroll-timeline engine — manual event rigging for parallax.",
+    "mitigation": "Add GSAP ScrollTrigger ONLY for scroll; Anime for everything else.",
+    "use_case": "Marketing pages, lightweight landing pages"
+  },
+  {
+    "num": 16, "direction": "B · Zero-Bundle", "name": "Route-Exit Animations",
+    "stack": "Framer Motion + Tailwind", "framework": "Next.js",
+    "score": 8, "mobile": "High",
+    "logic": "Framer Motion's AnimatePresence handles route exits; Tailwind handles the visual system.",
+    "constraint": "App Router needs template.tsx wrapper; AnimatePresence adds ~30kb.",
+    "mitigation": "Import motion/m only (tree-shake AnimatePresence if unused).",
+    "use_case": "Premium SaaS, marketing sites with personality"
+  },
+  {
+    "num": 17, "direction": "B · Zero-Bundle", "name": "Native Scroll Animations",
+    "stack": "CSS @scroll-timeline + position: sticky", "framework": "Framework-agnostic",
+    "score": 8, "mobile": "High",
+    "logic": "Browser-native scroll-linked animations — animation-timeline: scroll() — zero JS.",
+    "constraint": "Chrome/Safari only as of 2025; Firefox behind flag.",
+    "mitigation": "@supports guard + IntersectionObserver fallback.",
+    "use_case": "Parallax, scroll progress bars, pinned sections"
+  },
+  {
+    "num": 18, "direction": "B · Zero-Bundle", "name": "Card-to-Modal Morph",
+    "stack": "View Transitions + Shared Element", "framework": "Framework-agnostic",
+    "score": 9, "mobile": "High",
+    "logic": "view-transition-name on card and modal; browser morphs between them on state change.",
+    "constraint": "Only one element can have a given name per snapshot — collisions break the morph.",
+    "mitigation": "Dynamically assign names; clear them after transitionend.",
+    "use_case": "Image galleries, card-to-detail flows, master-detail UIs"
+  },
+  {
+    "num": 19, "direction": "B · Zero-Bundle", "name": "Reveal-on-Scroll, Zero Deps",
+    "stack": "WAAPI + IntersectionObserver", "framework": "Framework-agnostic",
+    "score": 8, "mobile": "High",
+    "logic": "IO fires once → element.animate() plays reveal. ~400 bytes of JS, native compositor perf.",
+    "constraint": "No stagger built-in — you sequence manually.",
+    "mitigation": "Use a data-stagger-index attribute and delay = index * 50ms.",
+    "use_case": "Blogs, docs, content sites where bundle size matters"
+  },
+  {
+    "num": 20, "direction": "B · Zero-Bundle", "name": "Utility-First Velocity",
+    "stack": "Tailwind + string variants", "framework": "React",
+    "score": 6, "mobile": "High",
+    "logic": "Declarative string variants replace motion hooks; Tailwind handles layout.",
+    "constraint": "No canvas/WebGL/procedural pipeline — shallow ceiling.",
+    "mitigation": "Use for marketing pages; graduate to GSAP when you hit the ceiling.",
+    "use_case": "Marketing pages, MVPs, prototype-to-production"
+  },
+  {
+    "num": 21, "direction": "C · Spatial", "name": "3D Hero Scene",
+    "stack": "Three.js + R3F", "framework": "React",
+    "score": 8, "mobile": "Low",
+    "logic": "R3F renders a 3D scene declaratively; camera orbits on scroll or pointer. Memorable first impression.",
+    "constraint": "Three.js is ~600kb; mobile GPUs struggle with >50k triangles.",
+    "mitigation": "Lazy-load below fold; use instancing for repeated geometry; cap pixel ratio at 1.5 on mobile.",
+    "use_case": "Product launches, immersive marketing, game/film sites"
+  },
+  {
+    "num": 22, "direction": "C · Spatial", "name": "Shader Material Hero",
+    "stack": "Three.js + custom GLSL", "framework": "React",
+    "score": 9, "mobile": "Medium",
+    "logic": "Custom fragment shader renders a generative background (gradient noise, fluid sim) at 60fps on GPU.",
+    "constraint": "GLSL is a separate skill — most frontend devs can't write shaders. Debug tooling is weak.",
+    "mitigation": "Use shader-park or lygia (shader libraries) for premade patterns; customize uniforms only.",
+    "use_case": "Premium brand sites, AI product launches"
+  },
+  {
+    "num": 23, "direction": "C · Spatial", "name": "Particle Field",
+    "stack": "Three.js + Points + Sparkles", "framework": "React",
+    "score": 7, "mobile": "Medium",
+    "logic": "10k-50k GPU-instanced points drift in 3D space; camera moves through them. Depth without geometry cost.",
+    "constraint": "Transparent particles thrash the GPU on mobile if depth-sorting is on.",
+    "mitigation": "Disable depthWrite on particle material; use additive blending.",
+    "use_case": "Hero backgrounds, ambient atmospheres"
+  },
+  {
+    "num": 24, "direction": "C · Spatial", "name": "3D Product Configurator",
+    "stack": "R3F + drei + OrbitControls", "framework": "React",
+    "score": 9, "mobile": "Medium",
+    "logic": "Load GLTF product model; user orbits, swaps materials, sees real-time updates. Sells better than 2D photos.",
+    "constraint": "GLTF files are 2-20MB; mobile data plans suffer.",
+    "mitigation": "Use Draco compression; serve LOD variants based on connection speed.",
+    "use_case": "E-commerce, furniture, automotive, jewelry"
+  },
+  {
+    "num": 25, "direction": "C · Spatial", "name": "Scroll-Driven 3D Camera",
+    "stack": "R3F + ScrollControls (drei)", "framework": "React",
+    "score": 8, "mobile": "Medium",
+    "logic": "Scroll position drives camera Z through a 3D scene. Story unfolds spatially as user scrolls.",
+    "constraint": "Camera path must be baked; dynamic paths cause jitter.",
+    "mitigation": "Precompute camera curve with CatmullRom; lerp scroll input.",
+    "use_case": "Storytelling, product tours, brand films"
+  },
+  {
+    "num": 26, "direction": "C · Spatial", "name": "AR Try-On",
+    "stack": "WebXR + Three.js", "framework": "Framework-agnostic",
+    "score": 7, "mobile": "Low",
+    "logic": "WebXR session places 3D objects in the user's real space via camera. Try glasses, furniture, shoes in AR.",
+    "constraint": "iOS Safari requires Quick Look (USDZ) not WebXR. Android Chrome supports WebXR.",
+    "mitigation": "Detect platform; serve USDZ on iOS, WebXR on Android, 3D viewer fallback on desktop.",
+    "use_case": "Retail, eyewear, furniture, footwear"
+  },
+  {
+    "num": 27, "direction": "C · Spatial", "name": "Volumetric Video",
+    "stack": "Three.js + PointsCloudPlayer", "framework": "Framework-agnostic",
+    "score": 6, "mobile": "Low",
+    "logic": "Play back captured 3D video (point cloud or mesh sequence) in Three.js. Hologram feel.",
+    "constraint": "Volumetric capture is expensive; files are huge (100MB+ per minute).",
+    "mitigation": "Stream via tiles; only load visible frustum. Use NERF or Gaussian Splatting for compression.",
+    "use_case": "Concerts, sports, education, museum exhibits"
+  },
+  {
+    "num": 28, "direction": "C · Spatial", "name": "Interactive 3D Map",
+    "stack": "Three.js + MapboxGL", "framework": "React",
+    "score": 8, "mobile": "Medium",
+    "logic": "Mapbox provides geo data; Three.js renders extruded 3D buildings on top. Tilt + rotate for spatial feel.",
+    "constraint": "Two WebGL contexts (Mapbox + Three) conflict on some GPUs.",
+    "mitigation": "Use Mapbox's built-in Three.js layer (custom layer); single context.",
+    "use_case": "Real estate, urban planning, logistics dashboards"
+  },
+  {
+    "num": 29, "direction": "C · Spatial", "name": "3D Data Viz",
+    "stack": "R3F + drei + Instances", "framework": "React",
+    "score": 8, "mobile": "Medium",
+    "logic": "3D bar charts, network graphs, particle scatter plots. Spatial depth makes dense data legible.",
+    "constraint": "3D charts can mislead (perspective distortion). Accessibility tools can't read 3D.",
+    "mitigation": "Pair 3D view with a 2D data table; let users toggle. Provide aria-labels per data point.",
+    "use_case": "Analytics, finance, scientific viz"
+  },
+  {
+    "num": 30, "direction": "C · Spatial", "name": "Hand-Tracking Interaction",
+    "stack": "WebXR + HandTracking + R3F", "framework": "React",
+    "score": 6, "mobile": "Low",
+    "logic": "Quest browser / Vision Pro tracks hand joints; pinch to grab 3D objects. No controller needed.",
+    "constraint": "Hand tracking is Quest+/Vision Pro only; Chrome desktop doesn't support it.",
+    "mitigation": "Use mouse + keyboard fallback; gate hand-tracking behind feature detection.",
+    "use_case": "Spatial computing apps, accessibility (motor-impaired users)"
+  }
+]

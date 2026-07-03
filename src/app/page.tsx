@@ -6,6 +6,7 @@ import { SECTIONS, search, type SearchItem } from "@/lib/wiki-data";
 import { cn } from "@/lib/utils";
 import { ActivateSection, BuildSection, ValidateSection, PlaybookSection, BuilderSection } from "@/components/wiki/sections-core";
 import { CombosSection, SkillsSection, MonetizeSection, EcosystemSection, AgentsSection } from "@/components/wiki/sections-new";
+import { FieldGuideSection } from "@/components/wiki/section-field-guide";
 import { CopyButton } from "@/components/wiki/copy-button";
 
 const SECTION_COMPONENTS: Record<string, () => JSX.Element> = {
@@ -18,6 +19,7 @@ const SECTION_COMPONENTS: Record<string, () => JSX.Element> = {
   skills: SkillsSection,
   monetize: MonetizeSection,
   ecosystem: EcosystemSection,
+  "field-guide": FieldGuideSection,
   agents: AgentsSection,
 };
 

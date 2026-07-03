@@ -1,0 +1,119 @@
+[
+  {
+    "id": "ui-ux-pro-max",
+    "name": "ui-ux-pro-max",
+    "role": "Design-system, contrast, and accessibility enforcement layer. Acts as a quality gate on every visual decision.",
+    "install": "npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max",
+    "category": "Quality Gate",
+    "top_5_synergies": [
+      {
+        "with": "21st-registry",
+        "score": 10,
+        "why": "21st-registry supplies the components; ui-ux-pro-max enforces that you USE them with correct contrast, spacing, and typography. Without the gate, teams ship beautiful components with broken a11y.",
+        "risk": "ui-ux-pro-max may flag 21st.dev components as non-compliant; you'll need to override their tokens."
+      },
+      {
+        "with": "stitch-design",
+        "score": 9,
+        "why": "Stitch generates designs; ui-ux-pro-max validates them. Closes the loop from prompt → design → quality gate.",
+        "risk": "Stitch output may not match your existing token system; manual remap required."
+      },
+      {
+        "with": "gsap-frameworks",
+        "score": 8,
+        "why": "ui-ux-pro-max enforces prefers-reduced-motion; GSAP respects it. The combo produces motion that doesn't trigger vestibular issues.",
+        "risk": "Over-eager GSAP timelines can override reduced-motion; gate every animation."
+      },
+      {
+        "with": "charts",
+        "score": 9,
+        "why": "Charts need contrast + colorblind-safe palettes; ui-ux-pro-max supplies the rules, charts executes.",
+        "risk": "Default chart colors may violate ui-ux-pro-max contrast rules; customize."
+      },
+      {
+        "with": "fullstack-dev",
+        "score": 8,
+        "why": "fullstack-dev scaffolds; ui-ux-pro-max enforces design discipline on the scaffold. Prevents 'shadcn soup'.",
+        "risk": "Scaffold defaults may conflict with ui-ux-pro-max tokens; adopt a prefix convention."
+      }
+    ]
+  },
+  {
+    "id": "stitch-design",
+    "name": "stitch-design",
+    "role": "Google Labs design generation — prompt → production-ready design markdown + component spec.",
+    "install": "npx skills add google-labs-code/stitch-skills --skill stitch-design",
+    "category": "Design Generation",
+    "top_5_synergies": [
+      {
+        "with": "21st-registry",
+        "score": 10,
+        "why": "Stitch generates the spec; 21st-registry supplies the components to match. Prompt → spec → real React components.",
+        "risk": "Stitch may specify components that don't exist in 21st.dev; fall back to custom."
+      },
+      {
+        "with": "ui-ux-pro-max",
+        "score": 9,
+        "why": "Stitch generates; ui-ux-pro-max validates. Closes the quality loop.",
+        "risk": "Stitch output may not pass a11y checks; manual fixes needed."
+      },
+      {
+        "with": "llm",
+        "score": 8,
+        "why": "LLM writes the prompt; Stitch renders the design. Two-stage generation: text → design → code.",
+        "risk": "LLM prompts can be vague; Stitch output mirrors the vagueness."
+      },
+      {
+        "with": "image-generation",
+        "score": 7,
+        "why": "Image-gen creates hero assets; Stitch places them in a layout. End-to-end visual production.",
+        "risk": "Image-gen aspect ratios may not match Stitch layouts; resize pipeline needed."
+      },
+      {
+        "with": "fullstack-dev",
+        "score": 8,
+        "why": "fullstack-dev hosts the components Stitch specifies. Prompt → spec → scaffold.",
+        "risk": "Stitch output may not align with Next.js App Router conventions; remap."
+      }
+    ]
+  },
+  {
+    "id": "21st-registry",
+    "name": "21st-registry",
+    "role": "21st.dev component registry install. Pulls production React components by ID. NOTE: skill name is '21st-registry', NOT '21st-dev-components' — the latter flag fails.",
+    "install": "npx skills add 21st-dev/registry --skill 21st-registry",
+    "category": "Component Vocabulary",
+    "top_5_synergies": [
+      {
+        "with": "ui-ux-pro-max",
+        "score": 10,
+        "why": "21st-registry supplies components; ui-ux-pro-max enforces correct usage. The canonical quality-loop combo.",
+        "risk": "Some 21st.dev components may not meet ui-ux-pro-max contrast rules; override tokens."
+      },
+      {
+        "with": "stitch-design",
+        "score": 10,
+        "why": "Stitch specifies; 21st-registry supplies. Prompt → spec → real components.",
+        "risk": "Stitch may specify non-existent components; custom build required."
+      },
+      {
+        "with": "fullstack-dev",
+        "score": 9,
+        "why": "fullstack-dev scaffolds the host app; 21st-registry fills it with components. Fastest path to a real UI.",
+        "risk": "21st.dev components may need peer deps (motion, etc.); install all."
+      },
+      {
+        "with": "gsap-frameworks",
+        "score": 8,
+        "why": "21st-registry supplies static components; GSAP adds motion. Two-layer composition.",
+        "risk": "21st.dev components may have their own animations that conflict with GSAP; disable theirs."
+      },
+      {
+        "with": "charts",
+        "score": 7,
+        "why": "21st-registry for layout/chrome; charts for data viz. Split responsibility by surface.",
+        "risk": "Chart sizing may not fit 21st.dev card slots; wrap in a sizing container."
+      }
+    ]
+  }
+]

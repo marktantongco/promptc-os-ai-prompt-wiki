@@ -57,6 +57,8 @@ import SKILL_STACKS from "@/data/enriched/skill-stacks.json";
 import ECOSYSTEM_BLUEPRINTS from "@/data/enriched/ecosystem-blueprints.json";
 import SKILLS_DIRECTORY from "@/data/enriched/skills-directory.json";
 import ANIMAL_GUIDE from "@/data/enriched/animal-guide.json";
+import MOTION_STACK_COMBOS from "@/data/enriched/motion-stack-combos.json";
+import FOUNDATIONAL_CORES from "@/data/enriched/foundational-cores.json";
 
 // ── Types (loose — the source data is dynamic) ──────────────────────────────
 type AnyRecord = Record<string, any>;
@@ -115,6 +117,8 @@ export const data = {
   ECOSYSTEM_BLUEPRINTS: ECOSYSTEM_BLUEPRINTS as AnyRecord[],
   SKILLS_DIRECTORY: SKILLS_DIRECTORY as AnyRecord[],
   ANIMAL_GUIDE: ANIMAL_GUIDE as AnyRecord[],
+  MOTION_STACK_COMBOS: MOTION_STACK_COMBOS as AnyRecord[],
+  FOUNDATIONAL_CORES: FOUNDATIONAL_CORES as AnyRecord[],
 };
 
 // ── Sidebar section catalog ─────────────────────────────────────────────────
@@ -138,6 +142,7 @@ export const SECTIONS: WikiSection[] = [
   { id: "skills",    label: "Skills Builder", short: "SKL", color: "#FFD700", emoji: "🧱", desc: "Curated 3-5 skill stacks, principles, health compounding, install commands.", count: data.SKILL_STACKS.length },
   { id: "monetize",  label: "Monetize",  short: "$",    color: "#FFD700", emoji: "💸", desc: "Top 20 monetization prompts, SaaS templates, frameworks, recipes, automation workflows.", count: data.TOP10_PROMPTS.length + data.SAAS_TEMPLATES.length + data.MONETIZE_RECIPES.length },
   { id: "ecosystem", label: "Ecosystem", short: "ECO",  color: "#22c55e", emoji: "🌐", desc: "Interconnectivity blueprints, motion patterns, infographic patterns, MCP integrations.", count: data.ECOSYSTEM_BLUEPRINTS.length },
+  { id: "field-guide", label: "Field Guide", short: "FG", color: "#4DFFFF", emoji: "🧭", desc: "30 motion-stack combos across 3 directions + live 21st.dev registry search (server-side proxied) + top-5 synergies per foundational core. Adapted from marktantongco/skill-stack-field-guide.", count: 33 },
   { id: "agents",    label: "AGENTS.md", short: "AG",   color: "#a1a1aa", emoji: "📜", desc: "Operating conventions (silentdepth v4 style), install commands, decision trees, failure modes.", },
 ];
 

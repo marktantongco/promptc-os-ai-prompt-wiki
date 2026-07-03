@@ -64,7 +64,7 @@ All pass → submit. Any fail → iterate.
 
 ```bash
 # ─── 21st.dev (canonical — use 21st-dev/registry, not forks) ───
-npx skills add 21st-dev/registry --skill 21st-dev-components
+npx skills add 21st-dev/registry --skill 21st-registry  # CORRECTED: skill name is 21st-registry, NOT 21st-dev-components (the latter fails)
 # SDK install: npx twenty-first (then paste API key from https://21st.dev/dashboard)
 
 # ─── UI / animation / 3D ───
@@ -113,7 +113,8 @@ npx skills add skills.volces.com --skill agent-browser
 #   1. Verify TWENTYFIRST_API_KEY matches your 21st.dev dashboard key
 #   2. Run: npx twenty-first  (installs SDK + prompts for key on first run)
 #   3. Reference in code: process.env.TWENTYFIRST_API_KEY (never by value)
-TWENTYFIRST_API_KEY=an_sk_<see .env.local — written via file-write, not shell>
+API_KEY_21ST=an_sk_<see .env.local — canonical name per Vercel deploy template>
+# Alias (older docs): TWENTYFIRST_API_KEY=<same value>
 # API_URL_21ST=https://21st.dev/api/v1
 # APP_URL_21ST=https://21st.dev
 ```
@@ -131,6 +132,36 @@ gsap@3.15.0                # animation engine (ScrollTrigger registered)
 ```
 
 These power the live motion demos in the Design Combos section.
+
+
+## Field Guide integration (Round 3)
+
+Added a new **Field Guide** section (11th wiki section) adapted from `marktantongco/skill-stack-field-guide` (MIT):
+- **30 motion-stack combos** across 3 directions (Silk & GPU / Zero-Bundle / Spatial)
+- **Live 21st.dev registry search** via `/api/21st-search` — server-side proxied, key never reaches browser
+- **Top-5 synergies per foundational core** (ui-ux-pro-max, stitch-design, 21st-registry)
+- **A/B comparison table** vs the original promptc-os wiki
+
+### Corrections applied (from field-guide research)
+- Skill name: `21st-registry` (NOT `21st-dev-components` — the latter flag fails)
+- Env var: `API_KEY_21ST` (canonical, per Vercel deploy template — NOT `TWENTYFIRST_API_KEY`)
+- Both names written to `.env.local` for backward compatibility
+
+### Live 21st.dev proxy endpoint
+- Route: `GET /api/21st-search?q=<query>&limit=20`
+- Reads `API_KEY_21ST` from env (server-side only)
+- Forwards to `https://21st.dev/api/v1/components/search` with `Authorization: Bearer <key>`
+- Returns normalized JSON: `{ query, count, results: [{id, name, description, author, preview, tags, install_command, url}] }`
+- 60s per-query cache via `next: { revalidate: 60 }`
+- Browser NEVER sees the API key
+
+### Failure modes (per the field-guide's own pattern)
+| Failure | Cause | Fix |
+|---------|-------|-----|
+| HTTP 401 from 21st.dev | Key invalid/expired | Verify at 21st.dev/dashboard, update `.env.local` |
+| HTTP 429 | Rate limited | Increase `revalidate` to 300s; add client-side debounce |
+| Empty results | Query too narrow | Try broader terms (button, hero, card) |
+| Network error | 21st.dev down | Fall back to static skills directory in the wiki |
 
 ## Skills directories (for discovery)
 

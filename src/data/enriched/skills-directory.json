@@ -1,16 +1,16 @@
 [
   {
-    "id": "21st-dev-components",
-    "name": "21st.dev Components",
+    "id": "21st-registry",
+    "name": "21st-registry",
     "category": "UI Components",
     "source": "skills.sh / llmbase.ai/skills / 21st.dev",
-    "install": "npx skills add 21st-dev/registry --skill 21st-dev-components",
+    "install": "npx skills add 21st-dev/registry --skill 21st-registry",
     "canonical": true,
-    "notes": "Use the canonical 21st-dev/registry. Avoid serafimcloud/21st and 21st-dev/agent-elements forks. API key goes in .env.local as TWENTYFIRST_API_KEY (or API_KEY_21ST), referenced by name in code, never by value. Update .env.local + git-crypt if you commit secrets.",
+    "notes": "CORRECTED: skill name is 21st-registry, NOT 21st-dev-components. The 21st-dev-components flag will FAIL. Pulls production React components by ID. Foundational core #3 in the skill-stack-field-guide.",
     "env": [
-      "TWENTYFIRST_API_KEY=an_sk_..."
+      "API_KEY_21ST=an_sk_... (canonical env var name per Vercel deploy template)"
     ],
-    "use_for": "Sidebar dashboards, notchatbot UIs, animated registration, magic URLs, blob cursors."
+    "use_for": "Production React components by ID, live registry search."
   },
   {
     "id": "ui-ux-pro-max",

@@ -1,0 +1,112 @@
+[
+  {
+    "num": 11,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 9,
+    "tags": "Native SPA Transitions CSS View Transitions Tailwind",
+    "logic": "Browser snapshots old DOM, morphs to new on route change — zero JS, hardware-composited.",
+    "constraint": "Browser support gaps (Firefox <2024); less granular than JS timelines.",
+    "mitigation": "@supports (view-transition-name) guard + progressive enhancement",
+    "mobile": "High"
+  },
+  {
+    "num": 12,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 8,
+    "tags": "Native C++ Timeline WAAPI CSS Custom Properties",
+    "logic": "",
+    "constraint": "No spring physics out of the box; easing must be cubic-bezier.",
+    "mitigation": "Pair with Popmotion for spring; WAAPI for the actual render",
+    "mobile": "High"
+  },
+  {
+    "num": 13,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 7,
+    "tags": "Framework-Agnostic Physics Popmotion Vanilla JS",
+    "logic": "Popmotion is the pure-math core behind Framer Motion — springs, decay, pointers — no Virtual DOM weight.",
+    "constraint": "No React bindings; you wire it yourself.",
+    "mitigation": "Wrap in a 30-line usePopMotion hook; or use Motion One (Popmotion's DOM wrapper)",
+    "mobile": "High"
+  },
+  {
+    "num": 14,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 8,
+    "tags": "",
+    "logic": "Spring physics (mass/tension/friction) respond to swipe velocity — no jarring cuts when interrupted mid-gesture.",
+    "constraint": "Cascading springs across many elements → unpredictable settling.",
+    "mitigation": "Cap concurrent springs; use useSprings with a single config object",
+    "mobile": "High"
+  },
+  {
+    "num": 15,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 7,
+    "tags": "Staggered Micro-Interactions Anime.js v4 CSS Variables",
+    "logic": "",
+    "constraint": "No native scroll-timeline engine — manual event rigging for parallax.",
+    "mitigation": "Add GSAP ScrollTrigger ONLY for scroll; Anime for everything else",
+    "mobile": "High"
+  },
+  {
+    "num": 16,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 8,
+    "tags": "",
+    "logic": "Framer Motion's AnimatePresence handles route exits; Tailwind handles the visual system.",
+    "constraint": "",
+    "mitigation": "Import motion/m only (tree-shake AnimatePresence if unused)",
+    "mobile": "High"
+  },
+  {
+    "num": 17,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 8,
+    "tags": "Native Scroll Animations CSS @scroll-timeline position: sticky",
+    "logic": "Browser-native scroll-linked animations — animation-timeline: scroll() — zero JS.",
+    "constraint": "Chrome/Safari only as of 2025; Firefox behind flag.",
+    "mitigation": "@supports guard + IntersectionObserver fallback",
+    "mobile": "High"
+  },
+  {
+    "num": 18,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 9,
+    "tags": "Card-to-Modal Morph View Transitions Shared Element",
+    "logic": "view-transition-name on card and modal; browser morphs between them on state change.",
+    "constraint": "Only one element can have a given name per snapshot — collisions break the morph.",
+    "mitigation": "Dynamically assign names; clear them after transitionend",
+    "mobile": "High"
+  },
+  {
+    "num": 19,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 8,
+    "tags": "Reveal-on-Scroll, Zero Deps WAAPI IntersectionObserver",
+    "logic": "IO fires once → element.animate() plays reveal. ~400 bytes of JS, native compositor perf.",
+    "constraint": "No stagger built-in — you sequence manually.",
+    "mitigation": "",
+    "mobile": "High"
+  },
+  {
+    "num": 20,
+    "name": "Zero-Bundle Fluidity",
+    "direction": "B · Zero-Bundle",
+    "score": 6,
+    "tags": "Utility-First Velocity Hype React Tailwind",
+    "logic": "Declarative string variants replace motion hooks; Tailwind handles layout.",
+    "constraint": "No canvas/WebGL/procedural pipeline — shallow ceiling.",
+    "mitigation": "Use for marketing pages; graduate to GSAP when you hit the ceiling",
+    "mobile": "High"
+  }
+]
