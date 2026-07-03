@@ -4,6 +4,7 @@ import { useMemo, useState, useCallback } from "react";
 import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
 import { SectionHeader, WikiCard, Pill, Lbl } from "./primitives";
+import { PinButton, usePins } from "./pin-list";
 import { Search, ExternalLink, AlertCircle } from "lucide-react";
 
 // ── 21ST.DEV LIVE REGISTRY SEARCH ──────────────────────────────────────────
@@ -147,6 +148,7 @@ function TwentyFirstSearch() {
 function MotionStackCombos() {
   const [direction, setDirection] = useState<'all' | 'A' | 'B' | 'C'>('all');
   const [sort, setSort] = useState<'default' | 'score'>('default');
+  const { pins, togglePin } = usePins();
 
   const combos = data.MOTION_STACK_COMBOS;
   const filtered = useMemo(() => {
@@ -189,7 +191,22 @@ function MotionStackCombos() {
                   <div className="font-semibold text-sm mt-0.5">{c.name}</div>
                 </div>
                 <div className="flex flex-col items-end gap-0.5">
-                  <span className="font-mono text-lg font-bold" style={{ color: sc }}>{c.score}/10</span>
+                  <div className="flex items-center gap-1">
+                    <span className="font-mono text-lg font-bold" style={{ color: sc }}>{c.score}/10</span>
+                    <PinButton
+                      item={{
+                        id: `field-guide:combos:${c.num}`,
+                        section: 'field-guide',
+                        sectionLabel: 'Field Guide',
+                        sectionColor: '#4DFFFF',
+                        label: `#${c.num} ${c.name}`,
+                        content: `${c.stack} — ${c.logic}. Constraint: ${c.constraint}. Mitigation: ${c.mitigation}.`,
+                        desc: `${c.direction} · ${c.use_case}`,
+                      }}
+                      pins={pins}
+                      togglePin={togglePin}
+                    />
+                  </div>
                   <span className="text-[9px] font-mono" style={{ color: mc }}>{c.mobile} mobile</span>
                 </div>
               </div>
@@ -213,6 +230,7 @@ function MotionStackCombos() {
 function FoundationalCores() {
   const cores = data.FOUNDATIONAL_CORES;
   const [expanded, setExpanded] = useState<string | null>(cores[0]?.id || null);
+  const { pins, togglePin } = usePins();
 
   return (
     <div>
@@ -235,6 +253,19 @@ function FoundationalCores() {
                   <div className="font-mono text-sm font-semibold text-cyan-400">{core.name}</div>
                   <div className="text-[10px] text-zinc-500 mt-0.5">{core.category}</div>
                 </div>
+                <PinButton
+                  item={{
+                    id: `field-guide:cores:${core.id}`,
+                    section: 'field-guide',
+                    sectionLabel: 'Field Guide',
+                    sectionColor: '#4DFFFF',
+                    label: `Core: ${core.name}`,
+                    content: `${core.role}. Install: ${core.install}`,
+                    desc: core.category,
+                  }}
+                  pins={pins}
+                  togglePin={togglePin}
+                />
                 <span className="text-[10px] text-zinc-500">{isOpen ? '▼' : '▶'}</span>
               </button>
 

@@ -145,6 +145,7 @@ export function CombosSection() {
 // ── SKILLS BUILDER ─────────────────────────────────────────────────────────
 export function SkillsSection() {
   const [tab, setTab] = useState<'stacks' | 'directory' | 'health'>('stacks');
+  const { pins, togglePin } = usePins();
 
   return (
     <div className="anim-zone">
@@ -170,7 +171,22 @@ export function SkillsSection() {
                   <div className="font-semibold text-base">{s.name}</div>
                   <div className="text-xs text-zinc-400 mt-0.5">{s.thesis}</div>
                 </div>
-                <span className="mono-label text-gold-400" style={{ color: '#FFD700' }}>{s.stack.length} SKILLS</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="mono-label text-gold-400" style={{ color: '#FFD700' }}>{s.stack.length} SKILLS</span>
+                  <PinButton
+                    item={{
+                      id: `skills:stacks:${s.id}`,
+                      section: 'skills',
+                      sectionLabel: 'Skills',
+                      sectionColor: '#FFD700',
+                      label: s.name,
+                      content: s.thesis,
+                      desc: s.use,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                </div>
               </div>
 
               <div className="space-y-1.5 mb-3">
@@ -233,7 +249,22 @@ export function SkillsSection() {
                   <div className="font-semibold text-sm">{s.name}</div>
                   <div className="text-[10px] text-zinc-500 mt-0.5 font-mono">{s.category}</div>
                 </div>
-                {s.canonical && <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/15 border border-green-500/40 text-green-400 font-mono">CANONICAL</span>}
+                <div className="flex items-center gap-1">
+                  {s.canonical && <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/15 border border-green-500/40 text-green-400 font-mono">CANONICAL</span>}
+                  <PinButton
+                    item={{
+                      id: `skills:directory:${s.id}`,
+                      section: 'skills',
+                      sectionLabel: 'Skills',
+                      sectionColor: '#FFD700',
+                      label: s.name,
+                      content: s.install,
+                      desc: s.notes,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                </div>
               </div>
               <p className="text-xs text-zinc-400 mb-2">{s.notes}</p>
               {s.use_for && <p className="text-xs text-zinc-500 mb-2"><span className="text-zinc-600">USE FOR:</span> {s.use_for}</p>}
@@ -301,6 +332,7 @@ export function SkillsSection() {
 // ── MONETIZE ───────────────────────────────────────────────────────────────
 export function MonetizeSection() {
   const [tab, setTab] = useState<'top' | 'saas' | 'recipes' | 'frameworks' | 'automation'>('top');
+  const { pins, togglePin } = usePins();
   return (
     <div className="anim-zone">
       <SectionHeader
@@ -326,7 +358,22 @@ export function MonetizeSection() {
                   <div className="font-semibold text-sm">{p.title || p.name || p.label}</div>
                   {p.when && <div className="text-xs text-zinc-500 mt-0.5">{p.when}</div>}
                 </div>
-                {p.cat && <span className="mono-label text-zinc-500">{p.cat}</span>}
+                <div className="flex items-center gap-1.5">
+                  {p.cat && <span className="mono-label text-zinc-500">{p.cat}</span>}
+                  <PinButton
+                    item={{
+                      id: `monetize:top:${i}`,
+                      section: 'monetize',
+                      sectionLabel: 'Monetize',
+                      sectionColor: '#FFD700',
+                      label: p.title || p.name || p.label,
+                      content: p.prompt || '',
+                      desc: p.when,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                </div>
               </div>
               {p.prompt && <CodeBlock text={p.prompt} maxHeight="320px" />}
               {p.action && <p className="text-xs text-amber-400 mt-2 font-mono">⚡ {p.action}</p>}
@@ -420,6 +467,7 @@ export function MonetizeSection() {
 
 // ── ECOSYSTEM BLUEPRINTS ───────────────────────────────────────────────────
 export function EcosystemSection() {
+  const { pins, togglePin } = usePins();
   return (
     <div className="anim-zone">
       <SectionHeader
@@ -436,7 +484,22 @@ export function EcosystemSection() {
                 <div className="font-semibold text-sm">{bp.name}</div>
                 <div className="text-xs text-zinc-500 mt-0.5">{bp.desc}</div>
               </div>
-              <span className="mono-label text-green-400">{bp.layer}</span>
+              <div className="flex items-center gap-1.5">
+                <span className="mono-label text-green-400">{bp.layer}</span>
+                <PinButton
+                  item={{
+                    id: `ecosystem:${i}`,
+                    section: 'ecosystem',
+                    sectionLabel: 'Ecosystem',
+                    sectionColor: '#22c55e',
+                    label: bp.name,
+                    content: bp.blueprint,
+                    desc: bp.desc,
+                  }}
+                  pins={pins}
+                  togglePin={togglePin}
+                />
+              </div>
             </div>
             <div className="mb-2">
               <Lbl text="Blueprint" color="#22c55e" />

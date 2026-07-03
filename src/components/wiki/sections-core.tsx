@@ -538,6 +538,7 @@ OUTPUT:
 export function ValidateSection() {
   const [swapLevel, setSwapLevel] = useState<'all' | 'beginner' | 'misconception' | 'advanced'>('all');
   const [keywordPicker, setKeywordPicker] = useState<string | null>(null);
+  const { pins, togglePin } = usePins();
 
   const swaps = useMemo(() => {
     if (swapLevel === 'all') return data.SWAPS;
@@ -574,7 +575,22 @@ export function ValidateSection() {
                       </div>
                       <div className="flex items-center justify-between gap-2">
                         <span className="text-sm text-green-400 font-mono">{s.good}</span>
-                        <CopyButton text={s.good} />
+                        <div className="flex items-center gap-1">
+                          <PinButton
+                            item={{
+                              id: `validate:swaps:${i}`,
+                              section: 'validate',
+                              sectionLabel: 'Validate',
+                              sectionColor: '#22c55e',
+                              label: `Swap: ${s.bad} → ${s.good}`,
+                              content: s.good,
+                              desc: s.tip,
+                            }}
+                            pins={pins}
+                            togglePin={togglePin}
+                          />
+                          <CopyButton text={s.good} />
+                        </div>
                       </div>
                       {s.tip && <p className="text-xs text-zinc-500 mt-1">{s.tip}</p>}
                       {s.level && <span className="mono-label text-zinc-600 mt-1 inline-block">{s.level}</span>}
@@ -617,7 +633,22 @@ export function ValidateSection() {
                 <WikiCard key={i} accent="#22c55e" pad="p-3">
                   <div className="flex items-start justify-between gap-2">
                     <div className="font-semibold text-sm">{l.rule}</div>
-                    {l.cat && <span className="mono-label text-zinc-500">{l.cat}</span>}
+                    <div className="flex items-center gap-1.5">
+                      {l.cat && <span className="mono-label text-zinc-500">{l.cat}</span>}
+                      <PinButton
+                        item={{
+                          id: `validate:lint:${i}`,
+                          section: 'validate',
+                          sectionLabel: 'Validate',
+                          sectionColor: '#22c55e',
+                          label: l.rule,
+                          content: l.fix || l.why || '',
+                          desc: l.why,
+                        }}
+                        pins={pins}
+                        togglePin={togglePin}
+                      />
+                    </div>
                   </div>
                   {l.why && <p className="text-xs text-zinc-400 mt-1">{l.why}</p>}
                   {l.fix && <p className="text-xs text-green-400 mt-1 font-mono">FIX: {l.fix}</p>}
@@ -666,6 +697,7 @@ export function ValidateSection() {
 
 export function PlaybookSection() {
   const [cat, setCat] = useState<string>('all');
+  const { pins, togglePin } = usePins();
   const cats = useMemo(() => {
     const s = new Set<string>();
     for (const w of data.WF) s.add((w as any).cat || 'General');
@@ -693,6 +725,19 @@ export function PlaybookSection() {
               <span className="font-semibold text-sm flex-1">{w.title}</span>
               {w.cat && <span className="mono-label text-amber-400">{w.cat}</span>}
               {w.chain && <span className="text-xs text-zinc-500">{Array.isArray(w.chain) ? w.chain.join(' → ') : w.chain}</span>}
+              <PinButton
+                item={{
+                  id: `playbook:wf:${i}`,
+                  section: 'playbook',
+                  sectionLabel: 'Playbook',
+                  sectionColor: '#FFB000',
+                  label: w.title,
+                  content: w.out || w.purpose || '',
+                  desc: w.purpose,
+                }}
+                pins={pins}
+                togglePin={togglePin}
+              />
             </div>
           }>
             <div className="space-y-2">
