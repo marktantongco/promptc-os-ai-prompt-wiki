@@ -233,3 +233,31 @@ Stage Summary:
 - skills.sh/trending data captured (top 10 trending skills documented)
 - opencode-accomplishments site researched (90+ skill store)
 - HERMES prompt fetched (style adopted, not installed as system prompt)
+
+---
+Task ID: 7
+Agent: main (Super Z)
+Task: Add Pin buttons to Build section, install a real 21st.dev component.
+
+Work Log:
+- Re-fetched silentdepth_v4.md (already adopted round 1, style in AGENTS.md). Did NOT install as system prompt (same boundary, 7th time).
+- Fetched skills.sh: top skills = find-skills (2.3M installs), remotion-render, just-scrape, grill-me, grill-with-docs, lark-base, tdd.
+- Checked 21st quota: 0/2 free retrievals remaining today. Search still works (doesn't count against quota).
+- Attempted real 21st component install: `21st add andrewlu0/sidebar`. Result: "[Marketplace membership required]" — the free tier can't install marketplace components. The CLI correctly forwarded the request (key in URL — 21st.dev's design), shadcn ran, 21st.dev returned 402/403. This is a quota/permissions issue, not a code bug.
+- Added Pin buttons to ALL 5 Build card types:
+  • Animals (7): Rabbit, Owl, Ant, Eagle, Dolphin, Beaver, Elephant — each gets a Pin button
+  • Chains (15): every chain gets a Pin button next to COPY CHAIN
+  • Enhancements (7): every enhancement gets a Pin button
+  • Typography (4): every type pairing gets a Pin button
+  • Vocab (52): every vocab term gets a Pin button
+  • Total Build pinable: 85 items
+- Import PinButton + usePins into BuildSection
+- Added `const { pins, togglePin } = usePins();` to BuildSection
+- Each card gets a PinButton with unique id (build:animals:${name}, build:chains:${i}, build:enh:${i}, build:typo:${d}, build:vocab:${term})
+- Verified lint clean (0 errors)
+- Verified via agent-browser: Build section renders 7 Pin buttons on Animals tab. Pinned Rabbit → badge count = 1 → panel opened showing "Rabbit" + "Build Systems". No console errors.
+
+Stage Summary:
+- Pin buttons now on 3 sections: Activate (80) + Build (85) + Design Combos (20) = 185 pinable items total
+- 21st component install attempted for real — failed due to marketplace membership requirement (free tier limitation). Key works, CLI works, but paid tier needed for marketplace components.
+- Boundaries held: did NOT install silentdepth_v4 as system prompt, did NOT echo API key in shell

@@ -218,6 +218,7 @@ export function ActivateSection() {
 
 export function BuildSection() {
   const [tab, setTab] = useState<'animals' | 'chains' | 'layers' | 'enh' | 'webapp' | 'json' | 'typo' | 'vocab'>('animals');
+  const { pins, togglePin } = usePins();
 
   const vocabCats = useMemo(() => {
     const cats: Record<string, any[]> = {};
@@ -252,12 +253,27 @@ export function BuildSection() {
         <div className="grid gap-3 sm:grid-cols-2">
           {data.ANIMALS.map((a: any) => (
             <WikiCard key={a.name} accent="#FF6B00">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">{a.emoji}</span>
-                <div>
-                  <div className="font-semibold text-sm">{a.name}</div>
-                  <div className="text-xs text-zinc-500">{a.mode}</div>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">{a.emoji}</span>
+                  <div>
+                    <div className="font-semibold text-sm">{a.name}</div>
+                    <div className="text-xs text-zinc-500">{a.mode}</div>
+                  </div>
                 </div>
+                <PinButton
+                  item={{
+                    id: `build:animals:${a.name}`,
+                    section: 'build',
+                    sectionLabel: 'Build',
+                    sectionColor: '#FF6B00',
+                    label: `${a.emoji} ${a.name} — ${a.mode}`,
+                    content: a.prompt,
+                    desc: a.mode,
+                  }}
+                  pins={pins}
+                  togglePin={togglePin}
+                />
               </div>
               <CodeBlock text={a.prompt} maxHeight="180px" />
             </WikiCard>
@@ -271,7 +287,22 @@ export function BuildSection() {
             <WikiCard key={i} accent="#FF6B00">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <div className="font-semibold text-sm">{c.name}</div>
-                <CopyButton text={c.combined || c.chain || ''} label="COPY CHAIN" />
+                <div className="flex items-center gap-1.5">
+                  <PinButton
+                    item={{
+                      id: `build:chains:${i}`,
+                      section: 'build',
+                      sectionLabel: 'Build',
+                      sectionColor: '#FF6B00',
+                      label: c.name,
+                      content: c.combined || c.chain || '',
+                      desc: c.desc,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                  <CopyButton text={c.combined || c.chain || ''} label="COPY CHAIN" />
+                </div>
               </div>
               {c.desc && <p className="text-xs text-zinc-500 mb-2">{c.desc}</p>}
               {(c.combined || c.chain) && <CodeBlock text={c.combined || c.chain} maxHeight="240px" />}
@@ -306,7 +337,22 @@ export function BuildSection() {
                   <div className="font-semibold text-sm">{e.name}</div>
                   {e.when && <div className="text-xs text-zinc-500 mt-0.5">{e.when}</div>}
                 </div>
-                {e.cat && <span className="mono-label text-zinc-500">{e.cat}</span>}
+                <div className="flex items-center gap-1.5">
+                  {e.cat && <span className="mono-label text-zinc-500">{e.cat}</span>}
+                  <PinButton
+                    item={{
+                      id: `build:enh:${i}`,
+                      section: 'build',
+                      sectionLabel: 'Build',
+                      sectionColor: '#FF6B00',
+                      label: e.name,
+                      content: e.snippet,
+                      desc: e.when,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                </div>
               </div>
               <CodeBlock text={e.snippet} maxHeight="220px" />
             </WikiCard>
@@ -353,7 +399,22 @@ export function BuildSection() {
         <div className="grid gap-3 sm:grid-cols-2">
           {data.TYPO.map((t: any, i: number) => (
             <WikiCard key={i} accent="#FF6B00">
-              <div className="font-semibold text-sm mb-1">{t.d}</div>
+              <div className="flex items-start justify-between gap-2 mb-1">
+                <div className="font-semibold text-sm">{t.d}</div>
+                <PinButton
+                  item={{
+                    id: `build:typo:${t.d}`,
+                    section: 'build',
+                    sectionLabel: 'Build',
+                    sectionColor: '#FF6B00',
+                    label: `${t.d} / ${t.m}`,
+                    content: `Display: ${t.d} | Mono: ${t.m} | Use: ${t.b}`,
+                    desc: t.b,
+                  }}
+                  pins={pins}
+                  togglePin={togglePin}
+                />
+              </div>
               <div className="text-xs text-zinc-500 mb-2">Mono: {t.m}</div>
               <p className="text-xs text-zinc-400 mb-3">{t.b}</p>
               <div className="flex items-baseline gap-3 p-3 rounded border border-white/10 bg-black/30">
@@ -376,7 +437,22 @@ export function BuildSection() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((v: any, i: number) => (
                   <WikiCard key={i} accent="#FF6B00" pad="p-3">
-                    <div className="font-semibold text-sm mb-1">{v.term}</div>
+                    <div className="flex items-start justify-between gap-2 mb-1">
+                      <div className="font-semibold text-sm">{v.term}</div>
+                      <PinButton
+                        item={{
+                          id: `build:vocab:${v.term}`,
+                          section: 'build',
+                          sectionLabel: 'Build',
+                          sectionColor: '#FF6B00',
+                          label: v.term,
+                          content: v.copy || v.def || '',
+                          desc: v.def,
+                        }}
+                        pins={pins}
+                        togglePin={togglePin}
+                      />
+                    </div>
                     {v.def && <p className="text-xs text-zinc-400 mb-2">{v.def}</p>}
                     {v.copy && (
                       <div className="mt-2">
