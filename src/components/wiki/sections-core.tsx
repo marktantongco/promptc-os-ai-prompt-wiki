@@ -4,9 +4,11 @@ import { useMemo, useState } from "react";
 import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
 import { SectionHeader, WikiCard, Pill, Lbl, Disclosure } from "./primitives";
+import { PinButton, usePins } from "./pin-list";
 
 export function ActivateSection() {
   const [tab, setTab] = useState<'master' | 'advocate' | 'mods' | 'tasks' | 'tmpls' | 'brands'>('master');
+  const { pins, togglePin } = usePins();
 
   const tmplGroups = useMemo(() => {
     const groups: Record<string, typeof data.TMPLS> = {};
@@ -37,7 +39,22 @@ export function ActivateSection() {
 
       {tab === 'master' && (
         <WikiCard accent="#4DFFFF">
-          <Lbl text="Master System Prompt" />
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <Lbl text="Master System Prompt" />
+            <PinButton
+              item={{
+                id: 'activate:master',
+                section: 'activate',
+                sectionLabel: 'Activate',
+                sectionColor: '#4DFFFF',
+                label: 'Master System Prompt',
+                content: data.MASTER.slice(0, 500) + '...',
+                desc: 'The root system prompt',
+              }}
+              pins={pins}
+              togglePin={togglePin}
+            />
+          </div>
           <p className="text-xs text-zinc-400 mb-3">The root system prompt. Drop into any AI as the first message. Activates advocacy mode, quality gates, and reasoning protocols.</p>
           <CodeBlock text={data.MASTER} maxHeight="600px" />
         </WikiCard>
@@ -45,7 +62,22 @@ export function ActivateSection() {
 
       {tab === 'advocate' && (
         <WikiCard accent="#4DFFFF">
-          <Lbl text="Advocate Mode" />
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <Lbl text="Advocate Mode" />
+            <PinButton
+              item={{
+                id: 'activate:advocate',
+                section: 'activate',
+                sectionLabel: 'Activate',
+                sectionColor: '#4DFFFF',
+                label: 'Advocate Mode',
+                content: data.ADVOCATE.slice(0, 500) + '...',
+                desc: 'AI as your business partner',
+              }}
+              pins={pins}
+              togglePin={togglePin}
+            />
+          </div>
           <p className="text-xs text-zinc-400 mb-3">Reframes the AI as your business partner, not just an assistant. Append to the master prompt for high-stakes decisions.</p>
           <CodeBlock text={data.ADVOCATE} maxHeight="500px" />
         </WikiCard>
@@ -60,7 +92,22 @@ export function ActivateSection() {
                   <div className="font-semibold text-sm">{m.label}</div>
                   {m.desc && <div className="text-xs text-zinc-500 mt-0.5">{m.desc}</div>}
                 </div>
-                {m.cat && <span className="mono-label text-zinc-500">{m.cat}</span>}
+                <div className="flex items-center gap-1.5">
+                  {m.cat && <span className="mono-label text-zinc-500">{m.cat}</span>}
+                  <PinButton
+                    item={{
+                      id: `activate:mods:${i}`,
+                      section: 'activate',
+                      sectionLabel: 'Activate',
+                      sectionColor: '#4DFFFF',
+                      label: m.label,
+                      content: m.content,
+                      desc: m.desc,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                </div>
               </div>
               <CodeBlock text={m.content} maxHeight="280px" />
             </WikiCard>
@@ -77,7 +124,22 @@ export function ActivateSection() {
                   <div className="font-semibold text-sm">{t.label}</div>
                   {t.desc && <div className="text-xs text-zinc-500 mt-0.5">{t.desc}</div>}
                 </div>
-                {t.cat && <span className="mono-label text-zinc-500">{t.cat}</span>}
+                <div className="flex items-center gap-1.5">
+                  {t.cat && <span className="mono-label text-zinc-500">{t.cat}</span>}
+                  <PinButton
+                    item={{
+                      id: `activate:tasks:${i}`,
+                      section: 'activate',
+                      sectionLabel: 'Activate',
+                      sectionColor: '#4DFFFF',
+                      label: t.label,
+                      content: t.content,
+                      desc: t.desc,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
+                </div>
               </div>
               <CodeBlock text={t.content} maxHeight="320px" />
             </WikiCard>
@@ -95,7 +157,22 @@ export function ActivateSection() {
                   <WikiCard key={i} accent="#4DFFFF">
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div className="font-semibold text-sm">{t.label}</div>
-                      {t.cat && <span className="mono-label text-zinc-500">{t.cat}</span>}
+                      <div className="flex items-center gap-1.5">
+                        {t.cat && <span className="mono-label text-zinc-500">{t.cat}</span>}
+                        <PinButton
+                          item={{
+                            id: `activate:tmpls:${t.label}`,
+                            section: 'activate',
+                            sectionLabel: 'Activate',
+                            sectionColor: '#4DFFFF',
+                            label: t.label,
+                            content: t.content,
+                            desc: t.desc,
+                          }}
+                          pins={pins}
+                          togglePin={togglePin}
+                        />
+                      </div>
                     </div>
                     {t.desc && <p className="text-xs text-zinc-500 mb-2">{t.desc}</p>}
                     <CodeBlock text={t.content} maxHeight="320px" />
@@ -116,6 +193,19 @@ export function ActivateSection() {
                   <div className="font-semibold text-sm">{b.name || b.id}</div>
                   {b.desc && <div className="text-xs text-zinc-500 mt-0.5">{b.desc}</div>}
                 </div>
+                <PinButton
+                  item={{
+                    id: `activate:brands:${b.id || b.name}`,
+                    section: 'activate',
+                    sectionLabel: 'Activate',
+                    sectionColor: '#4DFFFF',
+                    label: b.name || b.id,
+                    content: b.prompt,
+                    desc: b.desc,
+                  }}
+                  pins={pins}
+                  togglePin={togglePin}
+                />
               </div>
               <CodeBlock text={b.prompt} maxHeight="400px" />
             </WikiCard>
