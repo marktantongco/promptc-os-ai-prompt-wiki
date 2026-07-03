@@ -1,0 +1,101 @@
+[
+  {
+    "id": "stack-fullstack-ai-app",
+    "name": "Fullstack AI App Stack",
+    "thesis": "Ship a production AI app in a weekend with auth, payments, streaming, and a database.",
+    "stack": [
+      { "skill": "fullstack-dev", "source": "built-in", "role": "Next.js 16 + Tailwind + shadcn/ui + Prisma scaffold" },
+      { "skill": "21st-dev-components", "source": "npx skills add 21st-dev/registry --skill 21st-dev-components", "role": "Production-grade React component library (notchatbot UI, sidebars, dashboards)" },
+      { "skill": "ui-ux-pro-max", "source": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max", "role": "Design-system rules: spacing, typography scale, color tokens" },
+      { "skill": "gsap-frameworks", "source": "npx skills add https://github.com/heygen-com/hyperframes --skill gsap", "role": "GSAP animation patterns for React (ScrollTrigger, Flip, stagger)" },
+      { "skill": "llm", "source": "built-in z-ai-web-dev-sdk", "role": "Streaming chat completions, multi-turn context" }
+    ],
+    "why": "Covers the full surface area of an AI SaaS: UI (shadcn + 21st), motion (GSAP), design discipline (ui-ux-pro-max), and the AI itself (LLM SDK). Each skill fills a real gap the others leave.",
+    "use": "Vibes-coded MVPs, hackathon projects, internal AI tools, paid weekend builds.",
+    "health": "All skills are TypeScript-native and don't conflict. The only health cost is bundle size — code-split GSAP and Three.js aggressively.",
+    "install_order": ["fullstack-dev", "21st-dev-components", "ui-ux-pro-max", "llm", "gsap-frameworks"],
+    "env": ["TWENTYFIRST_API_KEY=an_sk_... (in .env.local, never committed)"]
+  },
+  {
+    "id": "stack-immersive-landing",
+    "name": "Immersive Landing Page Stack",
+    "thesis": "Build a launch-page that converts through motion depth, not copy.",
+    "stack": [
+      { "skill": "threejs-animation", "source": "npx skills add https://github.com/mrgoonie/claudekit-skills --skill threejs", "role": "WebGL scenes, shaders, particle systems" },
+      { "skill": "threejs-webgl", "source": "npx skills add https://github.com/freshtechbro/claudedesignskills --skill threejs-webgl", "role": "React Three Fiber patterns + shader material recipes" },
+      { "skill": "gsap-frameworks", "source": "npx skills add https://github.com/greensock/gsap-skills --skill gsap-frameworks", "role": "ScrollTrigger, pinning, scrub" },
+      { "skill": "ui-ux-pro-max", "source": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max", "role": "Typography hierarchy, color discipline so the 3D doesn't dominate" }
+    ],
+    "why": "Three.js + GSAP is the standard immersive combo. ui-ux-pro-max prevents the common failure mode where 3D swamps the content. Two Three.js skills cover both vanilla (claudekit) and React (freshtechbro) patterns.",
+    "use": "Product launches, agency portfolios, film/game marketing, NFT drops.",
+    "health": "High bundle cost (Three.js ~600kb, GSAP ~50kb). Must lazy-load below-the-fold. Accessibility: always provide a static fallback for prefers-reduced-motion. SEO: render critical content server-side.",
+    "install_order": ["ui-ux-pro-max", "gsap-frameworks", "threejs-animation", "threejs-webgl"],
+    "env": []
+  },
+  {
+    "id": "stack-content-engine",
+    "name": "Content Engine Stack",
+    "thesis": "Generate, schedule, and analyze content at scale across blog, social, and email.",
+    "stack": [
+      { "skill": "llm", "source": "built-in", "role": "Multi-turn article generation, tone control, summarization" },
+      { "skill": "web-search", "source": "built-in z-ai-web-dev-sdk", "role": "Live research for fact-grounded content" },
+      { "skill": "web-reader", "source": "built-in z-ai-web-dev-sdk", "role": "Source extraction, citation gathering" },
+      { "skill": "ASR", "source": "built-in", "role": "Transcribe voice memos into draft posts" },
+      { "skill": "image-generation", "source": "built-in", "role": "Hero illustrations, social cards" }
+    ],
+    "why": "End-to-end content pipeline: search (research) → reader (extract) → LLM (draft) → image-gen (visuals) → TTS/ASR (repurpose to/from audio). All built into z-ai-web-dev-sdk, so zero external dependencies.",
+    "use": "Solo creator ops, agency content teams, SEO programs, podcast repurposing.",
+    "health": "All skills share one SDK — zero dependency conflicts. Main cost is API tokens; cache aggressively and dedupe sources. Quality gate: human edit pass before publish.",
+    "install_order": ["web-search", "web-reader", "llm", "image-generation", "ASR"],
+    "env": []
+  },
+  {
+    "id": "stack-monitize-mcp",
+    "name": "MCP Tool → Monetize Stack",
+    "thesis": "Build a paid MCP server that Claude Desktop users subscribe to.",
+    "stack": [
+      { "skill": "21st-dev-components", "source": "npx skills add 21st-dev/registry --skill 21st-dev-components", "role": "Landing page + dashboard for the SaaS wrapper" },
+      { "skill": "llm", "source": "built-in", "role": "In-tool reasoning, prompt routing" },
+      { "skill": "fullstack-dev", "source": "built-in", "role": "API routes + Prisma for credit tracking + Stripe webhooks" },
+      { "skill": "web-search", "source": "built-in", "role": "Live data the MCP tool can call" }
+    ],
+    "why": "MCP tools need (a) the tool itself (TypeScript MCP SDK, not a skill), (b) a monetization wrapper (Stripe + Prisma + Next.js = fullstack-dev), (c) a marketing surface (21st-dev-components), and (d) often a live-data source (web-search).",
+    "use": "Vertical MCP tools for specific roles (recruiters, lawyers, SDRs).",
+    "health": "Stripe webhooks must be idempotent. Use Prisma's unique constraints + a webhook_log table. Always handle customer.subscription.deleted to revoke credits.",
+    "install_order": ["fullstack-dev", "21st-dev-components", "llm", "web-search"],
+    "env": ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "TWENTYFIRST_API_KEY"]
+  },
+  {
+    "id": "stack-research-deep-dive",
+    "name": "Deep Research Stack",
+    "thesis": "Run a multi-source, citation-grounded research pass on any question.",
+    "stack": [
+      { "skill": "web-search", "source": "built-in", "role": "Discover sources" },
+      { "skill": "web-reader", "source": "built-in", "role": "Extract clean text from each source" },
+      { "skill": "llm", "source": "built-in", "role": "Synthesize, with explicit citation instructions" },
+      { "skill": "xlsx", "source": "built-in", "role": "Export structured findings to a spreadsheet deliverable" },
+      { "skill": "pdf", "source": "built-in", "role": "Generate the final research report as a polished PDF" }
+    ],
+    "why": "Mirrors the gpt-researcher pattern: search → read → synthesize → deliver. Each skill maps to one stage. Output is a real artifact (PDF + XLSX), not chat text.",
+    "use": "Consulting deliverables, due diligence, market research, competitive intel.",
+    "health": "LLM synthesis can hallucinate citations. Force the LLM to output [source N] inline tags and verify each against the reader output. Reject any unverified claim.",
+    "install_order": ["web-search", "web-reader", "llm", "xlsx", "pdf"],
+    "env": []
+  },
+  {
+    "id": "stack-design-system",
+    "name": "Design System Stack",
+    "thesis": "Codify a brand design system into reusable tokens, components, and lint rules.",
+    "stack": [
+      { "skill": "ui-ux-pro-max", "source": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max", "role": "Token hierarchy, spacing scale, typography system" },
+      { "skill": "21st-dev-components", "source": "npx skills add 21st-dev/registry --skill 21st-dev-components", "role": "Production component primitives" },
+      { "skill": "fullstack-dev", "source": "built-in", "role": "Token pipeline (Tailwind 4 @theme), Storybook-free docs" },
+      { "skill": "charts", "source": "built-in", "role": "Chart-color system, dashboard patterns" }
+    ],
+    "why": "A design system isn't just components — it's tokens + components + chart patterns + documentation. The four skills cover all four layers. ui-ux-pro-max enforces discipline that 21st-dev-components alone won't.",
+    "use": "Startups formalizing their UI, agencies handing off to client teams, open-source design systems.",
+    "health": "Token naming collisions between ui-ux-pro-max and shadcn defaults. Adopt a prefix convention (--brand- vs --color-) and document it.",
+    "install_order": ["ui-ux-pro-max", "21st-dev-components", "fullstack-dev", "charts"],
+    "env": ["TWENTYFIRST_API_KEY"]
+  }
+]

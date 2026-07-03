@@ -1,0 +1,52 @@
+[
+  {
+    "id": "dev",
+    "label": "DEVELOPER",
+    "desc": "Full Next.js + Tailwind + Framer Motion project"
+  },
+  {
+    "id": "pd",
+    "label": "PRODUCT DESIGNER",
+    "desc": "Ultra-modern web app with design rationale"
+  },
+  {
+    "id": "sf",
+    "label": "STARTUP FOUNDER",
+    "desc": "Startup-ready premium mobile-first interface"
+  },
+  {
+    "id": "info",
+    "label": "INFOGRAPHIC",
+    "desc": "Dynamic infographic with scroll interactions"
+  },
+  {
+    "id": "genz",
+    "label": "GEN-Z UI",
+    "desc": "Neon gradients, animated typography, dark-mode"
+  },
+  {
+    "id": "ai",
+    "label": "AI PRODUCT",
+    "desc": "Complete app with Next.js + Tailwind + GSAP"
+  },
+  {
+    "id": "nc",
+    "label": "NO-CODE",
+    "desc": "Implementable in low-code tools"
+  },
+  {
+    "id": "edu",
+    "label": "EDUCATIONAL",
+    "desc": "Demo that teaches through visual interaction"
+  },
+  {
+    "id": "port",
+    "label": "PORTFOLIO",
+    "desc": "Ultra-modern minimal with smooth transitions"
+  },
+  {
+    "id": "exp",
+    "label": "EXPERIMENTAL",
+    "desc": "Bold Gen-Z, scroll triggers, dark mode default"
+  }
+]

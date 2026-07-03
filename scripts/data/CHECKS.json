@@ -1,0 +1,172 @@
+[
+  {
+    "lbl": "STRUCTURE",
+    "selectable": {
+      "role": {
+        "label": "Role",
+        "opts": [
+          "Senior Full-Stack Developer",
+          "Senior UX/Product Designer",
+          "AI/ML Engineer",
+          "DevOps / Platform Engineer",
+          "Startup CTO",
+          "Principal Engineer",
+          "Staff Engineer (Code Review)",
+          "Product Manager",
+          "Security Engineer",
+          "Data Engineer",
+          "Solutions Architect",
+          "Growth/Marketing Engineer"
+        ],
+        "placeholder": "Select role the AI should act as"
+      },
+      "constraints": {
+        "label": "Constraints",
+        "opts": [
+          "mobile-first at 375px minimum viewport",
+          "WCAG AA: 4.5:1 text contrast, 3:1 UI contrast",
+          "keyboard-navigable (tab order, focus-visible)",
+          "touch targets: 44px minimum, 8px between",
+          "60fps animation budget — no layout thrash",
+          "LCP <2.5s, CLS <0.1, FID/INP <100ms",
+          "initial JS bundle <200kb (code-split aggressively)",
+          "offline-capable (service worker + cache strategy)",
+          "SSR/edge-rendered for SEO-critical routes",
+          "WCAG AAA for healthcare, government, finance",
+          "right-to-left (RTL) language support",
+          "reduced-motion: @media (prefers-reduced-motion)",
+          "color-blind safe palette (no red+green alone)",
+          "no animations that flash >3 times per second"
+        ],
+        "placeholder": "Select applicable constraints",
+        "multi": true
+      }
+    },
+    "items": [
+      "Goal clear — one sentence maximum",
+      "Objective and success criteria stated",
+      "Output format specified — files, schema, or artifact type",
+      "Refinement instruction included (critique → structure → polish → final only)"
+    ]
+  },
+  {
+    "lbl": "DESIGN (UI/UX)",
+    "selectable": {
+      "aesthetic": {
+        "label": "Aesthetic Keywords",
+        "opts": [
+          "glassmorphism",
+          "neo-brutalism",
+          "kinetic typography",
+          "bento grid",
+          "dark-mode native",
+          "neon accent",
+          "liquid gradient",
+          "editorial layout",
+          "claymorphism",
+          "aurora gradient",
+          "noise grain",
+          "chromatic aberration",
+          "minimal + high-contrast",
+          "three.js immersive",
+          "scroll-trigger driven",
+          "magnetic + cursor-reactive"
+        ],
+        "placeholder": "Select 3+ aesthetic keywords",
+        "multi": true
+      },
+      "animlib": {
+        "label": "Animation Library",
+        "opts": [
+          "Framer Motion (React — spring physics, layout animations)",
+          "GSAP + ScrollTrigger (cinematic scroll, scrub, pin)",
+          "GSAP + SplitText (kinetic typography, char-level)",
+          "GSAP + Flip (layout morphing, filter animations)",
+          "GSAP + MorphSVGPlugin (SVG path morphing)",
+          "Three.js (WebGL 3D scenes, shaders, particles)",
+          "React Three Fiber (Three.js in React components)",
+          "Rive (state-machine interactive animation)",
+          "Lottie / lottie-web (After Effects export playback)",
+          "Motion One (lightweight WAAPI alternative to GSAP)",
+          "Anime.js (lightweight, CSS + SVG + JS properties)",
+          "CSS-only (@keyframes, transitions, scroll-driven)",
+          "Reanimated 3 (React Native — 60fps native animations)",
+          "Moti (React Native + Reanimated declarative)"
+        ],
+        "placeholder": "Select animation library"
+      }
+    },
+    "items": [
+      "Platform specified — mobile / web / desktop / hybrid",
+      "Mobile-first stated explicitly at 375px",
+      "Interaction states defined — hover / press / focus / disabled / loading / error"
+    ]
+  },
+  {
+    "lbl": "TECHNICAL",
+    "selectable": {
+      "framework": {
+        "label": "Framework",
+        "opts": [
+          "Next.js 15 (App Router)",
+          "SvelteKit 2",
+          "Astro 5",
+          "React + Vite 6",
+          "Nuxt 4",
+          "Remix / React Router 7",
+          "React Native + Expo",
+          "Flutter 3"
+        ],
+        "placeholder": "Select framework"
+      },
+      "styling": {
+        "label": "Styling",
+        "opts": [
+          "Tailwind CSS 4",
+          "CSS Modules",
+          "Styled Components",
+          "Vanilla Extract",
+          "UnoCSS",
+          "NativeWind (React Native Tailwind)",
+          "Tamagui (React Native)"
+        ],
+        "placeholder": "Select styling approach"
+      },
+      "animation": {
+        "label": "Animation",
+        "opts": [
+          "Framer Motion",
+          "GSAP 3",
+          "Three.js + R3F",
+          "Rive",
+          "Lottie",
+          "CSS @keyframes",
+          "Reanimated 3",
+          "Motion One"
+        ],
+        "placeholder": "Select animation library"
+      }
+    },
+    "items": [
+      "DB + auth + storage specified",
+      "Output format: folder structure + all files + run instructions",
+      "No TODOs, no lorem ipsum, no placeholder comments"
+    ]
+  },
+  {
+    "lbl": "QUALITY",
+    "items": [
+      "No vague words — nice, cool, awesome, modern, good, beautiful",
+      "At least one interaction metaphor defined (spring, stagger, reveal)",
+      "JSON schema rules appended if requesting structured output",
+      "Self-refinement loop: critique → refine × 2 → final output only"
+    ]
+  },
+  {
+    "lbl": "ANIMAL MODE",
+    "items": [
+      "Mode selected: Beaver / Dolphin / Eagle / Ant / Owl / Rabbit / Elephant",
+      "Or chained for complex goals: Eagle → Beaver → Dolphin → Ant"
+    ]
+  }
+]

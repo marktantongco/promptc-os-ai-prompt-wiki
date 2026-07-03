@@ -1,0 +1,27 @@
+[
+  {
+    "id": "activate",
+    "label": "⚡ ACTIVATE",
+    "sub": "Copy-paste to AI"
+  },
+  {
+    "id": "build",
+    "label": "🏗 BUILD",
+    "sub": "Reference library, Frameworks"
+  },
+  {
+    "id": "validate",
+    "label": "✅ VALIDATE",
+    "sub": "Score, lint, refine."
+  },
+  {
+    "id": "playbook",
+    "label": "📋 PLAYBOOK",
+    "sub": "24 workflows. Step-by-step."
+  },
+  {
+    "id": "monetize",
+    "label": "💰 MONETIZE",
+    "sub": "Profitable prompts, SaaS, frameworks."
+  }
+]

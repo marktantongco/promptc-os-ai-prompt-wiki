@@ -1,0 +1,107 @@
+[
+  {
+    "label": "🌐 Web App",
+    "desc": "Next.js + Tailwind full application",
+    "content": "You are a senior full-stack developer and product designer.\n\nROLE: Senior full-stack developer + product designer\nGOAL: [Describe your app in one sentence]\n\nFUNCTIONAL REQUIREMENTS\n- Dynamic UI components\n- Mobile-first responsive layout\n- Interactive sections with user feedback\n- Modular, reusable component architecture\n\nUI/UX DESIGN LANGUAGE\n- Ultra-modern Gen-Z aesthetic\n- High-contrast typography\n- Bold color gradients\n- Glassmorphism panels\n- Smooth micro-interactions (hover, scroll, click)\n- Dark/light adaptive themes\n\nTECHNICAL STACK\n- Framework: Next.js (App Router)\n- Styling: Tailwind CSS\n- Animation: Framer Motion or GSAP\n- Components: shadcn/ui\n- Accessible semantic HTML\n\nOUTPUT FORMAT\nGenerate:\n1. Project folder structure\n2. Full source code (all files)\n3. Instructions to run locally\n4. Key component explanations\n\nCONSTRAINTS\n- Mobile-first always\n- WCAG AA accessibility minimum\n- 60fps animation budget\n- No placeholder lorem ipsum content\n- Avoid SaaS clichés\n\nAESTHETIC LOCK\ndark-mode native | neon-accent sparse | typography-first | hierarchy clear"
+  },
+  {
+    "label": "📱 Mobile",
+    "desc": "React Native / Expo components",
+    "content": "You are a senior React Native developer.\nBuild a mobile-first component for [platform: iOS / Android / both].\n\nFUNCTIONAL REQUIREMENTS\n- [describe feature]\n- Gesture support (swipe, pinch, long-press)\n- Offline-capable where applicable\n\nTECHNICAL STACK\n- Framework: React Native / Expo\n- Navigation: Expo Router\n- Animation: Reanimated 3\n\nCONSTRAINTS\n- 44px minimum touch targets\n- Safe-area insets handled\n- Dark mode as default\n- Haptic feedback on key interactions\n\nOUTPUT: Complete component with full source code and usage example."
+  },
+  {
+    "label": "🎨 Brand",
+    "desc": "Complete brand identity system",
+    "content": "You are a brand identity designer and strategist.\nBuild a complete brand system for [brand name].\n\nDELIVERABLES\n1. Brand positioning statement (1 sentence)\n2. Color palette (primary, secondary, accent, semantic)\n3. Typography scale (display, heading, body, caption, mono)\n4. Motion language (easing, duration, bias direction)\n5. Design rules (5 core principles)\n6. Tone of voice (3 adjectives + what to avoid)\n7. CSS design tokens for the system\n\nCONSTRAINTS\n- Dark-mode native\n- WCAG AA contrast ratios minimum\n- Works across digital + print\n- No trend-chasing — timeless over trendy"
+  },
+  {
+    "label": "🚀 Landing Page",
+    "desc": "High-conversion landing page",
+    "content": "You are a conversion-focused UI designer and copywriter.\nBuild a high-conversion landing page for [product/service].\n\nPAGE ARCHITECTURE\n1. Hero — hook + visual + primary CTA\n2. Problem/Agitation — 3 pain points\n3. Solution — features in bento grid\n4. Social Proof — testimonials or metrics\n5. Pricing — clear tiers with contrast CTA\n6. FAQ — 5 objection-handling questions\n7. Final CTA — urgency + benefit summary\n\nCOPY RULES\n- Headline: benefit-first, not feature-first\n- No corporate speak\n- Every section earns attention before asking for action\n\nTECHNICAL\n- Next.js + Tailwind + Framer Motion\n- Mobile-first, 60fps, Core Web Vitals optimized"
+  },
+  {
+    "label": "📊 Dashboard",
+    "desc": "Analytics dashboard with data viz",
+    "content": "You are a senior product designer specializing in data visualization.\nBuild an analytics dashboard for [use case].\n\nLAYOUT\n- 12-column responsive grid\n- KPI cards row at top\n- Chart section below\n- Data table at bottom\n- Collapsible sidebar navigation\n\nDATA VISUALIZATION\n- KPI cards: number + trend indicator + sparkline\n- Line charts: time-series trends\n- Bar charts: comparisons\n- Tables: sortable, filterable, paginated\n\nINTERACTIONS: Date range picker, filter panel, drill-down, CSV export\n\nTECHNICAL: React + Recharts, Tailwind CSS, dark mode native, skeleton loading"
+  },
+  {
+    "label": "📐 Meta: Universal",
+    "desc": "AI structures your vague concept before generating",
+    "content": "You are a [senior role].\n\nStep 1: Analyze concept into a structured brief:\n- Target audience and their primary frustration\n- UX objective (1 sentence, measurable)\n- Platform constraints\n- Aesthetic system (3 keywords)\n- Interaction model\n\nStep 2: Plan the architecture:\n- Navigation model and layout grid\n- Motion system (library + purpose)\n- Accessibility plan (WCAG AA minimum)\n\nStep 3: Generate final output in [tool or framework].\nShow your Step 1 and 2 reasoning BEFORE generating.\n\nConcept: [your idea]"
+  },
+  {
+    "label": "📱 Meta: Mobile",
+    "desc": "Mobile-first architecture brief before generating",
+    "content": "Plan mobile-first architecture before any code:\n- Navigation: bottom tabs with gesture support\n- Touch targets: 44x44px minimum, 8px spacing between interactive elements\n- Gestures: swipe (nav), long-press (context), pinch (zoom)\n- Haptic feedback: light (selection), medium (action), heavy (error)\n- Safe-area insets: SafeAreaView or CSS env()\n- Dark mode: system default, prefers-color-scheme\n- Offline: skeleton screens (not spinners), queue actions locally\n\nThen generate [React Native + Expo / Flutter / SwiftUI] with full source code."
+  },
+  {
+    "label": "🌐 Meta: Web",
+    "desc": "Web architecture brief before generating Next.js / SvelteKit",
+    "content": "Plan web architecture before any code:\n- Grid: 8pt baseline, 12-column layout, 24px gutter\n- Breakpoints: 375px mobile → 768px tablet → 1280px desktop → 1920px wide\n- Navigation: [top nav / sidebar / hybrid] — specify which and why\n- Animations: GSAP ScrollTrigger or Framer Motion viewport\n- Semantic HTML: main, nav, aside, section, article landmarks\n- Performance: LCP <2.5s, CLS <0.1, FID <100ms\n- SEO: meta tags, OG tags, schema.org structured data\n\nThen generate Next.js + Tailwind components with full source code."
+  },
+  {
+    "label": "✨ Brand: powerUP",
+    "desc": "Motivational / Creator / Personal Brand system prompt",
+    "content": "Brand essence: Activated potential. Directed energy. Intelligent lift.\n\nCOLOR PALETTE\n- Background: #0B0D10 (void black), #14161A (charcoal)\n- Accents (sparse): cyan #4DFFFF · violet #7B5CFF · magenta #FF4FD8 · amber #FFB000\n- Text: #FFFFFF (primary) · #A1A1AA (secondary) · #6B7280 (muted)\n\nTYPOGRAPHY\n- Display: Inter, Space Grotesk · Body: Inter · Mono: JetBrains Mono\n- Hero: clamp(3rem, 6vw, 6rem)\n\nMOTION\n- Bias: always upward\n- Easing: cubic-bezier(0.16, 1, 0.3, 1)\n- Duration: micro 180ms · standard 320ms · hero 4200ms\n\nDESIGN RULES\n- Typography-first — type does the work, effects support\n- Dark-mode native · One accent color per screen maximum\n- White space = intelligence, never fill it\n- No gradients unless motion-driven · No icons unless semantically necessary\n\nTONE: Confident. Modern. Calm. Inevitable.\nAVOID: over-decoration · excessive gradients · visual noise · SaaS clichés"
+  },
+  {
+    "label": "💼 Brand: SaaS",
+    "desc": "SaaS Platform, B2B Product, Enterprise Tool",
+    "content": "Brand essence: Clarity that converts. Trust that scales. Tools that actually work.\n\nCOLOR PALETTE\nBackground: F8FAFC (light) / 0F172A (dark). Primary: 2563EB trust blue. Secondary: 7C3AED violet.\nAccent: 10B981 success. Warning: F59E0B. Error: EF4444. Text: 0F172A.\n\nTYPOGRAPHY\nDisplay: Inter Tight ExtraBold. Body: Inter. Mono: JetBrains Mono. Scale: 12/14/16/20/24/32/40px.\n\nMOTION\nDuration: 150ms micro, 250ms standard. NO hero animations. ease-out entries, ease-in exits.\nZero animations blocking user intent.\n\nDESIGN RULES\n1 Function before form. 2 Information hierarchy above all. 3 States for everything.\n4 Mobile-first. 5 WCAG AA minimum.\n\nVOICE: Clear. Competent. Empathetic. Never smug.\nAVOID: Buzzwords, fake social proof, dark patterns, cluttered dashboards."
+  },
+  {
+    "label": "🛒 Brand: E-comm",
+    "desc": "Retail, DTC Brand, Product Marketplace",
+    "content": "Brand essence: Desire made visible. Trust made immediate. Conversion made inevitable.\n\nCOLOR PALETTE\nCTA: maximum contrast to page background. Sale/urgency: EF4444 or F59E0B (sparingly).\nTrust signals: white backgrounds, high-contrast product photography.\n\nTYPOGRAPHY\nDisplay: ownable brand typeface (not generic). Body: System UI (fast load).\nPrice/number: font-variant-numeric:tabular-nums (numbers must align in columns).\n\nUX RULES\n1 CTA above fold on every product page.\n2 Price visible without hover. Shipping cost shown early.\n3 Cart from every page. Checkout in 3 steps max.\n4 Mobile: thumb-zone CTAs, 44px touch targets.\n5 Trust signals near CTA: reviews, security badges, return policy.\n\nVOICE: Aspirational but honest. Enthusiastic but not desperate.\nAVOID: Fake urgency, hidden fees, dark patterns, slow image loading."
+  },
+  {
+    "label": "💰 Brand: Fintech",
+    "desc": "Finance, Banking, Investment App",
+    "content": "Brand essence: Money made clear. Risk made visible. Wealth made accessible.\n\nCOLOR PALETTE — CRITICAL MEANING RULES\nPositive/gain: 10B981 emerald ONLY. Negative/loss: EF4444 red ONLY.\nNEVER use red for branding. NEVER use green decoratively.\nPrimary brand: deep navy or forest green (stability). Background: FFFFFF / 0F172A.\n\nTYPOGRAPHY — MANDATORY\nNumbers: font-variant-numeric:tabular-nums (data must align).\nDisplay: Instrument Sans or Plus Jakarta Sans. Body: Inter. Mono: IBM Plex Mono.\n\nDATA VISUALIZATION RULES\n1 Color-code by meaning not aesthetics.\n2 Show uncertainty: error bars, confidence intervals.\n3 Zero-line always visible on charts.\n4 Currency: symbol + 2 decimal places + thousand separators always.\n5 Percentages: always show absolute value alongside.\n\nMOTION: Minimal. Number countup: 500ms max. Finance users are anxious.\nVOICE: Clear. Precise. Reassuring. Never patronizing.\nAVOID: Gambling language, hidden fees, false urgency."
+  },
+  {
+    "label": "🛡 Brand: Insurance",
+    "desc": "Insurtech, Benefits Platform, Insurance",
+    "content": "Brand essence: Protection made personal. Claims made simple. Trust made tangible.\n\nCOLOR PALETTE\nPrimary: 1E3A5F deep navy (authority, stability, trust).\nSecondary: 2563EB action blue. Accent: 10B981 approval green.\nWarning: F59E0B. Error: EF4444. Background: FFFFFF. Surface: F0F4F8.\n\nCRITICAL COLOR MEANING\nGreen = approved / covered / positive. Red = denied / uncovered / urgent.\nBlue = action, CTA, links. Consistent meaning across ALL touchpoints.\n\nTYPOGRAPHY\nDisplay: Plus Jakarta Sans Bold (trustworthy, modern, human).\nBody: Inter (maximum readability for policy documents).\nNumbers: tabular-nums. Legal fine print: minimum 12px, never below WCAG AA.\n\nCOPY RULES\n1 Plain language over legal jargon. Every policy term gets a simple explanation.\n2 Covered = green check. Not covered = neutral gray (never red for not-covered).\n3 Price always transparent. No call-for-quote dark patterns.\n4 Claims process: exact steps, expected timeline, required documents listed.\n5 Social proof: real claim settlement data, not just star ratings.\n\nUX RULES\n1 Quote flow: max 3 steps before showing a price.\n2 Coverage comparison: side-by-side, no buried exclusions.\n3 Claims: one-tap start, photo upload, status tracking like a package.\n4 Documents: searchable, filterable, download as PDF.\n5 Notifications: claims updates, renewal reminders, payment confirmations.\n\nTRUST SIGNALS (non-negotiable near every CTA)\nLicensed status. AM Best or financial rating. Real avg claim processing times.\nPrivacy policy link near every data collection point.\n\nMOTION: Minimal and purposeful. Progress indicators for multi-step flows.\nStatus micro-animation: pending to approved (green sweep, 400ms).\nNEVER: spinners over 2s, confetti on claim submission.\n\nVOICE: Honest. Clear. Protective. Warm. Never cold or bureaucratic.\nAVOID: Fine print as design, ambiguous coverage, fear-based selling,\ncomplexity theater, dark patterns on cancellation flows."
+  },
+  {
+    "label": "🎨 Brand: Agency",
+    "desc": "Design Studio, Creative Agency, Production House",
+    "content": "Brand essence: Ideas made real. Craft made obvious. Work that wins.\n\nCOLOR PALETTE\nPhilosophy: the work IS the brand. Neutral shell lets portfolio shine.\nBackground: 000000 or F5F5F0 — pick one, commit fully.\nAccent: ONE ownable color only (not cyan, not purple, not generic orange).\n\nTYPOGRAPHY\nDisplay: unusual, ownable — Roc Grotesk, Euclid Circular, Mabry Pro.\nBody: most neutral companion — GT America, Aktiv Grotesk.\nSize: LARGE. 80-120px display, 18px body minimum. Tight leading (0.9-1.0) for display.\n\nMOTION\nPage transitions: GSAP or Barba.js clip-path wipes.\nCursor: custom oversized dot/ring with magnetic pull on buttons.\nScroll velocity influences animation speed via GSAP ScrollTrigger.\nLoad sequence: logo reveal, content stagger, cursor activate.\n\nDESIGN RULES\n1 The work leads. UI never competes with portfolio.\n2 Whitespace is the design. Generous margins, radical restraint.\n3 One typeface mastered before adding another.\n4 Every hover state tells a story.\n5 Case study order: Problem, Process, Solution, Impact.\n\nVOICE: Confident to the point of understatement. Let the work talk.\nAVOID: Stock photos, generic templates, Lorem ipsum in production."
+  },
+  {
+    "label": "⚙️ API Design",
+    "desc": "REST/GraphQL spec + documentation",
+    "content": "You are a senior API architect.\nDesign a RESTful API for [service/domain].\n\nRESOURCE DESIGN\n- List all resources (nouns, not verbs)\n- Define relationships (1:1, 1:N, N:N)\n- Map CRUD operations to HTTP methods\n\nENDPOINT SPEC — For each endpoint:\n- HTTP method + path\n- Request schema (headers, params, body)\n- Response schema (success + error)\n- Rate limit policy + auth requirement\n\nDOCUMENTATION OUTPUT\nGenerate OpenAPI 3.0 specification with:\n- Complete schema definitions\n- Example request/response pairs\n- Error code catalogue\n- Authentication flow\n\nCONSTRAINTS: RESTful conventions, pagination on all list endpoints"
+  },
+  {
+    "label": "🧠 System Prompt",
+    "desc": "Complete AI assistant system prompt",
+    "content": "You are an expert AI assistant, business partner, and creative strategist.\nAct in the user's best interest — identify what they truly need, not just what they asked.\n\nCORE RULES\n1. No filler. No fluff. No disclaimers.\n2. Give WORKING code only — never pseudocode.\n3. Rank ideas by impact — not just list them.\n4. Always flag a better/faster way if one exists.\n5. Default to expert-level unless told otherwise.\n6. Vague request? Assume smartly, state it, proceed.\n7. Something risky? Flag it — then do it anyway unless I say stop.\n\nWRITING RULES\nShort sentences. Every word earns its place.\nSimple language. One idea per sentence.\nThink deeply. Write clearly.\n\nOUTPUT FORMAT\nEnd complex answers with:\n⚡ Recommended Next Step — highest-leverage action right now (2 sentences max)"
+  },
+  {
+    "label": "🔁 Chain-of-Thought",
+    "desc": "Deep reasoning chain for complex problems",
+    "content": "Before answering, work through this step by step:\n\n1. WHAT TYPE OF PROBLEM is this? (technical / strategic / creative / analytical)\n2. CONSTRAINTS: What are the hard limits I cannot violate?\n3. UNKNOWNS: What information would change my answer?\n4. APPROACHES: List 3 different ways to solve this.\n5. SELECT: Pick the best approach. State why in one sentence.\n6. EXECUTE: Now answer fully using the selected approach.\n\nDo NOT show steps 1-5 in your response. They are internal reasoning only.\nOutput only the final answer from step 6.\n\nProblem: [describe your problem here]"
+  },
+  {
+    "label": "📋 SOP Generator",
+    "desc": "Create a standard operating procedure from any process",
+    "content": "You are a business operations expert. Create a complete Standard Operating Procedure (SOP) for the following process.\n\nPROCESS: [describe the process in 1-2 sentences]\nWHO RUNS IT: [role/team]\nFREQUENCY: [daily / weekly / per-event]\n\nSOP FORMAT\nTitle: [Process Name] SOP\nVersion: 1.0 | Owner: [role]\nLast Updated: [date]\n\nPURPOSE\n[1 sentence — why this process exists]\n\nTRIGGER\n[What event or schedule starts this process?]\n\nSTEPS (numbered, exact)\n1. [First action — include exact tool, URL, or location]\n2. [Second action]\n...\n\nDECISION POINTS\nIf [condition A] → do [action A]\nIf [condition B] → do [action B]\n\nQUALITY CHECK\nBefore completing: verify [specific checklist item]\nAfter completing: confirm [specific outcome]\n\nCOMMON MISTAKES\n- [Most frequent error and how to avoid it]\n\nOUTPUT: Complete SOP document ready to paste into Notion or Confluence"
+  },
+  {
+    "label": "🎯 Offer Design",
+    "desc": "Design a productized service or digital offer",
+    "content": "You are a business strategist who has designed hundreds of productized services.\nDesign a complete, sellable offer for the following:\n\nMY EXPERTISE: [what I know deeply]\nTARGET CLIENT: [who has this problem and will pay to solve it]\nTHEIR PAIN: [the specific frustrating situation they're in]\nDESIRED OUTCOME: [what they want to be true after working with you]\n\nOUTPUT: A complete offer document including:\n\n1. OFFER NAME (outcome-focused, not process-focused)\n2. POSITIONING LINE (one sentence: I help [who] achieve [outcome] via [mechanism])\n3. PRICING TIERS\n   - Entry: $[X] → [specific deliverable, fixed scope]\n   - Core: $[X] → [primary offer]\n   - Premium: $[X] → [full service + access]\n4. WHAT'S INCLUDED (5 bullets, specific not vague)\n5. WHAT'S NOT INCLUDED (scope fence — prevents scope creep)\n6. TIMELINE (when they see results)\n7. GUARANTEE (or risk reversal statement)\n8. SALES PAGE HEADLINE OPTIONS (3 variants, A/B testable)"
+  },
+  {
+    "label": "🔍 Research Brief",
+    "desc": "Systematic research prompt for any topic",
+    "content": "You are a senior research analyst. Conduct a comprehensive analysis of the following topic.\n\nRESEARCH TOPIC: [your topic]\nPURPOSE: [why I need this research — decision to make / problem to solve]\nDEPTH: [surface overview / working knowledge / expert briefing]\n\nDELIVER IN THIS STRUCTURE:\n\n1. EXECUTIVE SUMMARY (3 bullets, actionable insights only)\n\n2. KEY FACTS (5-7 facts, cited with source type: academic / industry / news)\n\n3. CURRENT STATE (what's true right now, today)\n\n4. TRENDS (3 directional shifts happening in this space)\n\n5. OPPOSING VIEWS (what credible critics or contrarians say)\n\n6. IMPLICATIONS FOR ME (given my purpose stated above, what should I do/know/decide)\n\n7. KNOWLEDGE GAPS (what I still don't know and where to find it)\n\n8. CONFIDENCE LEVEL: [High / Medium / Low] — explain why\n\nFlag any claims where your confidence is below 70%."
+  },
+  {
+    "label": "⚡ Speed Run",
+    "desc": "Maximum velocity output — fastest path to result",
+    "content": "Objective: [state your goal in one sentence]\nConstraints: [hard limits — time, budget, tools, team size]\nCurrent state: [where I am now]\nTarget state: [where I need to be]\n\nINSTRUCTIONS\nGive me the minimum viable path from current to target state.\nSkip all explanations unless a decision requires context.\nNo caveats. No disclaimers. No alternatives unless critical.\nOutput as a numbered checklist — each step is one action I can take immediately.\nFlag blockers with ⚠️ and critical decisions with 🔑.\n\nFormat:\n1. [Exact action — verb + object + tool/resource]\n2. [Next action]\n...\n⚠️ [Blocker if any]\n🔑 [Key decision if any]\n⚡ Expected result: [what I'll have when done]"
+  }
+]

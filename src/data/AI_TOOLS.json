@@ -1,0 +1,57 @@
+[
+  {
+    "id": "oc-agent-fw",
+    "label": "Open‌Claw",
+    "cat": "Agentic Runtime",
+    "tier": "Free / OSS",
+    "desc": "Open-source AI agent framework — compose tools, memory, and LLM calls",
+    "usecase": "Autonomous agents, tool-calling pipelines, multi-step AI tasks",
+    "deploy": "Cloudflare Workers, Fly.io, Railway, or local",
+    "tip": "Open‌Claw agents are stateless by default — add Cloudflare Durable Objects or Upstash Redis for memory",
+    "prompt": "Build a production Open‌Claw agent for [use case].\n\nAGENT DEFINITION\n// setup: Agent, tool from the agent framework pkg from \"open‑claw\"\n\nconst myAgent = new Agent({\n  model: \"groq/llama3-70b\", // or \"ollama/llama3.1\", \"openrouter/auto\"\n  systemPrompt: `You are a [role]. [core instructions]`,\n  tools: [searchTool, writeTool, notifyTool],\n  memory: { type: \"redis\", url: process.env.REDIS_URL }, // optional\n  maxSteps: 10,\n});\n\nTOOL DEFINITIONS\nconst searchTool = tool({\n  name: \"search\",\n  description: \"Search the web for current information\",\n  schema: z.object({ query: z.string() }),\n  execute: async ({ query }) => { /* implementation */ },\n});\n\nDEPLOYMENT (Cloudflare Workers)\nexport default { fetch: myAgent.handle };\n\nOUTPUT: complete agent implementation, tool definitions, wrangler.toml, env template"
+  },
+  {
+    "id": "zeroclaw",
+    "label": "Zero‌Claw",
+    "cat": "Zero-Cost Agent",
+    "tier": "Free",
+    "desc": "Zero-cost agent runtime — runs entirely on free tiers (Cloudflare + Groq)",
+    "usecase": "Cost-zero agent pipelines, edge AI, personal AI tools",
+    "deploy": "Cloudflare Workers + D1 + AI Gateway",
+    "tip": "Zero‌Claw's entire stack runs within Cloudflare free tier + Groq free tier. True $0/month for low-traffic agents.",
+    "prompt": "Build a Zero‌Claw agent that runs at zero cost using Cloudflare + Groq free tiers.\n\nSTACK\n- Runtime: Cloudflare Workers (free: 100k req/day)\n- LLM: Groq API (free: 14k tokens/min, Llama3-70B)\n- Memory: Cloudflare D1 (free: 5M reads/day)\n- Cache: Cloudflare KV (free: 100k reads/day)\n- AI Gateway: Cloudflare AI Gateway (caching + rate limiting)\n\nZERO-COST ARCHITECTURE\n1. Request → Worker → check KV cache (identical queries)\n2. Cache miss → Groq API via AI Gateway (caches responses automatically)\n3. Agent stores conversation in D1\n4. Response → KV cache with 1hr TTL\n\nWRANGLER CONFIG\n[ai] binding = \"AI\"\n[[d1_databases]] binding = \"DB\" database_name = \"agent-memory\"\n[[kv_namespaces]] binding = \"CACHE\"\n\nOUTPUT: Worker code, D1 schema, wrangler.toml, cost breakdown showing $0 at scale"
+  },
+  {
+    "id": "nullclaw",
+    "label": "Null‌Claw",
+    "cat": "Null-State Agent",
+    "tier": "Free",
+    "desc": "Stateless agent design — no memory, no DB, pure function agents",
+    "usecase": "One-shot tasks, serverless AI functions, API endpoint agents",
+    "deploy": "Any serverless platform — Vercel, Cloudflare, Netlify",
+    "tip": "Null‌Claw = function as agent. Input → LLM → output. No state, no session, no DB. Scales infinitely.",
+    "prompt": "Build a Null‌Claw stateless agent — pure function, no state, scales to infinity.\n\nDESIGN PRINCIPLE\nNull‌Claw agents are pure functions: (input, context) → output\nNo database. No session. No memory. Every call is independent.\n\nIMPLEMENTATION PATTERN\nexport async function POST(req: Request) {\n  const { task, context } = await req.json();\n  \n  const result = await groq.chat.completions.create({\n    model: \"llama-3.1-70b-versatile\",\n    messages: [\n      { role: \"system\", content: AGENT_SYSTEM_PROMPT },\n      { role: \"user\", content: buildPrompt(task, context) }\n    ],\n    response_format: { type: \"json_object\" }, // structured output\n    temperature: 0.1,\n  });\n  \n  return Response.json(JSON.parse(result.choices[0].message.content));\n}\n\nUSE CASES\n- Document classifier: POST {doc} → {category, confidence, tags}\n- Code reviewer: POST {code, lang} → {issues[], suggestions[], score}\n- Content scorer: POST {text} → {clarity, engagement, actionability}\n\nOUTPUT: complete implementation, system prompt, request/response schema, load test"
+  },
+  {
+    "id": "agno",
+    "label": "Agno",
+    "cat": "Agent Framework",
+    "tier": "Free / OSS",
+    "desc": "Python-native agent framework — multi-model, tool-calling, memory built-in",
+    "usecase": "Python AI pipelines, data processing agents, research automation",
+    "deploy": "Railway, Fly.io, Modal, or local",
+    "tip": "Agno's playground UI lets you test agents in browser before deploying. Use agno serve for local dev.",
+    "prompt": "Build a production Agno agent for [use case].\n\nSETUP\npip install agno\nexport GROQ_API_KEY=... # or OPENAI_API_KEY, ANTHROPIC_API_KEY\n\nAGENT DEFINITION\nfrom agno.agent import Agent\nfrom agno.models.groq import Groq\nfrom agno.tools.duckduckgo import DuckDuckGoTools\nfrom agno.tools.file import FileTools\n\nagent = Agent(\n  model=Groq(id=\"llama-3.3-70b-versatile\"),\n  tools=[DuckDuckGoTools(), FileTools()],\n  instructions=[\"[your agent instructions]\"],\n  markdown=True,\n  show_tool_calls=True,\n  memory=True, # adds conversation memory\n)\n\n# Run\nagent.print_response(\"[your task]\", stream=True)\n\n# As API\nfrom agno.app.fastapi import AgnoApp\napp = AgnoApp(agent=agent).get_app()\n\nOUTPUT: complete agent code, requirements.txt, Railway deploy config, test script"
+  },
+  {
+    "id": "crewai",
+    "label": "CrewAI",
+    "cat": "Multi-Agent",
+    "tier": "Free / OSS",
+    "desc": "Multi-agent orchestration — define crews of specialized AI agents",
+    "usecase": "Complex multi-step tasks requiring specialized roles, research → write → review pipelines",
+    "deploy": "Railway, Modal, or local Python",
+    "tip": "Define agents with distinct roles and verbose=True for debugging. Use sequential process for predictable pipelines.",
+    "prompt": "Build a CrewAI multi-agent crew for [use case].\n\nCREW DEFINITION\nfrom crewai import Agent, Task, Crew, Process\n\n# Define agents\nresearcher = Agent(\n  role=\"Senior Research Analyst\",\n  goal=\"Uncover cutting-edge developments in [domain]\",\n  backstory=\"Expert researcher with 10 years in [domain]\",\n  tools=[search_tool, scrape_tool],\n  verbose=True\n)\n\nwriter = Agent(\n  role=\"Content Strategist\",\n  goal=\"Create compelling, accurate content\",\n  backstory=\"Expert writer who transforms research into engaging content\",\n  verbose=True\n)\n\nreviewer = Agent(\n  role=\"Quality Reviewer\",\n  goal=\"Ensure accuracy, clarity, and strategic alignment\",\n  backstory=\"Senior editor with high standards\",\n  verbose=True\n)\n\n# Define tasks\nresearch_task = Task(description=\"Research [topic]...\", agent=researcher, expected_output=\"...\")\nwrite_task = Task(description=\"Write [deliverable]...\", agent=writer, expected_output=\"...\")\nreview_task = Task(description=\"Review and refine...\", agent=reviewer, expected_output=\"...\")\n\n# Assemble crew\ncrew = Crew(agents=[researcher, writer, reviewer], tasks=[research_task, write_task, review_task], process=Process.sequential)\nresult = crew.kickoff()\n\nOUTPUT: complete crew definition, tool implementations, .env template, run script"
+  }
+]

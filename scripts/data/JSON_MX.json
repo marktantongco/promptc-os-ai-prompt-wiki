@@ -1,0 +1,18 @@
+[
+  {
+    "sit": "First attempt, any capable model",
+    "use": "T1 + T4"
+  },
+  {
+    "sit": "Inconsistent output (Ollama/local)",
+    "use": "T1 + T2 + T4"
+  },
+  {
+    "sit": "Structure keeps being wrong",
+    "use": "T1 + T3 + T4"
+  },
+  {
+    "sit": "All else fails",
+    "use": "T1 + T2 + T3 + T4"
+  }
+]

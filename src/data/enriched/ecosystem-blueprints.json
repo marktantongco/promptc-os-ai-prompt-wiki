@@ -1,0 +1,106 @@
+[
+  {
+    "id": "bp-prompt-to-product",
+    "name": "Prompt → Product Pipeline",
+    "layer": "End-to-end",
+    "desc": "How a raw prompt becomes a monetized product. Six layers, each with its own tool.",
+    "blueprint": "LAYER 1 (Prompt) → ACTIVATE master prompt + modifiers + animal mode\nLAYER 2 (Validate) → VALIDATE lint + scoring + word swaps to harden the prompt\nLAYER 3 (Compose) → BUILDER workflow builder chains animals into a system prompt\nLAYER 4 (Build) → fullstack-dev skill ships the Next.js app\nLAYER 5 (Monetize) → MONETIZE recipes (Stripe + credit system + pricing)\nLAYER 6 (Distribute) → SAAS_TEMPLATES + AUTOMATION_WORKFLOWS for go-to-market",
+    "connections": [
+      "ACTIVATE.master → VALIDATE.lint (hardening loop)",
+      "BUILDER.workflow → fullstack-dev skill (code generation)",
+      "MONETIZE_RECIPES['ai-wrapper-saas'] → DEPLOY_STACKS['vercel-supabase-stripe']",
+      "AUTOMATION_WORKFLOWS → n8n / Zapier / Make for distribution"
+    ],
+    "failure_modes": [
+      "Skipping VALIDATE → prompt leaks PII or hallucinates → production incident",
+      "Building before pricing → no monetization hook → free forever",
+      "No automation layer → manual ops cost kills margin at scale"
+    ]
+  },
+  {
+    "id": "bp-animal-chain-architecture",
+    "name": "Animal Chain Architecture",
+    "layer": "Reasoning",
+    "desc": "How the 7 animal modes compose into reasoning chains. Each chain addresses a different cognitive bottleneck.",
+    "blueprint": "EAGLE → BEAVER → DOLPHIN → ANT (Vision → System → Creative → Steps)\n  Use for: greenfield product builds. Eagle sets strategy, Beaver designs the system, Dolphin invents the differentiator, Ant ships the first version.\n\nOWL → ELEPHANT → RABBIT (Analysis → Cross-field → Multiply)\n  Use for: research and content. Owl surfaces hidden factors, Elephant connects to other fields, Rabbit multiplies into publishable variations.\n\nBEAVER → OWL → ANT (Build → Audit → Steps)\n  Use for: refactors and migrations. Beaver designs the new system, Owl audits risks, Ant sequences the migration steps.\n\nDOLPHIN → EAGLE → BEAVER (Creative → Strategy → System)\n  Use for: pivots. Dolphin generates options, Eagle picks the strategic one, Beaver builds the new system.",
+    "connections": [
+      "ANIMALS × CHAINS → 15 named chains in source data",
+      "WF (workflows) → each workflow IS a named chain applied to a domain",
+      "BUILDER.workflow_builder → user-composable chains"
+    ],
+    "failure_modes": [
+      "Starting with Ant (steps) before Eagle (strategy) → ships the wrong thing fast",
+      "Using only one animal → single-mode thinking, no perspective diversity",
+      "Skipping Owl in technical decisions → hidden factors surface in production"
+    ]
+  },
+  {
+    "id": "bp-design-combo-selector",
+    "name": "Design Combo Selector",
+    "layer": "Visual",
+    "desc": "Decision tree for picking the right design combo from the 20 rated options.",
+    "blueprint": "IF audience = consumer/health → 🌱 Warm Minimal (score 9)\nIF audience = developer → 🏗 Developer Tool (score 10)\nIF audience = executive → 📊 Executive Dash (score 10)\nIF audience = creative agency → ⚡ Motion-First (score 9)\nIF audience = AI product user → 🔮 AI Product UI (score 10)\nIF surface = landing page → 💥 Brutal + Neon OR 🎬 Cinematic\nIF surface = dashboard → 📊 Executive Dash OR 📊 Data Dense\nIF surface = content → 📰 Editorial + Bento OR 🎭 Editorial Dark\nIF surface = marketing/launch → 🚀 Full Immersive (with senior motion designer only)\nIF budget < $5k → ✨ Micro + Skeleton (always safe)\nIF budget > $50k → 💎 Premium Minimal OR 🎬 Cinematic",
+    "connections": [
+      "COMBOS (20 entries) → COMBO_RATINGS (synergy score + structural reasoning)",
+      "VOCAB (52 terms) → individual elements that compose into combos",
+      "TYPO (typography pairings) → applies on top of any combo",
+      "AESTHETIC_KEYWORDS (16) → swap-in for [specific aesthetic keyword] in templates"
+    ],
+    "failure_modes": [
+      "Picking combo by aesthetic preference instead of audience → wrong fit",
+      "Stacking 3+ high-motion combos → bundle bloat, accessibility failures",
+      "Ignoring the synergy score → low-synergy combos fight each other"
+    ]
+  },
+  {
+    "id": "bp-monetization-decision-tree",
+    "name": "Monetization Decision Tree",
+    "layer": "Business",
+    "desc": "Pick the right monetization recipe based on what you have and who pays.",
+    "blueprint": "IF you have an MCP tool → mcp-to-product ($29-99/mo)\nIF you have an AI API capability → ai-wrapper-saas ($500-5k MRR)\nIF you have a consulting practice → consulting-to-product ($2-10k/project)\nIF you have an open-source project → open-source-monetize ($500-20k/mo)\nIF you have content/audience → MONETIZE_FW['audience-leverage']\nIF you have a dev tool → SAAS_TEMPLATES['devtool-saas']\nIF you have nothing yet → start with TOP10_PROMPTS['find-your-pricing']",
+    "connections": [
+      "MONETIZE_RECIPES (8) → SAAS_TEMPLATES (10) → DEPLOY_STACKS (9)",
+      "AUTOMATION_WORKFLOWS (6) → distribution multiplier on any recipe",
+      "TOP10_PROMPTS (15) → prompt-level tools to execute any recipe"
+    ],
+    "failure_modes": [
+      "Pricing too low → no margin for support/refunds/iter",
+      "Pricing too high → no first customers, no social proof",
+      "Skipping automation → manual ops cap growth at ~50 customers"
+    ]
+  },
+  {
+    "id": "bp-motion-system-layers",
+    "name": "Motion System Layers",
+    "layer": "Animation",
+    "desc": "Four motion layers stack — each addresses a different timing need.",
+    "blueprint": "LAYER 1 (Micro, 100-200ms) → button hovers, copy flashes, focus rings\n  Tool: CSS transitions, framer-motion useSpring\nLAYER 2 (Section, 250-400ms) → zone enter, modal open, drawer slide\n  Tool: CSS keyframes, framer-motion AnimatePresence\nLAYER 3 (Scroll, 600-1500ms) → parallax, pinned sections, scrub\n  Tool: GSAP ScrollTrigger (or framer-motion useScroll)\nLAYER 4 (Ambient, infinite) → background loops, particle drift, gradient shift\n  Tool: CSS @keyframes infinite, Three.js, Lottie",
+    "connections": [
+      "ANIM_LIBS (14 options) → pick one per layer",
+      "CONSTRAINT_OPTS → includes 'reduced-motion' and '60fps budget' as hard constraints",
+      "COMBOS with 'kinetic' tag → require Layer 3"
+    ],
+    "failure_modes": [
+      "Stacking two Layer 3 libs (GSAP + framer-motion useScroll) → bundle bloat, conflict",
+      "Layer 4 always-on without prefers-reduced-motion → accessibility violation",
+      "Layer 1 too slow (>200ms) → app feels sluggish, not premium"
+    ]
+  },
+  {
+    "id": "bp-skills-health-compounding",
+    "name": "Skills Health Compounding",
+    "layer": "Meta",
+    "desc": "How skill stacks compound (or decay) over time. Health is a function of compatibility, maintenance, and bundle cost.",
+    "blueprint": "HEALTH = compatibility × maintenance × bundle_discipline\n\nCOMPATIBILITY (do they conflict?)\n  +1 if both TS-native\n  +1 if no overlapping responsibilities\n  -1 if competing patterns (e.g. two state libs)\n  -2 if version conflicts (React 18 vs 19)\n\nMAINTENANCE (will they break?)\n  +1 if backed by a company (21st.dev, GSAP)\n  +1 if >1k GitHub stars\n  -1 if solo maintainer\n  -2 if last commit > 6 months ago\n\nBUNDLE_DISCIPLINE (cost control)\n  +1 if tree-shakeable\n  -1 if ships global CSS\n  -2 if > 100kb gzipped\n\nCompounding: a healthy stack gets FASTER to build with over time. An unhealthy stack gets slower (each new feature fights the others).",
+    "connections": [
+      "SKILL_STACKS (6 curated) → all pre-vetted for compatibility",
+      "TOOL_MATRIX (4) → external tool integrations",
+      "DEPLOY_STACKS (9) → where the stack actually runs"
+    ],
+    "failure_modes": [
+      "Adding skills without health check → tech debt compounds invisibly",
+      "Lock-in to a single skill author → bus-factor risk",
+      "No bundle budget → LCP > 2.5s, users bounce"
+    ]
+  }
+]

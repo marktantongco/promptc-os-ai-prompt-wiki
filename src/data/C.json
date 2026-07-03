@@ -1,0 +1,21 @@
+{
+  "bg": "#0B0D10",
+  "sur": "#14161A",
+  "bdr": "#ffffff12",
+  "bdrH": "#ffffff25",
+  "tx": "#FFFFFF",
+  "mu": "#a1a1aa",
+  "di": "#6b7280",
+  "fa": "#4b5563",
+  "cy": "#4DFFFF",
+  "vi": "#FF6B00",
+  "mg": "#FF4FD8",
+  "am": "#FFB000",
+  "gn": "#22c55e",
+  "bl": "#38bdf8",
+  "or": "#f97316",
+  "rd": "#ef4444",
+  "mn": "'DM Mono','JetBrains Mono',monospace",
+  "ss": "'DM Sans',system-ui,sans-serif",
+  "hd": "'Bebas Neue',sans-serif"
+}

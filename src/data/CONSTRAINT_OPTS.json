@@ -1,0 +1,16 @@
+[
+  "mobile-first at 375px minimum viewport",
+  "WCAG AA: 4.5:1 text contrast, 3:1 UI contrast",
+  "keyboard-navigable (tab order, focus-visible)",
+  "touch targets: 44px minimum, 8px between",
+  "60fps animation budget — no layout thrash",
+  "LCP <2.5s, CLS <0.1, FID/INP <100ms",
+  "initial JS bundle <200kb (code-split aggressively)",
+  "offline-capable (service worker + cache strategy)",
+  "SSR/edge-rendered for SEO-critical routes",
+  "WCAG AAA for healthcare, government, finance",
+  "right-to-left (RTL) language support",
+  "reduced-motion: @media (prefers-reduced-motion)",
+  "color-blind safe palette (no red+green alone)",
+  "no animations that flash >3 times per second"
+]

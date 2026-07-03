@@ -1,0 +1,110 @@
+[
+  {
+    "id": "quick",
+    "label": "⚡ Quick Win",
+    "timeframe": "Week 1",
+    "income": "$100–500",
+    "desc": "Sell a prompt pack or template on Gumroad. Zero setup cost, live in 2 hours.",
+    "steps": [
+      "Pick one niche you know (marketing, coding, design, finance)",
+      "Create 10 copy-ready prompts with title + use case + pro tip",
+      "Write a Gumroad listing (headline + 5 bullets + price $9–29)",
+      "Post on Twitter/X, Reddit, LinkedIn with 1 example prompt",
+      "First sale within 48 hours if you target a real pain"
+    ],
+    "prompt": "Create a 10-prompt pack for [niche] professionals that I can sell on Gumroad for $[price].\n\nFor each prompt include:\n- Title (outcome-focused, ≤8 words)\n- The prompt (copy-paste ready with [VARIABLE] placeholders)\n- Expected output (1 sentence)\n- Pro tip (what makes this prompt 10× better)\n- Common mistake to avoid\n\nNiche: [e.g. real estate agents, UX designers, sales reps, fitness coaches]\nPrice point: [$9 / $19 / $29]\nFormat: numbered list, ready to copy into a Gumroad product description."
+  },
+  {
+    "id": "active",
+    "label": "🎯 Active Income",
+    "timeframe": "Week 2–4",
+    "income": "$500–5k/project",
+    "desc": "Offer AI automation or prompt engineering as a service. Land first client via LinkedIn or Upwork.",
+    "steps": [
+      "Define one specific deliverable (e.g. 'I build N8n automations for e-commerce brands')",
+      "Create a simple offer: Audit $497 → Implementation $2,500",
+      "Post 5 LinkedIn posts showing your process (before/after automation)",
+      "DM 20 relevant businesses offering a free 30-min audit",
+      "Close first client → systematize delivery → hire or automate"
+    ],
+    "prompt": "Design my complete freelance AI service offer for [niche/industry].\n\nMY SKILL: [e.g. N8n automation, prompt engineering, AI content systems]\nTARGET CLIENT: [e.g. e-commerce brands, marketing agencies, law firms]\n\nOutput a complete service productization:\n1. Service name and one-liner (outcome-focused)\n2. Three pricing tiers with exact deliverables and timelines\n3. Discovery call script (5 questions + how to pitch)\n4. LinkedIn outreach DM template (≤50 words, not salesy)\n5. Proposal template structure\n6. Delivery process (week-by-week)\n7. Retainer upsell pitch (how to convert project → monthly)"
+  },
+  {
+    "id": "passive",
+    "label": "💰 Passive Income",
+    "timeframe": "Month 1–3",
+    "income": "$500–10k/mo MRR",
+    "desc": "Build a micro-SaaS or paid newsletter. Takes longer but compounds infinitely.",
+    "steps": [
+      "Choose one painful problem with clear willingness to pay",
+      "Build MVP in 1 weekend using free tier stack (Vercel + Supabase)",
+      "Launch on ProductHunt + relevant subreddits",
+      "Price at $9–29/mo (low friction, easy yes)",
+      "Add features based on churn reasons, not feature requests"
+    ],
+    "prompt": "Design a micro-SaaS MVP I can build in one weekend and launch for passive income.\n\nMY SKILLS: [e.g. frontend dev, no-code, data analysis]\nNICHE: [industry or user type you understand]\nTIME AVAILABLE: [hours per weekend]\n\nOutput a complete MVP plan:\n1. Problem statement (specific, painful, willingess to pay confirmed)\n2. MVP feature list (maximum 5 features for weekend build)\n3. Tech stack (free tier only: Vercel + Supabase + Stripe)\n4. Pricing model ($X/mo free trial → paid)\n5. Weekend build schedule (Saturday tasks + Sunday tasks)\n6. Launch checklist (ProductHunt, Reddit, Twitter)\n7. First 10 customer acquisition plan"
+  },
+  {
+    "id": "hybrid",
+    "label": "🔁 Hybrid Stack",
+    "timeframe": "Month 2–6",
+    "income": "$2k–20k/mo",
+    "desc": "Combine active consulting + passive products. Use consulting to fund development, products to create leverage.",
+    "steps": [
+      "Start consulting (active income, fast cash)",
+      "Document everything you build for clients → turn into templates",
+      "Package templates as digital products (passive)",
+      "Use product revenue to fund SaaS development",
+      "SaaS replaces consulting as primary income"
+    ],
+    "prompt": "Design a hybrid income architecture that transitions from active to passive income over 6 months.\n\nSTARTING POINT: [your current skills + time available]\nGOAL INCOME: $[X]/mo by month 6\nNICHE: [your area of expertise]\n\nOutput a month-by-month income architecture:\nMonth 1–2: [active income strategy] → target $[X]\nMonth 3–4: [product launch strategy] → add $[X] passive\nMonth 5–6: [SaaS or community launch] → target $[X] MRR\n\nFor each phase include:\n- Primary revenue action\n- Secondary build activity (building toward next phase)\n- Hours per week required\n- Key metrics to hit before moving to next phase\n- Risk and contingency plan"
+  },
+  {
+    "id": "creator",
+    "label": "🎬 Creator Economy",
+    "timeframe": "Month 1–6",
+    "income": "$500–20k/mo",
+    "desc": "Audience → trust → multiple revenue streams. Compounds infinitely.",
+    "steps": [
+      "Pick one platform and one niche. Consistency beats quality early.",
+      "Post 3× per week for 90 days before monetizing. Build trust first.",
+      "Month 3: Launch free lead magnet (guide, template, tool). Collect emails.",
+      "Month 4: Paid product $19–49. One-time, instant delivery, high value.",
+      "Month 5: Sponsorship outreach once you hit 1k subscribers/followers.",
+      "Month 6: Community or membership $29/mo for your most engaged audience."
+    ],
+    "prompt": "Design a 6-month creator monetization plan for [platform + niche].\n\nCREATOR PROFILE\nPlatform: [YouTube / Newsletter / Twitter / TikTok / LinkedIn]\nNiche: [ultra-specific — not 'tech' but 'AI tools for freelance designers']\nCurrent size: [followers/subscribers]\nTime available: [hours/week]\n\nMONTH-BY-MONTH REVENUE STACK\nMonth 1-2: Build audience ONLY. No monetization. Metric: 100 new followers/week.\nMonth 3: Lead magnet + email list. Metric: 200 email subscribers.\nMonth 4: Digital product launch ($19-49). Target: $500 first month.\nMonth 5: Sponsorships ($X CPM). Pitch when: 1k+ subs, 40%+ open rate.\nMonth 6: Community ($29/mo). Launch to email list first.\n\nCONTENT SYSTEM\nWeekly: [3 posts format] using AI to research + draft in 2 hours.\nMonthly: [1 long-form piece] that establishes authority on a pillar topic.\nRepurpose: Long → 3 social posts → 1 email.\n\nMONETIZATION CALCULATOR\n1,000 subscribers @ 5% conversion @ $29/mo = $1,450 MRR\n5,000 subscribers @ 2% sponsor rate @ $500/send = $1,000/send\n1 product sale/day @ $29 = $870/mo passive\n\nOUTPUT: Monthly content calendar, product brief, sponsor pitch template, community onboarding sequence"
+  },
+  {
+    "id": "community",
+    "label": "🏘 Community Builder",
+    "timeframe": "Month 2–8",
+    "income": "$1k–15k/mo",
+    "desc": "Paid community or membership. High retention, recurring revenue, compounding network effects.",
+    "steps": [
+      "Define the ONE transformation members achieve in 90 days (must be specific).",
+      "Platform: Circle (content + community), Skool (gamified), Discord + Whop (dev).",
+      "Pricing: $29–97/mo. Annual plan = 2 months free (reduces churn, improves cashflow).",
+      "Founding member offer: first 50 at 50% off, never expires. Creates urgency + loyalty.",
+      "Weekly: live Q&A or office hours. This is the #1 retention driver.",
+      "Monthly: challenge or sprint. Action = results = testimonials = referrals."
+    ],
+    "prompt": "Design a paid community for [niche] with full monetization architecture.\n\nCOMMUNITY DETAILS\nNiche: [ultra-specific — who is this for and what exact outcome do they get?]\nPlatform: [Circle / Skool / Discord+Whop]\nPrice: [$29 / $49 / $97 / $197 per month]\nCore promise: [what specific, measurable outcome in 90 days?]\n\nCOMMUNITY ARCHITECTURE\nSpaces/channels:\n- #start-here: onboarding checklist + introduce yourself prompt\n- #wins: weekly share template (I did X, it resulted in Y)\n- #ask-anything: answered within 24hrs by community + you\n- #resources: curated tools, prompts, templates (your IP)\n- #accountability: weekly goal thread\n\nMONTHLY CALENDAR\nWeek 1: Live Q&A / office hours (60 min, recorded)\nWeek 2: Resource drop (template, prompt pack, swipe file — your creation)\nWeek 3: Member spotlight (case study format: before/after/numbers)\nWeek 4: Challenge (action-focused, 7-day sprint with daily check-ins)\n\nRETENTION MECHANICS\nDay 0: Welcome video + first action (take 5 min, create a quick win)\nDay 7: First win check-in (email + in-community post)\nDay 30: Progress milestone + soft upsell to annual plan\nDay 45: Referral offer (1 free month per referral who stays 30 days)\nDay 365: Alumni tier ($X/mo discounted, perpetual access)\n\nPRICING MODEL\nMonthly: $[X]/mo, cancel anytime\nAnnual: $[X*10]/yr (2 months free)\nFounding: first 50 members at $[X*0.5]/mo, locked forever\n\nOUTPUT: Complete community architecture, onboarding sequence, monthly content calendar, pricing page copy"
+  },
+  {
+    "id": "agency",
+    "label": "🏢 Agency Flywheel",
+    "timeframe": "Month 1–12",
+    "income": "$5k–50k/mo",
+    "desc": "Productized service → retainer clients → hire → scale → exit or SaaS.",
+    "steps": [
+      "Define one specific deliverable for one specific client type. Not 'marketing' — 'landing pages for B2B SaaS startups'.",
+      "Productize: fixed scope, fixed price, fixed timeline. No custom projects.",
+      "Land 3 retainer clients ($1500–5000/mo each) before hiring anyone.",
+      "Hire #1 as delivery (not sales). You own client relationships.",
+      "Month 6: Build internal tools that make delivery 2x faster (this becomes your SaaS).",
+      "Month 12: Either sell the agency or productize your internal tools as software."
+    ],
+    "prompt": "Design an agency productization and scaling plan for [service type].\n\nMY SERVICE: [what I do, for whom, at what price]\nTARGET CLIENT: [industry + company size + specific pain]\nCURRENT: [solo / small team / established agency]\n\nPRODUCTIZED SERVICE DESIGN\nService name: [outcome-focused, not process-focused]\nDeliverable: [exact, scoped output — no 'ongoing strategy']\nTimeline: [X weeks, fixed]\nPrice: [$X one-time or $X/mo retainer]\nWhat's included: [5 bullet points maximum]\nWhat's NOT included: [scope fence — reduces scope creep]\n\n3-CLIENT MILESTONE PLAN\nClient 1: [how to get — referral, LinkedIn outreach, cold email?]\nClient 2: [same niche, refine the process]\nClient 3: [document everything into an SOP]\n→ Now hire a delivery person using Client 3 margin\n\nSCALING STACK\nCRM: Notion or HubSpot (free tier)\nContracts: DocuSign or PandaDoc\nInvoicing: Stripe or Wave (free)\nDelivery: Loom for async, Notion for client portals\nCommunication: Slack per client or Linear for project management\n\nOUTPUT: Service packaging doc, pricing tiers, outreach email template, proposal template, SOP for delivery, hiring criteria for first team member"
+  }
+]

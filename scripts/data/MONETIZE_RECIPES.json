@@ -1,0 +1,137 @@
+[
+  {
+    "id": "saas-ai-mvp",
+    "label": "SaaS AI MVP in 1 Weekend",
+    "cat": "Build",
+    "time": "48hrs",
+    "income": "$0→$500/mo",
+    "stack": "Next.js + Supabase + Groq + Stripe + Vercel",
+    "steps": [
+      "Day 1 AM: Validate idea — search 'alternatives to X', find painful friction",
+      "Day 1 PM: Build auth + DB schema + core feature only (not landing page)",
+      "Day 1 Eve: Deploy to Vercel free, share in 2 relevant communities",
+      "Day 2 AM: Build landing page + pricing ($9–29/mo free trial)",
+      "Day 2 PM: Set up Stripe subscription + webhook handler",
+      "Day 2 Eve: Submit to ProductHunt for next day, post on Twitter/X"
+    ],
+    "prompt": "You are a senior full-stack developer. Build a complete SaaS MVP in 48 hours.\n\nPRODUCT: [your idea — one sentence]\nSTACK: Next.js 15 + Supabase + Groq (free AI) + Stripe + Vercel\n\nSATURDAY BUILD LIST (in order, no skipping)\n1. Supabase: users table + core entity table + RLS policies\n2. Auth: email+password + Google OAuth via Supabase Auth\n3. Core feature: [the one thing that makes this worth paying for]\n4. Usage tracking: count API calls per user_id per day\n5. Free tier gate: if usage > limit → show upgrade prompt\n\nSUNDAY BUILD LIST\n1. Stripe: create Product + Price ($X/mo) + webhook endpoint\n2. Billing page: current plan + usage + upgrade button\n3. Landing page: hero + 3 benefits + pricing + social proof placeholder\n4. Deploy: push to GitHub → Vercel import → add env vars → live URL\n\nENV REQUIRED: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_KEY, GROQ_API_KEY, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET\n\nOUTPUT: Complete source code, schema.sql, stripe-webhook.ts, .env.example, deploy checklist"
+  },
+  {
+    "id": "prompt-pack-sell",
+    "label": "Prompt Pack → First Sale in 48hrs",
+    "cat": "Sell",
+    "time": "48hrs",
+    "income": "$9–99/sale",
+    "stack": "Gumroad + Notion/PDF + Twitter/Reddit",
+    "steps": [
+      "Hour 1: Pick niche (marketing, coding, design, real estate, law)",
+      "Hour 2: Write 10 prompts — title + copy-ready prompt + pro tip each",
+      "Hour 3: Format in Notion or Canva, export as PDF",
+      "Hour 4: Create Gumroad listing ($9–29), write 5-bullet description",
+      "Hour 5: Post 1 example prompt on Twitter + 2 relevant subreddits",
+      "Hour 6-48: Reply to every comment, iterate based on feedback"
+    ],
+    "prompt": "Create a 10-prompt pack I can sell on Gumroad for $[price].\n\nNICHE: [e.g. real estate agents, UX designers, e-commerce brands]\nPRICE: [$9 / $19 / $29]\n\nFor each of the 10 prompts, output exactly:\nTITLE: [outcome-focused, ≤8 words]\nUSE CASE: [one sentence — when would someone use this]\nPROMPT: [the full copy-paste ready prompt with [BRACKET] variables]\nPRO TIP: [the one thing that makes this prompt 10x better]\nCOMMON MISTAKE: [what beginners get wrong when using this]\n\nFORMAT: numbered 1-10, ready to paste into Gumroad product description\nQUALITY BAR: each prompt must be immediately usable without modification"
+  },
+  {
+    "id": "newsletter-monetize",
+    "label": "Newsletter → $1k/mo in 90 Days",
+    "cat": "Grow",
+    "time": "90 days",
+    "income": "$1k–5k/mo",
+    "stack": "Beehiiv (free) + Twitter + Reddit + Gumroad",
+    "steps": [
+      "Week 1: Pick sub-niche (not 'AI' — 'AI tools for therapists')",
+      "Week 1: Write 3 issues, set up Beehiiv, publish all 3 back-to-back",
+      "Week 2-4: Post 1 thread/week showing your research process",
+      "Month 2: Launch referral program (Beehiiv native, free)",
+      "Month 2: Create $19 resource pack for subscribers only",
+      "Month 3: Pitch sponsors once you hit 500 subscribers (CPM $20-40)"
+    ],
+    "prompt": "Design a newsletter monetization system for [niche].\n\nNEWSLETTER: [name] — [one sentence description]\nPLATFORM: Beehiiv (free tier, 2500 subscribers)\nNICHE: [ultra-specific — not 'marketing' but 'email marketing for SaaS founders']\n\nMONETIZATION STACK (in order of when to activate)\nMonth 1 — Audience building: paid nothing, focus on subscribers\nMonth 2 — Digital product: $19 resource pack for first 100 subscribers\nMonth 3 — Sponsorships: pitch when >500 subs, $25 CPM starting rate\nMonth 4 — Paid tier: $9/mo for bonus deep-dives + template library\nMonth 6 — Community: $29/mo Discord or Slack for peer networking\n\nCONTENT SYSTEM (weekly, AI-assisted)\nMonday: Research 3-5 sources on this week's topic\nTuesday: Draft with AI — \"Write a newsletter issue about [topic] for [avatar]. Hook in first line. 3 insights. 1 tool recommendation. 1 question to spark replies.\"\nWednesday: Edit for brand voice (30 min max) + schedule\n\nGROWTH LOOPS\nReferral: 3 referrals = free resource pack (Beehiiv native)\nCross-promo: DM 5 newsletters at same size, propose mutual shoutout\nLead magnet: [specific 1-page resource that makes someone subscribe immediately]\n\nOUTPUT: Complete content calendar (4 weeks), sponsor pitch template, referral reward structure"
+  },
+  {
+    "id": "agency-to-saas",
+    "label": "Agency → SaaS Transition Playbook",
+    "cat": "Scale",
+    "time": "6 months",
+    "income": "$5k→$20k MRR",
+    "stack": "n8n + OpenAI + Supabase + Stripe + Vercel",
+    "steps": [
+      "Month 1: Document the most-repeated deliverable from client work",
+      "Month 2: Build v1 as internal tool (use it yourself first)",
+      "Month 3: Offer to 3 existing clients at 50% discount for feedback",
+      "Month 4: Launch publicly at full price, keep 2 agency clients",
+      "Month 5: Hire 1 part-time support person using SaaS revenue",
+      "Month 6: Drop last agency clients, go SaaS-only"
+    ],
+    "prompt": "Design a 6-month plan to transition from agency services to a SaaS product.\n\nMY AGENCY: [what service I sell, to whom, at what price]\nMOST REPEATED WORK: [the deliverable I build over and over for clients]\nSAAS IDEA: [how to productize that deliverable]\n\nMONTH-BY-MONTH PLAN\nMonth 1: Document the repeatable process as an SOP. Build v1 yourself.\nMonth 2: Run the SaaS for 5 beta users (existing clients, 0 cost). Collect weekly feedback.\nMonth 3: Fix top 3 pain points from beta. Set pricing: [free trial → $X/mo paid].\nMonth 4: Launch to waitlist. Keep 3 agency clients as revenue bridge.\nMonth 5: First $1k MRR milestone. Hire 1 support person ($500/mo part-time).\nMonth 6: MRR covers all expenses. Drop all agency work. SaaS-first.\n\nMILESTONE GATES (don't advance until met)\nMonth 1→2: SOP documented, v1 deployed to production\nMonth 2→3: 5 beta users actively using weekly\nMonth 3→4: 3 users willing to pay real money\nMonth 4→5: $1k MRR (break-even with basic expenses)\nMonth 5→6: $3k MRR (can afford 1 hire)\n\nOUTPUT: Month-by-month action plan, pricing tiers, beta user recruitment script, first 10 customer acquisition tactics"
+  },
+  {
+    "id": "mcp-to-product",
+    "label": "MCP Tool → Paid Product",
+    "cat": "Build",
+    "time": "2 weeks",
+    "income": "$29–99/mo",
+    "stack": "MCP SDK + Node.js + Stripe + Vercel",
+    "steps": [
+      "Day 1: Identify a workflow Claude Desktop users repeat 10+ times/week",
+      "Day 2: Build MCP server with 3-5 tools that solve that workflow",
+      "Day 3-4: Test with 5 beta users from Claude Discord/Reddit",
+      "Day 5: Package as npm package or hosted API",
+      "Week 2: Add Stripe paywall, launch on MCP marketplace + ProductHunt"
+    ],
+    "prompt": "Build a monetizable MCP tool and package it as a paid product.\n\nWORKFLOW TO SOLVE: [what repetitive task this MCP tool automates]\nTARGET USER: Claude Desktop power users in [role/industry]\nPRICE: [$29/mo or $99 lifetime]\n\nMCP SERVER IMPLEMENTATION\n// const { Server } = mcpSdk.server;\n// const { StdioServerTransport } = mcpSdk.stdio;\n\nconst server = new Server({ name: \"my-tool\", version: \"1.0.0\" }, { capabilities: { tools: {} } });\n\nTOOLS TO BUILD (3-5 focused tools)\nTool 1: [primary action — the main thing users will call]\nTool 2: [secondary action — supports tool 1]\nTool 3: [output/save action — writes results somewhere]\n\nMONETIZATION OPTIONS\nOption A: npm package with API key validation ($5/mo for key)\nOption B: Hosted server with OAuth + usage tracking ($X/mo subscription)\nOption C: GitHub Sponsors + open-source with pro features\n\nCLAUDE DESKTOP CONFIG\n{ \"mcpServers\": { \"my-tool\": { \"command\": \"npx\", \"args\": [\"-y\", \"my-mcp-tool@latest\"] } } }\n\nOUTPUT: Complete MCP server, tool definitions, npm package.json, pricing page copy, README"
+  },
+  {
+    "id": "consulting-to-product",
+    "label": "Consulting → Productized Offer",
+    "cat": "Pivot",
+    "time": "4 weeks",
+    "income": "$2k–10k/project",
+    "stack": "Notion + Loom + Stripe + Calendly",
+    "steps": [
+      "Week 1: List every recurring deliverable you've made for clients in the past year",
+      "Week 1: Pick the one you could template 80% of. That's your productized service.",
+      "Week 2: Build a scoping questionnaire (10 questions) that captures 80% of what you need",
+      "Week 2: Write the proposal template (problem → solution → timeline → investment)",
+      "Week 3: Build the delivery system: Notion client portal + Loom for async updates",
+      "Week 4: Set price (3× your hourly × expected hours). No negotiation on scope."
+    ],
+    "prompt": "Productize my consulting service into a fixed-scope, fixed-price offer.\n\nMY CURRENT SERVICE: [what I do, who I do it for, what I charge]\nMOST COMMON DELIVERABLE: [the thing clients always end up needing]\n\nPRODUCTIZED OFFER DESIGN\nService name: [outcome + timeframe, e.g. \"90-Day AI Automation Audit & Build\"]\nDeliverable: [exact output — must be tangible and scoped]\nTimeline: [X weeks, fixed. No extensions without new contract.]\nPrice: [$X flat. State it clearly, never hourly.]\nIncludes: [5 bullet points maximum — be specific]\nExcludes: [what's out of scope — protect yourself]\n\nCLIENT PORTAL (Notion)\nPage 1: Project brief + goals + success metrics\nPage 2: Timeline + milestone tracker\nPage 3: Deliverables (with status: In Progress / Review / Complete)\nPage 4: Resources + assets + recordings\nPage 5: Final handoff + how to maintain\n\nSALES PAGE STRUCTURE\nHero: [Name of service] → [what they get] → [in how long] → [$X]\nProblem: 3 bullets of pain they feel right now\nSolution: What you do and why it works\nProcess: 3-step visual (Onboard → Build → Deliver)\nProof: 2-3 results from past clients\nCTA: [Book a Scoping Call] → 30 min → qualify → send proposal\n\nOUTPUT: Service one-pager, proposal template, client portal structure, scoping call script"
+  },
+  {
+    "id": "open-source-monetize",
+    "label": "Open Source → Revenue",
+    "cat": "Build",
+    "time": "6 months",
+    "income": "$500–20k/mo",
+    "stack": "GitHub + Polar.sh + Lemon Squeezy + GitHub Sponsors",
+    "steps": [
+      "Build a tool that solves YOUR problem. Use it daily. Make it great.",
+      "Launch on GitHub with exceptional README (screenshots, demo GIF, 5-command install).",
+      "Post on Hacker News Show HN, relevant Reddit, and Twitter. Engage every reply.",
+      "Month 2: Add 'Sponsor' button. Reach out to companies who use your tool.",
+      "Month 3: Pro features — hosted version, priority support, team features.",
+      "Month 6: Offer commercial license for organizations ($X/yr per seat)."
+    ],
+    "prompt": "Design a monetization strategy for my open-source project.\n\nPROJECT: [name, what it does, who uses it]\nGITHUB STARS: [current count]\nMONTHLY DOWNLOADS/INSTALLS: [if npm/pip/brew]\nCOMPANIES USING IT: [known or suspected — check GitHub dependency graph]\n\nMONETIZATION TIERS (in order of when to launch)\nFree: Core tool, always open-source, MIT or Apache license\nSponsor: [GitHub Sponsors / Polar.sh] — $5–50/mo from individuals + companies\nPro: Hosted version or cloud service — $X/mo (removes self-hosting burden)\nEnterprise: Commercial license + SLA + priority support — $X/yr per seat\n\nGITHUB README OPTIMIZATION\nTop 3 badges: stars, license, latest version\nHero section: one GIF showing the most impressive feature\nInstall: 1 command. No prerequisites listed first.\nQuickstart: working example in <5 minutes\nSponsor button: above the fold, specific ask (\"$9/mo keeps this maintained\")\n\nCOMPANY OUTREACH\nFind companies: GitHub dependency graph → who imports your package?\nEmail template: \"Hi [name], I noticed [company] uses [tool] in [repo]. \nI'm the maintainer. Would [company] consider sponsoring at $X/mo \nto ensure continued maintenance? It helps me prioritize your issues.\"\n\nOUTPUT: README rewrite, sponsor page copy, pricing tiers, company outreach email, Polar.sh configuration"
+  },
+  {
+    "id": "ai-wrapper-saas",
+    "label": "AI API Wrapper → SaaS",
+    "cat": "Build",
+    "time": "1 weekend",
+    "income": "$500–5k/mo MRR",
+    "stack": "Next.js + OpenRouter/Groq + Supabase + Stripe + Vercel",
+    "steps": [
+      "Pick one AI capability that businesses need but can't build themselves",
+      "Add a simple UI + prompt engineering on top — that's your moat",
+      "Free tier: 10 requests/day. Paid: $19/mo unlimited. Upsell: API access $49/mo.",
+      "SEO: write 20 blog posts targeting '[your tool] alternative' keywords",
+      "Build one integration (Zapier, Make, Slack) — distribution multiplier",
+      "Month 3: Add team features (shared history, custom prompts) → $49/mo team tier"
+    ],
+    "prompt": "Build a monetizable AI API wrapper with credit-based billing.\n\nCAPABILITY TO WRAP: [e.g. AI writing assistant for legal documents, AI image describer for e-commerce, AI code reviewer for GitHub PRs]\nTARGET CUSTOMER: [who has this problem and will pay $19-99/mo to solve it?]\nMOAT: [what makes your prompts / UX better than just using ChatGPT directly?]\n\nTECH STACK\nBackend: Next.js API routes\nLLM: OpenRouter (free models available) or Groq (free tier)\nDatabase: Supabase (credits table, usage tracking)\nAuth: Supabase Auth\nPayments: Stripe (subscription + credit top-up)\nDeploy: Vercel (free tier)\n\nCREDIT SYSTEM\n1 credit = 1 API call (or 1k tokens — pick one, be consistent)\nFree tier: 20 credits/day (no card required — maximize top of funnel)\nStarter: $9/mo — 500 credits/mo\nPro: $29/mo — 2000 credits/mo + API access\nTeams: $79/mo — 10k credits + 5 seats + custom system prompt\n\nDATABASE SCHEMA\nusers: id, email, stripe_customer_id, plan\ncredits: id, user_id, amount, type (subscription|topup|usage), created_at\napi_keys: id, user_id, key_hash, name, last_used_at, is_active\n\nSTRIPE SETUP\nProduct 1: Starter ($9/mo) → webhook: add 500 credits\nProduct 2: Pro ($29/mo) → webhook: add 2000 credits\nCredit top-up: $5 = 100 credits (one-time payment)\nWebhook: invoice.paid → add credits. customer.subscription.deleted → downgrade.\n\nOUTPUT: Complete source code, Supabase schema + RLS, Stripe webhook handler, usage tracking middleware, pricing page copy, SEO blog post outline"
+  }
+]

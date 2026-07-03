@@ -1,0 +1,146 @@
+[
+  {
+    "goal": "Build AI Content System",
+    "c": [
+      "Eagle",
+      "Beaver",
+      "Ant"
+    ],
+    "best": "Automated content pipelines"
+  },
+  {
+    "goal": "Solve Complex Problem",
+    "c": [
+      "Owl",
+      "Dolphin",
+      "Elephant"
+    ],
+    "best": "Product design, breakthrough features"
+  },
+  {
+    "goal": "Brainstorm Product",
+    "c": [
+      "Rabbit",
+      "Eagle",
+      "Ant"
+    ],
+    "best": "Product ideation, channel selection"
+  },
+  {
+    "goal": "Design Workflow",
+    "c": [
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "best": "Automation scripts, SOPs"
+  },
+  {
+    "goal": "Validate Business",
+    "c": [
+      "Owl",
+      "Elephant",
+      "Eagle"
+    ],
+    "best": "Startup validation, venture assessment"
+  },
+  {
+    "goal": "Generate Viral Content",
+    "c": [
+      "Rabbit",
+      "Dolphin",
+      "Eagle"
+    ],
+    "best": "Social media, marketing campaigns"
+  },
+  {
+    "goal": "Build Creator Brand",
+    "c": [
+      "Owl",
+      "Eagle",
+      "Dolphin",
+      "Beaver"
+    ],
+    "best": "Personal brand, newsletter, YouTube"
+  },
+  {
+    "goal": "Launch Digital Product",
+    "c": [
+      "Eagle",
+      "Rabbit",
+      "Beaver",
+      "Ant"
+    ],
+    "best": "Course, ebook, template launch"
+  },
+  {
+    "goal": "Debug & Optimize System",
+    "c": [
+      "Owl",
+      "Ant",
+      "Beaver",
+      "Eagle"
+    ],
+    "best": "Production debugging, performance"
+  },
+  {
+    "goal": "Research & Write Authority",
+    "c": [
+      "Owl",
+      "Elephant",
+      "Ant",
+      "Eagle"
+    ],
+    "best": "Long-form SEO, thought leadership"
+  },
+  {
+    "goal": "Build SaaS from Scratch",
+    "c": [
+      "Eagle",
+      "Owl",
+      "Beaver",
+      "Ant"
+    ],
+    "best": "Full product from idea to shipped"
+  },
+  {
+    "goal": "Automate Business Process",
+    "c": [
+      "Owl",
+      "Beaver",
+      "Ant",
+      "Dolphin"
+    ],
+    "best": "n8n workflows, Make, Zapier"
+  },
+  {
+    "goal": "Debug Production Issue",
+    "c": [
+      "Owl",
+      "Ant",
+      "Beaver",
+      "Eagle"
+    ],
+    "best": "Bugs, errors, performance regressions"
+  },
+  {
+    "goal": "Write + Publish Content",
+    "c": [
+      "Owl",
+      "Rabbit",
+      "Dolphin",
+      "Ant"
+    ],
+    "best": "Articles, newsletters, threads"
+  },
+  {
+    "goal": "Design + Build API",
+    "c": [
+      "Eagle",
+      "Owl",
+      "Beaver",
+      "Ant"
+    ],
+    "best": "REST API, webhooks, integrations"
+  }
+]

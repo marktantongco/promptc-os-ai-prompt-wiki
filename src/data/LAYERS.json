@@ -1,0 +1,50 @@
+[
+  {
+    "n": "01",
+    "name": "Role",
+    "pur": "Who the AI acts as",
+    "miss": "Generic, shallow responses"
+  },
+  {
+    "n": "02",
+    "name": "Context",
+    "pur": "Product, audience, platform",
+    "miss": "Misaligned output"
+  },
+  {
+    "n": "03",
+    "name": "Objective",
+    "pur": "What success looks like",
+    "miss": "Aimless generation"
+  },
+  {
+    "n": "04",
+    "name": "Constraints",
+    "pur": "Quality guardrails",
+    "miss": "Mediocre, unconstrained output"
+  },
+  {
+    "n": "05",
+    "name": "Aesthetic",
+    "pur": "Design language / tone",
+    "miss": "Visually dull or off-brand"
+  },
+  {
+    "n": "06",
+    "name": "Planning",
+    "pur": "Reason before generating",
+    "miss": "Structural mistakes"
+  },
+  {
+    "n": "07",
+    "name": "Output",
+    "pur": "Exact format to deliver",
+    "miss": "Incomplete or disorganized files"
+  },
+  {
+    "n": "08",
+    "name": "Refinement",
+    "pur": "Self-critique before final",
+    "miss": "First-draft quality only"
+  }
+]

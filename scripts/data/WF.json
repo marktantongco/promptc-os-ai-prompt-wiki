@@ -1,0 +1,1354 @@
+[
+  {
+    "id": 1,
+    "cat": "🎨 Design",
+    "title": "Design System Creation",
+    "purpose": "Build complete design system",
+    "best": "New products, rebrands",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Complete design system with color tokens, typography, and component library",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define long-term design vision",
+        "items": [
+          "Brand positioning and personality",
+          "Target audience demographics",
+          "Competitive landscape analysis",
+          "Design principles (3-5 core values)"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build foundational components",
+        "items": [
+          "Color palette (primary, secondary, accent, semantic)",
+          "Typography scale (display, heading, body, caption)",
+          "Spacing system (4px baseline grid)",
+          "Border radius and shadow scales"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Create component library",
+        "items": [
+          "Buttons (primary, secondary, ghost, icon)",
+          "Form elements (input, select, checkbox, radio)",
+          "Cards and containers",
+          "Navigation patterns"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Validate consistency",
+        "items": [
+          "Check all components follow the system",
+          "Verify accessibility contrast ratios",
+          "Test responsive behavior"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "cat": "🎨 Design",
+    "title": "Landing Page Design",
+    "purpose": "Create high-conversion landing page",
+    "best": "Marketing, startups",
+    "chain": [
+      "Rabbit",
+      "Eagle",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Complete landing page with all sections and conversion optimizations",
+    "steps": [
+      {
+        "a": "Rabbit",
+        "t": "Generate 10+ headline variations",
+        "items": [
+          "Problem-aware headlines",
+          "Solution-focused headlines",
+          "Benefit-driven headlines",
+          "Social proof headlines"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Structure the page architecture",
+        "items": [
+          "Hero section with CTA",
+          "Problem/Agitation section",
+          "Solution/features section",
+          "Social proof section",
+          "Pricing/CTA section"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Design each section",
+        "items": [
+          "Hero: Hook + visual + CTA",
+          "Features: 3-column bento grid",
+          "Testimonials: Carousel or grid",
+          "CTA: Contrast section"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Optimize for conversion",
+        "items": [
+          "Button placement and sizing",
+          "Form field minimization",
+          "Loading states",
+          "Mobile touch targets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "cat": "🎨 Design",
+    "title": "Dashboard Design",
+    "purpose": "Build data visualization dashboard",
+    "best": "Analytics, SaaS products",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Dolphin",
+      "Ant"
+    ],
+    "out": "Interactive dashboard with all widgets and filtering capabilities",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define data requirements",
+        "items": [
+          "Key metrics and KPIs",
+          "User roles and permissions",
+          "Data refresh frequency",
+          "Export requirements"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Layout the grid",
+        "items": [
+          "12-column responsive grid",
+          "Widget sizing standards",
+          "Gutter and margin system",
+          "Breakpoint definitions"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Choose visualization types",
+        "items": [
+          "KPI cards for single metrics",
+          "Line charts for trends",
+          "Bar charts for comparisons",
+          "Tables for detailed data"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement interactions",
+        "items": [
+          "Filter mechanisms",
+          "Date range selectors",
+          "Drill-down capabilities",
+          "Export functions"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "cat": "💻 Dev",
+    "title": "Full-Stack App Development",
+    "purpose": "Build complete web application",
+    "best": "Product builds",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Production-ready application with full documentation",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define product architecture",
+        "items": [
+          "Core features list",
+          "User flows and journeys",
+          "Data models and relationships",
+          "API boundaries"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Set up project structure",
+        "items": [
+          "Repository initialization",
+          "Dependencies configuration",
+          "Environment setup",
+          "Linting and formatting rules"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement feature by feature",
+        "items": [
+          "Database schema",
+          "API endpoints",
+          "Frontend components",
+          "Integration testing"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Review and optimize",
+        "items": [
+          "Code quality audit",
+          "Performance profiling",
+          "Security vulnerability check",
+          "Documentation completion"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "cat": "💻 Dev",
+    "title": "API Design",
+    "purpose": "Design RESTful or GraphQL API",
+    "best": "Backend development",
+    "chain": [
+      "Owl",
+      "Beaver",
+      "Ant",
+      "Dolphin"
+    ],
+    "out": "Complete API specification with OpenAPI documentation",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Analyze requirements",
+        "items": [
+          "Resource identification",
+          "Relationship mapping",
+          "Authentication needs",
+          "Rate limiting requirements"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Define endpoints",
+        "items": [
+          "HTTP methods selection",
+          "URL structure design",
+          "Request/response schemas",
+          "Error handling strategy"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Document comprehensively",
+        "items": [
+          "OpenAPI/Swagger specification",
+          "Example requests/responses",
+          "Authentication docs",
+          "Rate limit documentation"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Add advanced features",
+        "items": [
+          "Pagination strategies",
+          "Filtering and sorting",
+          "Caching headers",
+          "Webhook support"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "cat": "💻 Dev",
+    "title": "Database Schema Design",
+    "purpose": "Design scalable database structure",
+    "best": "Data modeling",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Production database schema with migration scripts",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Map data requirements",
+        "items": [
+          "Entity identification",
+          "Relationship types (1:1, 1:N, N:N)",
+          "Data volume estimation",
+          "Performance requirements"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Design schema",
+        "items": [
+          "Table/collection definitions",
+          "Column types and constraints",
+          "Index strategy",
+          "Foreign key relationships"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement migrations",
+        "items": [
+          "Up migration scripts",
+          "Seed data scripts",
+          "Rollback procedures",
+          "Migration testing"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Optimize for performance",
+        "items": [
+          "Query analysis",
+          "Index refinement",
+          "Partitioning strategy",
+          "Backup procedures"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "cat": "📈 Business",
+    "title": "Product Roadmap Planning",
+    "purpose": "Create strategic product roadmap",
+    "best": "Product management",
+    "chain": [
+      "Owl",
+      "Eagle",
+      "Rabbit",
+      "Beaver"
+    ],
+    "out": "Prioritized product roadmap with timeline and milestones",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Analyze current state",
+        "items": [
+          "Market analysis",
+          "Competitive landscape",
+          "User feedback review",
+          "Technical debt assessment"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Define vision",
+        "items": [
+          "12-month product vision",
+          "Key objectives and OKRs",
+          "Success metrics",
+          "Risk identification"
+        ]
+      },
+      {
+        "a": "Rabbit",
+        "t": "Generate initiatives",
+        "items": [
+          "Feature proposals",
+          "Technical improvements",
+          "Infrastructure needs",
+          "Research projects"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Prioritize and sequence",
+        "items": [
+          "Impact vs effort scoring",
+          "Dependency mapping",
+          "Resource allocation",
+          "Milestone planning"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "cat": "📈 Business",
+    "title": "Market Research",
+    "purpose": "Conduct comprehensive market analysis",
+    "best": "Business strategy",
+    "chain": [
+      "Owl",
+      "Elephant",
+      "Ant",
+      "Eagle"
+    ],
+    "out": "Market research report with actionable insights",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Define research scope",
+        "items": [
+          "Target market definition",
+          "Competitor list",
+          "Research questions",
+          "Data sources identification"
+        ]
+      },
+      {
+        "a": "Elephant",
+        "t": "Gather insights",
+        "items": [
+          "Industry reports review",
+          "Competitor analysis",
+          "Customer interview synthesis",
+          "Trend analysis"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Break down findings",
+        "items": [
+          "SWOT analysis",
+          "Market size estimation",
+          "User persona development",
+          "Opportunity mapping"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Synthesize recommendations",
+        "items": [
+          "Strategic positioning",
+          "Go-to-market suggestions",
+          "Pricing strategy",
+          "Risk mitigation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "cat": "📈 Business",
+    "title": "User Onboarding Flow",
+    "purpose": "Design effective user onboarding",
+    "best": "Product growth",
+    "chain": [
+      "Owl",
+      "Dolphin",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Complete onboarding flow with metrics and testing plan",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Understand user psychology",
+        "items": [
+          "Activation moment identification",
+          "Friction point analysis",
+          "Value moment mapping",
+          "Drop-off prediction"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Generate onboarding ideas",
+        "items": [
+          "Welcome emails",
+          "Interactive tutorials",
+          "Progress indicators",
+          "Social proof moments"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Design the flow",
+        "items": [
+          "Sign-up to first value",
+          "Step-by-step guidance",
+          "Progress tracking",
+          "Celebration moments"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement and test",
+        "items": [
+          "A/B test variations",
+          "Analytics tracking",
+          "Feedback loops",
+          "Iteration cycles"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "cat": "📝 Content",
+    "title": "Blog Content Creation",
+    "purpose": "Write SEO-optimized blog posts",
+    "best": "Content marketing",
+    "chain": [
+      "Owl",
+      "Eagle",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Ready-to-publish blog post with SEO optimizations",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Research topic",
+        "items": [
+          "Keyword analysis",
+          "Search intent identification",
+          "Competitor content review",
+          "Topic cluster mapping"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Structure outline",
+        "items": [
+          "H2/H3 hierarchy",
+          "Key points to cover",
+          "Data and statistics to include",
+          "Internal linking strategy"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Write section by section",
+        "items": [
+          "Compelling introduction",
+          "Body paragraphs with examples",
+          "Visual element suggestions",
+          "Strong conclusion"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Optimize for SEO",
+        "items": [
+          "Meta title and description",
+          "URL structure",
+          "Alt text for images",
+          "Schema markup"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "cat": "📝 Content",
+    "title": "Video Content Strategy",
+    "purpose": "Plan and create video content",
+    "best": "YouTube, social media",
+    "chain": [
+      "Rabbit",
+      "Eagle",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Video content calendar with production assets",
+    "steps": [
+      {
+        "a": "Rabbit",
+        "t": "Generate content angles",
+        "items": [
+          "10+ video topic ideas",
+          "Different formats (tutorial, vlog, review)",
+          "Audience variations",
+          "Trend adaptations"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Select and strategize",
+        "items": [
+          "Choose best topics",
+          "Define target audience",
+          "Set success metrics",
+          "Plan distribution channels"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Create production plan",
+        "items": [
+          "Script outline",
+          "B-roll requirements",
+          "Thumbnail concepts",
+          "Posting schedule"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Execute and optimize",
+        "items": [
+          "Filming and editing",
+          "SEO optimization",
+          "Engagement strategy",
+          "Analytics review"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "cat": "📝 Content",
+    "title": "Email Marketing Campaign",
+    "purpose": "Design email marketing sequence",
+    "best": "Marketing automation",
+    "chain": [
+      "Owl",
+      "Rabbit",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Complete email campaign automation with all sequences",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Define customer journey",
+        "items": [
+          "Funnel stages",
+          "Trigger events",
+          "Segment definitions",
+          "Goal mapping"
+        ]
+      },
+      {
+        "a": "Rabbit",
+        "t": "Generate email variations",
+        "items": [
+          "Welcome series ideas",
+          "Promo sequences",
+          "Re-engagement campaigns",
+          "Post-purchase flows"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Write each email",
+        "items": [
+          "Subject line optimization",
+          "Preview text",
+          "Body copy",
+          "CTA buttons"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Set up automation",
+        "items": [
+          "Trigger conditions",
+          "Timing intervals",
+          "A/B test variants",
+          "Unsubscribe handling"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "cat": "🔧 Automation",
+    "title": "Workflow Automation",
+    "purpose": "Design automated business process",
+    "best": "Operations, efficiency",
+    "chain": [
+      "Owl",
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Production automation workflow with monitoring",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Analyze current process",
+        "items": [
+          "Manual steps documentation",
+          "Time and resource costs",
+          "Error points identification",
+          "Bottleneck analysis"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Design automation",
+        "items": [
+          "Trigger definition",
+          "Action sequence",
+          "Conditional logic",
+          "Error handling"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement step by step",
+        "items": [
+          "API integrations",
+          "Data transformations",
+          "Notification system",
+          "Logging mechanism"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Test and monitor",
+        "items": [
+          "Edge case testing",
+          "Performance monitoring",
+          "Alert configuration",
+          "Documentation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "cat": "🔧 Automation",
+    "title": "CI/CD Pipeline Setup",
+    "purpose": "Build continuous integration/deployment",
+    "best": "Development ops",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Complete CI/CD pipeline with monitoring",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define pipeline stages",
+        "items": [
+          "Code checkout",
+          "Dependency installation",
+          "Linting and formatting",
+          "Unit testing",
+          "Integration testing",
+          "Build creation",
+          "Deployment trigger"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Configure tools",
+        "items": [
+          "GitHub Actions / GitLab CI",
+          "Environment variables",
+          "Secret management",
+          "Cache strategies"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Set up each stage",
+        "items": [
+          "Test runner configuration",
+          "Build script creation",
+          "Deployment scripts",
+          "Rollback procedures"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Implement monitoring",
+        "items": [
+          "Build status notifications",
+          "Deployment tracking",
+          "Performance metrics",
+          "Error alerting"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "cat": "🎯 Problem",
+    "title": "Debug Complex Issue",
+    "purpose": "Systematically debug production issues",
+    "best": "Engineering",
+    "chain": [
+      "Owl",
+      "Ant",
+      "Beaver",
+      "Eagle"
+    ],
+    "out": "Fixed issue with prevention measures",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Gather information",
+        "items": [
+          "Error logs review",
+          "User reports collection",
+          "Environment details",
+          "Recent changes timeline"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Isolate the problem",
+        "items": [
+          "Reproduce locally",
+          "Binary search debugging",
+          "Variable elimination",
+          "Hypothesis formation"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Implement fix",
+        "items": [
+          "Root cause addressing",
+          "Solution implementation",
+          "Test case addition",
+          "Code review preparation"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Prevent recurrence",
+        "items": [
+          "Add monitoring",
+          "Update documentation",
+          "Process improvement",
+          "Team knowledge sharing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "cat": "🎯 Problem",
+    "title": "Technical Debt Resolution",
+    "purpose": "Address accumulated technical debt",
+    "best": "Engineering",
+    "chain": [
+      "Owl",
+      "Eagle",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Reduced technical debt with verified improvements",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Audit current state",
+        "items": [
+          "Code complexity analysis",
+          "Test coverage review",
+          "Dependency age check",
+          "Performance baseline"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Prioritize debt items",
+        "items": [
+          "Impact assessment",
+          "Effort estimation",
+          "Risk evaluation",
+          "Dependency mapping"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Execute refactoring",
+        "items": [
+          "Smallest valuable first",
+          "Preserve behavior",
+          "Add tests first",
+          "Incremental changes"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Validate improvements",
+        "items": [
+          "Performance verification",
+          "Test coverage increase",
+          "Code review completion",
+          "Documentation update"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "cat": "📊 Data",
+    "title": "Analytics Implementation",
+    "purpose": "Set up proper analytics tracking",
+    "best": "Data teams",
+    "chain": [
+      "Owl",
+      "Beaver",
+      "Ant",
+      "Dolphin"
+    ],
+    "out": "Complete analytics implementation with dashboards",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Define metrics framework",
+        "items": [
+          "Business objectives",
+          "Key metrics identification",
+          "User journey mapping",
+          "Success events"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Plan tracking setup",
+        "items": [
+          "Event taxonomy",
+          "Property definitions",
+          "User identification strategy",
+          "Cross-domain tracking"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement tracking",
+        "items": [
+          "SDK installation",
+          "Event implementation",
+          "Conversion tracking",
+          "Custom dimensions"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Create dashboards",
+        "items": [
+          "Real-time monitoring",
+          "Funnel analysis",
+          "Cohort tracking",
+          "Custom reports"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "cat": "📊 Data",
+    "title": "Data Pipeline Construction",
+    "purpose": "Build reliable data processing pipeline",
+    "best": "Data engineering",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Ant",
+      "Owl"
+    ],
+    "out": "Production data pipeline with monitoring",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Design data architecture",
+        "items": [
+          "Source identification",
+          "Transformation logic",
+          "Storage requirements",
+          "Delivery destinations"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build pipeline components",
+        "items": [
+          "Extract scripts",
+          "Transform functions",
+          "Load processes",
+          "Validation checks"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Implement error handling",
+        "items": [
+          "Retry logic",
+          "Dead letter queues",
+          "Alert mechanisms",
+          "Recovery procedures"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Optimize and monitor",
+        "items": [
+          "Performance tuning",
+          "Cost optimization",
+          "Quality monitoring",
+          "SLA tracking"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "cat": "🤖 AI Product",
+    "title": "AI Tool / Product Build",
+    "purpose": "Build an AI-powered tool, reference system, or prompt OS",
+    "best": "promptc OS, AI dashboards, prompt managers, creative tools",
+    "chain": [
+      "Eagle",
+      "Beaver",
+      "Dolphin",
+      "Ant"
+    ],
+    "out": "Deployed AI product with prompt engine, UI system, and component library",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define the AI product vision",
+        "items": [
+          "Core user problem the AI solves",
+          "Zones or modes the product needs (activate / build / validate / playbook / builder)",
+          "Data architecture — what does the AI consume and output?",
+          "Prompt schema — how are prompts structured, stored, retrieved?",
+          "Success metric: what does the user walk away with after each session?"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build the prompt engine + UI system",
+        "items": [
+          "Design token system (colors, typography, spacing, animation curves)",
+          "Component library: Card, Code, Pill, CopyButton, Input, Label",
+          "Prompt data layer: all prompts as typed constants (not hardcoded in JSX)",
+          "Copy-to-clipboard utility with iframe/sandbox fallback",
+          "Zone navigation with animated transitions"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Design the creative interaction layer",
+        "items": [
+          "Interactive composers: chain builder, layer composer, live prompt generator",
+          "Copy-ready output on every single item — modifier, template, vocab term, workflow",
+          "Animation system: zone enter, section pop, copy flash, hover scale",
+          "Misconception vs correct views for educational depth",
+          "Selectable keyword pickers for ambiguous prompt variables"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Polish, fix, and ship",
+        "items": [
+          "Initialization order: declare all consts before they are referenced",
+          "Remove bare HTML tags (<title><meta><link>) from JSX returns",
+          "Verify fragment pairs <>...</> are balanced",
+          "Test clipboard copy in sandboxed iframe environments",
+          "Verify all template literal backticks are balanced across brand/prompt strings",
+          "Deploy: Vite build → Vercel (30 seconds)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "cat": "🎨 Design",
+    "title": "Creator Brand Identity",
+    "purpose": "Build a complete personal brand for content creators",
+    "best": "YouTubers, podcasters, indie makers, newsletter writers",
+    "chain": [
+      "Owl",
+      "Eagle",
+      "Dolphin",
+      "Beaver"
+    ],
+    "out": "Creator brand kit: positioning, color system, content pillars, voice guide",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Audit current presence",
+        "items": [
+          "Audit existing content across platforms",
+          "Identify what topics you actually talk about most",
+          "Find your natural tone by reading your past writing",
+          "Spot the gap between who you are vs how you present"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Define brand strategy",
+        "items": [
+          "One-sentence positioning: I help [who] do [what] via [medium]",
+          "3 content pillars you could talk about for 10 years",
+          "Your POV: what you believe that most in your niche don't",
+          "Platform priority: where does your audience actually live?"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Creative direction",
+        "items": [
+          "Visual identity: 2 colors, 1 font, 1 icon or symbol",
+          "Thumbnail or header template concept",
+          "Intro format for videos or newsletter opening",
+          "Signature content format that only you do"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build the system",
+        "items": [
+          "Content calendar: 3 types weekly",
+          "Repurposing pipeline: long to medium to short format",
+          "CTA hierarchy: subscribe, follow, buy",
+          "Brand guide: voice rules and examples"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "cat": "📈 Business",
+    "title": "SEO Growth System",
+    "purpose": "Build compounding organic traffic through systematic SEO",
+    "best": "Startups, SaaS, content businesses, e-commerce",
+    "chain": [
+      "Owl",
+      "Eagle",
+      "Ant",
+      "Beaver"
+    ],
+    "out": "SEO playbook with keyword map, content calendar, and technical checklist",
+    "steps": [
+      {
+        "a": "Owl",
+        "t": "Keyword research and audit",
+        "items": [
+          "Run site audit: broken links, missing meta, slow pages",
+          "Find top 20 keywords competitors rank for that you don't",
+          "Map keywords to search intent: informational, commercial, transactional",
+          "Find striking distance keywords: position 5-20 for quick wins"
+        ]
+      },
+      {
+        "a": "Eagle",
+        "t": "Content strategy",
+        "items": [
+          "Build topic cluster map: 1 pillar + 10 supporting posts per theme",
+          "Prioritize by: volume times difficulty times business value",
+          "Define content type per intent: guide, comparison, tool, landing page",
+          "Set publishing cadence: minimum 2-4 posts per week for compounding"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Execute content production",
+        "items": [
+          "Write pillar page (3000+ words, comprehensive, linkable)",
+          "Write supporting cluster posts targeting long-tail variants",
+          "Add internal links: each new post links to 3 existing posts",
+          "Optimize: title tag, H1, meta description, schema, alt text"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build link acquisition system",
+        "items": [
+          "Set up HARO or Qwoted for journalist link mentions",
+          "Build broken link finder workflow + outreach template",
+          "Create linkable assets: original research, free tools, data studies",
+          "Monthly: check new referring domains, disavow toxic links"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "cat": "💰 Monetize",
+    "title": "Digital Product Launch",
+    "purpose": "Launch and sell a digital product in 30 days",
+    "best": "Consultants, educators, creators, developers",
+    "chain": [
+      "Eagle",
+      "Rabbit",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Live product with sales page, email sequence, and first paying customers",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Validate the product idea",
+        "items": [
+          "Identify the most painful problem your audience pays to solve",
+          "Pre-sell before building: offer at 50% off, need 5 buyers to proceed",
+          "Determine format: PDF guide, video course, template pack, community",
+          "Run a 24-hour poll to validate the topic before building"
+        ]
+      },
+      {
+        "a": "Rabbit",
+        "t": "Create the content",
+        "items": [
+          "Outline: 5-7 core modules or sections",
+          "Create each section (minimum viable depth, not perfection)",
+          "Create bonus: 1 extra asset worth more than the product itself",
+          "Host on Gumroad, Lemon Squeezy, or Teachable"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build the sales system",
+        "items": [
+          "Write sales page: problem to solution to proof to offer to CTA",
+          "Set up 5-email welcome sequence for buyers",
+          "Set up affiliate program: 30-50% commission",
+          "Create promotional kit for affiliates with copy-paste content"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Launch and iterate",
+        "items": [
+          "Post launch announcement on Twitter, LinkedIn, newsletter, Reddit",
+          "Activate affiliates with promotional kit",
+          "Collect testimonials from first 10 buyers",
+          "A/B test headline after 100 visitors, optimize based on data"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "cat": "🤖 AI Product",
+    "title": "AI Agent System Build",
+    "purpose": "Design and ship a production AI agent with tools and memory",
+    "best": "Agentic apps, MCP tools, autonomous pipelines",
+    "chain": [
+      "Eagle",
+      "Owl",
+      "Beaver",
+      "Ant"
+    ],
+    "out": "Production-ready agent: tool definitions, system prompt, deploy config, test harness",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define agent strategy",
+        "items": [
+          "What task does this agent automate end-to-end?",
+          "What 3-5 tools does it need — search, write, notify, query, transform?",
+          "What is the failure mode if it goes wrong?",
+          "What is the max acceptable token cost per run?"
+        ]
+      },
+      {
+        "a": "Owl",
+        "t": "Design tool schemas",
+        "items": [
+          "Define each tool: name, description, input JSON schema, expected output",
+          "Decide execution order: sequential vs parallel vs conditional",
+          "Set guard rails: max_steps, timeout, retry policy",
+          "Plan memory: ephemeral (per-run) vs persistent (cross-run)"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build the implementation",
+        "items": [
+          "Implement each tool function with full error handling",
+          "Write system prompt: role + tools available + output format",
+          "Wire LLM call with tool_use support (Anthropic, OpenAI, or Groq)",
+          "Add structured logging for every tool call and result"
+        ]
+      },
+      {
+        "a": "Ant",
+        "t": "Test and harden",
+        "items": [
+          "Test happy path with representative inputs",
+          "Test each failure mode: tool error, LLM refusal, timeout",
+          "Add retry with exponential backoff on transient tool failures",
+          "Deploy with monitoring: alert on failure rate above 5%"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "cat": "📈 Business",
+    "title": "Community Growth Engine",
+    "purpose": "Build and grow a paid community from 0 to momentum",
+    "best": "Creator communities, SaaS user groups, learning cohorts",
+    "chain": [
+      "Eagle",
+      "Rabbit",
+      "Dolphin",
+      "Beaver"
+    ],
+    "out": "Community architecture, onboarding system, content calendar, and retention mechanics",
+    "steps": [
+      {
+        "a": "Eagle",
+        "t": "Define community strategy",
+        "items": [
+          "The one transformation members achieve in 90 days — must be specific and measurable",
+          "Platform: Circle (content-first), Skool (gamified), Discord (dev/creator)",
+          "Founding offer: first 50 at 50% off, locked price forever",
+          "Revenue model: free plus paid tier vs fully paid from day 1"
+        ]
+      },
+      {
+        "a": "Rabbit",
+        "t": "Set up and launch fast",
+        "items": [
+          "Create 5 core spaces: start-here, wins, resources, ask-anything, accountability",
+          "Write welcome sequence: Day 0 video, Day 3 check-in, Day 7 first win, Day 30 milestone",
+          "Invite first 10 members personally — do not automate this step",
+          "Run first live event within 7 days of launch, record it"
+        ]
+      },
+      {
+        "a": "Dolphin",
+        "t": "Design the experience",
+        "items": [
+          "Weekly rhythm: Monday post, Wednesday resource, Friday win share, Sunday challenge",
+          "Monthly: Week 1 live Q&A, Week 2 resource drop, Week 3 member spotlight, Week 4 sprint",
+          "Create the signature experience only your community has — this is your retention moat",
+          "Gamification: points for posts, badges for milestones, visible leaderboard"
+        ]
+      },
+      {
+        "a": "Beaver",
+        "t": "Build retention systems",
+        "items": [
+          "Day 45: annual plan offer — catches members before typical churn window",
+          "Referral: 1 month free per referral who stays 30 days",
+          "Churn alert: member inactive 14 days triggers personal DM from you",
+          "Alumni tier at 12 months: discounted rate, special badge, advisory role"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,217 @@
+[
+  {
+    "cat": "Role",
+    "mod": "act as an expert in [field] with 10+ years shipping production systems",
+    "tip": "Add seniority level — 'senior' vs 'principal' changes output depth"
+  },
+  {
+    "cat": "Role",
+    "mod": "give me the version a senior dev would write",
+    "tip": "Best for code — strips tutorials, adds error handling, real patterns"
+  },
+  {
+    "cat": "Role",
+    "mod": "you are a YC partner reviewing this idea",
+    "tip": "Forces brutal prioritization + market-size thinking"
+  },
+  {
+    "cat": "Role",
+    "mod": "think like a $10M ARR founder solving this",
+    "tip": "Unlocks operational wisdom, not just advice"
+  },
+  {
+    "cat": "Role",
+    "mod": "you are a staff engineer doing a code review",
+    "tip": "Gets security, scale, and edge-case concerns automatically"
+  },
+  {
+    "cat": "Output",
+    "mod": "don't explain, just do it",
+    "tip": "Eliminates preamble. Works best when prompt is already detailed"
+  },
+  {
+    "cat": "Output",
+    "mod": "respond only in JSON, no markdown fences",
+    "tip": "Critical for parsing in automation. Append JSON_GLOBAL rules too"
+  },
+  {
+    "cat": "Output",
+    "mod": "use markdown tables for comparisons",
+    "tip": "Forces structured output — easier to scan and copy"
+  },
+  {
+    "cat": "Output",
+    "mod": "give me a numbered list ranked by ROI",
+    "tip": "Turns brainstorm dumps into prioritized action"
+  },
+  {
+    "cat": "Output",
+    "mod": "output as a step-by-step SOP",
+    "tip": "Best for automation workflows and repeatable processes"
+  },
+  {
+    "cat": "Output",
+    "mod": "format as a complete file, no TODOs",
+    "tip": "Eliminates placeholder code — gets production-ready output"
+  },
+  {
+    "cat": "Output",
+    "mod": "give me 3 wildly different approaches",
+    "tip": "Breaks the average-output trap. Use before committing to one path"
+  },
+  {
+    "cat": "Reasoning",
+    "mod": "think step by step before answering",
+    "tip": "Triggers chain-of-thought — measurably improves complex reasoning"
+  },
+  {
+    "cat": "Reasoning",
+    "mod": "find the flaw in this reasoning first",
+    "tip": "Best adversarial prompt. Use before presenting plans to stakeholders"
+  },
+  {
+    "cat": "Reasoning",
+    "mod": "steelman the opposite view",
+    "tip": "Forces genuine counterarguments — not strawmen"
+  },
+  {
+    "cat": "Reasoning",
+    "mod": "what would change your answer?",
+    "tip": "Surfaces assumptions and sensitivities in any recommendation"
+  },
+  {
+    "cat": "Reasoning",
+    "mod": "cite your confidence level 1-10 per claim",
+    "tip": "Separates facts from speculation — essential for research prompts"
+  },
+  {
+    "cat": "Reasoning",
+    "mod": "identify second-order effects",
+    "tip": "Forces systems thinking beyond the immediate solution"
+  },
+  {
+    "cat": "Speed",
+    "mod": "give me the 80/20 version",
+    "tip": "Highest-leverage change. Add 'don't explain what you cut'"
+  },
+  {
+    "cat": "Speed",
+    "mod": "what's the one thing that matters most here?",
+    "tip": "Cuts analysis paralysis. Works for product, copy, and strategy"
+  },
+  {
+    "cat": "Speed",
+    "mod": "assume I'm an expert, skip the basics",
+    "tip": "Removes redundant context — cuts response length 40-60%"
+  },
+  {
+    "cat": "Speed",
+    "mod": "give me the MVP version first",
+    "tip": "Unlocks iterative building vs waiting for perfect output"
+  },
+  {
+    "cat": "Speed",
+    "mod": "what can I delete or simplify without losing value?",
+    "tip": "Best editing prompt. Apply after any long generation"
+  },
+  {
+    "cat": "Strategy",
+    "mod": "what would you do if this was your own business?",
+    "tip": "Gets honest, opinionated advice vs diplomatic hedging"
+  },
+  {
+    "cat": "Strategy",
+    "mod": "what am I missing or not asking that I should be?",
+    "tip": "#1 blind spot revealer. Use at end of strategy sessions"
+  },
+  {
+    "cat": "Strategy",
+    "mod": "be brutally honest, no diplomatic softening",
+    "tip": "Forces real assessment. Add 'I won't take it personally'"
+  },
+  {
+    "cat": "Strategy",
+    "mod": "rank these by impact",
+    "tip": "Turns idea lists into execution priority. Add 'with reasoning'"
+  },
+  {
+    "cat": "Strategy",
+    "mod": "what's the fastest path to first dollar?",
+    "tip": "Cuts scope creep on product builds. Revenue-first filter"
+  },
+  {
+    "cat": "Hack",
+    "mod": "pretend the answer is obvious and explain it simply",
+    "tip": "Breaks overthinking loops — surprisingly effective on complex topics"
+  },
+  {
+    "cat": "Hack",
+    "mod": "write this for someone who will implement it today",
+    "tip": "Adds urgency + specificity — removes theoretical hedging"
+  },
+  {
+    "cat": "Hack",
+    "mod": "what would a contrarian say about this?",
+    "tip": "Forces consideration of failure modes and market risks"
+  },
+  {
+    "cat": "Data",
+    "mod": "show me the SQL query, not just the result",
+    "tip": "Gets executable code instead of prose descriptions of what query to write"
+  },
+  {
+    "cat": "Data",
+    "mod": "profile before you optimize — what is the actual bottleneck?",
+    "tip": "Prevents premature optimization. Forces measurement-first thinking"
+  },
+  {
+    "cat": "Data",
+    "mod": "give me the EXPLAIN ANALYZE output interpretation",
+    "tip": "Turns database jargon into actionable index recommendations"
+  },
+  {
+    "cat": "Data",
+    "mod": "what metrics would a data engineer add to this schema?",
+    "tip": "Surfaces observability fields (created_at, updated_at, deleted_at, source) automatically"
+  },
+  {
+    "cat": "Agent",
+    "mod": "define the tools this agent needs before writing any code",
+    "tip": "Tool-first design prevents architecture rewrites. Define tool schemas upfront."
+  },
+  {
+    "cat": "Agent",
+    "mod": "what are the failure modes and how should each be handled?",
+    "tip": "Surfaces error states that most prompts skip. Critical for production agents."
+  },
+  {
+    "cat": "Agent",
+    "mod": "trace through one complete execution path step by step",
+    "tip": "Forces the AI to verify the logic before generating code"
+  },
+  {
+    "cat": "Agent",
+    "mod": "what external APIs or services does this depend on?",
+    "tip": "Maps all dependencies early — catches rate limits, auth requirements, costs"
+  },
+  {
+    "cat": "Productivity",
+    "mod": "give me a checklist I can follow without re-reading this",
+    "tip": "Converts explanations into executable checklists. Best for implementation guides."
+  },
+  {
+    "cat": "Productivity",
+    "mod": "what decision do I need to make first before proceeding?",
+    "tip": "Identifies the highest-leverage decision in any complex situation"
+  },
+  {
+    "cat": "Productivity",
+    "mod": "summarize this in 3 bullet points a 10-year-old could act on",
+    "tip": "Forces genuine simplification — not just shorter, but clearer"
+  },
+  {
+    "cat": "Productivity",
+    "mod": "what would I regret not knowing 6 months from now?",
+    "tip": "Unlocks forward-looking strategic advice vs present-state analysis"
+  }
+]

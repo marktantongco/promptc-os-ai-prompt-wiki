@@ -1,0 +1,363 @@
+[
+  {
+    "t": "glassmorphism",
+    "cat": "fx",
+    "d": "backdrop-filter:blur(20px) + rgba fill + 1px border at 12% opacity",
+    "tip": "Always pair with a colorful background behind it — glass on void-black does nothing",
+    "adv": "backdrop-filter:blur(20px) bg:rgba(255,255,255,0.06) border:1px solid rgba(255,255,255,0.12). Pair with vivid gradient background behind."
+  },
+  {
+    "t": "neo-brutalism",
+    "cat": "fx",
+    "d": "Thick black borders, flat color fills, hard drop shadows (no blur), oversized raw type",
+    "tip": "Works best monochromatic or with one saturated accent. Color + brutalism = chaos.",
+    "adv": "border:2-3px solid #000, box-shadow:4px 4px 0 #000 (no blur), flat fill, oversized raw type. Zero gradients, zero rounded corners."
+  },
+  {
+    "t": "bento grid",
+    "cat": "fx",
+    "d": "Asymmetric mosaic — cards spanning multiple columns/rows, single consistent gap",
+    "tip": "Gap consistency is the only rule. Vary cell size, not gap size.",
+    "adv": "CSS grid with named areas, consistent 16px gaps, cards spanning multiple columns. Each card = one focused content unit."
+  },
+  {
+    "t": "neon accent",
+    "cat": "fx",
+    "d": "Single saturated color against void-black. Everything else is neutral.",
+    "tip": "One accent per screen. Two accents = neither is special.",
+    "adv": "One saturated color (#4DFFFF or #FF4FD8) on #0B0D10 bg. Everything else is neutral. One accent per viewport maximum."
+  },
+  {
+    "t": "liquid gradient",
+    "cat": "fx",
+    "d": "Mesh gradient or animated blob that shifts hue — never static",
+    "tip": "Use CSS @keyframes on hue-rotate or a canvas/WebGL loop for motion version",
+    "adv": "CSS @keyframes on hue-rotate() or mesh gradient with animated positions. 8-12s loop. Background layer only, never foreground."
+  },
+  {
+    "t": "dark-mode native",
+    "cat": "fx",
+    "d": "Designed dark-first. Light mode is the adaptation.",
+    "tip": "Elevation changes on dark-native: higher = lighter. Opposite of light mode.",
+    "adv": "Base #0B0D10 or #111. Higher surface = slightly lighter (+8%). Use rgba overlays for elevation, not gray fills."
+  },
+  {
+    "t": "claymorphism",
+    "cat": "fx",
+    "d": "Inflated 3D soft shapes, multi-layer inner shadows, saturated pastel fills",
+    "tip": "inner-shadow: inset 0 -6px 12px rgba(0,0,0,0.2) is the key property",
+    "adv": "Large border-radius:24-32px, inner-shadow:inset 0 -6px 12px rgba(0,0,0,0.2), saturated pastel fills, inflated 3D appearance."
+  },
+  {
+    "t": "aurora gradient",
+    "cat": "fx",
+    "d": "Soft flowing color bands (green, violet, blue) with noise texture overlay",
+    "tip": "Low saturation + high blur radius + noise grain on top = aurora effect",
+    "adv": "Soft radial gradients (green, violet, blue) at 20-30% opacity + 40px blur + noise overlay at 4% opacity on top."
+  },
+  {
+    "t": "noise grain",
+    "cat": "fx",
+    "d": "SVG feTurbulence or CSS noise at 3-8% opacity for tactile depth",
+    "tip": "Add mix-blend-mode:overlay to make grain color-adaptive",
+    "adv": "SVG feTurbulence or CSS noise image at 3-6% opacity. Add mix-blend-mode:overlay for color-adaptive grain."
+  },
+  {
+    "t": "duotone",
+    "cat": "fx",
+    "d": "Map image shadows to one color, highlights to another — removes color, adds brand",
+    "tip": "Use CSS: filter:sepia(1) hue-rotate(Xdeg) saturate(Y) for quick duotone",
+    "adv": "CSS filter:sepia(1) hue-rotate(Xdeg) saturate(Y). Shadows map to brand color, highlights to white."
+  },
+  {
+    "t": "vignette",
+    "cat": "fx",
+    "d": "Radial-gradient overlay darkening edges toward center — focuses attention inward",
+    "tip": "radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%)",
+    "adv": "radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.65) 100%) on pseudo-element over full container."
+  },
+  {
+    "t": "scanline",
+    "cat": "fx",
+    "d": "Repeating 1-2px semi-transparent horizontal lines — retro CRT aesthetic",
+    "tip": "CSS: repeating-linear-gradient(transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)",
+    "adv": "repeating-linear-gradient(transparent 0, transparent 1px, rgba(0,0,0,0.08) 1px, rgba(0,0,0,0.08) 2px) background-size:100% 4px."
+  },
+  {
+    "t": "chromatic aberration",
+    "cat": "fx",
+    "d": "RGB channel offset creating color-fringe glitch effect at element edges",
+    "tip": "CSS filter:drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 cyan) on text or images",
+    "adv": "CSS filter:drop-shadow(2px 0 0 rgba(255,0,0,0.5)) drop-shadow(-2px 0 0 rgba(0,255,255,0.5)) on text or SVG edges."
+  },
+  {
+    "t": "mesh gradient",
+    "cat": "fx",
+    "d": "Multi-point gradient with color bleeding between anchors — no hard stops",
+    "tip": "Use Figma Mesh Gradient plugin or Three.js ShaderMaterial for animated version",
+    "adv": "4-6 radial-gradient circles at different coordinates, animate positions with @keyframes for a living background."
+  },
+  {
+    "t": "skeleton loading",
+    "cat": "motion",
+    "d": "Animated shimmer placeholder matching exact layout of pending content",
+    "tip": "Shape must mirror real content dimensions — not generic boxes. Use same border-radius.",
+    "adv": "Placeholder divs matching exact content dimensions. Shimmer: background:linear-gradient(90deg,#1a1a1a 25%,#2a2a2a 50%,#1a1a1a 75%) animated on X axis."
+  },
+  {
+    "t": "ambient motion",
+    "cat": "motion",
+    "d": "Subtle looping BG animation — slow float, soft pulse at <30% opacity",
+    "tip": "Never draw attention. Peripheral motion only. opacity < 0.3 is the rule.",
+    "adv": "CSS @keyframes translateY(-8px) over 6-8s ease-in-out infinite alternate. Max opacity 0.25. Peripheral only, never focal."
+  },
+  {
+    "t": "progressive disclosure",
+    "cat": "motion",
+    "d": "Reveal complexity only on demand — accordion, drill-down, hover expand",
+    "tip": "Default state shows essentials only. Complexity unlocks on explicit user action.",
+    "adv": "Default: essentials only. Reveal details on click/hover. max-height:0 to max-height:500px transition or accordion. Never show complexity upfront."
+  },
+  {
+    "t": "scroll-trigger",
+    "cat": "motion",
+    "d": "Animation fires at % viewport entry — GSAP ScrollTrigger or Framer viewport prop",
+    "tip": "GSAP: start:'top 80%' end:'top 20%' for clean entry/exit control",
+    "adv": "GSAP ScrollTrigger: gsap.from(el,{scrollTrigger:{trigger:el,start:'top 80%'},y:40,opacity:0,duration:0.6}). Or CSS @scroll-timeline."
+  },
+  {
+    "t": "stagger reveal",
+    "cat": "motion",
+    "d": "List items animate in sequence — 50-100ms delay between each element",
+    "tip": "Use CSS animation-delay:calc(var(--i)*60ms) for zero-JS stagger",
+    "adv": "CSS animation-delay:calc(var(--i)*60ms) on each child. opacity 0 to 1 + translateY 20px to 0 over 400ms ease-out."
+  },
+  {
+    "t": "spring physics",
+    "cat": "motion",
+    "d": "Easing with overshoot — Framer: type:'spring', stiffness:400, damping:30",
+    "tip": "High stiffness + low damping = snappy. Low stiffness + high damping = sluggish.",
+    "adv": "Framer: spring({stiffness:400,damping:30}). CSS: cubic-bezier(0.16,1,0.3,1). Controlled overshoot without infinite bounce."
+  },
+  {
+    "t": "magnetic button",
+    "cat": "motion",
+    "d": "Cursor proximity pulls button position — GSAP quickTo transform on mousemove",
+    "tip": "Clamp max pull to 30-40% of button size. Beyond that feels broken.",
+    "adv": "JS mousemove: calculate distance from center, gsap.quickTo moves element max 30% of its size toward cursor. Reset on mouseleave."
+  },
+  {
+    "t": "morph path",
+    "cat": "motion",
+    "d": "SVG path morphing between states — GSAP MorphSVGPlugin or Flubber.js",
+    "tip": "Source and target paths need same number of points for clean morph",
+    "adv": "GSAP MorphSVGPlugin.to(el,{morphSVG:targetPath}). Source and target must have same number of anchor points."
+  },
+  {
+    "t": "kinetic typography",
+    "cat": "motion",
+    "d": "Text that animates char-by-char, scrubs on scroll, or morphs between states",
+    "tip": "GSAP SplitText or Splitting.js for char-level control. CSS for word-level.",
+    "adv": "GSAP SplitText({type:'chars,words'}). gsap.from(split.chars,{opacity:0,y:20,stagger:0.04,duration:0.4}). Trigger on scroll or mount."
+  },
+  {
+    "t": "micro-interactions",
+    "cat": "motion",
+    "d": "Sub-200ms feedback on every state change — button press, checkbox, input shake",
+    "tip": "Every interaction needs a state. Default → hover → active → disabled → loading → success",
+    "adv": "hover:scale(1.02) 150ms ease-out. press:scale(0.97) 80ms ease-in. focus-visible ring 2px offset-2. loading spinner on async ops."
+  },
+  {
+    "t": "Three.js scene",
+    "cat": "3d",
+    "d": "WebGL 3D with camera, lights, mesh geometry + PBR materials, RAF loop",
+    "tip": "Use drei helpers (OrbitControls, Environment) to skip boilerplate. Install @react-three/drei",
+    "adv": "new THREE.Scene() + PerspectiveCamera(75,w/h,0.1,1000) + WebGLRenderer + AmbientLight + DirectionalLight. Use OrbitControls from drei."
+  },
+  {
+    "t": "WebGL shader",
+    "cat": "3d",
+    "d": "GLSL fragment/vertex shaders for GPU-computed visual effects",
+    "tip": "Start with Shadertoy examples. Always provide CSS fallback for low-end devices.",
+    "adv": "GLSL vertex passes UV coords, fragment uses time uniform for animation. Always provide CSS visual fallback for low-end devices."
+  },
+  {
+    "t": "particle system",
+    "cat": "3d",
+    "d": "GPU-instanced Points or tsParticles — avoid DOM-based particles entirely",
+    "tip": "Three.js Points + InstancedMesh. DOM particles > 200 will tank mobile.",
+    "adv": "new THREE.Points(new THREE.BufferGeometry(), new THREE.PointsMaterial({size:0.05})). Set 1000-5000 random positions in Float32Array."
+  },
+  {
+    "t": "GSAP timeline",
+    "cat": "3d",
+    "d": "Chained animation sequence with scrub, reverse, and repeat — gsap.timeline({paused:true})",
+    "tip": "paused:true on init, then .play() on trigger. Enables scroll-scrub and reversible animations."
+  },
+  {
+    "t": "GSAP ScrollTrigger",
+    "cat": "3d",
+    "d": "Pin, scrub, snap, and batch animations tied to scroll position",
+    "tip": "scrub:1 = smooth follow. scrub:true = instant. pin:true pauses scroll. Use markers:true for debug.",
+    "adv": "gsap.registerPlugin(ScrollTrigger); gsap.from(el,{scrollTrigger:{trigger:el,start:'top 80%',scrub:1},y:40,opacity:0})."
+  },
+  {
+    "t": "GSAP SplitText",
+    "cat": "3d",
+    "d": "Splits text into chars/words/lines for individual animation control",
+    "tip": "type:'chars,words' then stagger each char. Combine with ScrollTrigger for scroll-driven reveals.",
+    "adv": "const split=new SplitText(el,{type:'chars,words'}); gsap.from(split.chars,{opacity:0,y:20,stagger:0.04,ease:'power2.out'})."
+  },
+  {
+    "t": "GSAP Flip",
+    "cat": "3d",
+    "d": "Animates DOM layout changes — reorder, filter, show/hide with physics",
+    "tip": "Flip.fit() before DOM change, Flip.from(state) after. Zero manual positioning needed.",
+    "adv": "const state=Flip.getState(el); [apply DOM change]; Flip.from(state,{duration:0.5,ease:'power2.inOut'})."
+  },
+  {
+    "t": "Rive animation",
+    "cat": "3d",
+    "d": "State-machine interactive animation — reacts to user input in real time",
+    "tip": "Use Rive's state machine for button hover/press without JS. Lighter than Lottie.",
+    "adv": "Rive: use useRive() hook from the rive-app canvas package. Pass src, stateMachines, autoplay props."
+  },
+  {
+    "t": "Lottie",
+    "cat": "3d",
+    "d": "JSON-based After Effects export — frame-accurate vector animation",
+    "tip": "Optimize in LottieFiles editor first. Large Lottie files (>200kb) block LCP.",
+    "adv": "Lottie: use Lottie component from lottie pkg. Pass animationData, loop, style props. Optimize file size first."
+  },
+  {
+    "t": "tilt 3D",
+    "cat": "3d",
+    "d": "CSS perspective + rotateX/Y on mousemove — Vanilla Tilt or 10 lines of JS",
+    "tip": "Add perspective:1000px on parent. Clamp rotation to ±15deg max for comfort.",
+    "adv": "Parent: perspective:1000px. mousemove: el.style.transform=`rotateX(${-dy*.1}deg) rotateY(${dx*.1}deg)`. Clamp to max ±15deg."
+  },
+  {
+    "t": "editorial layout",
+    "cat": "layout",
+    "d": "Magazine-style: oversized type, text-image overlap, asymmetry, bleeds",
+    "tip": "Break the grid intentionally — one bleed element per section max",
+    "adv": "CSS grid named areas, display type clamp(48px,8vw,120px), text-image overlap with negative margins, full-bleed sections."
+  },
+  {
+    "t": "8pt grid",
+    "cat": "layout",
+    "d": "All spacing is a multiple of 8px — creates visual harmony without thinking",
+    "tip": "4px for tight internal spacing, 8px gaps, 16/24/32/48/64px for layout zones",
+    "adv": "All spacing values must be multiples of 8px: 8,16,24,32,48,64. Tight internal spacing: 4px. Component gap: 8px. Section: 48-64px."
+  },
+  {
+    "t": "fluid typography",
+    "cat": "layout",
+    "d": "Font sizes that scale between viewport sizes — clamp(min, fluid, max)",
+    "tip": "clamp(1rem, 2.5vw + 0.5rem, 3rem) — eliminates typography breakpoints",
+    "adv": "font-size:clamp(1rem, 2.5vw + 0.5rem, 3rem). Never use vw alone — always clamp between min and max values."
+  },
+  {
+    "t": "container queries",
+    "cat": "layout",
+    "d": "Components that respond to their container width, not viewport",
+    "tip": "@container (min-width: 400px) {} — enables true component-level responsiveness"
+  },
+  {
+    "t": "custom cursor",
+    "cat": "layout",
+    "d": "Replace OS cursor with SVG/div — tracks with GSAP quickTo for lag effect",
+    "tip": "Hide on touch devices: @media (pointer:coarse) { cursor: auto; }"
+  },
+  {
+    "t": "fiber optic bg",
+    "cat": "layout",
+    "d": "Thin luminous strands on dark canvas — Three.js Lines or canvas 2D with glow",
+    "tip": "Use ctx.shadowBlur=20 + ctx.strokeStyle='rgba(255,255,255,0.8)' on canvas",
+    "adv": "canvas 2D with animated bezier curves: ctx.shadowBlur=20, ctx.strokeStyle='rgba(77,255,255,0.8)', RAF loop updates positions."
+  },
+  {
+    "t": "blur overlay",
+    "cat": "layout",
+    "d": "backdrop-filter:blur(20px) for modals — check Firefox support",
+    "tip": "Add @supports not (backdrop-filter:blur()) fallback with semi-opaque solid bg",
+    "adv": "backdrop-filter:blur(20px). @supports not (backdrop-filter:blur()){background:rgba(11,13,16,0.92)} as fallback."
+  },
+  {
+    "t": "floating labels",
+    "cat": "layout",
+    "d": "Input placeholder rises to label on focus — CSS :focus + translateY",
+    "tip": "Never remove placeholder entirely. Use aria-label or title attribute as fallback",
+    "adv": "position:absolute label over input. On :focus or :not(:placeholder-shown): translateY(-24px) scale(0.8) with 200ms ease transition."
+  },
+  {
+    "t": "scroll-snap",
+    "cat": "layout",
+    "d": "CSS scroll-snap-type for carousel and page-based navigation",
+    "tip": "scroll-snap-type:x mandatory on container, scroll-snap-align:start on children",
+    "adv": "Container: overflow-x:scroll scroll-snap-type:x mandatory. Children: scroll-snap-align:start. Add scroll-padding-left on container."
+  },
+  {
+    "t": "masonry grid",
+    "cat": "layout",
+    "d": "Pinterest-style variable-height card layout",
+    "tip": "CSS grid-template-rows:masonry not supported everywhere — use JS masonry lib or columns:2-3",
+    "adv": "CSS columns:2 column-gap:16px. Children: break-inside:avoid. Or JS Masonry library. CSS masonry (grid-template-rows:masonry) is experimental."
+  },
+  {
+    "t": "data storytelling",
+    "cat": "data",
+    "d": "Sequence charts+annotations to guide viewer to insight",
+    "tip": "Start with the insight in the title. Every chart element supports one claim.",
+    "adv": "Put the insight in the chart title. Every annotation supports one claim. Remove all data that does not serve the story."
+  },
+  {
+    "t": "sparkline",
+    "cat": "data",
+    "d": "Inline micro-chart 24px tall — shows trend without axes, used in KPI cards",
+    "tip": "width:80px height:24px no axes no labels. SVG or canvas. Shows direction not values.",
+    "adv": "SVG path 80x24px, no axes, no labels. Smooth points with bezier. stroke:currentColor fill:none strokeWidth:1.5."
+  },
+  {
+    "t": "KPI card",
+    "cat": "data",
+    "d": "Value + delta vs prior period + sparkline + context label",
+    "tip": "4 elements: number, delta (% and absolute), sparkline, label. Missing any = incomplete.",
+    "adv": "Large number (clamp 28px,4vw,48px) + delta badge (color + % + absolute) + 80px sparkline + context label. No chart axes."
+  },
+  {
+    "t": "heat map",
+    "cat": "data",
+    "d": "2D grid where color intensity encodes value magnitude",
+    "tip": "Sequential scale (white to color) for one metric. Diverging for pos/neg (red-white-blue).",
+    "adv": "CSS grid cells with background:hsl(220,80%,calc(95% - value*60%)) for sequential scale. Tooltip shows value on hover."
+  },
+  {
+    "t": "waterfall chart",
+    "cat": "data",
+    "d": "Running total showing sequential additions and subtractions to final value",
+    "tip": "Best for financial breakdowns. Bars stacked not grouped. Use D3 or Recharts.",
+    "adv": "Stacked bars where each starts where previous ended. Green positive, red negative, gray subtotal. Use D3 or Recharts."
+  },
+  {
+    "t": "sankey diagram",
+    "cat": "data",
+    "d": "Flow viz where band width = quantity flowing between nodes",
+    "tip": "D3 sankey plugin. Best for: user journeys, budget allocation, conversion funnels.",
+    "adv": "D3 Sankey: use sankey() layout + sankeyLinkHorizontal() from d3 sankey plugin. Nodes=rects, links=paths, width=quantity."
+  },
+  {
+    "t": "variable font",
+    "cat": "motion",
+    "d": "Single font file with continuous weight/width axes — animate between values on scroll",
+    "tip": "font-variation-settings: 'wght' 100 to 900 animatable in CSS. One file, infinite styles.",
+    "adv": "font-variation-settings: wght 400. GSAP animate: gsap.to(el,{fontVariationSettings:'wght 900',scrollTrigger:{scrub:1}}). One file, infinite weight range."
+  },
+  {
+    "t": "text reveal",
+    "cat": "motion",
+    "d": "Chars/words/lines appear sequentially via clip-path or opacity stagger",
+    "tip": "GSAP SplitText + stagger 0.04s per char. CSS: clip-path:inset(0 100% 0 0) to inset(0 0 0 0).",
+    "adv": "clip-path:inset(0 100% 0 0) to inset(0 0% 0 0). Or GSAP: gsap.from(split.chars,{clipPath:'inset(0 100% 0 0)',stagger:0.04})."
+  }
+]

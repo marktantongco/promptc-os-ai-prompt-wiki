@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Rabbit",
+    "emoji": "🐇",
+    "mode": "Multiply Ideas",
+    "prompt": "Take this idea and multiply it into 10 different variations.\nFor each variation: change the angle, change the audience, change the format.\nPresent the results as a list of distinct ideas."
+  },
+  {
+    "name": "Owl",
+    "emoji": "🦉",
+    "mode": "Deep Analysis",
+    "prompt": "Think like an owl — slow, observant and analytical.\nExamine this problem from multiple perspectives and identify\nthe hidden factors most people overlook."
+  },
+  {
+    "name": "Ant",
+    "emoji": "🐜",
+    "mode": "Break Into Steps",
+    "prompt": "Think like an ant.\nBreak this goal into the smallest possible steps someone could realistically complete."
+  },
+  {
+    "name": "Eagle",
+    "emoji": "🦅",
+    "mode": "Big Picture Strategy",
+    "prompt": "Think like an eagle flying high above the landscape.\nExplain the long-term strategy behind this idea and how the pieces connect."
+  },
+  {
+    "name": "Dolphin",
+    "emoji": "🐬",
+    "mode": "Creative Solutions",
+    "prompt": "Think like a dolphin — curious, playful and inventive.\nGenerate creative solutions to this problem that most people wouldn't normally consider."
+  },
+  {
+    "name": "Beaver",
+    "emoji": "🦫",
+    "mode": "Build Systems",
+    "prompt": "Think like a beaver building a dam.\nDesign a practical system that solves this problem step by step."
+  },
+  {
+    "name": "Elephant",
+    "emoji": "🐘",
+    "mode": "Cross-Field Connections",
+    "prompt": "Think like an elephant with a powerful memory.\nConnect this idea to insights from other fields such as\npsychology, economics, science or history."
+  }
+]

@@ -1,0 +1,322 @@
+[
+  {
+    "rank": 1,
+    "cat": "🤖 Automation",
+    "title": "Automation Services",
+    "searches": "900k+/mo",
+    "why": "Businesses pay $500–5k/project and $200–2k/mo retainer to automate repetitive workflows. N8n, Make, and Zapier automations are the highest ROI service for solo operators.",
+    "pros": [
+      "Recurring retainer income",
+      "High ticket ($500–5k/project)",
+      "Deliver in hours not weeks",
+      "Templates make it nearly passive"
+    ],
+    "cons": [
+      "Client discovery takes time",
+      "API changes break automations",
+      "Maintenance overhead"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Freelance + retainer + template packs on Gumroad",
+    "prompt": "You are a senior automation consultant specializing in no-code/low-code business automation.\n\nCLIENT BRIEF\nBusiness type: [e.g. real estate agency, e-commerce store, SaaS company]\nCurrent manual process: [describe what they do manually]\nTools they already use: [e.g. Gmail, Notion, Airtable, Shopify]\nDesired outcome: [e.g. auto-send invoices, sync leads to CRM, notify team on new orders]\n\nDELIVERABLE\nDesign a complete automation workflow using [N8n / Make / Zapier] that:\n1. Identifies the trigger event\n2. Maps each automated action step-by-step\n3. Handles errors and edge cases\n4. Includes a testing checklist\n5. Estimates time saved per week\n\nOUTPUT FORMAT\n- Workflow diagram (text-based, node → node format)\n- Step-by-step setup instructions (numbered, copy-paste ready)\n- N8n JSON or Make scenario JSON if applicable\n- ROI calculation: hours saved × hourly rate\n- Upsell opportunities for this client"
+  },
+  {
+    "rank": 2,
+    "cat": "📦 SaaS",
+    "title": "SaaS Templates",
+    "searches": "720k+/mo",
+    "why": "Developers sell boilerplate SaaS starters for $49–299 one-time. Buyers save 40–80 hours of setup. Platforms: Gumroad, Lemon Squeezy, GitHub Sponsors.",
+    "pros": [
+      "100% passive after build",
+      "$49–299 per sale",
+      "Same product sold infinitely",
+      "Build once, earn forever"
+    ],
+    "cons": [
+      "Competitive market",
+      "Requires maintenance as deps update",
+      "Marketing effort upfront"
+    ],
+    "difficulty": "Intermediate",
+    "monetize": "Gumroad / Lemon Squeezy one-time + optional support tier",
+    "prompt": "You are a senior full-stack developer creating a production-ready SaaS starter template.\n\nTEMPLATE SPEC\nSaaS type: [e.g. B2B analytics, AI writing tool, booking system]\nTarget buyer: [indie hacker / agency / developer]\nPrice point: [free / $49 / $99 / $199]\n\nTECH STACK\n- Next.js 14 App Router\n- Supabase (DB + Auth + Storage)\n- Stripe (subscriptions + one-time payments)\n- Tailwind CSS + shadcn/ui\n- Resend (transactional email)\n\nREQUIRED FEATURES\n1. Auth: email/password + Google OAuth + magic link\n2. Billing: free tier + Pro plan ($X/mo) with Stripe\n3. Dashboard: user profile, usage stats, settings\n4. Subscription gating: protect Pro features\n5. Admin panel: user management, MRR dashboard\n6. Email: welcome, trial ending, payment failed\n\nOUTPUT\n- Complete folder structure\n- All source files (no TODOs, no lorem ipsum)\n- Database schema (SQL)\n- Stripe webhook handler\n- .env.local template with all required keys\n- README with 5-command setup\n- Landing page with pricing section"
+  },
+  {
+    "rank": 3,
+    "cat": "🎓 Consulting",
+    "title": "Training / Consulting",
+    "searches": "680k+/mo",
+    "why": "AI consulting rates: $75–300/hr. Prompt engineering courses sell for $97–497. The market is desperate for practitioners who can translate AI capability into business results.",
+    "pros": [
+      "$75–300/hr rate",
+      "High perceived value",
+      "Build authority fast",
+      "No inventory, no shipping"
+    ],
+    "cons": [
+      "Time-for-money ceiling",
+      "Client acquisition needed",
+      "Must stay current with AI"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Hourly consulting + cohort course + workshop ($197–497)",
+    "prompt": "You are an AI implementation consultant creating a consulting offer for [industry/niche].\n\nCONSULTING OFFER DESIGN\nTarget client: [e.g. marketing agencies, law firms, real estate teams]\nPain point: [what are they struggling with that AI can solve?]\nTransformation: [what does their workflow look like after working with you?]\n\nDELIVERABLE: Design a complete consulting productized service including:\n\n1. OFFER NAME & POSITIONING\n   - Service name (outcome-focused)\n   - One-liner value proposition\n   - Ideal client avatar (3 bullet points)\n\n2. SERVICE TIERS\n   Tier 1 - Audit ($497): 90-min AI readiness assessment + report\n   Tier 2 - Implementation ($2,500): 4-week workflow automation build\n   Tier 3 - Retainer ($1,500/mo): ongoing optimization + Slack access\n\n3. DISCOVERY CALL SCRIPT\n   - 5 qualifying questions\n   - Pain/cost/urgency framework\n   - Objection responses\n\n4. PROPOSAL TEMPLATE\n   - Problem restatement\n   - Proposed solution\n   - Timeline + milestones\n   - Investment + ROI projection\n\n5. DELIVERY FRAMEWORK\n   Week 1: Audit + toolstack recommendation\n   Week 2-3: Build + test automations\n   Week 4: Training + handoff + SOP documentation"
+  },
+  {
+    "rank": 4,
+    "cat": "🤖 AI",
+    "title": "AI Content Agency",
+    "searches": "520k+/mo",
+    "why": "Content agencies using AI produce 10× more output. Clients pay $1k–5k/mo for AI-assisted blog posts, social media, and email sequences. The competitive edge is speed + consistency.",
+    "pros": [
+      "High recurring revenue",
+      "AI does 80% of work",
+      "Scalable with templates",
+      "Global client base"
+    ],
+    "cons": [
+      "Content quality still needs human review",
+      "Market getting saturated",
+      "Clients may DIY eventually"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Monthly retainer $1k–5k/mo per client",
+    "prompt": "You are an AI content agency owner creating a content production system for [client niche].\n\nCLIENT: [e.g. SaaS startup, e-commerce brand, personal finance blogger]\nMONTHLY PACKAGE: [e.g. 4 blog posts + 20 social posts + 1 email sequence]\n\nCONTENT SYSTEM DESIGN\n\n1. BRAND VOICE DOCUMENT\n   Extract from: [paste client website URL or brand guidelines]\n   Output: tone (3 adjectives), vocabulary to use, vocabulary to avoid, content pillars (5)\n\n2. MONTHLY CONTENT CALENDAR\n   Week 1–4 breakdown:\n   - Blog topic + target keyword + word count\n   - 5 LinkedIn posts (hook + insight + CTA)\n   - 5 Twitter/X threads (numbered, 7 tweets each)\n   - Email subject lines (A/B variants)\n\n3. PRODUCTION PROMPT CHAIN\n   Step 1 — Research: \"Analyze top 5 articles ranking for [keyword]. Extract gaps.\"\n   Step 2 — Outline: \"Create H2/H3 outline targeting [keyword] with [word count].\"\n   Step 3 — Draft: \"Write section [X] using the brand voice document above.\"\n   Step 4 — Repurpose: \"Convert this blog post into 5 LinkedIn posts and 1 thread.\"\n\n4. QA CHECKLIST\n   - Fact-check statistics and claims\n   - Brand voice alignment (1–10 score)\n   - SEO: keyword density, meta description, internal links\n   - CTA present and specific"
+  },
+  {
+    "rank": 5,
+    "cat": "⚡ Prompt Eng",
+    "title": "Prompt Engineering",
+    "searches": "490k+/mo",
+    "why": "Prompt engineering is meta-skill that sells. Prompt packs ($9–99), courses ($197–997), and system prompt consulting ($500–5k) are all proven revenue streams.",
+    "pros": [
+      "Low barrier to entry",
+      "High perceived value",
+      "Evergreen demand",
+      "Multiple revenue channels"
+    ],
+    "cons": [
+      "Models change fast (prompts degrade)",
+      "Hard to patent or protect",
+      "Competition increasing"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Prompt packs (Gumroad $9–49) + course ($197+) + consulting",
+    "prompt": "You are a prompt engineering specialist creating a monetizable prompt product.\n\nPRODUCT TYPE: [Prompt Pack / System Prompt / Prompt Course Module]\nTARGET USER: [beginner / intermediate / advanced]\nUse case niche: [e.g. marketing copy, code review, product research, image generation]\n\nDELIVERABLE: Create a production-ready prompt product including:\n\n1. PROMPT PACK STRUCTURE (10 prompts minimum)\n   For each prompt:\n   - Title and use case\n   - The prompt (copy-paste ready, with [BRACKET] variables)\n   - Expected output description\n   - Pro tip: one thing that dramatically improves results\n   - Common mistake to avoid\n\n2. PROMPT QUALITY SCORING\n   Rate each prompt on:\n   - Clarity (1–10): Is the goal unambiguous?\n   - Constraints (1–10): Are quality guardrails explicit?\n   - Predictability (1–10): Same output every time?\n   - Reusability (1–10): Works across different inputs?\n\n3. SALES PAGE COPY\n   - Headline (outcome-focused)\n   - 5 bullet points (what you get)\n   - Social proof placeholder\n   - Price anchor + CTA"
+  },
+  {
+    "rank": 6,
+    "cat": "🔧 No-Code",
+    "title": "No-Code Tool Builder",
+    "searches": "410k+/mo",
+    "why": "No-code micro-tools built on Bubble, Glide, or Softr sell for $29–299. Calculators, generators, and converters with AI built-in are the fastest-growing category.",
+    "pros": [
+      "Build in hours not weeks",
+      "Low maintenance",
+      "AI makes simple tools powerful",
+      "Many monetization options"
+    ],
+    "cons": [
+      "Platform dependency",
+      "Limited customization",
+      "Bubble/Glide fees"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "One-time sale ($29–99) or freemium with Pro upgrade",
+    "prompt": "You are a no-code product developer creating a monetizable micro-tool.\n\nTOOL CONCEPT: [e.g. AI invoice generator, ROI calculator, social bio writer, resume scorer]\nTARGET USER: [freelancers / small business owners / job seekers]\nMonetization: [free with email capture / $9 one-time / freemium + $19/mo Pro]\n\nTOOL SPECIFICATION\n\n1. CORE FUNCTION\n   Input: [what does the user enter?]\n   Process: [what calculation or AI prompt runs?]\n   Output: [what does the user get?]\n\n2. TECH STACK OPTIONS (ranked by speed to launch)\n   Option A: Bubble.io — most features, visual dev, 2–4 hours\n   Option B: Glide — best for spreadsheet-backed tools, 1–2 hours\n   Option C: Softr + Airtable — best for directory/database tools\n   Option D: Next.js + Vercel + OpenAI — most custom, 4–8 hours\n\n3. AI PROMPT INTEGRATION\n   System prompt for the tool:\n   \"You are a [role]. The user provides [input type]. Output [format] that [outcome].\"\n\n4. LAUNCH CHECKLIST\n   - Landing page (Carrd or Framer, free)\n   - Email capture (Beehiiv or ConvertKit free)\n   - Payment (Gumroad, 0 setup cost)\n   - ProductHunt launch strategy"
+  },
+  {
+    "rank": 7,
+    "cat": "📧 Newsletter",
+    "title": "Newsletter Monetization",
+    "searches": "380k+/mo",
+    "why": "Newsletters at 1000 subscribers earn $500–5k/mo via sponsorships. At 5k subscribers: $2k–15k/mo. Beehiiv and Substack both have built-in monetization.",
+    "pros": [
+      "Compounding asset (subscribers grow)",
+      "Multiple revenue streams",
+      "You own the audience",
+      "AI can write 80% of content"
+    ],
+    "cons": [
+      "Slow to build (6–12 months to monetize)",
+      "Content consistency required",
+      "Open rates declining industry-wide"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Sponsorships + paid tier + digital products + consulting upsell",
+    "prompt": "You are a newsletter growth strategist designing a monetization system for [newsletter niche].\n\nNEWSLETTER DETAILS\nNiche: [e.g. AI tools for marketers, indie hacking, B2B sales]\nCurrent subscribers: [number]\nPlatform: [Beehiiv / Substack / ConvertKit]\nPublishing cadence: [weekly / twice-weekly]\n\nMONETIZATION STACK DESIGN\n\n1. REVENUE TIERS\n   Tier 1 — Free: 1x/week curated content + 1 sponsor slot ($X CPM)\n   Tier 2 — Paid ($9/mo): bonus deep-dives + community access + templates\n   Tier 3 — Sponsor package: dedicated send ($500–2,000 per send at 5k+ subs)\n\n2. CONTENT PRODUCTION SYSTEM (AI-assisted)\n   Monday: Research 5 AI tools → run each through evaluation prompt\n   Tuesday: Write newsletter using AI draft → human polish (30 min)\n   Wednesday: Schedule + set up sponsor link tracking\n\n3. GROWTH PLAYBOOK\n   - Referral program (Beehiiv native): 3 referrals = bonus resource\n   - Cross-promotion: swap mentions with 3 newsletters same size\n   - Lead magnet: [what 1-page resource gets your ideal reader to subscribe?]\n\n4. SPONSOR PITCH TEMPLATE\n   \"Hi [name], I run [newsletter] — [X] subscribers, [Y]% open rate.\n   Your [product] is perfect for my audience of [avatar description].\n   I offer [package details] at [$rate]. Here's my media kit: [link]\"\n\n5. AI CONTENT PROMPT\n   \"You are a newsletter writer for [niche]. Write a [word count] issue covering [topic].\n   Format: hook (2 sentences) → 3 insights → 1 tool recommendation → CTA.\n   Tone: [conversational/analytical/tactical]. Reading level: 8th grade.\""
+  },
+  {
+    "rank": 8,
+    "cat": "📱 Digital Products",
+    "title": "Digital Products",
+    "searches": "350k+/mo",
+    "why": "Digital products have 95%+ margins and zero fulfillment. Templates, ebooks, swipe files, and Notion dashboards sell 24/7 with zero active work after creation.",
+    "pros": [
+      "95%+ profit margin",
+      "Fully passive",
+      "No inventory",
+      "Global market"
+    ],
+    "cons": [
+      "Discoverability takes time",
+      "One-time purchases (not recurring)",
+      "Easy to copy"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Gumroad / Etsy / Notion marketplace — one-time + bundle upsell",
+    "prompt": "You are a digital product creator designing a high-converting product for [platform].\n\nPRODUCT TYPE: [Notion template / Figma UI kit / Prompt pack / Ebook / Swipe file / Excel tracker]\nTarget buyer: [who has this problem and will pay to solve it?]\nPlatform: [Gumroad / Etsy / Notion Marketplace / Framer Marketplace]\nPrice: [$9 / $19 / $49 / $99]\n\nPRODUCT DESIGN BRIEF\n\n1. PRODUCT TITLE (SEO-optimized for platform search)\n   Format: [Outcome] + [Product Type] + [For Who]\n   Example: \"AI Prompt Pack for Freelance Designers — 50 Copy-Paste Prompts\"\n\n2. PRODUCT CONTENTS (complete list)\n   - [Item 1]: [description + page count or number of items]\n   - [Item 2]: [description]\n   - Bonus: [what makes this feel like more than the price?]\n\n3. SALES COPY (for Gumroad/Etsy listing)\n   Headline: [specific outcome in ≤10 words]\n   Problem: [2 sentences — what frustration does this solve?]\n   Solution: [2 sentences — what transformation does this deliver?]\n   What's inside: [5 bullet points]\n   Social proof placeholder: \"Join [X]+ [avatar]s who use this to [outcome]\"\n\n4. PRODUCTION PROMPT\n   \"Create a complete [product type] for [target user] that helps them [specific outcome].\n   Include [specific sections/components]. Format as [file format].\n   Tone: [professional/playful/minimal]. No lorem ipsum. No placeholders.\""
+  },
+  {
+    "rank": 9,
+    "cat": "🔌 API Products",
+    "title": "API Wrapper Products",
+    "searches": "290k+/mo",
+    "why": "Wrapping AI APIs (OpenAI, ElevenLabs, Replicate) with a simpler interface and selling credits is a proven model. Minimal code, high perceived value.",
+    "pros": [
+      "High margins on credits",
+      "Recurring revenue",
+      "Technical moat",
+      "Scales automatically"
+    ],
+    "cons": [
+      "Dependent on upstream API",
+      "Pricing squeeze risk",
+      "Support overhead"
+    ],
+    "difficulty": "Intermediate",
+    "monetize": "Credit packs + monthly subscription — Stripe Billing",
+    "prompt": "You are an API product architect designing a monetizable AI API wrapper.\n\nAPI TO WRAP: [OpenAI GPT-4 / ElevenLabs voice / Replicate image / Deepgram transcription]\nProduct name: [what you're building]\nTarget customer: [developer / non-technical business owner / agency]\n\nPRODUCT ARCHITECTURE\n\n1. YOUR API LAYER\n   Endpoint: POST /api/generate\n   Auth: API key (Bearer token)\n   Rate limiting: [X requests/min by tier]\n   Input validation: [schema with zod or joi]\n   Output: standardized JSON response\n\n2. CREDIT SYSTEM\n   1 credit = 1 API call (or 1k tokens)\n   Free tier: 100 credits/month (acquisition)\n   Starter: $9/mo — 1,000 credits\n   Pro: $29/mo — 10,000 credits\n   Enterprise: Custom\n\n3. TECH STACK\n   Next.js API routes + Supabase (credits table + API key table) + Stripe\n   Database schema:\n   - users(id, email, stripe_customer_id)\n   - api_keys(id, user_id, key_hash, created_at)\n   - credit_ledger(id, user_id, amount, type, created_at)\n\n4. BILLING SETUP (Stripe)\n   - Subscription products for monthly plans\n   - Credit top-up one-time payment\n   - Webhook: invoice.paid → add credits to user\n\n5. LAUNCH PROMPT\n   \"Build a complete Next.js API wrapper for [upstream API] with:\n   Supabase credit tracking, Stripe billing, API key auth, rate limiting.\n   Provide complete source code, schema.sql, and .env.local template.\""
+  },
+  {
+    "rank": 10,
+    "cat": "🏘 Community",
+    "title": "Community + Membership",
+    "searches": "260k+/mo",
+    "why": "Paid communities on Circle, Discord, or Skool earn $1k–50k/mo. The key is a specific outcome promise + recurring value delivery. AI can generate 60%+ of the content.",
+    "pros": [
+      "Recurring revenue",
+      "Network effects",
+      "AI assists content creation",
+      "Premium positioning"
+    ],
+    "cons": [
+      "Requires active moderation",
+      "Churn if value drops",
+      "Slow to build critical mass"
+    ],
+    "difficulty": "Intermediate",
+    "monetize": "Monthly membership ($29–197/mo) + annual discount + courses upsell",
+    "prompt": "You are a community builder designing a paid membership for [niche].\n\nCOMMUNITY DETAILS\nNiche: [e.g. AI freelancers, SaaS founders, prompt engineers]\nPlatform: [Circle / Skool / Discord + Whop]\nMonthly price: [$29 / $49 / $97 / $197]\nCore promise: [what specific outcome does a member achieve in 90 days?]\n\nCOMMUNITY ARCHITECTURE\n\n1. SPACES / CHANNELS\n   #welcome — onboarding + introduce yourself prompt\n   #wins — weekly share format (template below)\n   #resources — curated links + AI tools\n   #ask-anything — questions get answered within 24hrs\n   #accountability — weekly goal thread\n\n2. RECURRING VALUE (monthly calendar)\n   Week 1: Live Q&A / office hours (60 min)\n   Week 2: Resource drop (prompt pack, template, swipe file)\n   Week 3: Member spotlight / case study\n   Week 4: Challenge or sprint (action-focused)\n\n3. ONBOARDING SEQUENCE\n   Day 0: Welcome email — \"Your first 3 actions\"\n   Day 3: Check-in prompt — \"What's your #1 goal this month?\"\n   Day 7: First win prompt — \"Share one thing you implemented\"\n   Day 30: Milestone check — \"Here's what you've unlocked\"\n\n4. AI CONTENT SYSTEM\n   Weekly prompt for community posts:\n   \"Write a [type] post for a [niche] community. Hook in line 1.\n   Share [insight/lesson/resource]. End with a question that gets replies.\n   Tone: [conversational]. Length: 150–200 words.\"\n\n5. RETENTION MECHANICS\n   - Progress tracking visible to member\n   - Annual plan offer at day 45 (save 2 months)\n   - Alumni tier at 12 months ($X/mo discounted)\n   - Referral reward: 1 free month per referral\""
+  },
+  {
+    "rank": 11,
+    "cat": "📱 App Dev",
+    "title": "Mobile App Development",
+    "searches": "620k+/mo",
+    "why": "Solodev agencies charge $5k–50k for app builds. With AI, one developer can deliver in days what used to take weeks. React Native + Expo has made cross-platform viable for small teams.",
+    "pros": [
+      "High ticket ($5k–50k per project)",
+      "Reusable templates across clients",
+      "Growing demand from non-technical founders",
+      "React Native: one codebase, iOS + Android"
+    ],
+    "cons": [
+      "App Store approval process (7-14 days)",
+      "Device testing overhead",
+      "Push notification complexity",
+      "Client expects free bug fixes forever"
+    ],
+    "difficulty": "Intermediate",
+    "monetize": "Project fee + retainer + template pack on Gumroad",
+    "prompt": "You are a senior React Native developer who ships apps for non-technical founders.\nWhen I describe an app idea:\n- Immediately identify the 3 screens that must exist at launch (not nice-to-haves)\n- Propose the data model (3-5 core entities max for MVP)\n- Specify the auth flow (social login vs email — which and why)\n- Identify which React Native libraries are required (with exact npm package names)\n- Flag App Store review risks before I waste time building\n\nApp idea: [describe your app here]\nTarget: [iOS only / Android only / both]"
+  },
+  {
+    "rank": 12,
+    "cat": "🎯 Coaching",
+    "title": "Coaching & Course Creation",
+    "searches": "580k+/mo",
+    "why": "The coaching industry is $20B+ and growing. AI lets one coach create 10× the content. Courses on Teachable/Kajabi routinely earn $10k–100k launches with an engaged email list of 2000+.",
+    "pros": [
+      "$500–5000 per client (1:1)",
+      "Courses sell 24/7 (passive)",
+      "AI creates content at scale",
+      "No physical product or inventory"
+    ],
+    "cons": [
+      "Results-dependent (clients must implement)",
+      "Content creation is ongoing",
+      "Market is saturated — niche down ruthlessly",
+      "Refund rates 5-15% on courses"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "1:1 coaching ($500–5000) → group program → self-paced course ($197–997)",
+    "prompt": "You are a course creation expert. When I describe my expertise:\n- Identify the one transformation students pay for (not the topic — the outcome)\n- Structure a 5-module curriculum where each module = one week of work\n- Write the sales page in PAS format (Problem → Agitation → Solution)\n- Design a 3-tier pricing structure (self-paced / group / VIP)\n- Identify the fastest path to first 10 students\n\nMy expertise: [what I know deeply]\nTarget student: [who struggles with what]\nDesired outcome: [what does the student achieve after completing?]"
+  },
+  {
+    "rank": 13,
+    "cat": "🎬 Video",
+    "title": "Video Production & Editing",
+    "searches": "410k+/mo",
+    "why": "Demand for video content has outpaced supply. AI video tools (Descript, Opus Clip, RunwayML) mean one editor can produce 10× the output. Agencies charge $500–3000 per video.",
+    "pros": [
+      "$500–3000 per video",
+      "Subscription retainers ($1500–5000/mo)",
+      "AI tools multiply output",
+      "High demand from podcasters, YouTubers, coaches"
+    ],
+    "cons": [
+      "Highly competitive on platforms",
+      "Commoditizing with AI tools",
+      "Client taste is subjective",
+      "Revision cycles extend timelines"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Per-video fee → monthly retainer → productized clips package",
+    "prompt": "You are a video content strategist and editor. When I give you a video brief:\n- Identify the hook (first 3 seconds — what makes someone stop scrolling?)\n- Structure the content arc: problem → insight → proof → action\n- List exact editing techniques that fit this content style\n- Suggest 3 thumbnail concepts with emotional trigger + text overlay\n- Recommend distribution: which 3 platforms and what format per platform\n\nVideo brief: [describe the video topic and goal]\nCreator: [who is making this — their niche and style]\nPlatform: [YouTube / TikTok / Instagram / LinkedIn]"
+  },
+  {
+    "rank": 14,
+    "cat": "🔧 No-Code",
+    "title": "No-Code Development",
+    "searches": "380k+/mo",
+    "why": "No-code tools (Bubble, Webflow, Framer, Glide, Softr) have reached production quality. Founders pay $3k–15k for no-code MVPs. AI + no-code means one operator can build and maintain full products.",
+    "pros": [
+      "Build fast (days not months)",
+      "No hiring needed",
+      "Clients don't need ongoing dev",
+      "Templates are reusable assets"
+    ],
+    "cons": [
+      "Platform dependency risk",
+      "Performance ceilings for complex logic",
+      "Vendor lock-in",
+      "Limited for complex data operations"
+    ],
+    "difficulty": "Beginner",
+    "monetize": "Project fee ($3k–15k) + monthly maintenance ($500–2k) + templates on Gumroad",
+    "prompt": "You are a no-code expert. When I describe a product or feature:\n- Recommend the best tool (Bubble / Webflow / Framer / Glide / Softr / Airtable) and explain why\n- Identify the 3 workflows that must be built first\n- Spot which requirement will be hardest in no-code (and the workaround)\n- Estimate realistic build time in hours\n- Flag any features that require native code (know the limits)\n\nProduct to build: [describe your product]\nBudget: [what the client can spend]\nTimeline: [when it needs to launch]"
+  },
+  {
+    "rank": 15,
+    "cat": "📦 SaaS",
+    "title": "Micro-SaaS",
+    "searches": "290k+/mo",
+    "why": "Micro-SaaS ($500–5k MRR) is the most achievable indie model. One developer, one specific problem, $29–99/mo pricing. Acquired by larger SaaS players or become lifetime passive income.",
+    "pros": [
+      "Build in 1 weekend",
+      "$29–99/mo per customer",
+      "No team needed",
+      "Acquirable at 3-5× ARR"
+    ],
+    "cons": [
+      "Finding the right problem is hard",
+      "Marketing is the hard part",
+      "Support overhead grows with customers",
+      "Copycats appear at $10k MRR"
+    ],
+    "difficulty": "Intermediate",
+    "monetize": "$29–99/mo subscription → sold for 3-5× ARR ($30k–500k)",
+    "prompt": "You are a micro-SaaS architect. When I describe a problem:\n- Validate: is someone already paying for a solution? (good sign — means demand exists)\n- Define the absolute minimum feature set for first paying customer\n- Propose pricing: free tier limits + paid tier value metric\n- Identify the acquisition channel (SEO, integrations marketplace, Reddit, cold email)\n- Design the 1-weekend build plan (Saturday: core + auth. Sunday: payment + deploy)\n\nProblem: [what workflow is painful and repetitive for [who]]\nBuilder skills: [what stack you're comfortable with]"
+  }
+]

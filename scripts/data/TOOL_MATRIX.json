@@ -1,0 +1,290 @@
+[
+  {
+    "cat": "Frontend",
+    "items": [
+      {
+        "id": "nextjs",
+        "label": "Next.js 15",
+        "deploy": [
+          "Vercel",
+          "Railway",
+          "Fly.io",
+          "Cloudflare"
+        ],
+        "strength": "SSR+SSG+PPR, App Router, edge-ready, React Server Components",
+        "weakness": "Vercel-optimized, config complexity",
+        "free": true,
+        "tip": "Use next/cache with revalidate for ISR. Avoid getServerSideProps in App Router."
+      },
+      {
+        "id": "svelte",
+        "label": "SvelteKit 2",
+        "deploy": [
+          "Vercel",
+          "Netlify",
+          "Cloudflare",
+          "Fly.io"
+        ],
+        "strength": "Tiny bundle, Svelte 5 runes, zero-runtime reactivity",
+        "weakness": "Smaller UI library ecosystem",
+        "free": true,
+        "tip": "Use adapter-cloudflare for edge deploy. Svelte 5 runes replace Svelte stores."
+      },
+      {
+        "id": "astro",
+        "label": "Astro 5",
+        "deploy": [
+          "Netlify",
+          "Cloudflare",
+          "Vercel"
+        ],
+        "strength": "Zero JS default, islands architecture, content collections",
+        "weakness": "Not for heavy interactivity",
+        "free": true,
+        "tip": "Use content:collections for blog/docs. Islands for interactive components only."
+      },
+      {
+        "id": "vite",
+        "label": "React + Vite 6",
+        "deploy": [
+          "GitHub Pages",
+          "Netlify",
+          "Vercel",
+          "Fly.io"
+        ],
+        "strength": "Fastest HMR, SPA, flexible, massive ecosystem",
+        "weakness": "No SSR without Vite SSR plugin or wrapper",
+        "free": true,
+        "tip": "Use React Query for data fetching. Zustand for state. TanStack Router for routing."
+      },
+      {
+        "id": "nuxt",
+        "label": "Nuxt 4",
+        "deploy": [
+          "Vercel",
+          "Netlify",
+          "Cloudflare"
+        ],
+        "strength": "Vue 3 + SSR/SSG/SPA in one, auto-imports, Nitro server engine",
+        "weakness": "Vue ecosystem smaller than React",
+        "free": true,
+        "tip": "Nitro runs on any runtime including Cloudflare Workers. Use useFetch for SSR-safe fetching."
+      },
+      {
+        "id": "remix",
+        "label": "Remix / React Router 7",
+        "deploy": [
+          "Vercel",
+          "Fly.io",
+          "Railway",
+          "Cloudflare"
+        ],
+        "strength": "Nested routes, loader/action pattern, progressive enhancement",
+        "weakness": "Different mental model from Next.js",
+        "free": true,
+        "tip": "Loaders run on server per-route. Actions handle mutations. No useState for server data."
+      }
+    ]
+  },
+  {
+    "cat": "Database",
+    "items": [
+      {
+        "id": "supabase",
+        "label": "Supabase",
+        "deploy": [
+          "Vercel",
+          "Railway",
+          "Netlify"
+        ],
+        "strength": "Postgres + Auth + Storage + Realtime + Edge Functions",
+        "weakness": "Free tier pauses after 7 days inactivity",
+        "free": true,
+        "tip": "Set up a cron ping to prevent sleep. Use RLS on every table — never bypass."
+      },
+      {
+        "id": "turso",
+        "label": "Turso (libSQL)",
+        "deploy": [
+          "Cloudflare",
+          "Railway",
+          "Vercel"
+        ],
+        "strength": "SQLite at edge, 500 free DBs, 1B row reads/mo, no cold start",
+        "weakness": "SQLite not for complex multi-table joins",
+        "free": true,
+        "tip": "Use Drizzle ORM. Create a DB per tenant for multi-tenant apps (500 free DBs is generous)."
+      },
+      {
+        "id": "neon",
+        "label": "Neon Postgres",
+        "deploy": [
+          "Vercel",
+          "Railway",
+          "Render"
+        ],
+        "strength": "Serverless Postgres, DB branching, never pauses, connection pooling",
+        "weakness": "Connection pooling required for serverless",
+        "free": true,
+        "tip": "Always use connection pooler URL for serverless functions. Direct URL only for migrations."
+      },
+      {
+        "id": "pocketbase",
+        "label": "PocketBase 0.22",
+        "deploy": [
+          "Fly.io",
+          "Railway",
+          "Self-hosted"
+        ],
+        "strength": "Single Go binary: DB+Auth+Files+Admin UI+Hooks. No config.",
+        "weakness": "Self-managed, not auto-scaling",
+        "free": true,
+        "tip": "Extend with Go hooks or JS hooks (pb_hooks). Pairs perfectly with Fly.io free VMs."
+      },
+      {
+        "id": "d1",
+        "label": "Cloudflare D1",
+        "deploy": [
+          "Cloudflare Workers/Pages"
+        ],
+        "strength": "SQLite at edge, 5M reads/day free, co-located with Workers",
+        "weakness": "Write-heavy workloads hit limits quickly",
+        "free": true,
+        "tip": "Use for read-heavy data. Combine with KV for high-read cache layer."
+      },
+      {
+        "id": "mongodb",
+        "label": "MongoDB Atlas",
+        "deploy": [
+          "Any"
+        ],
+        "strength": "Flexible document model, Atlas free 512MB, built-in search",
+        "weakness": "512MB limit hits fast, M0 cluster has no SLA",
+        "free": true,
+        "tip": "Enable Atlas Search (free) for full-text. Use $lookup sparingly — prefer embedding."
+      }
+    ]
+  },
+  {
+    "cat": "AI Provider",
+    "items": [
+      {
+        "id": "groq",
+        "label": "Groq API",
+        "tier": "Free",
+        "strength": "Fastest inference globally (700+ tok/s), Llama3/Mixtral/Gemma, 14k tokens/min free",
+        "weakness": "Rate limits on free tier, limited model selection",
+        "tip": "Use for real-time streaming chat. groq-sdk npm package. Add retry with exponential backoff."
+      },
+      {
+        "id": "ollama",
+        "label": "Ollama (Local)",
+        "tier": "Free forever",
+        "strength": "100% free, private, 100+ models, runs offline, no rate limits",
+        "weakness": "Needs GPU/RAM locally, not hostable without a server",
+        "tip": "Use llama3.1:8b for most tasks. codellama for code. qwen2.5-coder for Python/JS coding."
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini 2.0 Flash",
+        "tier": "Free tier",
+        "strength": "1M context window, multimodal (image+audio+video), 1500 req/day free",
+        "weakness": "Google data terms, privacy concerns for sensitive data",
+        "tip": "Use for long-document analysis, image understanding, and multimodal workflows."
+      },
+      {
+        "id": "cerebras",
+        "label": "Cerebras Inference",
+        "tier": "Free tier",
+        "strength": "Wafer-scale chip — 2000+ tokens/sec on Llama3.1-70B, generous free tier",
+        "weakness": "Limited model selection, newer platform",
+        "tip": "Fastest large-model inference available. Free tier sufficient for most prototypes."
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter",
+        "tier": "Free models",
+        "strength": "100+ models, free tier includes Llama/Mistral/Gemma, unified API key",
+        "weakness": "Latency varies by provider, reliability depends on upstream",
+        "tip": "Use ':free' suffix models for zero cost. Set fallback models in request for reliability."
+      },
+      {
+        "id": "nvidia",
+        "label": "Nvidia Nemotron",
+        "tier": "Free credits",
+        "strength": "Nemotron-4 340B, enterprise-grade, Nvidia API free credits on signup",
+        "weakness": "Credits limited, not a long-term free solution",
+        "tip": "Best for enterprise reasoning tasks. Nemotron-4 340B outperforms GPT-4 on many benchmarks."
+      },
+      {
+        "id": "opencode",
+        "label": "OpenCode / Qwen",
+        "tier": "Free",
+        "strength": "Alibaba Qwen2.5-Coder-32B free on HuggingFace, top coding benchmark scores",
+        "weakness": "HF inference can be slow under load, rate limited",
+        "tip": "Use via HuggingFace Inference API (free). Qwen2.5-Coder-32B beats GPT-4 on HumanEval."
+      },
+      {
+        "id": "together",
+        "label": "Together AI",
+        "tier": "Free credits",
+        "strength": "$25 free credits on signup, Llama/Mistral/Qwen, fast inference",
+        "weakness": "Credits expire, no perpetual free tier",
+        "tip": "Redeem $25 signup credits immediately. Use for fine-tuning experiments and batch jobs."
+      },
+      {
+        "id": "cloudflareai",
+        "label": "Cloudflare Workers AI",
+        "tier": "Free",
+        "strength": "10k neurons/day free, runs in Workers at edge, no cold start",
+        "weakness": "Limited model selection, smaller context windows",
+        "tip": "Use for lightweight inference at edge. AI Gateway adds caching + rate limiting on top."
+      }
+    ]
+  },
+  {
+    "cat": "Payments",
+    "items": [
+      {
+        "id": "stripe",
+        "label": "Stripe Billing",
+        "tier": "No monthly fee",
+        "strength": "Industry standard, subscriptions+one-time+credits, best webhook reliability",
+        "weakness": "2.9%+30c per txn, requires business entity in some regions",
+        "tip": "Use Stripe Billing for subscriptions. Payment Links for quick one-time sales with zero code."
+      },
+      {
+        "id": "lemon",
+        "label": "Lemon Squeezy",
+        "tier": "No monthly fee",
+        "strength": "Merchant of record (handles VAT/tax globally), digital products focus",
+        "weakness": "8-10% total fees, less flexible than Stripe",
+        "tip": "Use if you want zero tax complexity. They handle all global VAT automatically."
+      },
+      {
+        "id": "polar",
+        "label": "Polar.sh",
+        "tier": "No monthly fee",
+        "strength": "GitHub-native, built for OSS devs, issue funding, 5% fee",
+        "weakness": "Smaller audience, newer platform",
+        "tip": "Best for OSS projects. GitHub Sponsors integration. Benefit-based subscriptions."
+      },
+      {
+        "id": "gumroad",
+        "label": "Gumroad",
+        "tier": "No monthly fee",
+        "strength": "Built-in marketplace discovery, easiest setup, digital product focus",
+        "weakness": "10% fee, limited customization, no subscriptions on free",
+        "tip": "Use for one-time digital products. 10% fee is high but zero setup cost. Good for testing demand."
+      },
+      {
+        "id": "whop",
+        "label": "Whop",
+        "tier": "No monthly fee",
+        "strength": "Built-in community features, Discord integration, great for courses+communities",
+        "weakness": "3-3.5% fee, newer platform",
+        "tip": "Best for community memberships. Built-in access control for Discord/Telegram."
+      }
+    ]
+  }
+]

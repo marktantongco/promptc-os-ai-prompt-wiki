@@ -1,0 +1,351 @@
+[
+  {
+    "bad": "nice",
+    "good": "clear and intentional",
+    "level": "beginner",
+    "tip": "Specificity forces the AI to make design decisions instead of guessing"
+  },
+  {
+    "bad": "cool",
+    "good": "high-contrast and dynamic",
+    "level": "beginner",
+    "tip": "Name the visual property — contrast, motion, density"
+  },
+  {
+    "bad": "modern",
+    "good": "[select aesthetic keyword below]",
+    "level": "beginner",
+    "isAesthetic": true,
+    "tip": "'Modern' means nothing to an AI. Pick a named style."
+  },
+  {
+    "bad": "awesome",
+    "good": "visually striking and purposeful",
+    "level": "beginner",
+    "tip": "Every element must justify its existence"
+  },
+  {
+    "bad": "good design",
+    "good": "typographically strong with clear visual hierarchy",
+    "level": "beginner",
+    "tip": "Hierarchy = size+weight+spacing+color in that order"
+  },
+  {
+    "bad": "beautiful",
+    "good": "visually precise with intentional contrast ratio",
+    "level": "beginner",
+    "tip": "Beauty is subjective. Contrast ratio is measurable."
+  },
+  {
+    "bad": "simple",
+    "good": "reduced to essential elements only",
+    "level": "beginner",
+    "tip": "Minimalism is a decision, not a default"
+  },
+  {
+    "bad": "clean",
+    "good": "uncluttered with 8pt grid spacing and intentional whitespace",
+    "level": "beginner",
+    "tip": "Name the spacing system — 4pt, 8pt, 12pt"
+  },
+  {
+    "bad": "professional",
+    "good": "polished, authoritative, and on-brand",
+    "level": "beginner",
+    "tip": "On-brand = specific color, type, motion tokens"
+  },
+  {
+    "bad": "user-friendly",
+    "good": "frictionless with intuitive affordances and 44px touch targets",
+    "level": "beginner",
+    "tip": "Touch targets are measurable. Frictionless is a UX goal."
+  },
+  {
+    "bad": "responsive",
+    "good": "fluid grid at 375/768/1280/1920px breakpoints with touch target compliance",
+    "level": "beginner",
+    "tip": "Name the breakpoints. Responsive without breakpoints is guesswork."
+  },
+  {
+    "bad": "fast",
+    "good": "LCP<2.5s, CLS<0.1, FID<100ms, initial JS<200kb",
+    "level": "beginner",
+    "tip": "Web Vitals are the standard — use them directly"
+  },
+  {
+    "bad": "make it pop",
+    "good": "increase contrast ratio and focal-point visual weight",
+    "level": "misconception",
+    "tip": "'Pop' = contrast + proximity + size. Define which."
+  },
+  {
+    "bad": "just add animations",
+    "good": "define trigger, duration, easing, and purpose first",
+    "level": "misconception",
+    "tip": "Animation without purpose = distraction"
+  },
+  {
+    "bad": "make it minimal",
+    "good": "remove every element that doesn't serve a function",
+    "level": "misconception",
+    "tip": "Minimalism is ruthless subtraction, not sparse decoration"
+  },
+  {
+    "bad": "dark mode version",
+    "good": "redesign contrast, color semantics, and elevation for dark-native",
+    "level": "misconception",
+    "tip": "Inverting light mode ≠ dark mode. Elevation logic changes."
+  },
+  {
+    "bad": "mobile-friendly",
+    "good": "mobile-first: design at 375px viewport before scaling up",
+    "level": "misconception",
+    "tip": "Mobile-friendly = afterthought. Mobile-first = constraint-driven design."
+  },
+  {
+    "bad": "add whitespace",
+    "good": "apply 8pt baseline grid with intentional visual rhythm",
+    "level": "misconception",
+    "tip": "Random whitespace looks accidental. Grid-based spacing looks designed."
+  },
+  {
+    "bad": "accessible",
+    "good": "WCAG AA: 4.5:1 text contrast, 3:1 UI contrast, keyboard-navigable, aria-labels on all interactive elements",
+    "level": "misconception",
+    "tip": "Accessibility is measurable. Name the standard."
+  },
+  {
+    "bad": "smooth animation",
+    "good": "cubic-bezier(0.16,1,0.3,1) 320ms spring easing with controlled overshoot",
+    "level": "advanced",
+    "tip": "Spring easing feels physical. Ease-in-out feels digital."
+  },
+  {
+    "bad": "glassmorphism",
+    "good": "backdrop-filter:blur(20px), background:rgba(255,255,255,0.06), border:1px solid rgba(255,255,255,0.12)",
+    "level": "advanced",
+    "tip": "Specify all three properties — blur, fill opacity, border opacity"
+  },
+  {
+    "bad": "good typography",
+    "good": "modular scale 1.25, line-height 1.6 body/1.1 display, tabular-nums for data, clamp() for fluid sizing",
+    "level": "advanced",
+    "tip": "Modular scale creates harmony. clamp() removes media query bloat."
+  },
+  {
+    "bad": "interactive",
+    "good": "hover 150ms ease-out, press 80ms scale(0.97), focus-visible 2px ring offset-2",
+    "level": "advanced",
+    "tip": "Spec all three states. Consistency = quality signal."
+  },
+  {
+    "bad": "loading state",
+    "good": "skeleton shimmer matching exact content shape, 400ms shimmer loop, fade-in on content arrival",
+    "level": "advanced",
+    "tip": "Skeleton must mirror real content layout — not generic rectangles"
+  },
+  {
+    "bad": "write good copy",
+    "good": "hook (problem) → agitation → solution → proof → CTA. One idea per sentence.",
+    "level": "hack",
+    "tip": "PAS framework converts better than feature lists"
+  },
+  {
+    "bad": "make it SEO-friendly",
+    "good": "semantic HTML landmarks, schema.org JSON-LD, OG tags, canonical URLs, LCP image preloaded",
+    "level": "hack",
+    "tip": "SEO is technical. Name every attribute."
+  },
+  {
+    "bad": "add error handling",
+    "good": "typed errors, retry with exponential backoff, fallback UI, error boundary, toast notification with action",
+    "level": "hack",
+    "tip": "Error handling has 5 layers. Name which ones you want."
+  },
+  {
+    "bad": "make it scalable",
+    "good": "stateless functions, horizontal scaling, read replicas for DB, CDN for assets, queue for async jobs",
+    "level": "hack",
+    "tip": "Scalability is architecture. Name the pattern."
+  },
+  {
+    "bad": "secure it",
+    "good": "input validation (zod), parameterized queries (no SQL injection), CORS policy, rate limiting, JWT rotation",
+    "level": "hack",
+    "tip": "Security is a checklist. Give the AI the checklist."
+  },
+  {
+    "bad": "track users",
+    "good": "define event taxonomy: event_name, properties:{}, user_id, timestamp — then implement",
+    "level": "beginner",
+    "tip": "Taxonomy first, SDK second. Retrofitting analytics is 10x harder."
+  },
+  {
+    "bad": "add analytics",
+    "good": "instrument: page_view, session_start, [feature]_clicked, [goal]_completed, error_occurred",
+    "level": "beginner",
+    "tip": "5 events well-tracked beats 50 events inconsistently tracked."
+  },
+  {
+    "bad": "show a chart",
+    "good": "line chart for trends over time, bar for comparisons, scatter for correlations, funnel for conversion",
+    "level": "misconception",
+    "tip": "Chart type = data relationship. Pick the relationship, chart follows."
+  },
+  {
+    "bad": "good dashboard",
+    "good": "KPI cards (delta + sparkline) + trend chart + data table + filter panel + date range picker",
+    "level": "misconception",
+    "tip": "Every dashboard needs these 5. If it's missing one, it's incomplete."
+  },
+  {
+    "bad": "SEO-friendly",
+    "good": "semantic HTML landmarks, title+meta+OG per page, JSON-LD schema, canonical URL, LCP image preloaded with fetchpriority=high",
+    "level": "hack",
+    "tip": "SEO is 5 specific technical attributes. Name them all."
+  },
+  {
+    "bad": "write for SEO",
+    "good": "primary keyword in H1 + first 100 words + URL slug + meta description. Secondary keywords in H2s. Internal links to 3 related pages.",
+    "level": "hack",
+    "tip": "On-page SEO is a formula. Apply the formula, not the vibe."
+  },
+  {
+    "bad": "AI agent",
+    "good": "define: model, system prompt, tools (name+schema+execute), memory type, max_steps, output format",
+    "level": "misconception",
+    "tip": "An agent without defined tools is just a chatbot. Tools are what make it an agent."
+  },
+  {
+    "bad": "automate this",
+    "good": "trigger (event/schedule/webhook) → validate input → transform data → call API → handle errors → log result → notify on failure",
+    "level": "misconception",
+    "tip": "Automation has 7 required stages. Missing any one causes silent failures."
+  },
+  {
+    "bad": "AI workflow",
+    "good": "define: trigger source, data schema in, LLM call (model+prompt+output schema), tools available, error fallback, output destination",
+    "level": "advanced",
+    "tip": "LLM call is one step in the workflow, not the whole workflow."
+  },
+  {
+    "bad": "optimize the database",
+    "good": "add index on columns in WHERE/JOIN/ORDER BY clauses, use EXPLAIN ANALYZE, add connection pooling, cache hot queries in Redis",
+    "level": "advanced",
+    "tip": "Indexes solve 80% of DB performance issues. Run EXPLAIN first."
+  },
+  {
+    "bad": "make it faster",
+    "good": "profile first: measure LCP, TTFB, JS execution time, DB query time — then optimize the bottleneck only",
+    "level": "hack",
+    "tip": "Optimize the slowest thing, not everything. Profile before you optimize."
+  },
+  {
+    "bad": "add caching",
+    "good": "cache-aside for DB reads (Redis, 5min TTL), CDN for static assets (1yr cache-control), stale-while-revalidate for API responses",
+    "level": "advanced",
+    "tip": "Three separate cache layers. Each solves a different latency problem."
+  },
+  {
+    "bad": "any type",
+    "good": "unknown type with type narrowing, or define the exact interface",
+    "level": "advanced",
+    "tip": "'unknown' forces type checking. 'any' disables it. Never use 'any' in production."
+  },
+  {
+    "bad": "type assertion",
+    "good": "type guard function with isinstance check — never use 'as' without validation",
+    "level": "advanced",
+    "tip": "'as' is a lie to the compiler. Runtime errors follow. Use type guards."
+  },
+  {
+    "bad": "optional chaining",
+    "good": "explicit null checks with type narrowing — know when data can be null",
+    "level": "hack",
+    "tip": "Optional chaining hides bugs. Explicit checks surface them early."
+  },
+  {
+    "bad": "test it manually",
+    "good": "write unit test: arrange input, act, assert output matches expectation",
+    "level": "misconception",
+    "tip": "Manual testing doesn't scale. The test is the documentation."
+  },
+  {
+    "bad": "test the implementation",
+    "good": "test the behavior — what does the function do, not how it does it",
+    "level": "advanced",
+    "tip": "Testing implementation makes refactoring impossible. Test behavior only."
+  },
+  {
+    "bad": "mock everything",
+    "good": "test with real objects where possible; mock only external I/O (APIs, DBs)",
+    "level": "hack",
+    "tip": "Over-mocking creates tests that pass when production fails."
+  },
+  {
+    "bad": "mobile friendly",
+    "good": "mobile-first: design at 375px, then layer up with min-width media queries",
+    "level": "beginner",
+    "tip": "Mobile-first forces constraint-driven design. Desktop-first creates retrofits."
+  },
+  {
+    "bad": "touch event",
+    "good": "pointer events API — pointerdown/pointerup handles mouse + touch + stylus",
+    "level": "advanced",
+    "tip": "Touch events don't fire on desktop. Pointer events work everywhere."
+  },
+  {
+    "bad": "click handler",
+    "good": "pointer event + 44px minimum touch target + 8px gap between targets",
+    "level": "misconception",
+    "tip": "44px touch target is Apple HIG + WCAG requirement. Below it = failed accessibility."
+  },
+  {
+    "bad": "REST endpoint",
+    "good": "define: HTTP method + path + request schema + response schema + error codes",
+    "level": "beginner",
+    "tip": "An API without a schema is a guess. Define the contract before building."
+  },
+  {
+    "bad": "return 200 always",
+    "good": "HTTP 201 for created, 400 for validation, 401 for auth, 404 for missing, 422 for unprocessable, 500 for server error",
+    "level": "misconception",
+    "tip": "Correct status codes enable client-side error handling without parsing response bodies."
+  },
+  {
+    "bad": "API key in URL",
+    "good": "Authorization: Bearer token in header — never credentials in URL (they log)",
+    "level": "hack",
+    "tip": "URLs are logged everywhere. Headers are not. API keys in URLs leak to server logs, browser history, proxies."
+  },
+  {
+    "bad": "useEffect for everything",
+    "good": "useEffect for sync only — prefer useMemo, useCallback, derived state for transforms",
+    "level": "advanced",
+    "tip": "90% of useEffect usages are wrong. If you're deriving state, use useMemo. If you're handling events, use callbacks."
+  },
+  {
+    "bad": "prop drilling",
+    "good": "React Context for theme/auth, Zustand for cross-component state, URL params for navigation state",
+    "level": "misconception",
+    "tip": "Context for slow-changing global data. Zustand for fast-changing UI state. Not everything needs a store."
+  },
+  {
+    "bad": "key={index}",
+    "good": "key={item.id} — unique stable identifier from the data, never array index",
+    "level": "beginner",
+    "tip": "Index keys break animations, form state, and reconciliation. Always use a stable ID."
+  },
+  {
+    "bad": "px everywhere",
+    "good": "rem for text (respects user font preferences), px for borders/shadows, % for layout",
+    "level": "misconception",
+    "tip": "px ignores user accessibility settings. rem inherits from root. Mix intentionally."
+  },
+  {
+    "bad": "absolute position",
+    "good": "CSS Grid or Flexbox for layout — absolute only for overlays, tooltips, and decorative elements",
+    "level": "misconception",
+    "tip": "Absolute positioning breaks reflow. Grid/Flex adapts to content. Use absolute sparingly."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "n8n-content",
+    "label": "📝 Content Pipeline",
+    "tool": "n8n",
+    "trigger": "Schedule (daily 8am)",
+    "desc": "Auto-publish blog posts from Airtable → WordPress → social",
+    "prompt": "Design an n8n automation: content publishing pipeline.\n\nTRIGGER: Schedule — every day at 8:00 AM\nWORKFLOW\n1. Read Airtable → filter rows where status=\"Ready to Publish\"\n2. HTTP Request → WordPress REST API → create post (title, body, categories, tags)\n3. Wait 5 minutes\n4. Twitter/X node → post thread (hook + link)\n5. LinkedIn node → post article summary\n6. Airtable → update row status to \"Published\" + add published_url\n7. Slack → notify #content-team with title + links\n\nERROR HANDLING\n- On any step failure → Slack #alerts with error details + row ID\n- Retry: 3 times with 5-minute delay\n\nOUTPUT: n8n workflow JSON (importable), test payload, Airtable schema"
+  },
+  {
+    "id": "n8n-leads",
+    "label": "🎯 Lead Capture",
+    "tool": "n8n",
+    "trigger": "Webhook (form submit)",
+    "desc": "Typeform → qualify with AI → CRM → Slack notify",
+    "prompt": "Design an n8n lead qualification automation.\n\nTRIGGER: Webhook — fires on Typeform submission\nWORKFLOW\n1. Parse Typeform payload (name, email, company, revenue, use_case)\n2. OpenAI node → score lead 1-10 with reasoning:\n   \"Score this lead: [data]. Output JSON: {score, tier, reason, next_action}\"\n3. IF score >= 7 → HubSpot create contact (MQL) + notify #sales-hot in Slack\n4. IF score 4-6 → HubSpot create contact (lead) + add to nurture sequence\n5. IF score < 4 → add to low-priority list + send automated email only\n6. All leads → Google Sheets log (timestamp, score, tier, source)\n7. Send personalized welcome email via Resend based on tier\n\nOUTPUT: n8n JSON, OpenAI scoring prompt, HubSpot field mapping, email templates"
+  },
+  {
+    "id": "n8n-monitor",
+    "label": "🔔 Site Monitor",
+    "tool": "n8n",
+    "trigger": "Schedule (every 5 min)",
+    "desc": "Uptime + competitor price monitoring with AI summary",
+    "prompt": "Design an n8n site monitoring automation.\n\nTRIGGER: Schedule — every 5 minutes\nWORKFLOW — UPTIME CHECK\n1. HTTP Request → check your site (expect 200)\n2. IF non-200 → PagerDuty alert + Slack #incidents\n3. Measure response time → log to Google Sheets\n\nWORKFLOW — COMPETITOR MONITOR (daily)\n1. HTTP Request → scrape competitor pricing page\n2. OpenAI → extract prices: \"Extract pricing tiers as JSON from this HTML: [content]\"\n3. Compare to previous day's prices in Google Sheets\n4. IF any price changed → Slack #competitive-intel with diff summary\n5. Weekly → email digest of all price changes\n\nOUTPUT: two n8n JSONs (uptime + competitive), Google Sheets schema, Slack message templates"
+  },
+  {
+    "id": "make-invoice",
+    "label": "💰 Invoice Automation",
+    "tool": "Make",
+    "trigger": "New row in Airtable",
+    "desc": "Auto-generate PDF invoice → email → mark paid on webhook",
+    "prompt": "Design a Make (Integromat) invoice automation scenario.\n\nTRIGGER: Airtable — watch for new rows in Invoices table\nSCENARIO\nModule 1: Airtable → get invoice data (client, amount, line items, due date)\nModule 2: HTML Template → render invoice HTML using data\nModule 3: PDF.co or PDFMonkey → convert HTML to PDF\nModule 4: Gmail → send to client with PDF attachment\n  Subject: \"Invoice #{{invoice_id}} from [Company] — Due {{due_date}}\"\nModule 5: Airtable → update status to \"Sent\", add sent_at timestamp\nModule 6: Wait for webhook (payment provider callback)\nModule 7: On payment webhook → Airtable update status to \"Paid\" + send receipt\n\nRETRY: 3 attempts with exponential backoff on PDF/email failures\nOUTPUT: Make scenario JSON blueprint, HTML invoice template, webhook endpoint spec"
+  },
+  {
+    "id": "mcp-agent",
+    "label": "🤖 MCP Agent Pipeline",
+    "tool": "MCP",
+    "trigger": "User prompt / API call",
+    "desc": "Claude + MCP tools → autonomous research + write + publish",
+    "prompt": "Design an MCP agent pipeline for autonomous content research and publishing.\n\nMCP SERVER TOOLS TO BUILD\n1. search_web(query) → returns top 5 results with summaries\n2. read_url(url) → returns cleaned text content of any URL\n3. write_file(path, content) → saves output to filesystem\n4. publish_wordpress(title, body, tags) → publishes via WP REST API\n5. notify_slack(channel, message) → sends Slack notification\n\nAGENT SYSTEM PROMPT\n\"You are a content research agent. When given a topic:\n1. Search for 5 recent authoritative sources using search_web\n2. Read each source using read_url\n3. Synthesize key insights (no copying, only synthesis)\n4. Write a 1000-word expert article using the insights\n5. Save draft with write_file\n6. Publish with publish_wordpress\n7. Notify #content with notify_slack\nQuality bar: every claim must be sourced. No generic advice.\"\n\nCLAUDE DESKTOP CONFIG\n{ \"mcpServers\": { \"content-agent\": { \"command\": \"node\", \"args\": [\"/path/to/server.js\"] } } }\n\nOUTPUT: MCP server implementation, tool definitions, agent system prompt, test harness"
+  },
+  {
+    "id": "zapier-crm",
+    "label": "📊 CRM Sync",
+    "tool": "Zapier",
+    "trigger": "Multi-trigger",
+    "desc": "Sync leads across HubSpot, Gmail, Slack, and Google Sheets",
+    "prompt": "Design Zapier automations for a complete CRM sync system.\n\nZAP 1 — NEW EMAIL → CRM\nTrigger: Gmail — new email matching [your-sales@] recipient\nAction 1: Extract sender email + parse company from domain\nAction 2: HubSpot — create/update contact\nAction 3: Google Sheets — log email thread\n\nZAP 2 — CRM DEAL STAGE CHANGE\nTrigger: HubSpot — deal stage changed\nAction 1: Slack — notify #sales with deal name + new stage + owner\nAction 2: Google Calendar — if \"Demo Scheduled\" → create event\nAction 3: Gmail — if \"Proposal Sent\" → send follow-up reminder email in 3 days\n\nZAP 3 — PAYMENT → ONBOARDING\nTrigger: Stripe — payment succeeded\nAction 1: HubSpot — mark deal \"Closed Won\"\nAction 2: Slack — notify #wins with amount + client name\nAction 3: Notion — create client workspace from template\nAction 4: Gmail — send welcome email with onboarding link\n\nOUTPUT: Zapier workflow spec for each Zap, field mapping tables, Gmail filter syntax"
+  }
+]

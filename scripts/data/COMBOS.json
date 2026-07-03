@@ -1,0 +1,122 @@
+[
+  {
+    "combo": "🫧 Glass + Bento",
+    "els": "glassmorphism, bento grid, dark-mode",
+    "best": "Dashboards, data viz",
+    "psych": "Depth + hierarchy + scannability"
+  },
+  {
+    "combo": "💥 Brutal + Neon",
+    "els": "brutalist, neon accent, kinetic",
+    "best": "Landing pages, bold brands",
+    "psych": "Urgency + attention + focus"
+  },
+  {
+    "combo": "🌊 Liquid + Ambient",
+    "els": "liquid gradient, ambient motion",
+    "best": "Hero sections, immersive",
+    "psych": "Emotion + flow + atmosphere"
+  },
+  {
+    "combo": "📰 Editorial + Bento",
+    "els": "editorial, bento grid, progressive",
+    "best": "Content platforms, blogs",
+    "psych": "Authority + modern organization"
+  },
+  {
+    "combo": "✨ Micro + Skeleton",
+    "els": "micro-interactions, skeleton loading",
+    "best": "Apps, data-heavy interfaces",
+    "psych": "Reduced perceived wait time"
+  },
+  {
+    "combo": "🚀 Full Immersive",
+    "els": "kinetic, liquid, micro, ambient",
+    "best": "Marketing sites, launches",
+    "psych": "Maximum engagement"
+  },
+  {
+    "combo": "🎮 Cyberpunk Glow",
+    "els": "neon, chromatic, scanline, dark",
+    "best": "Gaming, crypto, tech",
+    "psych": "Futuristic + innovation"
+  },
+  {
+    "combo": "💎 Premium Minimal",
+    "els": "glass, noise grain, duotone",
+    "best": "Luxury brands",
+    "psych": "Exclusivity + sophistication"
+  },
+  {
+    "combo": "🧸 Playful 3D",
+    "els": "claymorphism, morph, tilt, cursor",
+    "best": "Kids apps, gamified",
+    "psych": "Friendly + approachable"
+  },
+  {
+    "combo": "🌐 Fiber Tech",
+    "els": "fiber, particles, mesh, liquid",
+    "best": "Telecom, networks",
+    "psych": "Connectivity + speed"
+  },
+  {
+    "combo": "🎬 Cinematic",
+    "els": "vignette, blur, kinetic, ambient",
+    "best": "Film, media",
+    "psych": "Movie-like atmosphere"
+  },
+  {
+    "combo": "📊 Isotype Data",
+    "els": "isotype, bento, skeleton, duotone",
+    "best": "Statistics, reports",
+    "psych": "Data digestible + memorable"
+  },
+  {
+    "combo": "⚡ Motion-First",
+    "els": "GSAP ScrollTrigger, stagger, spring, magnetic",
+    "best": "Portfolios, agencies, demos",
+    "psych": "Personality + craft + delight"
+  },
+  {
+    "combo": "🔮 AI Product UI",
+    "els": "ambient motion, progressive disclosure, mesh",
+    "best": "AI tools, chat, generative apps",
+    "psych": "Intelligence + calm + futurism"
+  },
+  {
+    "combo": "📊 Executive Dash",
+    "els": "skeleton loading, KPI cards, sparklines, filter",
+    "best": "Analytics, SaaS dashboards",
+    "psych": "Authority + clarity + trust"
+  },
+  {
+    "combo": "🎭 Editorial Dark",
+    "els": "editorial layout, dark-native, vignette, kinetic",
+    "best": "Media brands, premium content",
+    "psych": "Drama + authority + depth"
+  },
+  {
+    "combo": "🌱 Warm Minimal",
+    "els": "claymorphism, soft shadows, floating labels",
+    "best": "Health, wellness, consumer apps",
+    "psych": "Trust + approachability + calm"
+  },
+  {
+    "combo": "🔬 Data Dense",
+    "els": "bento grid, tabular nums, sparklines, duotone",
+    "best": "Finance, analytics, enterprise",
+    "psych": "Precision + information density"
+  },
+  {
+    "combo": "🎪 Expressive Gen-Z",
+    "els": "chromatic aberration, variable font, tilt 3D",
+    "best": "Fashion, gaming, youth brands",
+    "psych": "Identity + self-expression + edge"
+  },
+  {
+    "combo": "🏗 Developer Tool",
+    "els": "monospace type, dark-native, syntax highlight",
+    "best": "Dev tools, CLIs, technical SaaS",
+    "psych": "Craft + precision + legibility"
+  }
+]

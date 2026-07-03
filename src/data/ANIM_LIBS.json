@@ -1,0 +1,16 @@
+[
+  "Framer Motion (React — spring physics, layout animations)",
+  "GSAP + ScrollTrigger (cinematic scroll, scrub, pin)",
+  "GSAP + SplitText (kinetic typography, char-level)",
+  "GSAP + Flip (layout morphing, filter animations)",
+  "GSAP + MorphSVGPlugin (SVG path morphing)",
+  "Three.js (WebGL 3D scenes, shaders, particles)",
+  "React Three Fiber (Three.js in React components)",
+  "Rive (state-machine interactive animation)",
+  "Lottie / lottie-web (After Effects export playback)",
+  "Motion One (lightweight WAAPI alternative to GSAP)",
+  "Anime.js (lightweight, CSS + SVG + JS properties)",
+  "CSS-only (@keyframes, transitions, scroll-driven)",
+  "Reanimated 3 (React Native — 60fps native animations)",
+  "Moti (React Native + Reanimated declarative)"
+]

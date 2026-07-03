@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Self-Refinement Loop",
+    "when": "Any complex generation — code, copy, design, architecture",
+    "content": "Generate draft →\nCritique on: sophistication, uniqueness, performance, platform alignment →\nRefine once for structure →\nRefine once for polish and consistency →\nOutput final result only.\n\nMax: 2 refinement passes. 3 absolute maximum. Never regenerate from scratch.",
+    "howto": "APPEND TO END OF ANY PROMPT:\n\n---\nAfter generating your first draft, do NOT show it.\nInstead:\n1. Critique it — is it generic? Does every section earn its place?\n2. Refine once for structure — cut anything that doesn't serve the goal.\n3. Refine once for polish — fix inconsistencies, improve specificity.\nOutput the final version only. No commentary, no \"here's the refined version\".\n---\n\nEXAMPLE: \"Build a SaaS landing page for a time-tracking tool... [your full prompt] ...\nAfter generating, self-critique and refine twice. Output final only.\"\n\nBEST FOR: landing page copy, design specs, API docs, architecture decisions"
+  },
+  {
+    "label": "Chain-of-Thought",
+    "when": "Complex reasoning — system design, debugging, strategy",
+    "content": "Let's think step by step before answering.\n\nBefore you respond, silently:\n1. Identify what type of problem this is.\n2. List the key constraints and unknowns.\n3. Consider 2-3 different approaches.\n4. Select the best approach and state why in one sentence.\nThen answer.",
+    "howto": "ADD BEFORE YOUR ACTUAL REQUEST:\n\n---\nLet's think step by step. Before answering:\n1. Identify what type of problem this is.\n2. List the key constraints and unknowns.\n3. Consider 2-3 approaches.\n4. Select best approach — explain why in one sentence.\nThen answer.\n---\n\nEXAMPLE: \"Let's think step by step. Design a multi-tenant Postgres schema with\nrow-level security, soft deletes, and audit logs. [full spec]\"\n\nBEST FOR: system design, DB schema, multi-step flows, onboarding journeys, debugging"
+  },
+  {
+    "label": "Self-Consistency",
+    "when": "Creative decisions — layouts, headlines, color palettes",
+    "content": "Generate [6-12] variants silently.\nIdentify the strongest structural patterns across all variants.\nMerge the best attributes into one final output.\nDo not show the variants — output the merged final only.",
+    "howto": "INJECT MID-PROMPT before the generation instruction:\n\n---\nBefore committing to one solution, silently generate 6 different approaches.\nFor each, note its strongest quality and biggest weakness.\nIdentify 2-3 structural patterns that appear in the best approaches.\nMerge those patterns into one final, superior output.\nShow only the final merged result.\n---\n\nEXAMPLE: \"Design a hero section for an AI writing tool...\n[spec] ...generate 6 variants silently, merge the best, show final only.\"\n\nBEST FOR: hero sections, headline copy, nav patterns, pricing layouts, color palettes"
+  },
+  {
+    "label": "Tweak Protocol",
+    "when": "Iterating on existing output — change one thing precisely",
+    "content": "Refine [SPECIFIC ELEMENT] with [SPECIFIC CHANGE].\nLock: aesthetic, color palette, layout structure, font choices.\nPreserve: component hierarchy, existing interactions, accessibility.\nDo NOT: regenerate other sections, change tech stack, alter unrelated styles.\nOutput: only the changed element with surrounding context.",
+    "howto": "TEMPLATE (replace brackets):\n\n---\nRefine [SPECIFIC ELEMENT: \"the hero headline\"] \nwith [SPECIFIC CHANGE: \"make it more urgent, benefit-focused\"].\nLock: aesthetic, color palette, layout, font choices.\nPreserve: component hierarchy, interactions, accessibility.\nDo NOT: touch anything else.\nOutput: only the changed element with context for placement.\n---\n\nEXAMPLES:\n• \"Refine the CTA button copy with more urgency. Lock everything else.\"\n• \"Refine the card hover animation with a 3D tilt. Preserve layout.\"\n• \"Refine error handling to use typed errors + toast. Preserve all other logic.\"\n\nBEST FOR: iterating on live designs, A/B copy testing, polishing interactions"
+  },
+  {
+    "label": "Prompt Diff",
+    "when": "Before deploying prompts in production — A/B testing",
+    "content": "Compare Prompt A and Prompt B.\nFor each, score 1-10 on:\n- Clarity: Is the goal unambiguous?\n- Constraints: Are quality guardrails explicit?\n- Predictability: Would two AIs produce similar outputs?\n- Specificity: Is the output format fully defined?\n\nState which performs better and why (2 sentences).\nRewrite the weaker prompt using insights from the stronger one.",
+    "howto": "WRAPPER FOR A/B PROMPT TESTING:\n\n---\nCompare these two prompts. For each, score 1-10 on:\nClarity · Constraints · Predictability · Specificity\n\nPrompt A:\n[paste prompt A]\n\nPrompt B:\n[paste prompt B]\n\nOutput:\n1. Scores table\n2. Which performs better and why (2 sentences)\n3. Rewrite of the weaker prompt\n---\n\nBEST FOR: refining system prompts, automation workflows, before production deploy"
+  },
+  {
+    "label": "Zero-Shot CoT",
+    "when": "Quick boost on any prompt without restructuring",
+    "content": "Think carefully before answering. Show your reasoning.",
+    "howto": "SIMPLEST CoT HACK — append to any prompt:\n\n\"Think carefully before answering. Show your reasoning.\"\n\nOR for code specifically:\n\"Think step by step. Write pseudocode first, then implement.\"\n\nOR for decisions:\n\"List the tradeoffs before recommending.\"\n\nWHEN TO USE: when you get shallow or confidently wrong answers.\nTHE FIX: this single line measurably improves accuracy on complex tasks."
+  },
+  {
+    "label": "Role + Constraint Stack",
+    "when": "Any prompt — biggest quality multiplier per word added",
+    "content": "You are a [specific role] with [years] of experience in [domain].\nYou write for [audience level]. You prioritize [value 1] over [value 2].\nYou never [anti-pattern]. You always [standard].",
+    "howto": "STACK THESE THREE AT THE TOP OF ANY PROMPT:\n\n1. ROLE: \"You are a senior staff engineer who has shipped 3 production systems\n   handling 10M+ users. You write for practitioners, not beginners.\"\n\n2. CONSTRAINT: \"Prioritize correctness over brevity. No pseudocode. \n   No TODOs. Full error handling. TypeScript strict mode.\"\n\n3. ANTI-PATTERN: \"Never suggest 'you could also...' alternatives after \n   answering. Never hedge with 'this depends on your use case'. \n   Make a recommendation and commit to it.\"\n\nEXAMPLE COMBINED:\n\"You are a senior security engineer with 8 years in fintech.\nYou write for senior engineers, not beginners.\nPrioritize security correctness over simplicity.\nNever suggest multiple approaches — pick the best one and commit.\n[your actual request]\"\n\nIMPACT: adds ~2-3 quality points per prompt. Highest ROI enhancement."
+  }
+]

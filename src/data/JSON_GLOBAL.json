@@ -1,0 +1,1 @@
+"Respond EXCLUSIVELY with valid JSON — no explanations, no markdown fences, no extra text.\nUse double quotes only. No trailing commas. No comments inside JSON.\nUnknown values use \"TBD\". Output must pass JSON.parse() without errors."

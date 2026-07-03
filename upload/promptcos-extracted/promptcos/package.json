@@ -1,0 +1,19 @@
+{
+  "name": "promptc-os",
+  "version": "2026.4.0",
+  "private": true,
+  "description": "promptc OS — AI Prompt Engineering Master Reference",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}

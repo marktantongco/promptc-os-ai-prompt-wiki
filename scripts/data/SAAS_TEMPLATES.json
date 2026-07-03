@@ -1,0 +1,92 @@
+[
+  {
+    "rank": 1,
+    "title": "AI Writing Assistant",
+    "niche": "Productivity / Content",
+    "mrr": "$5k–50k/mo potential",
+    "stack": "Next.js + OpenAI + Stripe + Supabase",
+    "why": "Massive market. Jasper, Copy.ai, Writesonic all $1B+. Niche down to win.",
+    "prompt": "Build a niche AI writing assistant SaaS for [specific niche: e.g. real estate agents, lawyers, therapists].\n\nPRODUCT: [Niche] AI Writing Assistant\nStack: Next.js 14 + OpenAI API + Supabase + Stripe + Resend\n\nFEATURES\n- Auth: email + Google OAuth (Supabase)\n- 10 specialized writing templates for [niche]\n- Custom tone settings (formal/casual/technical)\n- History + saved outputs\n- Free tier: 5 generations/day\n- Pro ($29/mo): unlimited + API access\n\nSYSTEM PROMPT PER TEMPLATE\n\"You are an expert [niche professional]. Write [document type] for [use case].\nUse industry-specific terminology. Format: [structure]. Length: [words].\nTone: [professional/friendly]. Avoid: [list of things to exclude].\"\n\nOUTPUT: Complete Next.js app with all templates, Stripe subscription setup, usage tracking, and landing page copy."
+  },
+  {
+    "rank": 2,
+    "title": "Invoice + Billing SaaS",
+    "niche": "Finance / Freelance",
+    "mrr": "$3k–30k/mo potential",
+    "stack": "Next.js + Supabase + Stripe + PDF generation",
+    "why": "Every freelancer and small business needs invoicing. Sticky product — high retention.",
+    "prompt": "Build an invoice and billing SaaS for freelancers and small agencies.\n\nPRODUCT: Smart Invoice SaaS\nStack: Next.js 14 + Supabase + Stripe + React-PDF\n\nFEATURES\n- Client management (CRM lite)\n- Invoice builder (line items, tax, discount)\n- PDF generation and email delivery\n- Payment tracking (paid/overdue/draft)\n- Recurring invoice automation\n- Revenue dashboard (MRR, outstanding, paid this month)\n- Free tier: 3 clients, 5 invoices/mo\n- Pro ($19/mo): unlimited + recurring + custom branding\n\nKEY PROMPTS\nInvoice reminder email: \"Write a professional but friendly payment reminder for invoice #[X] for $[amount], due [date]. Client name: [name]. Keep it under 100 words.\"\nLate payment escalation: \"Write a firm but professional second reminder for an invoice [X] days overdue.\"\n\nOUTPUT: Complete source code, Supabase schema, Stripe webhook handler, PDF template, and email templates."
+  },
+  {
+    "rank": 3,
+    "title": "Link Shortener + Analytics",
+    "niche": "Marketing / Developer Tools",
+    "mrr": "$2k–20k/mo potential",
+    "stack": "Next.js + Cloudflare + Turso",
+    "why": "Simple to build, clear value, every marketer needs it. Bitly charges $35/mo — opportunity to niche.",
+    "prompt": "Build a link shortener SaaS with click analytics and UTM builder.\n\nPRODUCT: Smart Link SaaS\nStack: Next.js 14 + Cloudflare Workers (redirect speed) + Turso (edge SQLite) + Vercel\n\nFEATURES\n- Custom short links (yourname.co/link)\n- Click analytics: total clicks, unique visitors, countries, devices, referrers\n- UTM parameter builder\n- QR code generation\n- Link expiration + password protection\n- Free tier: 20 links, 1k clicks/mo\n- Pro ($12/mo): unlimited links, custom domain, API\n\nTRACKING IMPLEMENTATION\nOn redirect: log(ip_hash, user_agent, referer, country, timestamp) → Turso\nDashboard: aggregate queries by time period, group by country/device\n\nOUTPUT: Complete source code with Cloudflare Worker for redirects, analytics dashboard, and custom domain setup guide."
+  },
+  {
+    "rank": 4,
+    "title": "Waitlist Builder",
+    "niche": "Launch / Growth",
+    "mrr": "$1k–10k/mo potential",
+    "stack": "Next.js + Supabase + Resend",
+    "why": "Every startup needs a waitlist. Minimal features, huge demand during product launches.",
+    "prompt": "Build a waitlist SaaS with viral referral mechanics.\n\nPRODUCT: Viral Waitlist Builder\nStack: Next.js 14 + Supabase + Resend + Vercel\n\nFEATURES\n- Customizable waitlist page (logo, headline, email field)\n- Referral system: each signup gets unique link, move up for referrals\n- Real-time position counter (\"You're #247 — refer 3 friends to jump to #50\")\n- Email sequence: confirm → position update → early access notification\n- Dashboard: total signups, referral conversion, daily growth chart\n- Embed widget (iframe or JS snippet for existing sites)\n- Free tier: 1 waitlist, 100 signups\n- Pro ($19/mo): unlimited waitlists, custom domain, API\n\nREFERRAL LOGIC\nposition = base_position - (referrals × boost_value)\nSend email when: signup, referral made, position changes by 10+\n\nOUTPUT: Complete source code, email templates (Resend), referral tracking schema, embeddable widget JS."
+  },
+  {
+    "rank": 5,
+    "title": "Form Builder",
+    "niche": "Business / Developer Tools",
+    "mrr": "$5k–40k/mo potential",
+    "stack": "Next.js + Supabase + Stripe",
+    "why": "Typeform charges $50/mo. There's room for a niche (AI-powered, industry-specific, cheaper) form builder.",
+    "prompt": "Build an AI-powered form builder SaaS.\n\nPRODUCT: AI Form Builder\nStack: Next.js 14 + Supabase + Stripe + React-Hook-Form\n\nFEATURES\n- Drag-and-drop form builder (text, email, select, date, file upload, rating, NPS)\n- AI form generator: \"Create a client intake form for a graphic designer\" → instant form\n- Conditional logic (show field if answer = X)\n- Response dashboard with CSV export\n- Webhook + Zapier integration\n- Embed anywhere (iframe or JS)\n- Email notifications on submission\n- Free tier: 3 forms, 100 responses/mo\n- Pro ($24/mo): unlimited + file uploads + webhooks + custom domain\n\nAI FORM GENERATION PROMPT\n\"Generate a form schema as JSON for: [user description].\nInclude: field type, label, placeholder, required, validation rules, conditional logic.\nOutput valid JSON only. No explanation.\"\n\nOUTPUT: Complete source code, form schema spec, AI integration, and response analytics dashboard."
+  },
+  {
+    "rank": 6,
+    "title": "AI Chatbot Builder",
+    "niche": "Customer Support / SaaS",
+    "mrr": "$3k–25k/mo potential",
+    "stack": "Next.js + OpenAI + Supabase + Stripe",
+    "why": "Every business wants an AI chatbot. Intercom charges $74/mo. A niche chatbot builder (legal, medical, e-commerce) sells for $29–99/mo.",
+    "prompt": "Build a white-label AI chatbot builder SaaS — companies embed it on their site.\n\nPRODUCT: AI Chatbot Builder\nStack: Next.js 14 + OpenAI API + Supabase + Stripe + React + Vercel\n\nFEATURES\n- Chatbot creation: name, avatar, personality, knowledge base (file upload → embeddings)\n- Knowledge base: PDF/URL ingestion → text chunking → embeddings in Supabase pgvector\n- Embed code: <script> tag or iframe for any website\n- Conversation history: stored per visitor session\n- Analytics: total chats, top questions, satisfaction rating\n- Free tier: 1 chatbot, 100 messages/mo\n- Pro ($29/mo): 5 chatbots, 10k messages, custom domain\n\nRAG IMPLEMENTATION\n1. Upload PDF → extract text → chunk (500 tokens, 50 overlap)\n2. Embed chunks with OpenAI text-embedding-3-small\n3. Store in Supabase pgvector table (content, embedding, chatbot_id)\n4. On user message → embed query → similarity search → inject top 5 chunks as context\n5. GPT-4o-mini → answer with context only (no hallucination outside knowledge base)\n\nOUTPUT: Complete source with RAG pipeline, embed snippet generator, analytics dashboard"
+  },
+  {
+    "rank": 7,
+    "title": "Social Media Scheduler",
+    "niche": "Marketing / Creator Tools",
+    "mrr": "$2k–20k/mo potential",
+    "stack": "Next.js + Supabase + Twitter/LinkedIn APIs + Stripe",
+    "why": "Buffer charges $18/mo. A niche scheduler (for agencies, for specific platforms, with AI captions) carves out loyal segments.",
+    "prompt": "Build a social media scheduling SaaS with AI caption generation.\n\nPRODUCT: AI Social Scheduler\nStack: Next.js 14 + Supabase + Twitter/X API + LinkedIn API + OpenAI + Stripe\n\nFEATURES\n- Connect accounts: Twitter/X, LinkedIn, Instagram (via Meta API)\n- Post composer: text + image upload + link preview\n- AI caption generator: \"Generate 5 caption variations for this [topic] for [platform]\"\n- Calendar view: drag-and-drop scheduling\n- Queue: optimal posting times based on account analytics\n- Analytics: impressions, clicks, engagement per post\n- Free tier: 3 accounts, 10 scheduled posts/mo\n- Pro ($19/mo): 10 accounts, unlimited posts, analytics\n\nPOSTING QUEUE LOGIC\njobs table: (id, user_id, platform, content, media_url, scheduled_at, status)\nCron (every minute): SELECT jobs WHERE scheduled_at <= now() AND status='pending'\n→ post via platform API → update status='published' or status='failed'\n\nOUTPUT: Complete scheduler with cron worker, platform API integrations, calendar UI"
+  },
+  {
+    "rank": 8,
+    "title": "Notion Template Marketplace",
+    "niche": "Productivity / Creator Economy",
+    "mrr": "$1k–8k/mo potential",
+    "stack": "Next.js + Supabase + Stripe + Gumroad alternative",
+    "why": "The Notion template market generates $500k+/mo across creators. Building the marketplace itself captures 5-10% of all transactions.",
+    "prompt": "Build a Notion template marketplace with seller dashboard and buyer storefront.\n\nPRODUCT: Notion Template Marketplace\nStack: Next.js 14 + Supabase + Stripe Connect + Vercel\n\nMARKETPLACE FEATURES\nBuyer side:\n- Browse templates by category (productivity, business, personal)\n- Preview with screenshots + demo video embed\n- Instant delivery: Notion duplication link emailed on purchase\n\nSeller side:\n- Upload template: title, description, category, screenshots, price, Notion link\n- Stripe Connect: sellers receive 85% (marketplace takes 15%)\n- Dashboard: sales, revenue, reviews, refund requests\n\nPlatform features:\n- Stripe Connect Express onboarding for sellers\n- Escrow: hold 24hrs before releasing to seller\n- Review system: verified purchase required\n\nSTRIPE CONNECT FLOW\n1. Seller onboards via Stripe Connect Express\n2. Buyer pays → Stripe charges buyer, holds in platform account\n3. 24hrs later → Stripe Transfer to seller (85% of amount)\n\nOUTPUT: Complete marketplace with Stripe Connect, seller dashboard, buyer storefront"
+  },
+  {
+    "rank": 9,
+    "title": "AI Resume Builder",
+    "niche": "Career / Job Search",
+    "mrr": "$3k–30k/mo potential",
+    "stack": "Next.js + OpenAI + Supabase + Stripe + react-pdf",
+    "why": "Resume.io charges $24.95/mo. An AI resume builder with ATS optimization and job-specific tailoring is a high-demand, low-churn product.",
+    "prompt": "Build an AI-powered resume builder with ATS optimization.\n\nPRODUCT: AI Resume Builder\nStack: Next.js 14 + OpenAI + Supabase + react-pdf + Stripe\n\nFEATURES\n- Resume editor: drag-and-drop sections (experience, education, skills, projects)\n- AI enhancement: \"Rewrite this bullet point to be more impactful for [role]\"\n- ATS score: paste job description → score resume match (keyword analysis)\n- Job-specific tailoring: \"Optimize my resume for this job: [paste JD]\"\n- Templates: 5 ATS-safe designs (PDF export)\n- LinkedIn import: paste LinkedIn URL → auto-populate fields\n- Free tier: 1 resume, no AI features\n- Pro ($12/mo): unlimited resumes, AI rewriting, ATS scoring, 5 templates\n\nATS OPTIMIZATION PROMPT\n\"Analyze this resume vs this job description. Output JSON:\n{match_score: 0-100, missing_keywords: [], weak_bullets: [], suggestions: []}\"\n\nOUTPUT: Complete builder with PDF generation, ATS analyzer, AI rewriting UI"
+  },
+  {
+    "rank": 10,
+    "title": "White-Label Prompt Manager",
+    "niche": "Agency / Enterprise AI",
+    "mrr": "$5k–50k/mo potential",
+    "stack": "Next.js + Supabase + Stripe",
+    "why": "Agencies and enterprise teams need to manage hundreds of prompts across projects. No dominant solution exists under $100/mo. White-label adds agency revenue stream.",
+    "prompt": "Build a white-label prompt management SaaS for agencies and enterprise teams.\n\nPRODUCT: Prompt Manager Pro (white-label)\nStack: Next.js 14 + Supabase + Stripe + Vercel\n\nFEATURES\n- Prompt library: folders, tags, categories, search\n- Version control: prompt history + diff view + rollback\n- Variables: [BRACKET] syntax highlighted, fill-in form UI\n- Team sharing: roles (admin/editor/viewer), workspace per client\n- Prompt testing: A/B test with quality score (clarity/constraints/predictability)\n- API access: REST API to fetch prompts programmatically\n- White-label: custom domain, logo, color scheme per workspace\n- Pricing: Starter $19/mo (1 workspace) → Agency $99/mo (10 workspaces) → Enterprise custom\n\nWHITE-LABEL ARCHITECTURE\n- Each workspace has: custom_domain, logo_url, primary_color, brand_name\n- Middleware resolves custom domain → workspace_id → renders branded UI\n- Stripe per-workspace subscription (platform uses Stripe Connect or manual billing)\n\nOUTPUT: Complete prompt manager, version control system, API, white-label theming engine"
+  }
+]

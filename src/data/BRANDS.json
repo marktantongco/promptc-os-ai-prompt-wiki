@@ -1,0 +1,44 @@
+[
+  {
+    "id": "powerup",
+    "label": "powerUP",
+    "uc": "Motivational / Creator / Personal Brand",
+    "col": "#4DFFFF",
+    "prompt": "Brand essence: Activated potential. Directed energy. Intelligent lift.\n\nCOLOR PALETTE\n- Background: #0B0D10 (void black), #14161A (charcoal)\n- Accents (sparse): cyan #4DFFFF · violet #7B5CFF · magenta #FF4FD8 · amber #FFB000\n- Text: #FFFFFF (primary) · #A1A1AA (secondary) · #6B7280 (muted)\n\nTYPOGRAPHY\n- Display: Inter, Space Grotesk · Body: Inter · Mono: JetBrains Mono\n- Hero: clamp(3rem, 6vw, 6rem)\n\nMOTION\n- Bias: always upward\n- Easing: cubic-bezier(0.16, 1, 0.3, 1)\n- Duration: micro 180ms · standard 320ms · hero 4200ms\n\nDESIGN RULES\n- Typography-first — type does the work, effects support\n- Dark-mode native · One accent color per screen maximum\n- White space = intelligence, never fill it\n- No gradients unless motion-driven · No icons unless semantically necessary\n\nTONE: Confident. Modern. Calm. Inevitable.\nAVOID: over-decoration · excessive gradients · visual noise · SaaS clichés"
+  },
+  {
+    "id": "saas",
+    "label": "SaaS / B2B",
+    "uc": "SaaS Platform, B2B Product, Enterprise Tool",
+    "col": "#38bdf8",
+    "prompt": "Brand essence: Clarity that converts. Trust that scales. Tools that actually work.\n\nCOLOR PALETTE\nBackground: F8FAFC (light) / 0F172A (dark). Primary: 2563EB trust blue. Secondary: 7C3AED violet.\nAccent: 10B981 success. Warning: F59E0B. Error: EF4444. Text: 0F172A.\n\nTYPOGRAPHY\nDisplay: Inter Tight ExtraBold. Body: Inter. Mono: JetBrains Mono. Scale: 12/14/16/20/24/32/40px.\n\nMOTION\nDuration: 150ms micro, 250ms standard. NO hero animations. ease-out entries, ease-in exits.\nZero animations blocking user intent.\n\nDESIGN RULES\n1 Function before form. 2 Information hierarchy above all. 3 States for everything.\n4 Mobile-first. 5 WCAG AA minimum.\n\nVOICE: Clear. Competent. Empathetic. Never smug.\nAVOID: Buzzwords, fake social proof, dark patterns, cluttered dashboards."
+  },
+  {
+    "id": "ecomm",
+    "label": "E-commerce",
+    "uc": "Retail, DTC Brand, Product Marketplace",
+    "col": "#22c55e",
+    "prompt": "Brand essence: Desire made visible. Trust made immediate. Conversion made inevitable.\n\nCOLOR PALETTE\nCTA: maximum contrast to page background. Sale/urgency: EF4444 or F59E0B (sparingly).\nTrust signals: white backgrounds, high-contrast product photography.\n\nTYPOGRAPHY\nDisplay: ownable brand typeface (not generic). Body: System UI (fast load).\nPrice/number: font-variant-numeric:tabular-nums (numbers must align in columns).\n\nUX RULES\n1 CTA above fold on every product page.\n2 Price visible without hover. Shipping cost shown early.\n3 Cart from every page. Checkout in 3 steps max.\n4 Mobile: thumb-zone CTAs, 44px touch targets.\n5 Trust signals near CTA: reviews, security badges, return policy.\n\nVOICE: Aspirational but honest. Enthusiastic but not desperate.\nAVOID: Fake urgency, hidden fees, dark patterns, slow image loading."
+  },
+  {
+    "id": "fintech",
+    "label": "Fintech",
+    "uc": "Finance, Banking, Investment App",
+    "col": "#FFB000",
+    "prompt": "Brand essence: Money made clear. Risk made visible. Wealth made accessible.\n\nCOLOR PALETTE — CRITICAL MEANING RULES\nPositive/gain: 10B981 emerald ONLY. Negative/loss: EF4444 red ONLY.\nNEVER use red for branding. NEVER use green decoratively.\nPrimary brand: deep navy or forest green (stability). Background: FFFFFF / 0F172A.\n\nTYPOGRAPHY — MANDATORY\nNumbers: font-variant-numeric:tabular-nums (data must align).\nDisplay: Instrument Sans or Plus Jakarta Sans. Body: Inter. Mono: IBM Plex Mono.\n\nDATA VISUALIZATION RULES\n1 Color-code by meaning not aesthetics.\n2 Show uncertainty: error bars, confidence intervals.\n3 Zero-line always visible on charts.\n4 Currency: symbol + 2 decimal places + thousand separators always.\n5 Percentages: always show absolute value alongside.\n\nMOTION: Minimal. Number countup: 500ms max. Finance users are anxious.\nVOICE: Clear. Precise. Reassuring. Never patronizing.\nAVOID: Gambling language, hidden fees, false urgency."
+  },
+  {
+    "id": "insurance",
+    "label": "Insurance",
+    "uc": "Insurtech, Benefits Platform, Insurance Brand",
+    "col": "#7B5CFF",
+    "prompt": "Brand essence: Protection made personal. Claims made simple. Trust made tangible.\n\nCOLOR PALETTE\nPrimary: 1E3A5F deep navy (authority, stability, trust).\nSecondary: 2563EB action blue. Accent: 10B981 approval green.\nWarning: F59E0B. Error: EF4444. Background: FFFFFF. Surface: F0F4F8.\n\nCRITICAL COLOR MEANING\nGreen = approved / covered / positive. Red = denied / uncovered / urgent.\nBlue = action, CTA, links. Consistent meaning across ALL touchpoints.\n\nTYPOGRAPHY\nDisplay: Plus Jakarta Sans Bold (trustworthy, modern, human).\nBody: Inter (maximum readability for policy documents).\nNumbers: tabular-nums. Legal fine print: minimum 12px, never below WCAG AA.\n\nCOPY RULES\n1 Plain language over legal jargon. Every policy term gets a simple explanation.\n2 Covered = green check. Not covered = neutral gray (never red for not-covered).\n3 Price always transparent. No call-for-quote dark patterns.\n4 Claims process: exact steps, expected timeline, required documents listed.\n5 Social proof: real claim settlement data, not just star ratings.\n\nUX RULES\n1 Quote flow: max 3 steps before showing a price.\n2 Coverage comparison: side-by-side, no buried exclusions.\n3 Claims: one-tap start, photo upload, status tracking like a package.\n4 Documents: searchable, filterable, download as PDF.\n5 Notifications: claims updates, renewal reminders, payment confirmations.\n\nTRUST SIGNALS (non-negotiable near every CTA)\nLicensed status. AM Best or financial rating. Real avg claim processing times.\nPrivacy policy link near every data collection point.\n\nMOTION: Minimal and purposeful. Progress indicators for multi-step flows.\nStatus micro-animation: pending to approved (green sweep, 400ms).\nNEVER: spinners over 2s, confetti on claim submission.\n\nVOICE: Honest. Clear. Protective. Warm. Never cold or bureaucratic.\nAVOID: Fine print as design, ambiguous coverage, fear-based selling,\ncomplexity theater, dark patterns on cancellation flows."
+  },
+  {
+    "id": "agency",
+    "label": "Creative Agency",
+    "uc": "Design Studio, Production House",
+    "col": "#FF4FD8",
+    "prompt": "Brand essence: Ideas made real. Craft made obvious. Work that wins.\n\nCOLOR PALETTE\nPhilosophy: the work IS the brand. Neutral shell lets portfolio shine.\nBackground: 000000 or F5F5F0 — pick one, commit fully.\nAccent: ONE ownable color only (not cyan, not purple, not generic orange).\n\nTYPOGRAPHY\nDisplay: unusual, ownable — Roc Grotesk, Euclid Circular, Mabry Pro.\nBody: most neutral companion — GT America, Aktiv Grotesk.\nSize: LARGE. 80-120px display, 18px body minimum. Tight leading (0.9-1.0) for display.\n\nMOTION\nPage transitions: GSAP or Barba.js clip-path wipes.\nCursor: custom oversized dot/ring with magnetic pull on buttons.\nScroll velocity influences animation speed via GSAP ScrollTrigger.\nLoad sequence: logo reveal, content stagger, cursor activate.\n\nDESIGN RULES\n1 The work leads. UI never competes with portfolio.\n2 Whitespace is the design. Generous margins, radical restraint.\n3 One typeface mastered before adding another.\n4 Every hover state tells a story.\n5 Case study order: Problem, Process, Solution, Impact.\n\nVOICE: Confident to the point of understatement. Let the work talk.\nAVOID: Stock photos, generic templates, Lorem ipsum in production."
+  }
+]

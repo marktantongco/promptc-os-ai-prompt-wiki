@@ -1,0 +1,34 @@
+[
+  {
+    "id": "t1",
+    "label": "T1 — Role + Strict Schema",
+    "badge": "Zero-shot baseline",
+    "color": "#22c55e",
+    "when": "First attempt, any capable model",
+    "content": "You are an expert [role].\nAnalyze the input and respond EXCLUSIVELY with valid JSON.\nUse this exact schema:\n{\n  \"sitemap\": [ { \"page_slug\": \"\", \"page_title\": \"\", \"description\": \"\" } ],\n  \"pages\": {\n    \"<slug>\": {\n      \"sections\": [ { \"type\": \"\", \"heading\": \"\", \"content\": \"\" } ],\n      \"seo\": { \"meta_title\": \"\", \"meta_description\": \"\" }\n    }\n  },\n  \"global\": { \"site_title\": \"\", \"tagline\": \"\", \"color_palette\": \"\" },\n  \"image_prompts\": [ \"descriptive string for image generation\" ]\n}\nInput: [your input here]"
+  },
+  {
+    "id": "t2",
+    "label": "T2 — Few-Shot Examples",
+    "badge": "Best for local models",
+    "color": "#FF6B00",
+    "when": "Inconsistent output (Ollama/local)",
+    "content": "Example 1:\nInput: \"A freelance photographer portfolio site\"\nOutput: { ...valid JSON... }\n\nExample 2:\nInput: \"Local gym with classes and membership info\"\nOutput: { ...valid JSON... }\n\nNow process:\nInput: \"[real input]\"\nOutput:"
+  },
+  {
+    "id": "t3",
+    "label": "T3 — CoT + Structured",
+    "badge": "Fix structural errors",
+    "color": "#FFB000",
+    "when": "Structure keeps being wrong",
+    "content": "First, think step by step internally:\n1. Identify core type and goals.\n2. List essential entities.\n3. For each entity, identify 3-5 properties.\n4. Draft descriptions and labels.\nThen output ONLY the JSON. Do not include your reasoning in the output."
+  },
+  {
+    "id": "t4",
+    "label": "T4 — Validation Guardrails",
+    "badge": "Always append",
+    "color": "#4DFFFF",
+    "when": "Add to any technique above",
+    "content": "After generating the JSON:\n- Verify all keys match the schema exactly\n- Check for trailing commas and fix them\n- Confirm all strings use double quotes\n- Replace any undefined values with \"TBD\"\n- Ensure the result passes JSON.parse() without errors"
+  }
+]

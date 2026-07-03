@@ -1,0 +1,151 @@
+[
+  {
+    "id": "vercel-supa",
+    "tag": "WEB · Serverless · Managed",
+    "tier": "Free",
+    "label": "Vercel + Supabase",
+    "tech": [
+      "Next.js 14",
+      "Supabase (PostgreSQL+Auth+Storage+Realtime)",
+      "Vercel Edge Functions"
+    ],
+    "best": "SaaS MVP, auth apps, real-time dashboards",
+    "limits": "Supabase: 500MB DB, 50k MAU, 5GB storage / Vercel: 100GB bandwidth",
+    "strength": "Zero-config full-stack: DB+Auth+Storage+Deploy in one afternoon",
+    "weakness": "Supabase free tier pauses after 7 days inactivity — set up ping cron",
+    "prompt": "You are a senior full-stack architect. Build a production Next.js 14 SaaS on Vercel + Supabase free tier.\n\nSTACK: Next.js 14 App Router · Supabase PostgreSQL · Supabase Auth · Tailwind · shadcn/ui\nDEPLOY: Vercel (free) · Supabase (free tier)\n\nREQUIREMENTS\n1. Row Level Security on all Supabase tables\n2. Auth: email/password + Google OAuth via Supabase\n3. Middleware for protected routes\n4. Supabase client: server + browser variants\n5. Environment: .env.local template with all required keys\n\nOUTPUT: folder structure, schema.sql, middleware.ts, Supabase client files, deploy instructions (3 commands)"
+  },
+  {
+    "id": "cloudflare-edge",
+    "tag": "WEB · Edge · CDN",
+    "tier": "Free",
+    "label": "Cloudflare Pages + Workers + D1",
+    "tech": [
+      "SvelteKit or Astro",
+      "Cloudflare D1 (SQLite at edge)",
+      "Cloudflare Workers",
+      "KV + R2"
+    ],
+    "best": "Global CDN apps, edge-computed APIs, content sites",
+    "limits": "Workers: 100k req/day · D1: 5M reads/day · Pages: unlimited deploys · R2: 10GB free",
+    "strength": "Global edge network, zero cold-starts on Workers, D1 SQLite is free and fast",
+    "weakness": "D1 not suited for write-heavy workloads. Workers runtime ≠ Node.js API parity",
+    "prompt": "Build a SvelteKit app deployed to Cloudflare Pages with D1, Workers, KV, and R2.\n\nSTACK: SvelteKit + adapter-cloudflare · D1 (SQLite) · Workers (API) · KV (cache) · R2 (files)\n\nSETUP\nnpx create-svelte@latest myapp && cd myapp\nnpm i -D @sveltejs/adapter-cloudflare wrangler\nwrangler d1 create myapp-db\nwrangler kv:namespace create CACHE\n\nOUTPUT: wrangler.toml, D1 schema, KV caching layer, R2 file upload handler, Pages deploy config"
+  },
+  {
+    "id": "railway-hono",
+    "tag": "WEB · Container · API",
+    "tier": "Free",
+    "label": "Railway + Hono + Turso",
+    "tech": [
+      "Hono (Bun runtime)",
+      "Turso libSQL/SQLite",
+      "Railway container deploy"
+    ],
+    "best": "REST APIs, background jobs, cron workers, microservices",
+    "limits": "Railway: $5 free credit/mo · Turso: 500 DBs, 1B row reads/mo free",
+    "strength": "No sleep mode, Bun is 4× faster than Node, Turso SQLite at edge",
+    "weakness": "Railway credit is consumed — monitor usage. Turso not for complex relational schemas",
+    "prompt": "Build a production Hono API on Bun runtime, deployed to Railway, with Turso SQLite.\n\nSTACK: Bun · Hono · Drizzle ORM · Turso (libSQL) · Railway\n\nSETUP\nbun create hono myapp && cd myapp\nbun add drizzle-orm @libsql/client\nturso db create myapp && turso db tokens create myapp\n\nOUTPUT: complete Hono API, Drizzle schema, auth middleware, Railway Dockerfile, env template"
+  },
+  {
+    "id": "fly-pocketbase",
+    "tag": "WEB · Self-hosted · Container",
+    "tier": "Free",
+    "label": "Fly.io + PocketBase",
+    "tech": [
+      "PocketBase (Go binary — DB+Auth+Storage+Admin)",
+      "Fly.io (3 free VMs)",
+      "Any frontend on Vercel/Netlify"
+    ],
+    "best": "Personal tools, internal apps, full backend without managed complexity",
+    "limits": "Fly.io: 3 shared-cpu VMs free, 3GB storage per machine",
+    "strength": "PocketBase = entire backend in one binary. Auth+DB+Files+Admin UI. No vendor lock-in.",
+    "weakness": "Self-managed upgrades, not auto-scaling, Fly free tier has memory limits",
+    "prompt": "Deploy PocketBase on Fly.io as a complete self-hosted backend.\n\nSETUP\nfly auth login && fly launch --image ghcr.io/muchobien/pocketbase:latest\nfly volumes create pb_data --size 3 --region sin\n\nfly.toml config:\n[mounts] source=\"pb_data\" destination=\"/pb_data\"\n[http_service] internal_port=8090 force_https=true\n\nOUTPUT: fly.toml, GitHub Actions deploy workflow, PocketBase collection schemas, JS SDK client"
+  },
+  {
+    "id": "n8n-cloud",
+    "tag": "AUTOMATION · Workflow · n8n",
+    "tier": "Free Trial",
+    "label": "n8n Cloud (Hosted)",
+    "tech": [
+      "n8n Cloud (14-day trial)",
+      "n8n workflows",
+      "200+ integrations"
+    ],
+    "best": "Business automation, webhook processors, scheduled jobs, AI agent pipelines",
+    "limits": "Free trial 14 days. After: $24/mo Starter (2,500 executions). Self-host = free forever.",
+    "strength": "Visual workflow builder, 200+ native integrations, AI nodes (OpenAI, Anthropic), webhook triggers",
+    "weakness": "Cloud tier costs at scale. Self-host needs a VPS.",
+    "prompt": "Design an n8n automation workflow for [use case].\n\nTRIGGER: [Webhook / Schedule (cron) / Polling / Manual]\nINTEGRATIONS NEEDED: [e.g. Gmail, Slack, Airtable, OpenAI, HTTP Request]\n\nWORKFLOW DESIGN\nNode 1: Trigger — [describe event]\nNode 2: [transformation or filter]\nNode 3: AI node — OpenAI: \"Summarize this: {{ $json.content }}\"\nNode 4: [output — Slack message / DB insert / Email / HTTP POST]\n\nERROR HANDLING\n- Add Error Trigger node connected to Slack #alerts\n- Set retry count: 3 with exponential backoff\n\nOUTPUT: n8n workflow JSON (importable), node configuration for each step, test payload example"
+  },
+  {
+    "id": "n8n-self",
+    "tag": "AUTOMATION · Self-hosted · Docker",
+    "tier": "Free",
+    "label": "n8n Self-hosted (Docker)",
+    "tech": [
+      "n8n via Docker Compose",
+      "PostgreSQL or SQLite",
+      "Nginx reverse proxy",
+      "Cloudflare Tunnel (no open ports)"
+    ],
+    "best": "Unlimited executions, private data, full control over integrations",
+    "limits": "Only your server specs. Use Hetzner CX22 (€4/mo) for production.",
+    "strength": "100% free, unlimited executions, all 200+ integrations, local AI models via Ollama node",
+    "weakness": "You manage upgrades, backups, and scaling",
+    "prompt": "Set up self-hosted n8n with Docker Compose on a Linux VPS with Cloudflare Tunnel for secure access.\n\nDOCKER COMPOSE\nServices: n8n + PostgreSQL + Cloudflare Tunnel (cloudflared)\nn8n env: N8N_BASIC_AUTH_ACTIVE=true, DB_TYPE=postgresdb, WEBHOOK_URL=https://your-tunnel.cfargotunnel.com\n\nCLOUDFLARE TUNNEL (no open ports needed)\ncloudflared tunnel create n8n-tunnel\ncloudflared tunnel route dns n8n-tunnel n8n.yourdomain.com\n\nBACKUP\npg_dump n8n_db | gzip > backup_$(date +%Y%m%d).sql.gz\ncron: 0 2 * * * /path/to/backup.sh\n\nOUTPUT: docker-compose.yml, .env template, cloudflared config.yml, nginx.conf, backup cron script"
+  },
+  {
+    "id": "mcp-server",
+    "tag": "AI · MCP · Tool Server",
+    "tier": "Free",
+    "label": "MCP Server (Model Context Protocol)",
+    "tech": [
+      "MCP TypeScript SDK",
+      "Node.js or Python",
+      "stdio or SSE transport",
+      "Claude / Cursor / Continue.dev client"
+    ],
+    "best": "Expose tools, resources, and prompts to AI assistants (Claude, Cursor, GitHub Copilot)",
+    "limits": "MCP is a protocol standard — no platform limits. Client support varies.",
+    "strength": "AI clients can use your tools natively. No API key management. Context-aware tool calling.",
+    "weakness": "Client ecosystem still maturing. Debugging stdio transport is non-trivial.",
+    "prompt": "Build a production MCP server that exposes [tools/resources] to AI assistants.\n\nSTACK: Node.js + MCP SDK (modelcontextprotocol) · TypeScript · stdio transport\n\nMCP SERVER STRUCTURE\n// const { Server } = mcpSdk.server;\nconst server = new Server({ name:\"my-mcp\", version:\"1.0.0\" }, { capabilities:{ tools:{} } });\n\nTOOL DEFINITIONS\nserver.setRequestHandler(ListToolsRequestSchema, async () => ({\n  tools: [{ name:\"[tool_name]\", description:\"[what it does]\", inputSchema:{ type:\"object\", properties:{} } }]\n}));\nserver.setRequestHandler(CallToolRequestSchema, async (request) => {\n  // implement tool logic\n  return { content:[{ type:\"text\", text: result }] };\n});\n\nCLAUDE DESKTOP CONFIG (~/.config/claude/claude_desktop_config.json)\n{ \"mcpServers\": { \"my-mcp\": { \"command\": \"node\", \"args\": [\"/path/to/server.js\"] } } }\n\nOUTPUT: complete MCP server, tool implementations, Claude Desktop config, README with test instructions"
+  },
+  {
+    "id": "zeroclaw",
+    "tag": "AGENTIC · Open‌Claw · Edge",
+    "tier": "Free",
+    "label": "Zero‌Claw / Open‌Claw / Null‌Claw",
+    "tech": [
+      "Open‌Claw framework",
+      "Zero‌Claw (zero-cost agent runtime)",
+      "Null‌Claw (null-state agent)",
+      "Cloudflare Workers or Fly.io"
+    ],
+    "best": "AI agents, autonomous task runners, multi-step AI pipelines with tool use",
+    "limits": "Depends on underlying deployment target (Cloudflare Workers free tier / Fly.io free VMs)",
+    "strength": "Agent-native architecture, tool-calling built-in, composable pipelines, minimal boilerplate",
+    "weakness": "Ecosystem is early-stage — pin versions, check changelogs before production use",
+    "prompt": "Build an agentic AI application using Open‌Claw/Zero‌Claw deployed to Cloudflare Workers.\n\nAGENT ARCHITECTURE\n- Agent runtime: Zero‌Claw (zero-cost, edge-native)\n- LLM backend: Groq (free tier) or Cloudflare AI (free Workers AI)\n- Tool definitions: structured JSON schema per tool\n- State: Cloudflare Durable Objects or KV for agent memory\n- Trigger: HTTP webhook or scheduled cron\n\nAGENT TOOL DEFINITIONS\nconst tools = [\n  { name: \"search_web\", description: \"Search the web for current information\", parameters: {...} },\n  { name: \"write_file\", description: \"Write output to storage\", parameters: {...} },\n  { name: \"notify_slack\", description: \"Send Slack notification\", parameters: {...} },\n];\n\nDEPLOYMENT\nwrangler publish --name my-agent\nSet: GROQ_API_KEY, AGENT_SECRET in Cloudflare secrets\n\nOUTPUT: complete agent implementation, tool definitions, Durable Object memory schema, wrangler.toml, test harness"
+  },
+  {
+    "id": "local-ollama",
+    "tag": "LOCAL · Privacy · Hybrid",
+    "tier": "Free",
+    "label": "Local Stack (Ollama + Cloudflare Tunnel)",
+    "tech": [
+      "Ollama (100+ models, local inference)",
+      "Any framework on localhost",
+      "Cloudflare Quick Tunnel (zero config)",
+      "SQLite local"
+    ],
+    "best": "Privacy-first AI apps, dev/test, personal tools, offline-capable apps",
+    "limits": "Your machine specs. Cloudflare quick-tunnel URL changes each restart.",
+    "strength": "100% free forever, full privacy, runs offline, 100+ models including Llama3/Mistral/CodeLlama",
+    "weakness": "Not always-on, URL not stable without a named tunnel, hardware-constrained",
+    "prompt": "Build a local-first AI app with Ollama inference, exposed via stable Cloudflare Tunnel.\n\nSETUP (one-time)\n1. curl -fsSL https://ollama.com/install.sh | sh\n2. ollama pull llama3.1 && ollama pull mistral && ollama pull codellama\n3. cloudflared tunnel login && cloudflared tunnel create myapp\n4. cloudflared tunnel route dns myapp app.yourdomain.com\n\nAPP STACK\n- API: Hono on Bun (localhost:3000)\n- AI: fetch(\"http://localhost:11434/api/generate\") with streaming\n- DB: SQLite via Drizzle (local file)\n- Frontend: React + Vite served by Hono\n\nOLLAMA STREAMING\nconst stream = await ollama.chat({ model:\"llama3.1\", messages, stream:true });\nfor await (const chunk of stream) process.stdout.write(chunk.message.content);\n\nOUTPUT: complete app with streaming chat, local SQLite history, cloudflared config.yml, process manager (PM2) config"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "u": "Data Viz",
+    "c": "Space Grotesk (headers) + Inter (body) + JetBrains Mono (numbers)"
+  },
+  {
+    "u": "Creative",
+    "c": "Syne (display) + Space Grotesk (body) + Clash Display (accent)"
+  },
+  {
+    "u": "Mobile",
+    "c": "Inter Tight (headlines) + Inter (body) + SF Pro (UI)"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "universal": "You are a [senior role].\n\nStep 1: Analyze and rewrite the concept into a structured brief including:\n- Target audience and their goals\n- UX objectives\n- Platform constraints\n- Aesthetic system\n- Interaction model\n\nStep 2: Plan the architecture:\n- Navigation model\n- Layout grid\n- Motion and animation system\n- Accessibility plan\n\nStep 3: Generate the final output in [tool or framework].\n\nConcept: [your idea]",
+  "mobile": "Plan mobile-first architecture:\n- Bottom navigation with gesture support\n- 44px minimum touch targets\n- Swipe gesture patterns\n- Haptic feedback cues\n- Safe-area insets handled\n- Dark mode as default\nThen generate [React Native / Expo] components with full source code.",
+  "web": "Plan web architecture:\n- 8pt baseline grid\n- Responsive breakpoints: 375px, 768px, 1280px, 1920px\n- Navigation: [top nav / sidebar / hybrid]\n- Scroll-trigger animations via Framer Motion\n- Semantic HTML structure\n- SEO meta tags included\nThen generate Next.js + Tailwind components with full source code."
+}

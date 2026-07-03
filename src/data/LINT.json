@@ -1,0 +1,226 @@
+[
+  {
+    "id": "missing-role",
+    "seg": "universal",
+    "check": "Role defined? Who is the AI acting as?",
+    "auto": true,
+    "fix": "Prepend: 'You are a senior [role]...'"
+  },
+  {
+    "id": "missing-objective",
+    "seg": "universal",
+    "check": "Is there a clear, measurable success condition?",
+    "auto": false,
+    "fix": "Add: 'Success = [specific outcome]'"
+  },
+  {
+    "id": "vague-language",
+    "seg": "universal",
+    "check": "Uses: nice, cool, awesome, modern, good, beautiful?",
+    "auto": true,
+    "fix": "Replace with specific terms from SWAPS list"
+  },
+  {
+    "id": "missing-constraints",
+    "seg": "universal",
+    "check": "Are quality guardrails explicitly listed?",
+    "auto": true,
+    "fix": "Add: WCAG AA, mobile-first, 60fps, bundle <200kb"
+  },
+  {
+    "id": "missing-output",
+    "seg": "universal",
+    "check": "Output format specified? Files, schema, format?",
+    "auto": false,
+    "fix": "Add: 'Generate: 1. [file] 2. [file] 3. [instructions]'"
+  },
+  {
+    "id": "no-refinement",
+    "seg": "universal",
+    "check": "Refinement instruction present?",
+    "auto": true,
+    "fix": "Append: 'Critique → refine structure → refine polish → output final only'"
+  },
+  {
+    "id": "ui-no-platform",
+    "seg": "ui/ux",
+    "check": "Platform specified? mobile / web / desktop?",
+    "auto": true,
+    "fix": "Add platform + viewport breakpoints"
+  },
+  {
+    "id": "ui-no-aesthetic",
+    "seg": "ui/ux",
+    "check": "3+ aesthetic keywords from vocab list?",
+    "auto": false,
+    "fix": "Pick from Design Vocab: glassmorphism, bento, neo-brutalism..."
+  },
+  {
+    "id": "ui-no-anim-lib",
+    "seg": "ui/ux",
+    "check": "Animation library named and configured?",
+    "auto": true,
+    "fix": "Specify: Framer Motion / GSAP / Three.js / Rive / CSS-only"
+  },
+  {
+    "id": "ui-no-mobile-first",
+    "seg": "ui/ux",
+    "check": "Mobile-first stated explicitly at 375px?",
+    "auto": true,
+    "fix": "Add: 'Design at 375px minimum. Scale up.'"
+  },
+  {
+    "id": "ui-no-a11y",
+    "seg": "ui/ux",
+    "check": "Accessibility: WCAG AA, aria-labels, keyboard nav?",
+    "auto": true,
+    "fix": "Add: 'WCAG AA: 4.5:1 text, 3:1 UI, aria-labels, tab-navigable'"
+  },
+  {
+    "id": "ui-no-states",
+    "seg": "ui/ux",
+    "check": "Interactive states defined? hover/press/focus/disabled?",
+    "auto": false,
+    "fix": "Add state spec: hover 150ms, press 80ms scale(0.97), focus-visible ring"
+  },
+  {
+    "id": "code-no-stack",
+    "seg": "code",
+    "check": "Full stack specified? Framework + runtime + DB?",
+    "auto": false,
+    "fix": "Define: framework, ORM, auth, deploy target"
+  },
+  {
+    "id": "code-no-errors",
+    "seg": "code",
+    "check": "Error handling strategy mentioned?",
+    "auto": true,
+    "fix": "Add: 'Handle all errors, no silent failures, typed errors'"
+  },
+  {
+    "id": "code-no-types",
+    "seg": "code",
+    "check": "TypeScript / type safety specified?",
+    "auto": true,
+    "fix": "Add: 'Full TypeScript, no any types, strict mode'"
+  },
+  {
+    "id": "code-no-tests",
+    "seg": "code",
+    "check": "Test coverage mentioned?",
+    "auto": false,
+    "fix": "Add: 'Include unit tests for core logic'"
+  },
+  {
+    "id": "code-has-todos",
+    "seg": "code",
+    "check": "Prompt says 'no TODOs, no placeholders'?",
+    "auto": true,
+    "fix": "Add: 'No TODOs. No lorem ipsum. No placeholder comments.'"
+  },
+  {
+    "id": "code-no-perf",
+    "seg": "code",
+    "check": "Performance constraints defined? LCP/bundle/fps?",
+    "auto": false,
+    "fix": "Add: LCP<2.5s, CLS<0.1, <200kb JS, 60fps animation"
+  },
+  {
+    "id": "copy-no-audience",
+    "seg": "content",
+    "check": "Target audience defined with pain point?",
+    "auto": false,
+    "fix": "Add: '[Avatar] struggling with [specific pain]'"
+  },
+  {
+    "id": "copy-no-tone",
+    "seg": "content",
+    "check": "Tone and voice defined (3 adjectives)?",
+    "auto": false,
+    "fix": "Add: 'Tone: [confident/warm/direct]. Avoid: [corporate/preachy]'"
+  },
+  {
+    "id": "copy-no-cta",
+    "seg": "content",
+    "check": "Call to action specified?",
+    "auto": false,
+    "fix": "Add: 'End with CTA: [specific action] → [specific outcome]'"
+  },
+  {
+    "id": "copy-no-length",
+    "seg": "content",
+    "check": "Word count or length constraint given?",
+    "auto": true,
+    "fix": "Add target length: tweets=280, headlines=10 words, posts=150-200"
+  },
+  {
+    "id": "agent-no-trigger",
+    "seg": "agent",
+    "check": "Trigger event defined? What starts the workflow?",
+    "auto": false,
+    "fix": "Define: webhook / schedule / user action / event"
+  },
+  {
+    "id": "agent-no-failsafe",
+    "seg": "agent",
+    "check": "Error and fallback behavior defined?",
+    "auto": false,
+    "fix": "Add: 'On failure: retry X times → notify → log → halt'"
+  },
+  {
+    "id": "agent-no-output",
+    "seg": "agent",
+    "check": "Final output artifact specified?",
+    "auto": false,
+    "fix": "Add: what the automation produces or stores at end"
+  },
+  {
+    "id": "agent-no-tools",
+    "seg": "agent",
+    "check": "Tools/integrations listed? (Slack, DB, API, etc.)",
+    "auto": false,
+    "fix": "List all external tools the agent needs access to"
+  },
+  {
+    "id": "mobile-no-breakpoints",
+    "seg": "mobile",
+    "check": "Breakpoints defined? 375/768/1280/1920px?",
+    "auto": true,
+    "fix": "Add: mobile-first at 375px, tablet 768px, desktop 1280px"
+  },
+  {
+    "id": "mobile-no-touch",
+    "seg": "mobile",
+    "check": "Touch targets 44px minimum with 8px gap?",
+    "auto": true,
+    "fix": "Add: min 44px height/width on all interactive elements"
+  },
+  {
+    "id": "mobile-no-viewport",
+    "seg": "mobile",
+    "check": "Viewport meta with viewport-fit=cover?",
+    "auto": true,
+    "fix": "Add: width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  {
+    "id": "api-no-schema",
+    "seg": "api",
+    "check": "Request + response schema defined (JSON)?",
+    "auto": false,
+    "fix": "Add: input schema (zod), output schema, error codes"
+  },
+  {
+    "id": "api-no-auth",
+    "seg": "api",
+    "check": "Auth strategy specified? (Bearer / API key / OAuth)",
+    "auto": false,
+    "fix": "Add: Authorization header type + token expiry strategy"
+  },
+  {
+    "id": "api-no-rate-limit",
+    "seg": "api",
+    "check": "Rate limiting mentioned?",
+    "auto": true,
+    "fix": "Add: X requests per minute per API key, 429 on exceed"
+  }
+]

@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── promptc OS wiki — neon/dark design tokens (ported from source C={} system) ── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Zone accent colors — ported verbatim from source */
+  --color-void: #0B0D10;
+  --color-surface: #14161A;
+  --color-cyan: #4DFFFF;
+  --color-orange: #FF6B00;
+  --color-magenta: #FF4FD8;
+  --color-amber: #FFB000;
+  --color-green: #22c55e;
+  --color-blue: #38bdf8;
+  --color-gold: #FFD700;
+  --color-red: #ef4444;
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), 'JetBrains Mono', monospace;
+  --font-display: var(--font-bebas), sans-serif;
+}
+
+:root {
+  --background: #0B0D10;
+  --foreground: #FFFFFF;
+  --card: #14161A;
+  --card-foreground: #FFFFFF;
+  --popover: #14161A;
+  --popover-foreground: #FFFFFF;
+  --primary: #4DFFFF;
+  --primary-foreground: #0B0D10;
+  --secondary: #1a1d22;
+  --secondary-foreground: #a1a1aa;
+  --muted: #1a1d22;
+  --muted-foreground: #a1a1aa;
+  --accent: #FF6B00;
+  --accent-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255,255,255,0.08);
+  --input: rgba(255,255,255,0.10);
+  --ring: #4DFFFF;
+  --radius: 0.5rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0B0D10; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.30); }
+
+/* Animations */
+@keyframes zoneEnter { from { opacity:0; transform:translateY(8px) scale(0.99) } to { opacity:1; transform:none } }
+@keyframes popIn { from { opacity:0; transform:scale(0.94) } to { opacity:1; transform:scale(1) } }
+@keyframes fadeSlide { from { opacity:0; transform:translateY(10px) } to { opacity:1; transform:none } }
+@keyframes shimmerIn { from { opacity:0; transform:translateX(-8px) } to { opacity:1; transform:none } }
+@keyframes glowPulse { 0%,100% { opacity:1 } 50% { opacity:0.7 } }
+
+.anim-zone { animation: zoneEnter 0.3s cubic-bezier(0.16,1,0.3,1); }
+.anim-pop { animation: popIn 0.2s cubic-bezier(0.16,1,0.3,1); }
+.anim-slide { animation: fadeSlide 0.25s cubic-bezier(0.16,1,0.3,1); }
+.anim-shimmer { animation: shimmerIn 0.2s cubic-bezier(0.16,1,0.3,1); }
+.anim-glow { animation: glowPulse 2s ease-in-out infinite; }
+
+button:active { transform: scale(0.96); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Utility: mono label */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Code block styling — preserves source aesthetic */
+.wiki-code {
+  background: #0B0D10;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 44px 12px 13px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.75;
+  color: #e4e4e7;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+/* Headings use display font */
+.wiki-display { font-family: var(--font-display); letter-spacing: 0.02em; line-height: 0.95; }
+
+/* Sticky footer helper */
+.wiki-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.wiki-shell > footer { margin-top: auto; }
