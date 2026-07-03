@@ -5,11 +5,13 @@ import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
 import { SectionHeader, WikiCard, Pill, Lbl, Disclosure } from "./primitives";
 import { ComboDemo } from "./combo-demos";
+import { PinButton, usePins } from "./pin-list";
 import Image from "next/image";
 
 // ── DESIGN COMBOS WITH SYNERGY RATINGS ─────────────────────────────────────
 export function CombosSection() {
   const [sort, setSort] = useState<'score' | 'default'>('default');
+  const { pins, togglePin } = usePins();
   const combos = data.COMBO_RATINGS.length ? data.COMBO_RATINGS : data.COMBOS;
   const sorted = useMemo(() => {
     if (sort === 'score') return [...combos].sort((a, b) => (b.score || 0) - (a.score || 0));
@@ -45,6 +47,19 @@ export function CombosSection() {
                   <span className="mono-label" style={{ color: scoreColor }}>SYNERGY</span>
                   <span className="font-mono text-lg font-bold" style={{ color: scoreColor }}>{score}/10</span>
                   {hasDemo && <span className="text-[9px] px-1 py-0.5 rounded bg-green-500/15 border border-green-500/40 text-green-400 font-mono">LIVE</span>}
+                  <PinButton
+                    item={{
+                      id: `combos:${c.combo}`,
+                      section: 'combos',
+                      sectionLabel: 'Design Combos',
+                      sectionColor: '#38bdf8',
+                      label: c.combo,
+                      content: `${c.els} — ${c.best}. ${c.psych}. Score: ${score}/10. ${c.structural || ''}`,
+                      desc: c.best,
+                    }}
+                    pins={pins}
+                    togglePin={togglePin}
+                  />
                 </div>
               </div>
 

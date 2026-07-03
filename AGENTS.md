@@ -226,6 +226,82 @@ See the in-app **Field Guide → Swap Guide** tab for full why/risk/SOP per swap
 | `npx twenty-first` not found | SDK not installed | Run `npm install -g twenty-first` or use `npx` |
 | Component install fails | Wrong install_ref format | Use `@author/slug` from the API response, not the URL |
 
+
+## Round 5 — 21st.dev CLI installed + Pin List feature
+
+### 21st.dev CLI installation (DONE)
+
+```bash
+# 1. Install CLI globally (audited npm package)
+npm i -g @21st-dev/cli
+
+# 2. Login by writing key to config file (NOT shell echo)
+#    Config location: ~/.config/21st/auth.json
+#    Format: {"token": "21st_sk_...", "apiKey": "21st_sk_..."}
+mkdir -p ~/.config/21st
+# Write auth.json via file-write (Python/Node script), NOT shell echo
+
+# 3. Verify login
+21st whoami    # → "Logged in as ..."
+21st usage     # → "Tier: free, X/Y retrievals remaining today"
+
+# 4. Search for components
+21st search "button" --limit 5 --json
+
+# 5. Install a component (NOTE: this puts the key in the URL — 21st.dev's design)
+21st add <author>/<slug>
+# Internally runs: npx shadcn@latest add "https://21st.dev/r/<author>/<slug>?api_key=***"
+# The CLI redacts the key in console output (api_key=***), but it IS in the HTTP request
+```
+
+### ⚠️ 21st.dev CLI security note
+
+The `21st add` command puts the API key in the URL query string (`?api_key=...`).
+This is 21st.dev's own design — unavoidable if you use their CLI.
+The key appears in: the HTTP request to 21st.dev, npm/shadcn cache logs, and potentially upstream proxy logs.
+**Mitigation**: only use `21st add` with keys you're willing to rotate. The CLI redacts the key in terminal output.
+
+### Pin List feature (NEW)
+
+Added a **Pin List** feature inspired by `skyleen77/pin-list` on 21st.dev:
+- **Pin button** on every Design Combo card (and extensible to other sections)
+- **Pin badge** in the header (shows count, click to open panel)
+- **Pin panel** — right-side drawer with:
+  - Filter/search pins
+  - Click pin to navigate back to its section
+  - Remove pin (X button on hover)
+  - localStorage persistence (no backend)
+- Built with `useSyncExternalStore` (React 19 correct pattern for SSR-safe localStorage)
+
+### Why I built Pin List instead of importing the 21st.dev component
+
+1. The `marktantongco/pin-list` you referenced doesn't exist in the public registry (only `skyleen77/pin-list` does)
+2. The 21st.dev bundle is a compiled Vite app (388KB) — not a drop-in React component
+3. A wiki-specific Pin List (pin prompts/combos/skills, not generic items) is more useful than a fixed component
+4. Built with the wiki's design tokens (neon/dark, Bebas/DM Sans/DM Mono) — no theme clash
+
+### Failure modes (Pin List)
+
+| Failure | Cause | Fix |
+|---|---|---|
+| Pins disappear on refresh | localStorage disabled (private mode) | Fall back to in-memory state; warn user |
+| Pin button doesn't toggle | useSyncExternalStore not re-rendering | Verify writePins() calls all listeners |
+| Hydration mismatch | Server renders 0 pins, client loads N | useSyncExternalStore with `() => []` server snapshot |
+| Pin panel won't open | Header z-index conflict | Panel uses z-50, header z-40 — verified |
+| Pin count badge wrong | Stale closure | useSyncExternalStore auto-tracks; no closure issue |
+
+### Component install SOP (for the user)
+
+```bash
+# TO INSTALL A 21ST.DEV COMPONENT:
+1. 21st search "<query>" --json    # find the component
+2. 21st add <author>/<slug>         # install (key goes in URL — 21st.dev's design)
+3. Component lands in components/21st/<slug>/
+4. Import in your code: import { X } from '@/components/21st/<slug>'
+5. Test on dark surface — 21st.dev components may need theme overrides
+6. If it clashes, delete the file and revert the import
+```
+
 ## Skills directories (for discovery)
 
 - https://skills.sh — discover and install skills for AI agents

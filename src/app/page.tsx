@@ -8,6 +8,7 @@ import { ActivateSection, BuildSection, ValidateSection, PlaybookSection, Builde
 import { CombosSection, SkillsSection, MonetizeSection, EcosystemSection, AgentsSection } from "@/components/wiki/sections-new";
 import { FieldGuideSection } from "@/components/wiki/section-field-guide";
 import { CopyButton } from "@/components/wiki/copy-button";
+import { usePins, PinBadge, PinListPanel } from "@/components/wiki/pin-list";
 
 const SECTION_COMPONENTS: Record<string, () => JSX.Element> = {
   activate: ActivateSection,
@@ -27,6 +28,8 @@ export default function Home() {
   const [active, setActive] = useState('activate');
   const [q, setQ] = useState('');
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [pinPanelOpen, setPinPanelOpen] = useState(false);
+  const { pins, removePin } = usePins();
 
   const results = useMemo(() => q.trim() ? search(q) : [], [q]);
   const ActiveSection = SECTION_COMPONENTS[active] ?? ActivateSection;
@@ -69,6 +72,9 @@ export default function Home() {
               </button>
             )}
           </div>
+
+          {/* Pin button */}
+          <PinBadge count={pins.length} onClick={() => setPinPanelOpen(true)} />
 
           <a
             href="https://github.com/marktantongco/promptc"
@@ -130,6 +136,16 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Pin List Panel */}
+      {pinPanelOpen && (
+        <PinListPanel
+          pins={pins}
+          removePin={removePin}
+          onClose={() => setPinPanelOpen(false)}
+          onNavigate={go}
+        />
+      )}
     </div>
   );
 }
