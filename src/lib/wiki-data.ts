@@ -59,6 +59,7 @@ import SKILLS_DIRECTORY from "@/data/enriched/skills-directory.json";
 import ANIMAL_GUIDE from "@/data/enriched/animal-guide.json";
 import MOTION_STACK_COMBOS from "@/data/enriched/motion-stack-combos.json";
 import FOUNDATIONAL_CORES from "@/data/enriched/foundational-cores.json";
+import COMPONENT_SWAP_GUIDE from "@/data/enriched/component-swap-guide.json";
 
 // ── Types (loose — the source data is dynamic) ──────────────────────────────
 type AnyRecord = Record<string, any>;
@@ -119,6 +120,7 @@ export const data = {
   ANIMAL_GUIDE: ANIMAL_GUIDE as AnyRecord[],
   MOTION_STACK_COMBOS: MOTION_STACK_COMBOS as AnyRecord[],
   FOUNDATIONAL_CORES: FOUNDATIONAL_CORES as AnyRecord[],
+  COMPONENT_SWAP_GUIDE: COMPONENT_SWAP_GUIDE as AnyRecord[],
 };
 
 // ── Sidebar section catalog ─────────────────────────────────────────────────

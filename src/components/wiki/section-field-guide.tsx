@@ -272,29 +272,103 @@ function FoundationalCores() {
   );
 }
 
+// ── COMPONENT SWAP GUIDE (shadcn → 21st.dev) ───────────────────────────────
+function ComponentSwapGuide() {
+  const swaps = data.COMPONENT_SWAP_GUIDE;
+  return (
+    <div>
+      <Lbl text="Component Swap Guide: shadcn → 21st.dev" color="#4DFFFF" />
+      <p className="text-xs text-zinc-400 mb-3">
+        Curated mapping of shadcn primitives currently used in this wiki → production-grade 21st.dev replacements.
+        Each swap includes the install command, why it's better, and the risk. Install the SDK first:{" "}
+        <code className="text-amber-300 font-mono text-[10px]">npx twenty-first</code>{" "}
+        (one-time, prompts for API key — already in your <code className="text-amber-300 font-mono text-[10px]">.env.local</code>).
+      </p>
+
+      <div className="p-3 rounded-lg border border-orange-500/30 bg-orange-500/5 mb-4 text-xs">
+        <div className="text-orange-400 font-semibold mb-1">⚠️ API KEY SAFETY</div>
+        <div className="text-zinc-400">
+          The key in <code className="text-orange-300">.env.local</code> was shared in chat —{" "}
+          <strong className="text-orange-300">rotate it at 21st.dev/dashboard after this session.</strong>{" "}
+          The proxy at <code className="text-orange-300">/api/21st-search</code> keeps it server-side; the browser never sees it.
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        {swaps.map((s: any, i: number) => (
+          <WikiCard key={i} accent="#4DFFFF" pad="p-3">
+            <div className="flex items-start justify-between gap-2 mb-2">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-mono text-sm text-zinc-400 line-through">{s.shadcn_component}</span>
+                  <span className="text-cyan-400">→</span>
+                  <span className="font-mono text-sm text-cyan-400 font-semibold">{s.swap_for}</span>
+                </div>
+                <div className="text-[10px] text-zinc-500 font-mono truncate">{s.shadcn_import}</div>
+              </div>
+            </div>
+
+            <div className="text-xs text-zinc-300 mb-2">
+              <span className="text-zinc-600">USE IN WIKI:</span> {s.use_in_wiki}
+            </div>
+
+            <div className="text-xs text-zinc-300 mb-2">
+              <span className="text-green-400">WHY SWAP:</span> {s.why_swap}
+            </div>
+
+            <div className="text-xs text-zinc-400 mb-3">
+              <span className="text-orange-400">RISK:</span> {s.risk}
+            </div>
+
+            <div className="flex items-center justify-between gap-2 p-2 rounded bg-black/40 border border-white/10">
+              <code className="text-[10px] text-amber-300 truncate flex-1 font-mono">{s.install_command}</code>
+              <CopyButton text={s.install_command} label="COPY" />
+            </div>
+          </WikiCard>
+        ))}
+      </div>
+
+      <div className="mt-4 p-3 rounded-lg border border-cyan-500/20 bg-cyan-500/5 text-xs">
+        <Lbl text="SOP: How to actually swap a component" color="#4DFFFF" />
+        <ol className="list-decimal ml-4 space-y-1 text-zinc-300">
+          <li>Run <code className="text-cyan-300">npx twenty-first</code> once (installs SDK, reads API_KEY_21ST from .env.local)</li>
+          <li>Copy the install command above (e.g. <code className="text-cyan-300">npx twenty-first add @arlanoska/color-depth</code>)</li>
+          <li>Paste in your terminal — downloads the component to <code className="text-cyan-300">components/21st/</code></li>
+          <li>Find the shadcn import in the wiki code (search for <code className="text-cyan-300">{`from '@/components/ui/button'`}</code>)</li>
+          <li>Replace with the 21st.dev import path</li>
+          <li>Test on dark surface first — 21st.dev components may need theme overrides</li>
+          <li>If it clashes with the neon aesthetic, revert by deleting the 21st.dev file and restoring the shadcn import</li>
+        </ol>
+      </div>
+    </div>
+  );
+}
+
 // ── MAIN SECTION ───────────────────────────────────────────────────────────
 export function FieldGuideSection() {
-  const [tab, setTab] = useState<'search' | 'combos' | 'cores' | 'compare'>('search');
+  const [tab, setTab] = useState<'search' | 'combos' | 'cores' | 'swap' | 'compare'>('search');
 
   return (
     <div className="anim-zone">
       <SectionHeader
         emoji="🧭" label="FIELD GUIDE" color="#4DFFFF"
         title="Skill-Stack Field Guide"
-        desc="Adapted from marktantongco/skill-stack-field-guide (MIT). 30 motion-stack combinations across 3 directions (Silk & GPU / Zero-Bundle / Spatial), live 21st.dev component registry search (server-side proxied — key never reaches browser), and top-5 synergies per foundational core."
-        count={data.MOTION_STACK_COMBOS.length + data.FOUNDATIONAL_CORES.length}
+        desc="Adapted from marktantongco/skill-stack-field-guide (MIT). 30 motion-stack combinations across 3 directions (Silk & GPU / Zero-Bundle / Spatial), live 21st.dev component registry search (server-side proxied — key never reaches browser), top-5 synergies per foundational core, and a component swap guide (shadcn → 21st.dev)."
+        count={data.MOTION_STACK_COMBOS.length + data.FOUNDATIONAL_CORES.length + data.COMPONENT_SWAP_GUIDE.length}
       />
 
       <div className="flex flex-wrap gap-1.5 mb-5">
         <Pill label="🔍 Live 21st.dev" active={tab === 'search'} color="#4DFFFF" onClick={() => setTab('search')} />
         <Pill label={`30 Motion-Stacks`} active={tab === 'combos'} color="#4DFFFF" onClick={() => setTab('combos')} />
         <Pill label="Foundational Cores" active={tab === 'cores'} color="#4DFFFF" onClick={() => setTab('cores')} />
+        <Pill label={`Swap Guide (${data.COMPONENT_SWAP_GUIDE.length})`} active={tab === 'swap'} color="#4DFFFF" onClick={() => setTab('swap')} />
         <Pill label="A/B vs promptc-os" active={tab === 'compare'} color="#4DFFFF" onClick={() => setTab('compare')} />
       </div>
 
       {tab === 'search' && <TwentyFirstSearch />}
       {tab === 'combos' && <MotionStackCombos />}
       {tab === 'cores' && <FoundationalCores />}
+      {tab === 'swap' && <ComponentSwapGuide />}
       {tab === 'compare' && <ABComparison />}
 
       <div className="mt-6 p-3 rounded-lg border border-white/10 bg-black/20 text-xs text-zinc-500">

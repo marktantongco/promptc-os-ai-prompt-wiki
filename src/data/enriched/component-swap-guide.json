@@ -1,0 +1,90 @@
+[
+  {
+    "shadcn_component": "Button",
+    "shadcn_import": "import { Button } from '@/components/ui/button'",
+    "use_in_wiki": "Copy buttons, tab pills, sidebar nav, all interactive triggers across 11 sections",
+    "swap_for": "The Art of Color Depth",
+    "install_ref": "@arlanoska/color-depth",
+    "install_command": "npx twenty-first add @arlanoska/color-depth",
+    "why_swap": "10 skeuomorphic button materials (glossy, glass, metal, foil, neon) vs shadcn's flat variants. Same markup, swap CSS variables. Cursor-reactive glints on Metal/Foil.",
+    "risk": "Pure CSS + pointer hook, zero deps — but the visual style is bold. May clash with the wiki's neon/dark aesthetic if not themed. Test on dark surface first.",
+    "preview_query": "button"
+  },
+  {
+    "shadcn_component": "Card",
+    "shadcn_import": "import { Card } from '@/components/ui/card'",
+    "use_in_wiki": "Every WikiCard in all 11 sections (200+ instances)",
+    "swap_for": "Animated Sparkline",
+    "install_ref": "@larsen66/animated-sparkline",
+    "install_command": "npx twenty-first add @larsen66/animated-sparkline",
+    "why_swap": "For the Monetize and Ecosystem sections specifically — sparklines inside cards make data-dense surfaces feel alive. shadcn Card is fine for text; this adds motion.",
+    "risk": "Only swap for data-viz cards, not text cards. Mixed card styles across sections is acceptable if scoped.",
+    "preview_query": "card"
+  },
+  {
+    "shadcn_component": "Dialog (Modal)",
+    "shadcn_import": "import { Dialog, DialogContent } from '@/components/ui/dialog'",
+    "use_in_wiki": "Mobile drawer, copy confirmations, combo detail expansions",
+    "swap_for": "BeUI Morphing Modal",
+    "install_ref": "@starc007/be-ui-morphing-modal",
+    "install_command": "npx twenty-first add @starc007/be-ui-morphing-modal",
+    "why_swap": "Morphing modal animates from the trigger element (card-to-modal pattern — combo #18 in the Field Guide). Premium feel for the Builder section's workflow detail view.",
+    "risk": "Morphing requires shared element IDs; ensure only one modal open at a time. Test on mobile — morph can disorient on small screens.",
+    "preview_query": "modal"
+  },
+  {
+    "shadcn_component": "Input",
+    "shadcn_import": "import { Input } from '@/components/ui/input'",
+    "use_in_wiki": "Search bar, Builder goal input, WebAppGen fields",
+    "swap_for": "Gradient Chat Input",
+    "install_ref": "@ruixen.ui/gradient-chat-input",
+    "install_command": "npx twenty-first add @ruixen.ui/gradient-chat-input",
+    "why_swap": "The Builder section's goal input is the single most important interaction in the wiki. A gradient chat-style input signals 'AI lives here' better than a flat text field.",
+    "risk": "Chat input implies conversational UX — make sure the Builder actually responds in chat-like fashion or it's misleading.",
+    "preview_query": "input"
+  },
+  {
+    "shadcn_component": "Tabs",
+    "shadcn_import": "import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'",
+    "use_in_wiki": "All section sub-navigation (Activate, Build, Validate, Skills, Monetize, Field Guide)",
+    "swap_for": "BeUI Expandable Tabs",
+    "install_ref": "@starc007/be-ui-expandable-tabs",
+    "install_command": "npx twenty-first add @starc007/be-ui-expandable-tabs",
+    "why_swap": "Expandable tabs fit more labels without truncation — useful for the Activate section's 6 tabs (Master/Advocate/Mods/Tasks/Templates/Brands) on mobile.",
+    "risk": "Expandable tabs add a click to reach overflow items — slower for power users. Keep for mobile-only, fall back to shadcn Tabs on desktop.",
+    "preview_query": "tabs"
+  },
+  {
+    "shadcn_component": "Accordion",
+    "shadcn_import": "import { Accordion, AccordionItem } from '@/components/ui/accordion'",
+    "use_in_wiki": "Playbook workflows (24 items), Validate lint rules (32 items)",
+    "swap_for": "BeUI Bouncy Accordion",
+    "install_ref": "@starc007/be-ui-bouncy-accordion",
+    "install_command": "npx twenty-first add @starc007/be-ui-bouncy-accordion",
+    "why_swap": "Bouncy spring physics on expand/collapse — feels premium for the Playbook section where users open/close workflows repeatedly.",
+    "risk": "Spring physics can feel slow if over-animated. Cap duration at 300ms.",
+    "preview_query": "accordion"
+  },
+  {
+    "shadcn_component": "Tooltip",
+    "shadcn_import": "import { Tooltip, TooltipContent } from '@/components/ui/tooltip'",
+    "use_in_wiki": "Combo scores, confidence bars, copy button hints",
+    "swap_for": "BeUI Tooltip",
+    "install_ref": "@starc007/beui-tooltip",
+    "install_command": "npx twenty-first add @starc007/beui-tooltip",
+    "why_swap": "Marginal upgrade — shadcn Tooltip is already solid. Only swap if you want the BeUI aesthetic consistency across the whole UI.",
+    "risk": "Low risk. Pure aesthetic preference.",
+    "preview_query": "tooltip"
+  },
+  {
+    "shadcn_component": "Sidebar (custom)",
+    "shadcn_import": "Custom div in page.tsx (not shadcn Sidebar)",
+    "use_in_wiki": "Desktop sidebar (10 section nav), mobile drawer",
+    "swap_for": "Dashboard Sidebar",
+    "install_ref": "@arunjdass/dashboard-sidebar",
+    "install_command": "npx twenty-first add @arunjdass/dashboard-sidebar",
+    "why_swap": "Purpose-built dashboard sidebar with active-state indicators, group headers, and collapse-on-mobile. Replaces my hand-rolled nav with a battle-tested pattern.",
+    "risk": "May bring its own styling that clashes with the void-black neon aesthetic. Theme override required.",
+    "preview_query": "sidebar"
+  }
+]

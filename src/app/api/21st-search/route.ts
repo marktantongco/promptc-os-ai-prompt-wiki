@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 //
 // Env: API_KEY_21ST (canonical) or TWENTYFIRST_API_KEY (alias)
 // Endpoint: https://21st.dev/api/v1/components/search
+// Query params: q=<query>, limit=<n>, scope=public (defaults to "team" which is empty)
 
 const API_KEY = process.env.API_KEY_21ST || process.env.TWENTYFIRST_API_KEY || "";
 const API_URL = process.env.API_URL_21ST || "https://21st.dev";
@@ -14,6 +15,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const query = searchParams.get("q") || "";
   const limit = Math.min(parseInt(searchParams.get("limit") || "20", 10), 50);
+  const scope = searchParams.get("scope") || "public";
 
   if (!query.trim()) {
     return NextResponse.json({ error: "Missing 'q' query parameter", results: [] }, { status: 400 });
@@ -28,7 +30,8 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const upstream = await fetch(`${SEARCH_URL}?query=${encodeURIComponent(query)}&limit=${limit}`, {
+    const upstreamUrl = `${SEARCH_URL}?q=${encodeURIComponent(query)}&limit=${limit}&scope=${scope}`;
+    const upstream = await fetch(upstreamUrl, {
       headers: {
         "Authorization": `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
@@ -46,19 +49,28 @@ export async function GET(req: NextRequest) {
     }
 
     const data = await upstream.json();
-    const results = Array.isArray(data) ? data : (data.components || data.results || []);
+    // 21st.dev returns { query, scope, results: [...] }
+    const rawResults = Array.isArray(data) ? data : (data.results || []);
     return NextResponse.json({
       query,
-      count: results.length,
-      results: results.slice(0, limit).map((c: any) => ({
-        id: c.id,
+      scope,
+      count: rawResults.length,
+      results: rawResults.slice(0, limit).map((c: any) => ({
+        id: c.slug || c.id,
         name: c.name,
+        slug: c.slug,
         description: c.description || "",
-        author: c.author?.username || c.author || "",
-        preview: c.preview || c.thumbnail || c.image || "",
+        author: c.author || "",
+        registry: c.registry || "ui",
+        visibility: c.visibility || "public",
+        preview: c.preview_url || c.preview || c.thumbnail || "",
+        bundle_html_url: c.bundle_html_url || "",
         tags: c.tags || [],
-        install_command: c.install_command || `npx twenty-first add ${c.id}`,
-        url: c.url || `${API_URL}/components/${c.id}`,
+        install_ref: c.install_ref || "",
+        install_command: c.install_ref ? `npx twenty-first add ${c.install_ref}` : `npx twenty-first add ${c.slug}`,
+        url: c.url || `${API_URL}/components/${c.slug}`,
+        updated_at: c.updated_at || "",
+        score: c.score || 0,
       })),
     });
   } catch (err: any) {

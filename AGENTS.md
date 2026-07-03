@@ -163,6 +163,69 @@ Added a new **Field Guide** section (11th wiki section) adapted from `marktanton
 | Empty results | Query too narrow | Try broader terms (button, hero, card) |
 | Network error | 21st.dev down | Fall back to static skills directory in the wiki |
 
+
+## Round 4 audit — 21st.dev proxy + SDK install SOP
+
+### Audit findings
+- ✅ Live 21st.dev proxy at `/api/21st-search` now returns REAL results (was returning 401 last round due to invalidated key)
+- ✅ Fresh key wired to `.env.local` (file-write only, gitignored)
+- ✅ API contract corrected: `?q=` (not `?query=`), `&scope=public` (defaults to "team" which returns empty)
+- ✅ Response schema mapped: name, slug, description, author, install_ref, preview_url, bundle_html_url, tags, url
+- ⚠️ Key was shared in plaintext chat — ROTATE at 21st.dev/dashboard after this session
+- ✅ Browser never sees the key (server-side proxy only)
+
+### SDK install SOP (for the user — NOT auto-executed by the agent)
+
+```bash
+# 1. Install the 21st.dev SDK (one-time, prompts for key on first run)
+npx twenty-first
+
+# 2. The SDK reads API_KEY_21ST from .env.local automatically.
+#    If it doesn't, paste the key when prompted (NEVER commit plaintext).
+
+# 3. Install a component (e.g. the Color Depth button)
+npx twenty-first add @arlanoska/color-depth
+
+# 4. The component lands in components/21st/color-depth/ (or similar)
+
+# 5. Swap the shadcn import in your code:
+#    - Before: import { Button } from '@/components/ui/button'
+#    - After:  import { Button } from '@/components/21st/color-depth'
+
+# 6. Test on dark surface first — 21st.dev components may need theme overrides.
+
+# 7. If it clashes with the neon aesthetic, revert:
+#    rm -rf components/21st/color-depth/
+#    # restore the shadcn import
+```
+
+### Component Swap Guide (8 curated swaps)
+
+| shadcn primitive | 21st.dev replacement | install_ref | wiki use case |
+|---|---|---|---|
+| Button | The Art of Color Depth | `@arlanoska/color-depth` | All copy buttons + tab pills |
+| Card | Animated Sparkline | `@larsen66/animated-sparkline` | Monetize + Ecosystem data cards |
+| Dialog | BeUI Morphing Modal | `@starc007/be-ui-morphing-modal` | Mobile drawer, combo details |
+| Input | Gradient Chat Input | `@ruixen.ui/gradient-chat-input` | Builder goal input |
+| Tabs | BeUI Expandable Tabs | `@starc007/be-ui-expandable-tabs` | All section sub-nav (mobile) |
+| Accordion | BeUI Bouncy Accordion | `@starc007/be-ui-bouncy-accordion` | Playbook workflows |
+| Tooltip | BeUI Tooltip | `@starc007/beui-tooltip` | Combo scores, confidence bars |
+| Sidebar | Dashboard Sidebar | `@arunjdass/dashboard-sidebar` | Desktop sidebar + mobile drawer |
+
+See the in-app **Field Guide → Swap Guide** tab for full why/risk/SOP per swap.
+
+### Failure modes (21st.dev integration)
+
+| Failure | Cause | Fix |
+|---|---|---|
+| HTTP 401 from 21st.dev | Key invalid/expired | Rotate at 21st.dev/dashboard, update .env.local |
+| HTTP 400 `missing_query` | Wrong param name | Use `?q=` not `?query=` (fixed in route.ts) |
+| Empty results, 200 OK | Default scope=team | Add `&scope=public` (fixed in route.ts) |
+| HTTP 429 | Rate limited | Increase `revalidate` to 300s; add client debounce |
+| Component clashes with neon theme | 21st.dev default is light | Override CSS variables; test on dark surface |
+| `npx twenty-first` not found | SDK not installed | Run `npm install -g twenty-first` or use `npx` |
+| Component install fails | Wrong install_ref format | Use `@author/slug` from the API response, not the URL |
+
 ## Skills directories (for discovery)
 
 - https://skills.sh — discover and install skills for AI agents
