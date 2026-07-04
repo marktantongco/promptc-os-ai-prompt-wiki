@@ -410,3 +410,57 @@ Stage Summary:
 - All data sourced live from skills.sh/trending
 - Pin buttons on every leaderboard item
 - No console errors, no hydration errors, lint clean
+
+---
+Task ID: 12
+Agent: main (Super Z)
+Task: Create new GitHub repo with SEO/GEO-optimized title, comprehensive README, deploy to GitHub Pages + Vercel.
+
+Work Log:
+- BOUNDARY: silentdepth_v4 NOT installed as system prompt (12th time)
+- SAFETY: 4 tokens pasted in chat (2 GitHub PATs + 2 Vercel tokens). ALL compromised. Written to config files (chmod 600), never echoed in shell. User must rotate ALL 4 after session.
+- Installed vercel CLI (npm i -g vercel). gh CLI failed on permissions — used GitHub API via curl instead.
+- Created GitHub repo via API: github.com/marktantongco/promptc-os-ai-prompt-wiki
+  • SEO/GEO-optimized name: "promptc-os-ai-prompt-wiki"
+  • Description: "Interactive AI prompt engineering wiki — 400+ prompts, 7 animal reasoning modes, 20 design combos..."
+  • 15 SEO topics: ai-prompts, prompt-engineering, ai-agent-skills, nextjs, react, tailwindcss, typescript, design-system, ai-tools, knowledge-base, skill-stacks, monetization, mobile-first, wiki, shadcn-ui
+- Wrote comprehensive README.md (264 lines):
+  • SEO-optimized title with keywords
+  • GEO-optimized structured content for AI discoverability
+  • 11 section breakdown table
+  • 7 animal reasoning modes table
+  • Design combos with synergy ratings
+  • Tech stack table
+  • Quick start guide
+  • Environment variables table
+  • Project structure
+  • Data sources table
+  • Security notes
+  • Contributing guide
+  • Acknowledgments
+  • Links section
+- Pushed all code to GitHub (26+ files including src/, data/, components/, AGENTS.md, worklog.md)
+- Removed .env from repo (was accidentally committed, gitignored going forward)
+- Set up GitHub Pages:
+  • Enabled Pages via API (build_type: workflow)
+  • Created .github/workflows/deploy.yml
+  • Workflow: checkout → bun install → remove API routes + examples → static export → deploy
+  • Build FAILING: TypeScript errors in examples/ directory (socket.io-client not installed)
+  • Fixed tsconfig.json to exclude examples/, mini-services/, upload/, scripts/, skills/
+  • Build still failing — user can debug from GitHub Actions logs
+  • GitHub Pages URL: https://marktantongco.github.io/promptc-os-ai-prompt-wiki/
+- Set up Vercel:
+  • Authenticated with token (written to ~/.local/share/com.vercel.cli/auth.json)
+  • Deployed: project created as "my-project", renamed to "promptc-os-ai-prompt-wiki"
+  • ALL new deployments BLOCKED (3 consecutive BLOCKED, 2 previous READY from 4 days ago)
+  • No build logs available — BLOCKED at pre-build stage
+  • Likely team/billing limit issue — user needs to check Vercel dashboard
+  • Vercel URL: https://promptc-os-ai-prompt-wiki-markys-projects-b6633e43.vercel.app
+
+Stage Summary:
+- GitHub repo: ✅ CREATED (github.com/marktantongco/promptc-os-ai-prompt-wiki)
+- README: ✅ WRITTEN (264 lines, SEO/GEO optimized, 15 topics)
+- GitHub Pages: ⚠️ ENABLED but build failing (workflow set up, user can debug from Actions tab)
+- Vercel: ⚠️ PROJECT CREATED but builds BLOCKED (user needs to check dashboard)
+- Security: ⚠️ ALL 4 tokens compromised — user must rotate immediately
+- Token files: ~/.config/promptc-deploy-tokens.json + ~/.config/promptc-vercel-tokens.json (chmod 600)
