@@ -74,7 +74,9 @@ export function Lbl({ text, color = "#4DFFFF" }: { text: string; color?: string 
   return <div className="mono-label mb-1.5" style={{ color }}>{text}</div>;
 }
 
-// Expandable disclosure
+// Expandable disclosure — uses div[role=button] instead of <button> to allow
+// nested interactive elements (PinButton, CopyButton) inside the summary.
+// HTML spec forbids <button> inside <button>; this avoids hydration errors.
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -84,13 +86,16 @@ export function Disclosure({
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div className="border border-white/10 rounded-lg overflow-hidden">
-      <button
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-3 py-2.5 text-left text-sm hover:bg-white/5 transition-colors"
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(o => !o); } }}
+        className="w-full flex items-center justify-between px-3 py-2.5 text-left text-sm hover:bg-white/5 transition-colors cursor-pointer"
       >
-        <span>{summary}</span>
-        <ChevronDown className={cn("h-4 w-4 text-zinc-400 transition-transform", open && "rotate-180")} />
-      </button>
+        <span className="flex-1 min-w-0">{summary}</span>
+        <ChevronDown className={cn("h-4 w-4 text-zinc-400 transition-transform shrink-0", open && "rotate-180")} />
+      </div>
       {open && <div className="px-3 pb-3 pt-1 border-t border-white/10">{children}</div>}
     </div>
   );

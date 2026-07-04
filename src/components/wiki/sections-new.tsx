@@ -356,7 +356,7 @@ export function MonetizeSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{p.title || p.name || p.label}</div>
-                  {p.when && <div className="text-xs text-zinc-400 mt-0.5">{p.when}</div>}
+                  {p.why && <div className="text-xs text-zinc-400 mt-0.5">{p.why}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
                   {p.cat && <Badge variant="hot">{p.cat}</Badge>}
@@ -376,7 +376,7 @@ export function MonetizeSection() {
                 </div>
               </div>
               {p.prompt && <CodeBlock text={p.prompt} maxHeight="320px" />}
-              {p.action && <p className="text-xs text-amber-400 mt-2 font-mono">⚡ {p.action}</p>}
+              {p.monetize && <p className="text-xs text-amber-400 mt-2 font-mono">⚡ {p.monetize}</p>}
             </WikiCard>
           ))}
         </div>
@@ -389,12 +389,12 @@ export function MonetizeSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{s.name || s.title}</div>
-                  {s.desc && <div className="text-xs text-zinc-400 mt-0.5">{s.desc}</div>}
+                  {s.niche && <div className="text-xs text-zinc-400 mt-0.5">{s.niche}</div>}
                 </div>
                 {s.cat && <span className="mono-label text-zinc-400">{s.cat}</span>}
               </div>
               {s.stack && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">STACK:</span> <span className="font-mono text-amber-300">{s.stack}</span></p>}
-              {s.diff && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">DIFFERENTIATOR:</span> {s.diff}</p>}
+              {s.why && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">DIFFERENTIATOR:</span> {s.why}</p>}
               {s.prompt && <CodeBlock text={s.prompt} maxHeight="300px" />}
             </WikiCard>
           ))}
@@ -439,7 +439,7 @@ export function MonetizeSection() {
                 {f.cat && <span className="mono-label text-zinc-400">{f.cat}</span>}
               </div>
               {f.desc && <p className="text-xs text-zinc-400 mb-2">{f.desc}</p>}
-              {f.framework && <CodeBlock text={f.framework} maxHeight="220px" />}
+              {f.prompt && <CodeBlock text={f.prompt} maxHeight="220px" />}
             </WikiCard>
           ))}
         </div>
@@ -451,12 +451,12 @@ export function MonetizeSection() {
             <WikiCard key={i} accent="#FFD700">
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
-                  <div className="font-semibold text-sm">{w.name}</div>
+                  <div className="font-semibold text-sm">{w.label}</div>
                   {w.trigger && <div className="text-xs text-zinc-400 mt-0.5">TRIGGER: {w.trigger}</div>}
                 </div>
-                {w.cat && <span className="mono-label text-zinc-400">{w.cat}</span>}
+                {w.tool && <span className="mono-label text-zinc-400">{w.tool}</span>}
               </div>
-              {w.flow && <CodeBlock text={w.flow} maxHeight="200px" />}
+              {w.flow && <CodeBlock text={w.prompt} maxHeight="200px" />}
             </WikiCard>
           ))}
         </div>

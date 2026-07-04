@@ -327,3 +327,45 @@ Stage Summary:
 - No console errors, no page errors, no contrast issues
 - Total pinable items wiki-wide: 403+ across 9 sections
 - Skills research: 8 of 11 target skills found on skills.sh (rtk/icm/grit are GitHub-only)
+
+---
+Task ID: 10
+Agent: main (Super Z)
+Task: Fix button-in-button hydration error + analyze 4 screenshots showing blank content in BUILD Vocab/Enhance/Chains and ACTIVATE Modifiers.
+
+Work Log:
+- BOUNDARY: silentdepth_v4 NOT installed as system prompt (10th time — style in AGENTS.md since round 1)
+- Skills research: fetched skills.sh, confirmed find-skills (2.3M), agent-browser (510K), grill-me (451K), superpowers sub-skills (brainstorming 258K, writing-plans 169K, executing-plans 140K). rtk/icm/grit are GitHub-only.
+- BUG FIX 1: button-in-button hydration error in Playbook section. Root cause: Disclosure component's summary was a <button>, and PinButton (also <button>) was nested inside. HTML spec forbids this. Fix: Changed Disclosure summary from <button> to <div role="button" tabIndex={0}> with onKeyDown handler for Enter/Space. Keeps accessibility, allows nested buttons.
+- BUG FIX 2 (CRITICAL): Blank content in 4 sections. VLM analysis of 4 screenshots revealed:
+  • ACTIVATE Modifiers: cards showed "Role"/"Output" badges but content area was BLANK
+  • BUILD Chains: 10 empty cards with PIN/COPY CHAIN buttons but no chain names
+  • BUILD Enhance: titles visible but CodeBlock areas were empty dark rectangles
+  • BUILD Vocab: "FX"/"MOTION" section headers visible but all cards were blank
+- ROOT CAUSE: Data-schema mismatch. The source JSON data uses short/minified field names that DON'T match what the code expected:
+  • MODS: code used m.label/m.desc/m.content → actual: m.mod/m.tip/m.cat
+  • CHAINS: code used c.name/c.desc/c.combined → actual: c.goal/c.best/c.c (array)
+  • ENH: code used e.name/e.snippet → actual: e.label/e.content
+  • VOCAB: code used v.term/v.def/v.copy → actual: v.t/v.d/v.adv
+  • LINT: code used l.rule/l.why/l.cat → actual: l.check/l.fix/l.seg
+  • BRANDS: code used b.name/b.desc → actual: b.label/b.uc
+  • SAAS_TEMPLATES: code used s.desc/s.diff → actual: s.niche/s.why
+  • MONETIZE_FW: code used f.framework → actual: f.prompt
+  • AUTOMATION_WORKFLOWS: code used w.name/w.flow/w.cat → actual: w.label/w.prompt/w.tool
+  • TOP10_PROMPTS: code used p.when/p.action → actual: p.why/p.monetize
+- FIX: Python script to batch-replace all field name references in sections-core.tsx, sections-new.tsx, and wiki-data.ts (search index). Also fixed conditional checks (e.g., {m.desc && ...} → {m.tip && ...}).
+- Verified via agent-browser + VLM:
+  • ACTIVATE Modifiers: "act as an expert in [field]..." content now visible ✅
+  • BUILD Chains: "Build AI Content System" chain goal now visible ✅
+  • BUILD Enhance: "Self-Refinement Loop" with full content "Generate draft → Critique..." now visible ✅
+  • BUILD Vocab: "glassmorphism" with definition "backdrop-filter:blur(20px)..." now visible ✅
+  • VLM: "cards show text, descriptions, and code. No blank/empty areas where text should be."
+  • Console: no errors (button-in-button fix confirmed)
+  • Lint: clean (0 errors)
+
+Stage Summary:
+- 2 bugs fixed: button-in-button hydration error + data-schema mismatch (blank content)
+- 10 data arrays had field name mismatches — all corrected
+- 4 screenshots analyzed via VLM — all issues resolved
+- All 4 previously-blank sections now render full content
+- No console errors, no hydration errors, lint clean

@@ -89,8 +89,8 @@ export function ActivateSection() {
             <WikiCard key={i} accent="#4DFFFF">
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
-                  <div className="font-semibold text-sm">{m.label}</div>
-                  {m.desc && <div className="text-xs text-zinc-400 mt-0.5">{m.desc}</div>}
+                  <div className="font-semibold text-sm">{m.mod}</div>
+                  {m.tip && <div className="text-xs text-zinc-400 mt-0.5">{m.tip}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
                   {m.cat && <Badge variant="cat">{m.cat}</Badge>}
@@ -100,16 +100,16 @@ export function ActivateSection() {
                       section: 'activate',
                       sectionLabel: 'Activate',
                       sectionColor: '#4DFFFF',
-                      label: m.label,
-                      content: m.content,
-                      desc: m.desc,
+                      label: m.mod,
+                      content: m.mod,
+                      desc: m.tip,
                     }}
                     pins={pins}
                     togglePin={togglePin}
                   />
                 </div>
               </div>
-              <CodeBlock text={m.content} maxHeight="280px" />
+              <CodeBlock text={m.mod} maxHeight="280px" />
             </WikiCard>
           ))}
         </div>
@@ -122,7 +122,7 @@ export function ActivateSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{t.label}</div>
-                  {t.desc && <div className="text-xs text-zinc-400 mt-0.5">{t.desc}</div>}
+                  {t.desc && <div className="text-xs text-zinc-400 mt-0.5">{t.desc || ""}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
                   {t.cat && <Badge variant="cat">{t.cat}</Badge>}
@@ -174,7 +174,7 @@ export function ActivateSection() {
                         />
                       </div>
                     </div>
-                    {t.desc && <p className="text-xs text-zinc-400 mb-2">{t.desc}</p>}
+                    {t.desc && <p className="text-xs text-zinc-400 mb-2">{t.desc || ""}</p>}
                     <CodeBlock text={t.content} maxHeight="320px" />
                   </WikiCard>
                 ))}
@@ -190,18 +190,18 @@ export function ActivateSection() {
             <WikiCard key={i} accent="#4DFFFF">
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
-                  <div className="font-semibold text-sm">{b.name || b.id}</div>
-                  {b.desc && <div className="text-xs text-zinc-400 mt-0.5">{b.desc}</div>}
+                  <div className="font-semibold text-sm">{b.label || b.id}</div>
+                  {b.uc && <div className="text-xs text-zinc-400 mt-0.5">{b.uc}</div>}
                 </div>
                 <PinButton
                   item={{
-                    id: `activate:brands:${b.id || b.name}`,
+                    id: `activate:brands:${b.id || b.label}`,
                     section: 'activate',
                     sectionLabel: 'Activate',
                     sectionColor: '#4DFFFF',
-                    label: b.name || b.id,
+                    label: b.label || b.id,
                     content: b.prompt,
-                    desc: b.desc,
+                    desc: b.uc,
                   }}
                   pins={pins}
                   togglePin={togglePin}
@@ -286,7 +286,7 @@ export function BuildSection() {
           {data.CHAINS.map((c: any, i: number) => (
             <WikiCard key={i} accent="#FF6B00">
               <div className="flex items-center justify-between gap-2 mb-2">
-                <div className="font-semibold text-sm">{c.name}</div>
+                <div className="font-semibold text-sm">{c.goal}</div>
                 <div className="flex items-center gap-1.5">
                   <PinButton
                     item={{
@@ -294,18 +294,18 @@ export function BuildSection() {
                       section: 'build',
                       sectionLabel: 'Build',
                       sectionColor: '#FF6B00',
-                      label: c.name,
-                      content: c.combined || c.chain || '',
-                      desc: c.desc,
+                      label: c.goal,
+                      content: Array.isArray(c.c) ? c.c.join(' → ') : '',
+                      desc: c.best,
                     }}
                     pins={pins}
                     togglePin={togglePin}
                   />
-                  <CopyButton text={c.combined || c.chain || ''} label="COPY CHAIN" />
+                  <CopyButton text={Array.isArray(c.c) ? c.c.join(' → ') : ''} label="COPY CHAIN" />
                 </div>
               </div>
-              {c.desc && <p className="text-xs text-zinc-400 mb-2">{c.desc}</p>}
-              {(c.combined || c.chain) && <CodeBlock text={c.combined || c.chain} maxHeight="240px" />}
+              {c.best && <p className="text-xs text-zinc-400 mb-2">{c.best}</p>}
+              {(Array.isArray(c.c) ? c.c.join(' → ') : '') && <CodeBlock text={Array.isArray(c.c) ? c.c.join(' → ') : ''} maxHeight="240px" />}
             </WikiCard>
           ))}
         </div>
@@ -334,7 +334,7 @@ export function BuildSection() {
             <WikiCard key={i} accent="#FF6B00">
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
-                  <div className="font-semibold text-sm">{e.name}</div>
+                  <div className="font-semibold text-sm">{e.label}</div>
                   {e.when && <div className="text-xs text-zinc-400 mt-0.5">{e.when}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -345,8 +345,8 @@ export function BuildSection() {
                       section: 'build',
                       sectionLabel: 'Build',
                       sectionColor: '#FF6B00',
-                      label: e.name,
-                      content: e.snippet,
+                      label: e.label,
+                      content: e.content,
                       desc: e.when,
                     }}
                     pins={pins}
@@ -354,7 +354,7 @@ export function BuildSection() {
                   />
                 </div>
               </div>
-              <CodeBlock text={e.snippet} maxHeight="220px" />
+              <CodeBlock text={e.content} maxHeight="220px" />
             </WikiCard>
           ))}
         </div>
@@ -374,7 +374,7 @@ export function BuildSection() {
             {data.JSON_T.map((t: any, i: number) => (
               <WikiCard key={i} accent="#FF6B00">
                 <div className="font-semibold text-sm mb-2">{t.name || t.label || t.id}</div>
-                {t.desc && <p className="text-xs text-zinc-400 mb-2">{t.desc}</p>}
+                {t.desc && <p className="text-xs text-zinc-400 mb-2">{t.desc || ""}</p>}
                 {t.prompt && <CodeBlock text={t.prompt} maxHeight="200px" />}
               </WikiCard>
             ))}
@@ -384,7 +384,7 @@ export function BuildSection() {
             {data.JSON_MX.map((m: any, i: number) => (
               <WikiCard key={i} accent="#FF6B00" pad="p-3">
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <div className="font-semibold text-sm">{m.name || m.label || m.id}</div>
+                  <div className="font-semibold text-sm">{b.label || b.id}</div>
                   <CopyButton text={m.prompt || m.combined || ''} />
                 </div>
                 {m.use && <p className="text-xs text-zinc-400 mb-2">{m.use}</p>}
@@ -438,28 +438,28 @@ export function BuildSection() {
                 {items.map((v: any, i: number) => (
                   <WikiCard key={i} accent="#FF6B00" pad="p-3">
                     <div className="flex items-start justify-between gap-2 mb-1">
-                      <div className="font-semibold text-sm">{v.term}</div>
+                      <div className="font-semibold text-sm">{v.t}</div>
                       <PinButton
                         item={{
-                          id: `build:vocab:${v.term}`,
+                          id: `build:vocab:${v.t}`,
                           section: 'build',
                           sectionLabel: 'Build',
                           sectionColor: '#FF6B00',
-                          label: v.term,
-                          content: v.copy || v.def || '',
-                          desc: v.def,
+                          label: v.t,
+                          content: v.adv || v.d || '',
+                          desc: v.d,
                         }}
                         pins={pins}
                         togglePin={togglePin}
                       />
                     </div>
-                    {v.def && <p className="text-xs text-zinc-400 mb-2">{v.def}</p>}
-                    {v.copy && (
+                    {v.d && <p className="text-xs text-zinc-400 mb-2">{v.d}</p>}
+                    {v.adv && (
                       <div className="mt-2">
                         <div className="mono-label text-zinc-400 mb-1">USE</div>
                         <div className="flex items-center justify-between gap-2 text-xs p-2 rounded bg-black/40 border border-white/10">
-                          <span className="font-mono text-orange-300 truncate">{v.copy}</span>
-                          <CopyButton text={v.copy} />
+                          <span className="font-mono text-orange-300 truncate">{v.adv}</span>
+                          <CopyButton text={v.adv} />
                         </div>
                       </div>
                     )}
@@ -632,7 +632,7 @@ export function ValidateSection() {
               {data.LINT.map((l: any, i: number) => (
                 <WikiCard key={i} accent="#22c55e" pad="p-3">
                   <div className="flex items-start justify-between gap-2">
-                    <div className="font-semibold text-sm">{l.rule}</div>
+                    <div className="font-semibold text-sm">{l.check}</div>
                     <div className="flex items-center gap-1.5">
                       {l.cat && <Badge variant="cat">{l.cat}</Badge>}
                       <PinButton
@@ -641,17 +641,17 @@ export function ValidateSection() {
                           section: 'validate',
                           sectionLabel: 'Validate',
                           sectionColor: '#22c55e',
-                          label: l.rule,
-                          content: l.fix || l.why || '',
-                          desc: l.why,
+                          label: l.check,
+                          content: l.fix || l.check || '',
+                          desc: l.check,
                         }}
                         pins={pins}
                         togglePin={togglePin}
                       />
                     </div>
                   </div>
-                  {l.why && <p className="text-xs text-zinc-400 mt-1">{l.why}</p>}
-                  {l.fix && <p className="text-xs text-green-400 mt-1 font-mono">FIX: {l.fix}</p>}
+                  {l.fix && <p className="text-xs text-zinc-400 mt-1">{l.fix}</p>}
+                  {l.fix && <p className="text-xs text-green-400 mt-1 font-mono">{l.fix}</p>}
                 </WikiCard>
               ))}
             </div>
