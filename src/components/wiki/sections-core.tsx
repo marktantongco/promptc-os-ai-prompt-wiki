@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
-import { SectionHeader, WikiCard, Pill, Lbl, Disclosure } from "./primitives";
+import { SectionHeader, WikiCard, Pill, Lbl, Disclosure, Badge } from "./primitives";
 import { PinButton, usePins } from "./pin-list";
 
 export function ActivateSection() {
@@ -90,10 +90,10 @@ export function ActivateSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{m.label}</div>
-                  {m.desc && <div className="text-xs text-zinc-500 mt-0.5">{m.desc}</div>}
+                  {m.desc && <div className="text-xs text-zinc-400 mt-0.5">{m.desc}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  {m.cat && <span className="mono-label text-zinc-500">{m.cat}</span>}
+                  {m.cat && <Badge variant="cat">{m.cat}</Badge>}
                   <PinButton
                     item={{
                       id: `activate:mods:${i}`,
@@ -122,10 +122,10 @@ export function ActivateSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{t.label}</div>
-                  {t.desc && <div className="text-xs text-zinc-500 mt-0.5">{t.desc}</div>}
+                  {t.desc && <div className="text-xs text-zinc-400 mt-0.5">{t.desc}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  {t.cat && <span className="mono-label text-zinc-500">{t.cat}</span>}
+                  {t.cat && <Badge variant="cat">{t.cat}</Badge>}
                   <PinButton
                     item={{
                       id: `activate:tasks:${i}`,
@@ -158,7 +158,7 @@ export function ActivateSection() {
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div className="font-semibold text-sm">{t.label}</div>
                       <div className="flex items-center gap-1.5">
-                        {t.cat && <span className="mono-label text-zinc-500">{t.cat}</span>}
+                        {t.cat && <Badge variant="cat">{t.cat}</Badge>}
                         <PinButton
                           item={{
                             id: `activate:tmpls:${t.label}`,
@@ -174,7 +174,7 @@ export function ActivateSection() {
                         />
                       </div>
                     </div>
-                    {t.desc && <p className="text-xs text-zinc-500 mb-2">{t.desc}</p>}
+                    {t.desc && <p className="text-xs text-zinc-400 mb-2">{t.desc}</p>}
                     <CodeBlock text={t.content} maxHeight="320px" />
                   </WikiCard>
                 ))}
@@ -191,7 +191,7 @@ export function ActivateSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{b.name || b.id}</div>
-                  {b.desc && <div className="text-xs text-zinc-500 mt-0.5">{b.desc}</div>}
+                  {b.desc && <div className="text-xs text-zinc-400 mt-0.5">{b.desc}</div>}
                 </div>
                 <PinButton
                   item={{
@@ -258,7 +258,7 @@ export function BuildSection() {
                   <span className="text-2xl">{a.emoji}</span>
                   <div>
                     <div className="font-semibold text-sm">{a.name}</div>
-                    <div className="text-xs text-zinc-500">{a.mode}</div>
+                    <div className="text-xs text-zinc-400">{a.mode}</div>
                   </div>
                 </div>
                 <PinButton
@@ -304,7 +304,7 @@ export function BuildSection() {
                   <CopyButton text={c.combined || c.chain || ''} label="COPY CHAIN" />
                 </div>
               </div>
-              {c.desc && <p className="text-xs text-zinc-500 mb-2">{c.desc}</p>}
+              {c.desc && <p className="text-xs text-zinc-400 mb-2">{c.desc}</p>}
               {(c.combined || c.chain) && <CodeBlock text={c.combined || c.chain} maxHeight="240px" />}
             </WikiCard>
           ))}
@@ -335,10 +335,10 @@ export function BuildSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{e.name}</div>
-                  {e.when && <div className="text-xs text-zinc-500 mt-0.5">{e.when}</div>}
+                  {e.when && <div className="text-xs text-zinc-400 mt-0.5">{e.when}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  {e.cat && <span className="mono-label text-zinc-500">{e.cat}</span>}
+                  {e.cat && <Badge variant="cat">{e.cat}</Badge>}
                   <PinButton
                     item={{
                       id: `build:enh:${i}`,
@@ -374,7 +374,7 @@ export function BuildSection() {
             {data.JSON_T.map((t: any, i: number) => (
               <WikiCard key={i} accent="#FF6B00">
                 <div className="font-semibold text-sm mb-2">{t.name || t.label || t.id}</div>
-                {t.desc && <p className="text-xs text-zinc-500 mb-2">{t.desc}</p>}
+                {t.desc && <p className="text-xs text-zinc-400 mb-2">{t.desc}</p>}
                 {t.prompt && <CodeBlock text={t.prompt} maxHeight="200px" />}
               </WikiCard>
             ))}
@@ -387,7 +387,7 @@ export function BuildSection() {
                   <div className="font-semibold text-sm">{m.name || m.label || m.id}</div>
                   <CopyButton text={m.prompt || m.combined || ''} />
                 </div>
-                {m.use && <p className="text-xs text-zinc-500 mb-2">{m.use}</p>}
+                {m.use && <p className="text-xs text-zinc-400 mb-2">{m.use}</p>}
                 {(m.prompt || m.combined) && <CodeBlock text={m.prompt || m.combined} maxHeight="180px" />}
               </WikiCard>
             ))}
@@ -415,7 +415,7 @@ export function BuildSection() {
                   togglePin={togglePin}
                 />
               </div>
-              <div className="text-xs text-zinc-500 mb-2">Mono: {t.m}</div>
+              <div className="text-xs text-zinc-400 mb-2">Mono: {t.m}</div>
               <p className="text-xs text-zinc-400 mb-3">{t.b}</p>
               <div className="flex items-baseline gap-3 p-3 rounded border border-white/10 bg-black/30">
                 <span style={{ fontFamily: 'var(--font-display)' }} className="text-3xl">{t.d}</span>
@@ -456,7 +456,7 @@ export function BuildSection() {
                     {v.def && <p className="text-xs text-zinc-400 mb-2">{v.def}</p>}
                     {v.copy && (
                       <div className="mt-2">
-                        <div className="mono-label text-zinc-600 mb-1">USE</div>
+                        <div className="mono-label text-zinc-400 mb-1">USE</div>
                         <div className="flex items-center justify-between gap-2 text-xs p-2 rounded bg-black/40 border border-white/10">
                           <span className="font-mono text-orange-300 truncate">{v.copy}</span>
                           <CopyButton text={v.copy} />
@@ -504,14 +504,14 @@ OUTPUT:
       <p className="text-xs text-zinc-400 mb-3">Live prompt updates as you select. Copy when ready.</p>
       <div className="grid sm:grid-cols-3 gap-3 mb-3">
         <div>
-          <div className="mono-label text-zinc-500 mb-1">Audience</div>
+          <div className="mono-label text-zinc-400 mb-1">Audience</div>
           <input
             value={audience} onChange={e => setAudience(e.target.value)} placeholder="e.g. indie hackers"
             className="w-full bg-black/40 border border-white/10 rounded px-2 py-1.5 text-xs text-white outline-none focus:border-orange-400"
           />
         </div>
         <div>
-          <div className="mono-label text-zinc-500 mb-1">Framework</div>
+          <div className="mono-label text-zinc-400 mb-1">Framework</div>
           <select
             value={framework} onChange={e => setFramework(e.target.value)}
             className="w-full bg-black/40 border border-white/10 rounded px-2 py-1.5 text-xs text-white outline-none focus:border-orange-400"
@@ -520,7 +520,7 @@ OUTPUT:
           </select>
         </div>
         <div>
-          <div className="mono-label text-zinc-500 mb-1">Aesthetic</div>
+          <div className="mono-label text-zinc-400 mb-1">Aesthetic</div>
           <select
             value={aesthetic} onChange={e => setAesthetic(e.target.value)}
             className="w-full bg-black/40 border border-white/10 rounded px-2 py-1.5 text-xs text-white outline-none focus:border-orange-400"
@@ -571,7 +571,7 @@ export function ValidateSection() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs text-red-400 line-through">{s.bad}</span>
-                        <span className="text-zinc-600">→</span>
+                        <span className="text-zinc-400">→</span>
                       </div>
                       <div className="flex items-center justify-between gap-2">
                         <span className="text-sm text-green-400 font-mono">{s.good}</span>
@@ -592,8 +592,8 @@ export function ValidateSection() {
                           <CopyButton text={s.good} />
                         </div>
                       </div>
-                      {s.tip && <p className="text-xs text-zinc-500 mt-1">{s.tip}</p>}
-                      {s.level && <span className="mono-label text-zinc-600 mt-1 inline-block">{s.level}</span>}
+                      {s.tip && <p className="text-xs text-zinc-400 mt-1">{s.tip}</p>}
+                      {s.level && <span className="mono-label text-zinc-400 mt-1 inline-block">{s.level}</span>}
                       {isKeywordRow && (
                         <div className="mt-2">
                           <button
@@ -634,7 +634,7 @@ export function ValidateSection() {
                   <div className="flex items-start justify-between gap-2">
                     <div className="font-semibold text-sm">{l.rule}</div>
                     <div className="flex items-center gap-1.5">
-                      {l.cat && <span className="mono-label text-zinc-500">{l.cat}</span>}
+                      {l.cat && <Badge variant="cat">{l.cat}</Badge>}
                       <PinButton
                         item={{
                           id: `validate:lint:${i}`,
@@ -675,7 +675,7 @@ export function ValidateSection() {
               {data.SDIMS.map((d: any, i: number) => (
                 <div key={i} className="text-xs p-2 rounded border border-white/10 bg-black/20">
                   <div className="font-semibold">{d.name || d.dim || d.label}</div>
-                  {d.desc && <div className="text-zinc-500 mt-0.5">{d.desc}</div>}
+                  {d.desc && <div className="text-zinc-400 mt-0.5">{d.desc}</div>}
                 </div>
               ))}
             </div>
@@ -684,7 +684,7 @@ export function ValidateSection() {
               {data.SSCALE.map((s: any, i: number) => (
                 <div key={i} className="text-xs px-2 py-1 rounded border border-white/10 bg-black/20">
                   <span className="font-mono text-green-400">{s.grade || s.label || s.score}</span>
-                  <span className="text-zinc-500 ml-1">{s.desc || s.range || s.use}</span>
+                  <span className="text-zinc-400 ml-1">{s.desc || s.range || s.use}</span>
                 </div>
               ))}
             </div>
@@ -723,8 +723,8 @@ export function PlaybookSection() {
           <Disclosure key={i} summary={
             <div className="flex items-center gap-3">
               <span className="font-semibold text-sm flex-1">{w.title}</span>
-              {w.cat && <span className="mono-label text-amber-400">{w.cat}</span>}
-              {w.chain && <span className="text-xs text-zinc-500">{Array.isArray(w.chain) ? w.chain.join(' → ') : w.chain}</span>}
+              {w.cat && <Badge variant="rank">{w.cat}</Badge>}
+              {w.chain && <span className="text-xs text-zinc-400">{Array.isArray(w.chain) ? w.chain.join(' → ') : w.chain}</span>}
               <PinButton
                 item={{
                   id: `playbook:wf:${i}`,
@@ -821,10 +821,10 @@ export function BuilderSection() {
                     <span className="text-xl">{a.emoji}</span>
                     <div>
                       <div className={`font-semibold text-sm ${active ? 'text-pink-400' : ''}`}>{a.name}</div>
-                      <div className="text-[10px] text-zinc-500">{a.mode}</div>
+                      <div className="text-[10px] text-zinc-400">{a.mode}</div>
                     </div>
                   </div>
-                  {g && <div className="text-[10px] text-zinc-600 mt-1">{g.cognitive_role}</div>}
+                  {g && <div className="text-[10px] text-zinc-400 mt-1">{g.cognitive_role}</div>}
                 </button>
               );
             })}
@@ -855,7 +855,7 @@ export function BuilderSection() {
           <Lbl text="Generated Prompt" color="#FF4FD8" />
           {history.length === 0 ? (
             <WikiCard pad="p-6">
-              <p className="text-xs text-zinc-500 text-center">Pick animals + type a goal, then click GENERATE.</p>
+              <p className="text-xs text-zinc-400 text-center">Pick animals + type a goal, then click GENERATE.</p>
             </WikiCard>
           ) : (
             history.map((h, i) => (
@@ -863,7 +863,7 @@ export function BuilderSection() {
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <div>
                     <div className="font-semibold text-sm">{h.goal}</div>
-                    <div className="text-xs text-zinc-500">{h.chain.join(' → ')}</div>
+                    <div className="text-xs text-zinc-400">{h.chain.join(' → ')}</div>
                   </div>
                   <CopyButton text={h.prompt} label="COPY" />
                 </div>

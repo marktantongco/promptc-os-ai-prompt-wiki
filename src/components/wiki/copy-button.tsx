@@ -47,7 +47,7 @@ export function CopyButton({ text, label = "COPY", className, variant = "sm" }: 
         "inline-flex items-center gap-1 rounded-md border font-mono uppercase tracking-wider transition-all",
         ok
           ? "border-green-500/40 bg-green-500/10 text-green-400"
-          : "border-white/15 bg-white/5 text-zinc-400 hover:border-white/30 hover:text-white",
+          : "border-white/20 bg-white/5 text-zinc-200 hover:border-white/40 hover:text-white",
         variant === "sm" ? "px-2.5 py-1 text-[10px]" : "px-3 py-1.5 text-xs",
         className
       )}
