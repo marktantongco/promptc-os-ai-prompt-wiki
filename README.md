@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Live](https://img.shields.io/badge/LIVE-promptc--os-4DFFFF)](https://promptc-os-ai-prompt-wiki.vercel.app)
 
-**🌐 Live:** [promptc-os-ai-prompt-wiki.vercel.app](https://promptc-os-ai-prompt-wiki.vercel.app) · **Source:** [github.com/marktantongco/promptc-os-ai-prompt-wiki](https://github.com/marktantongco/promptc-os-ai-prompt-wiki)
+**🌐 Live:** [marktantongco.github.io/promptc-os-ai-prompt-wiki](https://marktantongco.github.io/promptc-os-ai-prompt-wiki/) (GitHub Pages) · **Vercel:** [promptc-os-ai-prompt-wiki.vercel.app](https://promptc-os-ai-prompt-wiki-markys-projects-b6633e43.vercel.app) · **Source:** [github.com/marktantongco/promptc-os-ai-prompt-wiki](https://github.com/marktantongco/promptc-os-ai-prompt-wiki)
 
 ---
 
