@@ -1,0 +1,205 @@
+[
+  {
+    "rank": 1,
+    "name": "ai-video-generation",
+    "source": "halt-catch-fire/skills",
+    "installs": 21700,
+    "install_str": "21.7K"
+  },
+  {
+    "rank": 6,
+    "name": "find-skills",
+    "source": "vercel-labs/skills",
+    "installs": 13500,
+    "install_str": "13.5K"
+  },
+  {
+    "rank": 7,
+    "name": "viral-hooks",
+    "source": "vyralcontent/content-skills",
+    "installs": 8100,
+    "install_str": "8.1K"
+  },
+  {
+    "rank": 14,
+    "name": "gpt-image-edit",
+    "source": "agentspace-so/runcomfy-agent-skills",
+    "installs": 6100,
+    "install_str": "6.1K"
+  },
+  {
+    "rank": 41,
+    "name": "relight",
+    "source": "agentspace-so/runcomfy-agent-skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 42,
+    "name": "image-edit",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 43,
+    "name": "nano-banana-2",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 44,
+    "name": "video-edit",
+    "source": "doany-ai/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 45,
+    "name": "kling-3-0",
+    "source": "agentspace-so/runcomfy-agent-skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 46,
+    "name": "flux-kontext",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 47,
+    "name": "ace-step",
+    "source": "doany-ai/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 49,
+    "name": "video-inpainting",
+    "source": "doany-ai/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 50,
+    "name": "wan-2-7",
+    "source": "doany-ai/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 51,
+    "name": "seedance-v2",
+    "source": "agentspace-so/runcomfy-agent-skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 53,
+    "name": "ai-image-generation",
+    "source": "doany-ai/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 54,
+    "name": "controlnet-pose",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 55,
+    "name": "video-outpainting",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 56,
+    "name": "nano-banana-edit",
+    "source": "doany-ai/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 57,
+    "name": "video-extend",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 58,
+    "name": "face-swap",
+    "source": "runcomfy-com/skills",
+    "installs": 5700,
+    "install_str": "5.7K"
+  },
+  {
+    "rank": 59,
+    "name": "grill-me",
+    "source": "mattpocock/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 60,
+    "name": "runcomfy-cli",
+    "source": "doany-ai/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 61,
+    "name": "flux-2-klein",
+    "source": "doany-ai/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 64,
+    "name": "image-to-video",
+    "source": "doany-ai/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 65,
+    "name": "happyhorse-1-0",
+    "source": "doany-ai/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 66,
+    "name": "image-outpainting",
+    "source": "runcomfy-com/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 68,
+    "name": "image-inpainting",
+    "source": "doany-ai/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 75,
+    "name": "agentspace",
+    "source": "agentspace-so/skills",
+    "installs": 5600,
+    "install_str": "5.6K"
+  },
+  {
+    "rank": 76,
+    "name": "gpt-image-2",
+    "source": "runcomfy-com/skills",
+    "installs": 5500,
+    "install_str": "5.5K"
+  }
+]

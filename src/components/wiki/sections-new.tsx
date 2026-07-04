@@ -144,7 +144,7 @@ export function CombosSection() {
 
 // ── SKILLS BUILDER ─────────────────────────────────────────────────────────
 export function SkillsSection() {
-  const [tab, setTab] = useState<'stacks' | 'directory' | 'health'>('stacks');
+  const [tab, setTab] = useState<'stacks' | 'directory' | 'health' | 'leaderboard'>('stacks');
   const { pins, togglePin } = usePins();
 
   return (
@@ -160,6 +160,7 @@ export function SkillsSection() {
         <Pill label={`Stacks (${data.SKILL_STACKS.length})`} active={tab === 'stacks'} color="#FFD700" onClick={() => setTab('stacks')} />
         <Pill label={`Directory (${data.SKILLS_DIRECTORY.length})`} active={tab === 'directory'} color="#FFD700" onClick={() => setTab('directory')} />
         <Pill label="Health Rubric" active={tab === 'health'} color="#FFD700" onClick={() => setTab('health')} />
+        <Pill label="🏆 Leaderboard" active={tab === 'leaderboard'} color="#FFD700" onClick={() => setTab('leaderboard')} />
       </div>
 
       {tab === 'stacks' && (
@@ -325,11 +326,118 @@ export function SkillsSection() {
           </WikiCard>
         </div>
       )}
+
+      {tab === 'leaderboard' && <SkillsLeaderboard />}
     </div>
   );
 }
 
-// ── MONETIZE ───────────────────────────────────────────────────────────────
+// ── SKILLS LEADERBOARD (from skills.sh/trending) ───────────────────────────
+function SkillsLeaderboard() {
+  const sections = data.SKILLS_LEADERBOARD;
+  const { pins, togglePin } = usePins();
+
+  return (
+    <div className="space-y-6">
+      {sections.map((section: any, i: number) => (
+        <div key={section.id}>
+          <Lbl text={section.title} color="#FFD700" />
+          <p className="text-xs text-zinc-300 mb-3 max-w-3xl">{section.description}</p>
+
+          {section.skills && (
+            <div className="space-y-1.5">
+              {section.skills.map((s: any, j: number) => (
+                <div key={j} className="flex items-center gap-3 p-2.5 rounded-lg border border-white/10 bg-[#14161A] hover:bg-[#1a1d22] transition-colors">
+                  <Badge variant="rank">#{s.rank}</Badge>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-sm text-amber-300 truncate">{s.name}</span>
+                      <Badge variant="cat">{s.category}</Badge>
+                    </div>
+                    <div className="text-[10px] text-zinc-400 font-mono mt-0.5">{s.source}</div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="font-mono text-sm text-green-400">{s.installs}</span>
+                    <div className="hidden sm:block max-w-[200px]">
+                      <p className="text-[10px] text-zinc-400 truncate">{s.use}</p>
+                    </div>
+                    <PinButton
+                      item={{
+                        id: `skills:leaderboard:${s.name}`,
+                        section: 'skills',
+                        sectionLabel: 'Skills',
+                        sectionColor: '#FFD700',
+                        label: `${s.name} (${s.installs})`,
+                        content: `${s.source} — ${s.use}`,
+                        desc: s.use,
+                      }}
+                      pins={pins}
+                      togglePin={togglePin}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {section.combos && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {section.combos.map((c: any, j: number) => {
+                const sc = c.score >= 9 ? '#22c55e' : c.score >= 7 ? '#FFB000' : '#FF6B00';
+                return (
+                  <WikiCard key={j} accent={sc}>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="font-semibold text-sm">{c.name}</div>
+                      <Badge variant="score">{c.score}/10</Badge>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {c.skills.map((sk: string, k: number) => (
+                        <span key={k} className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono">{sk}</span>
+                      ))}
+                    </div>
+                    <p className="text-xs text-zinc-300 mb-2">{c.rationale}</p>
+                    <p className="text-[10px] text-zinc-400"><span className="text-zinc-500">USE:</span> {c.use_case}</p>
+                  </WikiCard>
+                );
+              })}
+            </div>
+          )}
+
+          {section.stacks && (
+            <div className="space-y-3">
+              {section.stacks.map((s: any, j: number) => {
+                const sc = s.recommendation_score >= 9 ? '#22c55e' : s.recommendation_score >= 7 ? '#FFB000' : '#FF6B00';
+                return (
+                  <WikiCard key={j} accent={sc}>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="font-semibold text-sm">{s.name}</div>
+                      <Badge variant="score">{s.recommendation_score}/10</Badge>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {s.stack.map((sk: string, k: number) => (
+                        <span key={k} className="text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono">{sk}</span>
+                      ))}
+                    </div>
+                    <p className="text-xs text-zinc-300 mb-1">{s.why}</p>
+                    <p className="text-[10px] text-amber-400"><span className="text-zinc-500">BEST FOR:</span> {s.best_for}</p>
+                  </WikiCard>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      ))}
+
+      <div className="p-3 rounded-lg border border-white/10 bg-black/20 text-xs text-zinc-400">
+        <span className="text-zinc-300">Source:</span>{" "}
+        <a href="https://skills.sh/trending" target="_blank" rel="noopener" className="text-amber-400 hover:underline">
+          skills.sh/trending ↗
+        </a>{" · "}
+        <span>Live data fetched {new Date().toISOString().slice(0,10)}</span>
+      </div>
+    </div>
+  );
+}
 export function MonetizeSection() {
   const [tab, setTab] = useState<'top' | 'saas' | 'recipes' | 'frameworks' | 'automation'>('top');
   const { pins, togglePin } = usePins();
