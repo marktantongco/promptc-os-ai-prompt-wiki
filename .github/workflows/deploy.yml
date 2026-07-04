@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
@@ -30,32 +30,28 @@ jobs:
         run: bun install
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
         with:
           static_site_generator: next
 
       - name: Build static export
         run: |
-          # Remove directories that cause build errors
-          rm -rf src/app/api        # API routes incompatible with static export
-          rm -rf examples           # Example files import missing deps (socket.io-client)
-          rm -rf mini-services      # Not needed for static deployment
-          rm -rf upload             # User uploads, not part of the app
-          rm -rf scripts            # Build scripts, not part of the app
+          # Remove directories that cause build errors or aren't needed
+          rm -rf src/app/api examples mini-services upload scripts skills db prisma
 
-          # Replace next.config.ts with static export config
+          # Create static export config
           rm -f next.config.ts
           cat > next.config.mjs << 'CONFIGEOF'
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  basePath: '/promptc-os-ai-prompt-wiki',
-  trailingSlash: true,
-};
-export default nextConfig;
-CONFIGEOF
+          /** @type {import('next').NextConfig} */
+          const nextConfig = {
+            output: 'export',
+            basePath: '/promptc-os-ai-prompt-wiki',
+            trailingSlash: true,
+          };
+          export default nextConfig;
+          CONFIGEOF
 
-          # Build
+          # Build — tsconfig.json already excludes examples/mini-services/etc
           DEPLOY_TARGET=vercel npx next build
         env:
           DEPLOY_TARGET: vercel
