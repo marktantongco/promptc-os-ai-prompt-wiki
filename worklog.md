@@ -296,3 +296,34 @@ Stage Summary:
 - Typography: FIXED (global brighten + mono-label default color)
 - Badges: ADDED to 9 sections (~250+ badges total)
 - Lint clean, dev server 200, no console errors
+
+---
+Task ID: 9
+Agent: main (Super Z)
+Task: Mock-test Pin buttons on Playbook, Skills, Monetize, Ecosystem, Field Guide + final screenshot. Research skills from skills.sh.
+
+Work Log:
+- Re-acknowledged silentdepth_v4 boundary (9th time — style adopted round 1, in AGENTS.md, NOT installed as system prompt)
+- Fetched skills.sh: researched 11 skills. Found 8 on skills.sh:
+  • find-skills (vercel-labs/skills, 2.3M installs)
+  • agent-browser (vercel-labs/agent-browser, 510.4K)
+  • grill-me (mattpocock/skills, 451.5K)
+  • superpowers (obra/superpowers) → brainstorming (258K), writing-plans (169K), executing-plans (140K)
+  • orchestrate, rtk, icm, grit — NOT on skills.sh (rtk/icm/grit are on github.com/rtk-ai)
+- Mock-tested all 5 sections via agent-browser:
+  1. PLAYBOOK ✅ — 1 Pin button visible (first workflow), clicked → badge=1 → panel showed Playbook item
+  2. SKILLS ✅ — 6 Pin buttons (one per skill stack), clicked first → badge=2 → panel showed "Fullstack AI App Stack"
+  3. MONETIZE ✅ — 5 Pin buttons visible (first 5 top prompts), clicked first → badge=3 → panel showed "MCP Tool → Monetize Stack"
+  4. ECOSYSTEM ✅ — 4 Pin buttons visible (first 4 blueprints), clicked first → badge=4 → panel showed Ecosystem section
+  5. FIELD GUIDE ✅ — 30 Pin buttons (one per motion-stack combo), clicked first → badge=5 → panel showed Field Guide section with direction filters (A·Silk&GPU, B·Zero-Bundle, C·Spatial)
+- Console errors: NONE (infinite loop fix from round 8 confirmed working)
+- Page errors: NONE
+- Final screenshot: wiki-pin-panel-final.png — VLM verified "5 pinned items shown (Pinned [5]), text readable, no contrast issues"
+- Lint clean, dev server 200
+
+Stage Summary:
+- All 5 remaining sections mock-tested: Playbook ✅, Skills ✅, Monetize ✅, Ecosystem ✅, Field Guide ✅
+- 5 items pinned across 5 sections — all appear in the Pin panel with correct section labels
+- No console errors, no page errors, no contrast issues
+- Total pinable items wiki-wide: 403+ across 9 sections
+- Skills research: 8 of 11 target skills found on skills.sh (rtk/icm/grit are GitHub-only)
