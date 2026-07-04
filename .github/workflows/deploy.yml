@@ -36,7 +36,12 @@ jobs:
 
       - name: Build static export
         run: |
-          # Create a static export config
+          # Remove API routes (incompatible with static export)
+          # The 21st.dev live search won't work on GitHub Pages, but all other content will
+          rm -rf src/app/api
+
+          # Create static export config (replaces next.config.ts)
+          mv next.config.ts next.config.ts.bak
           cat > next.config.mjs << 'EOF'
           /** @type {import('next').NextConfig} */
           const nextConfig = {
@@ -47,6 +52,8 @@ jobs:
           };
           export default nextConfig;
           EOF
+
+          # Build
           DEPLOY_TARGET=vercel npx next build
         env:
           DEPLOY_TARGET: vercel
