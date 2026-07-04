@@ -85,7 +85,7 @@ export const data = {
   META: META as AnyRecord,
   ENH: ENH as AnyRecord[],
   WEB_VARS: WEB_VARS as AnyRecord[],
-  DOLPHIN_C: DOLPHIN_C as AnyRecord[],
+  DOLPHIN_C: DOLPHIN_C as string[],
   JSON_GLOBAL: JSON_GLOBAL as string,
   JSON_T: JSON_T as AnyRecord[],
   JSON_MX: JSON_MX as AnyRecord[],

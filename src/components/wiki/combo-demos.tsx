@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useRef, useMemo, useEffect, useState } from "react";
+import { Suspense, useRef, useMemo, useEffect, useState, type ReactElement } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Sparkles, MeshDistortMaterial, Icosahedron, Sphere, Torus } from "@react-three/drei";
 import gsap from "gsap";
@@ -189,7 +189,7 @@ export function GlassBentoDemo() {
 }
 
 // ── Demo registry ──────────────────────────────────────────────────────────
-export const COMBO_DEMOS: Record<string, () => JSX.Element> = {
+export const COMBO_DEMOS: Record<string, () => ReactElement> = {
   "🎮 Cyberpunk Glow": CyberpunkGlowDemo,
   "🌊 Liquid + Ambient": LiquidGradientDemo,
   "⚡ Motion-First": MotionFirstDemo,

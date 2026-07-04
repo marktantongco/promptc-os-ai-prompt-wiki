@@ -384,8 +384,8 @@ export function BuildSection() {
             {data.JSON_MX.map((m: any, i: number) => (
               <WikiCard key={i} accent="#FF6B00" pad="p-3">
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <div className="font-semibold text-sm">{b.label || b.id}</div>
-                  <CopyButton text={m.prompt || m.combined || ''} />
+                  <div className="font-semibold text-sm">{m.sit || m.name || m.label || m.id || `Item ${i+1}`}</div>
+                  <CopyButton text={m.use || m.prompt || m.combined || ''} />
                 </div>
                 {m.use && <p className="text-xs text-zinc-400 mb-2">{m.use}</p>}
                 {(m.prompt || m.combined) && <CodeBlock text={m.prompt || m.combined} maxHeight="180px" />}
