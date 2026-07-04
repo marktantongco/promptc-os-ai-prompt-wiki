@@ -36,22 +36,24 @@ jobs:
 
       - name: Build static export
         run: |
-          # Remove API routes (incompatible with static export)
-          # The 21st.dev live search won't work on GitHub Pages, but all other content will
-          rm -rf src/app/api
+          # Remove directories that cause build errors
+          rm -rf src/app/api        # API routes incompatible with static export
+          rm -rf examples           # Example files import missing deps (socket.io-client)
+          rm -rf mini-services      # Not needed for static deployment
+          rm -rf upload             # User uploads, not part of the app
+          rm -rf scripts            # Build scripts, not part of the app
 
-          # Create static export config (replaces next.config.ts)
-          mv next.config.ts next.config.ts.bak
-          cat > next.config.mjs << 'EOF'
-          /** @type {import('next').NextConfig} */
-          const nextConfig = {
-            output: 'export',
-            images: { unoptimized: true },
-            basePath: '/promptc-os-ai-prompt-wiki',
-            trailingSlash: true,
-          };
-          export default nextConfig;
-          EOF
+          # Replace next.config.ts with static export config
+          rm -f next.config.ts
+          cat > next.config.mjs << 'CONFIGEOF'
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  basePath: '/promptc-os-ai-prompt-wiki',
+  trailingSlash: true,
+};
+export default nextConfig;
+CONFIGEOF
 
           # Build
           DEPLOY_TARGET=vercel npx next build
