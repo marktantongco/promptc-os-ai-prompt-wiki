@@ -3,7 +3,7 @@
 import { useMemo, useState, useCallback } from "react";
 import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
-import { SectionHeader, WikiCard, Pill, Lbl } from "./primitives";
+import { SectionHeader, WikiCard, Pill, Lbl, Badge } from "./primitives";
 import { PinButton, usePins } from "./pin-list";
 import { Search, ExternalLink, AlertCircle } from "lucide-react";
 
@@ -51,13 +51,13 @@ function TwentyFirstSearch() {
 
       <div className="flex gap-2 mb-3">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
           <input
             value={q}
             onChange={e => setQ(e.target.value)}
             onKeyDown={e => e.key === "Enter" && run(q)}
             placeholder="Search components: button, hero, card, navbar…"
-            className="w-full bg-black/40 border border-white/10 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-zinc-500 outline-none focus:border-cyan-400/50"
+            className="w-full bg-black/40 border border-white/10 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-zinc-400 outline-none focus:border-cyan-400/50"
           />
         </div>
         <button
@@ -70,7 +70,7 @@ function TwentyFirstSearch() {
       </div>
 
       <div className="flex flex-wrap gap-1 mb-3">
-        <span className="mono-label text-zinc-600 mr-1">TRY:</span>
+        <span className="mono-label text-zinc-400 mr-1">TRY:</span>
         {suggestions.map(s => (
           <button
             key={s}
@@ -105,7 +105,7 @@ function TwentyFirstSearch() {
       )}
 
       {searched && !loading && results.length === 0 && !error && (
-        <div className="text-xs text-zinc-500 p-3 text-center">No components matched "{q}".</div>
+        <div className="text-xs text-zinc-400 p-3 text-center">No components matched "{q}".</div>
       )}
 
       {results.length > 0 && (
@@ -121,7 +121,7 @@ function TwentyFirstSearch() {
                 />
               )}
               <div className="font-semibold text-xs mb-0.5 truncate">{r.name}</div>
-              {r.author && <div className="text-[10px] text-zinc-500 mb-1">@{r.author}</div>}
+              {r.author && <div className="text-[10px] text-zinc-400 mb-1">@{r.author}</div>}
               {r.description && (
                 <p className="text-[10px] text-zinc-400 line-clamp-2 mb-2">{r.description}</p>
               )}
@@ -192,7 +192,9 @@ function MotionStackCombos() {
                 </div>
                 <div className="flex flex-col items-end gap-0.5">
                   <div className="flex items-center gap-1">
-                    <span className="font-mono text-lg font-bold" style={{ color: sc }}>{c.score}/10</span>
+                    <Badge variant="rank">#{c.num}</Badge>
+                    <Badge variant="score">{c.score}/10</Badge>
+                    <Badge variant={c.mobile === 'High' ? 'live' : c.mobile === 'Medium' ? 'hot' : 'new'}>{c.mobile}</Badge>
                     <PinButton
                       item={{
                         id: `field-guide:combos:${c.num}`,
@@ -212,12 +214,12 @@ function MotionStackCombos() {
               </div>
               <div className="flex flex-wrap gap-1 mb-2">
                 <span className="text-[9px] px-1.5 py-0.5 rounded border border-white/10 bg-black/30 text-zinc-400 font-mono">{c.stack}</span>
-                <span className="text-[9px] px-1.5 py-0.5 rounded border border-white/10 bg-black/30 text-zinc-500 font-mono">{c.framework}</span>
+                <span className="text-[9px] px-1.5 py-0.5 rounded border border-white/10 bg-black/30 text-zinc-400 font-mono">{c.framework}</span>
               </div>
-              <div className="text-xs text-zinc-300 mb-1"><span className="text-zinc-600">Logic:</span> {c.logic}</div>
-              <div className="text-xs text-orange-300 mb-1"><span className="text-zinc-600">Constraint:</span> {c.constraint}</div>
-              <div className="text-xs text-green-300 mb-1"><span className="text-zinc-600">Mitigation:</span> {c.mitigation}</div>
-              <div className="text-[10px] text-zinc-500 mt-1"><span className="text-zinc-700">USE:</span> {c.use_case}</div>
+              <div className="text-xs text-zinc-300 mb-1"><span className="text-zinc-400">Logic:</span> {c.logic}</div>
+              <div className="text-xs text-orange-300 mb-1"><span className="text-zinc-400">Constraint:</span> {c.constraint}</div>
+              <div className="text-xs text-green-300 mb-1"><span className="text-zinc-400">Mitigation:</span> {c.mitigation}</div>
+              <div className="text-[10px] text-zinc-400 mt-1"><span className="text-zinc-400">USE:</span> {c.use_case}</div>
             </WikiCard>
           );
         })}
@@ -251,7 +253,7 @@ function FoundationalCores() {
                 <span className="font-mono text-2xl text-cyan-400/40">#{i+1}</span>
                 <div className="flex-1 min-w-0">
                   <div className="font-mono text-sm font-semibold text-cyan-400">{core.name}</div>
-                  <div className="text-[10px] text-zinc-500 mt-0.5">{core.category}</div>
+                  <div className="text-[10px] text-zinc-400 mt-0.5">{core.category}</div>
                 </div>
                 <PinButton
                   item={{
@@ -266,7 +268,7 @@ function FoundationalCores() {
                   pins={pins}
                   togglePin={togglePin}
                 />
-                <span className="text-[10px] text-zinc-500">{isOpen ? '▼' : '▶'}</span>
+                <span className="text-[10px] text-zinc-400">{isOpen ? '▼' : '▶'}</span>
               </button>
 
               {isOpen && (
@@ -287,8 +289,8 @@ function FoundationalCores() {
                             <span className="font-mono text-xs text-pink-400">+ {s.with}</span>
                             <span className="font-mono text-sm font-bold" style={{ color: sc }}>{s.score}/10</span>
                           </div>
-                          <p className="text-[11px] text-zinc-300 mb-1"><span className="text-zinc-600">WHY:</span> {s.why}</p>
-                          <p className="text-[11px] text-orange-300"><span className="text-zinc-600">RISK:</span> {s.risk}</p>
+                          <p className="text-[11px] text-zinc-300 mb-1"><span className="text-zinc-400">WHY:</span> {s.why}</p>
+                          <p className="text-[11px] text-orange-300"><span className="text-zinc-400">RISK:</span> {s.risk}</p>
                         </div>
                       );
                     })}
@@ -335,12 +337,12 @@ function ComponentSwapGuide() {
                   <span className="text-cyan-400">→</span>
                   <span className="font-mono text-sm text-cyan-400 font-semibold">{s.swap_for}</span>
                 </div>
-                <div className="text-[10px] text-zinc-500 font-mono truncate">{s.shadcn_import}</div>
+                <div className="text-[10px] text-zinc-400 font-mono truncate">{s.shadcn_import}</div>
               </div>
             </div>
 
             <div className="text-xs text-zinc-300 mb-2">
-              <span className="text-zinc-600">USE IN WIKI:</span> {s.use_in_wiki}
+              <span className="text-zinc-400">USE IN WIKI:</span> {s.use_in_wiki}
             </div>
 
             <div className="text-xs text-zinc-300 mb-2">
@@ -402,7 +404,7 @@ export function FieldGuideSection() {
       {tab === 'swap' && <ComponentSwapGuide />}
       {tab === 'compare' && <ABComparison />}
 
-      <div className="mt-6 p-3 rounded-lg border border-white/10 bg-black/20 text-xs text-zinc-500">
+      <div className="mt-6 p-3 rounded-lg border border-white/10 bg-black/20 text-xs text-zinc-400">
         <span className="text-zinc-400">Source:</span>{" "}
         <a href="https://github.com/marktantongco/skill-stack-field-guide" target="_blank" rel="noopener" className="text-cyan-400 hover:underline">
           github.com/marktantongco/skill-stack-field-guide ↗
@@ -439,7 +441,7 @@ function ABComparison() {
               <th className="text-left p-2 border-b border-white/10 mono-label text-cyan-400">promptc-os (A)</th>
               <th className="text-left p-2 border-b border-white/10 mono-label text-pink-400">Field Guide (B)</th>
               <th className="text-left p-2 border-b border-white/10 mono-label text-amber-400">Winner</th>
-              <th className="text-left p-2 border-b border-white/10 mono-label text-zinc-500">Why</th>
+              <th className="text-left p-2 border-b border-white/10 mono-label text-zinc-400">Why</th>
             </tr>
           </thead>
           <tbody>
@@ -455,7 +457,7 @@ function ABComparison() {
                     'bg-zinc-500/15 text-zinc-400 border border-zinc-500/30'
                   }`}>{r.winner}</span>
                 </td>
-                <td className="p-2 text-zinc-500 align-top">{r.why}</td>
+                <td className="p-2 text-zinc-400 align-top">{r.why}</td>
               </tr>
             ))}
           </tbody>

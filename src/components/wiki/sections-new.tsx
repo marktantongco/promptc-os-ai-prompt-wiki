@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { data } from "@/lib/wiki-data";
 import { CopyButton, CodeBlock } from "./copy-button";
-import { SectionHeader, WikiCard, Pill, Lbl, Disclosure } from "./primitives";
+import { SectionHeader, WikiCard, Pill, Lbl, Disclosure, Badge } from "./primitives";
 import { ComboDemo } from "./combo-demos";
 import { PinButton, usePins } from "./pin-list";
 import Image from "next/image";
@@ -44,9 +44,9 @@ export function CombosSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="font-semibold text-sm">{c.combo}</div>
                 <div className="flex items-center gap-1.5">
-                  <span className="mono-label" style={{ color: scoreColor }}>SYNERGY</span>
-                  <span className="font-mono text-lg font-bold" style={{ color: scoreColor }}>{score}/10</span>
-                  {hasDemo && <span className="text-[9px] px-1 py-0.5 rounded bg-green-500/15 border border-green-500/40 text-green-400 font-mono">LIVE</span>}
+                  <Badge variant="score">{score}/10</Badge>
+                  {hasDemo && <Badge variant="live">LIVE</Badge>}
+                  {hasImage && !hasDemo && <Badge variant="cat">PREVIEW</Badge>}
                   <PinButton
                     item={{
                       id: `combos:${c.combo}`,
@@ -88,8 +88,8 @@ export function CombosSection() {
                 ))}
               </div>
 
-              <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-500">Best for:</span> {c.best}</p>
-              <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-500">Psych:</span> {c.psych}</p>
+              <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">Best for:</span> {c.best}</p>
+              <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">Psych:</span> {c.psych}</p>
 
               {c.structural && (
                 <div className="mb-2">
@@ -114,7 +114,7 @@ export function CombosSection() {
 
               {c.stack && (
                 <div className="mb-2">
-                  <div className="mono-label text-zinc-600 mb-1">STACK</div>
+                  <div className="mono-label text-zinc-400 mb-1">STACK</div>
                   <div className="flex flex-wrap gap-1">
                     {c.stack.map((s: string, j: number) => (
                       <span key={j} className="text-[10px] px-1.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-300 font-mono">{s}</span>
@@ -124,7 +124,7 @@ export function CombosSection() {
               )}
 
               <div className="flex items-center justify-between gap-2 mt-2 pt-2 border-t border-white/10">
-                <span className="mono-label text-zinc-600">CONFIDENCE</span>
+                <span className="mono-label text-zinc-400">CONFIDENCE</span>
                 <div className="flex items-center gap-1">
                   {[...Array(10)].map((_, k) => (
                     <span key={k} className="w-1.5 h-3 rounded-sm" style={{
@@ -195,8 +195,8 @@ export function SkillsSection() {
                     <span className="font-mono text-gold-400" style={{ color: '#FFD700' }}>{i+1}.</span>
                     <div className="flex-1">
                       <div className="font-semibold text-zinc-200">{skill.skill}</div>
-                      <div className="text-zinc-500 mt-0.5">{skill.role}</div>
-                      <div className="text-[10px] font-mono text-zinc-600 mt-1">{skill.source}</div>
+                      <div className="text-zinc-400 mt-0.5">{skill.role}</div>
+                      <div className="text-[10px] font-mono text-zinc-400 mt-1">{skill.source}</div>
                     </div>
                   </div>
                 ))}
@@ -204,15 +204,15 @@ export function SkillsSection() {
 
               <div className="grid sm:grid-cols-3 gap-2 mb-3">
                 <div className="text-xs p-2 rounded bg-black/30 border border-white/10">
-                  <div className="mono-label text-zinc-500 mb-1">WHY</div>
+                  <div className="mono-label text-zinc-400 mb-1">WHY</div>
                   <p className="text-zinc-300">{s.why}</p>
                 </div>
                 <div className="text-xs p-2 rounded bg-black/30 border border-white/10">
-                  <div className="mono-label text-zinc-500 mb-1">USE FOR</div>
+                  <div className="mono-label text-zinc-400 mb-1">USE FOR</div>
                   <p className="text-zinc-300">{s.use}</p>
                 </div>
                 <div className="text-xs p-2 rounded bg-black/30 border border-white/10">
-                  <div className="mono-label text-zinc-500 mb-1">HEALTH</div>
+                  <div className="mono-label text-zinc-400 mb-1">HEALTH</div>
                   <p className="text-zinc-300">{s.health}</p>
                 </div>
               </div>
@@ -247,10 +247,10 @@ export function SkillsSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{s.name}</div>
-                  <div className="text-[10px] text-zinc-500 mt-0.5 font-mono">{s.category}</div>
+                  <div className="text-[10px] text-zinc-400 mt-0.5 font-mono">{s.category}</div>
                 </div>
                 <div className="flex items-center gap-1">
-                  {s.canonical && <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/15 border border-green-500/40 text-green-400 font-mono">CANONICAL</span>}
+                  {s.canonical && <Badge variant="live">CANONICAL</Badge>}
                   <PinButton
                     item={{
                       id: `skills:directory:${s.id}`,
@@ -267,7 +267,7 @@ export function SkillsSection() {
                 </div>
               </div>
               <p className="text-xs text-zinc-400 mb-2">{s.notes}</p>
-              {s.use_for && <p className="text-xs text-zinc-500 mb-2"><span className="text-zinc-600">USE FOR:</span> {s.use_for}</p>}
+              {s.use_for && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">USE FOR:</span> {s.use_for}</p>}
               <div className="flex items-center justify-between gap-2 p-2 rounded bg-black/40 border border-white/10">
                 <code className="text-[10px] text-amber-300 truncate flex-1 font-mono">{s.install}</code>
                 <CopyButton text={s.install} label="COPY" />
@@ -356,10 +356,10 @@ export function MonetizeSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{p.title || p.name || p.label}</div>
-                  {p.when && <div className="text-xs text-zinc-500 mt-0.5">{p.when}</div>}
+                  {p.when && <div className="text-xs text-zinc-400 mt-0.5">{p.when}</div>}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  {p.cat && <span className="mono-label text-zinc-500">{p.cat}</span>}
+                  {p.cat && <Badge variant="hot">{p.cat}</Badge>}
                   <PinButton
                     item={{
                       id: `monetize:top:${i}`,
@@ -389,12 +389,12 @@ export function MonetizeSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{s.name || s.title}</div>
-                  {s.desc && <div className="text-xs text-zinc-500 mt-0.5">{s.desc}</div>}
+                  {s.desc && <div className="text-xs text-zinc-400 mt-0.5">{s.desc}</div>}
                 </div>
-                {s.cat && <span className="mono-label text-zinc-500">{s.cat}</span>}
+                {s.cat && <span className="mono-label text-zinc-400">{s.cat}</span>}
               </div>
-              {s.stack && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-600">STACK:</span> <span className="font-mono text-amber-300">{s.stack}</span></p>}
-              {s.diff && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-600">DIFFERENTIATOR:</span> {s.diff}</p>}
+              {s.stack && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">STACK:</span> <span className="font-mono text-amber-300">{s.stack}</span></p>}
+              {s.diff && <p className="text-xs text-zinc-400 mb-2"><span className="text-zinc-400">DIFFERENTIATOR:</span> {s.diff}</p>}
               {s.prompt && <CodeBlock text={s.prompt} maxHeight="300px" />}
             </WikiCard>
           ))}
@@ -408,10 +408,10 @@ export function MonetizeSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{r.label}</div>
-                  {r.stack && <div className="text-xs text-zinc-500 mt-0.5 font-mono">{r.stack}</div>}
+                  {r.stack && <div className="text-xs text-zinc-400 mt-0.5 font-mono">{r.stack}</div>}
                 </div>
                 <div className="flex flex-col items-end gap-1">
-                  {r.cat && <span className="mono-label text-zinc-500">{r.cat}</span>}
+                  {r.cat && <span className="mono-label text-zinc-400">{r.cat}</span>}
                   {r.time && <span className="text-[10px] text-amber-400 font-mono">{r.time}</span>}
                   {r.income && <span className="text-[10px] text-green-400 font-mono">{r.income}</span>}
                 </div>
@@ -436,7 +436,7 @@ export function MonetizeSection() {
             <WikiCard key={i} accent="#FFD700">
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="font-semibold text-sm">{f.name || f.label}</div>
-                {f.cat && <span className="mono-label text-zinc-500">{f.cat}</span>}
+                {f.cat && <span className="mono-label text-zinc-400">{f.cat}</span>}
               </div>
               {f.desc && <p className="text-xs text-zinc-400 mb-2">{f.desc}</p>}
               {f.framework && <CodeBlock text={f.framework} maxHeight="220px" />}
@@ -452,9 +452,9 @@ export function MonetizeSection() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold text-sm">{w.name}</div>
-                  {w.trigger && <div className="text-xs text-zinc-500 mt-0.5">TRIGGER: {w.trigger}</div>}
+                  {w.trigger && <div className="text-xs text-zinc-400 mt-0.5">TRIGGER: {w.trigger}</div>}
                 </div>
-                {w.cat && <span className="mono-label text-zinc-500">{w.cat}</span>}
+                {w.cat && <span className="mono-label text-zinc-400">{w.cat}</span>}
               </div>
               {w.flow && <CodeBlock text={w.flow} maxHeight="200px" />}
             </WikiCard>
@@ -482,10 +482,10 @@ export function EcosystemSection() {
             <div className="flex items-start justify-between gap-2 mb-2">
               <div>
                 <div className="font-semibold text-sm">{bp.name}</div>
-                <div className="text-xs text-zinc-500 mt-0.5">{bp.desc}</div>
+                <div className="text-xs text-zinc-400 mt-0.5">{bp.desc}</div>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="mono-label text-green-400">{bp.layer}</span>
+                <Badge variant="cat">{bp.layer}</Badge>
                 <PinButton
                   item={{
                     id: `ecosystem:${i}`,
@@ -673,19 +673,19 @@ Direct. Conversational. Confident + provisional. Short sentences. Plain language
         <WikiCard accent="#FFD700">
           <Lbl text="Skills directories" color="#FFD700" />
           <ul className="text-xs space-y-1.5">
-            <li><a href="https://skills.sh" target="_blank" rel="noopener" className="text-amber-400 hover:underline font-mono">skills.sh</a> <span className="text-zinc-500">— discover and install skills for AI agents</span></li>
-            <li><a href="https://llmbase.ai/skills" target="_blank" rel="noopener" className="text-amber-400 hover:underline font-mono">llmbase.ai/skills</a> <span className="text-zinc-500">— browse agent skills directory, ranked by installs</span></li>
-            <li><a href="https://skillsllm.com" target="_blank" rel="noopener" className="text-amber-400 hover:underline font-mono">skillsllm.com</a> <span className="text-zinc-500">— 1,600+ security-vetted skills for Claude Code, Codex, ChatGPT</span></li>
+            <li><a href="https://skills.sh" target="_blank" rel="noopener" className="text-amber-400 hover:underline font-mono">skills.sh</a> <span className="text-zinc-400">— discover and install skills for AI agents</span></li>
+            <li><a href="https://llmbase.ai/skills" target="_blank" rel="noopener" className="text-amber-400 hover:underline font-mono">llmbase.ai/skills</a> <span className="text-zinc-400">— browse agent skills directory, ranked by installs</span></li>
+            <li><a href="https://skillsllm.com" target="_blank" rel="noopener" className="text-amber-400 hover:underline font-mono">skillsllm.com</a> <span className="text-zinc-400">— 1,600+ security-vetted skills for Claude Code, Codex, ChatGPT</span></li>
           </ul>
         </WikiCard>
         <WikiCard accent="#22c55e">
           <Lbl text="Source attribution" color="#22c55e" />
           <ul className="text-xs text-zinc-300 space-y-1">
-            <li><span className="text-zinc-500">Source project:</span> promptc-os-v12.zip (React 18 + Vite)</li>
-            <li><span className="text-zinc-500">Source author:</span> @markytanky</li>
-            <li><span className="text-zinc-500">Source repo:</span> github.com/marktantongco/promptc</li>
-            <li><span className="text-zinc-500">Conventions doc:</span> system_silentdepth_v4.md (style adopted, not installed as system prompt)</li>
-            <li><span className="text-zinc-500">Wiki stack:</span> Next.js 16 + Tailwind 4 + shadcn/ui + TypeScript</li>
+            <li><span className="text-zinc-400">Source project:</span> promptc-os-v12.zip (React 18 + Vite)</li>
+            <li><span className="text-zinc-400">Source author:</span> @markytanky</li>
+            <li><span className="text-zinc-400">Source repo:</span> github.com/marktantongco/promptc</li>
+            <li><span className="text-zinc-400">Conventions doc:</span> system_silentdepth_v4.md (style adopted, not installed as system prompt)</li>
+            <li><span className="text-zinc-400">Wiki stack:</span> Next.js 16 + Tailwind 4 + shadcn/ui + TypeScript</li>
           </ul>
         </WikiCard>
       </div>

@@ -13,12 +13,24 @@ export function SectionHeader({
       <h1 className="wiki-display text-4xl sm:text-5xl mb-2" style={{ color }}>
         {title}
         {count !== undefined && (
-          <span className="ml-3 text-base align-middle font-mono opacity-60">[{count}]</span>
+          <span className="ml-3 text-base align-middle font-mono opacity-70" style={{ color: '#a1a1aa' }}>[{count}]</span>
         )}
       </h1>
-      <p className="text-sm text-zinc-400 max-w-2xl">{desc}</p>
+      <p className="text-sm text-zinc-300 max-w-2xl">{desc}</p>
     </header>
   );
+}
+
+// Slap-on badge — for scores, ranks, categories, counts, live status
+export function Badge({
+  children, variant = 'count', className,
+}: {
+  children: ReactNode;
+  variant?: 'score' | 'rank' | 'cat' | 'count' | 'live' | 'new' | 'hot' | 'pin';
+  className?: string;
+}) {
+  const variantClass = `badge badge-${variant}`;
+  return <span className={cn(variantClass, className)}>{children}</span>;
 }
 
 // Card with optional accent border (preserves source aesthetic)
@@ -44,7 +56,7 @@ export function Pill({
       onClick={onClick}
       className={cn(
         "rounded-full px-3 py-1 font-mono text-[11px] uppercase tracking-wider transition-all whitespace-nowrap",
-        active ? "border" : "border border-white/10 text-zinc-400 hover:border-white/30 hover:text-white"
+        active ? "border" : "border border-white/15 text-zinc-300 hover:border-white/40 hover:text-white"
       )}
       style={active ? {
         background: `${color}18`,

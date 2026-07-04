@@ -261,3 +261,38 @@ Stage Summary:
 - Pin buttons now on 3 sections: Activate (80) + Build (85) + Design Combos (20) = 185 pinable items total
 - 21st component install attempted for real — failed due to marketplace membership requirement (free tier limitation). Key works, CLI works, but paid tier needed for marketplace components.
 - Boundaries held: did NOT install silentdepth_v4 as system prompt, did NOT echo API key in shell
+
+---
+Task ID: 8
+Agent: main (Super Z)
+Task: Fix getServerSnapshot infinite loop, fix typography contrast, add slap-on badges to all rankings/lists.
+
+Work Log:
+- CRITICAL BUG FIX: getServerSnapshot infinite loop in pin-list.tsx. Root cause: `() => [] as PinnedItem[]` creates a new array every render → useSyncExternalStore loops. Fix: hoisted to module-level `const EMPTY_PINS: PinnedItem[] = []` and passed as stable reference. Console error resolved (verified via agent-browser — no errors).
+- Typography contrast fix (4 screenshots analyzed via VLM):
+  • VLM findings: "ROLE" labels unreadable, description text too dim, PIN/COPY button text low contrast, "FX" section dark on dark
+  • Global sed replacement: text-zinc-700 → text-zinc-500, text-zinc-600 → text-zinc-500, text-zinc-500 → text-zinc-400 across 5 files
+  • mono-label CSS: added default color #d4d4d8 (zinc-300) instead of inheriting
+  • SectionHeader desc: text-zinc-400 → text-zinc-300
+  • CopyButton: text-zinc-400 → text-zinc-200, border-white/15 → border-white/20
+  • PinButton: text-zinc-400 → text-zinc-200, border-white/15 → border-white/20
+  • Pill: text-zinc-400 → text-zinc-300, border-white/10 → border-white/15
+  • Verified via VLM: "Text is readable. No remaining contrast issues."
+- Slap-on badges system: added 8 badge variants in globals.css (.badge-score, .badge-rank, .badge-cat, .badge-count, .badge-live, .badge-new, .badge-hot, .badge-pin). Added Badge component in primitives.tsx.
+- Badges added to:
+  • Activate Mods (43 cat badges), Tasks (8 cat badges), Templates (21 cat badges)
+  • Build Enhancements (7 cat badges)
+  • Validate Lint Rules (32 cat badges)
+  • Playbook Workflows (24 rank badges)
+  • Monetize Top Prompts (15 hot badges)
+  • Ecosystem Blueprints (6 cat badges)
+  • Field Guide Motion-Stacks (30 rank + 30 score + 30 mobile badges = 90 badges)
+  • Design Combos (20 score + 5 live + 6 preview badges)
+  • Skills Directory (canonical badges)
+- Verified via agent-browser + VLM: badges visible, text readable, no contrast issues, no console errors
+
+Stage Summary:
+- Infinite loop bug: FIXED (EMPTY_PINS constant)
+- Typography: FIXED (global brighten + mono-label default color)
+- Badges: ADDED to 9 sections (~250+ badges total)
+- Lint clean, dev server 200, no console errors

@@ -26,6 +26,11 @@ let pinsCache: PinnedItem[] = [];
 let initialized = false;
 const listeners = new Set<() => void>();
 
+// CRITICAL: module-level constant for server snapshot.
+// useSyncExternalStore requires getServerSnapshot to return a STABLE reference,
+// otherwise it loops infinitely (new array every render → snapshot never matches).
+const EMPTY_PINS: PinnedItem[] = [];
+
 function readPins(): PinnedItem[] {
   if (!initialized && typeof window !== "undefined") {
     try {
@@ -54,7 +59,7 @@ function subscribe(listener: () => void) {
 
 // Hook: use pins state + toggle (uses useSyncExternalStore for SSR-safe localStorage)
 export function usePins() {
-  const pins = useSyncExternalStore(subscribe, readPins, () => [] as PinnedItem[]);
+  const pins = useSyncExternalStore(subscribe, readPins, () => EMPTY_PINS);
 
   const togglePin = useCallback((item: Omit<PinnedItem, 'pinnedAt'>) => {
     const id = item.id;
@@ -96,7 +101,7 @@ export function PinButton({
         "inline-flex items-center gap-1 rounded-md border font-mono uppercase tracking-wider transition-all",
         pinned
           ? "border-amber-500/50 bg-amber-500/15 text-amber-400"
-          : "border-white/15 bg-white/5 text-zinc-400 hover:border-amber-500/40 hover:text-amber-400",
+          : "border-white/20 bg-white/5 text-zinc-200 hover:border-amber-500/50 hover:text-amber-400",
         "px-2 py-1 text-[10px]",
         className
       )}
@@ -140,7 +145,7 @@ export function PinListPanel({
           <div className="flex items-center gap-2">
             <Pin className="h-4 w-4 text-amber-400" />
             <span className="wiki-display text-lg">Pinned</span>
-            <span className="mono-label text-zinc-500">[{pins.length}]</span>
+            <span className="mono-label text-zinc-400">[{pins.length}]</span>
           </div>
           <button onClick={onClose} className="p-2 rounded hover:bg-white/10">
             <X className="h-4 w-4" />
@@ -149,19 +154,19 @@ export function PinListPanel({
 
         <div className="p-3 border-b border-white/10">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
             <input
               value={q}
               onChange={e => setQ(e.target.value)}
               placeholder="Filter pins…"
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-zinc-500 outline-none focus:border-amber-400/50"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-zinc-400 outline-none focus:border-amber-400/50"
             />
           </div>
         </div>
 
         <div className="flex-1 overflow-y-auto p-3 space-y-2">
           {sorted.length === 0 ? (
-            <div className="text-center py-12 text-zinc-500">
+            <div className="text-center py-12 text-zinc-400">
               <Pin className="h-8 w-8 mx-auto mb-2 opacity-30" />
               <p className="text-sm">{q ? "No pins match filter." : "No pins yet. Click PIN on any item to save it here."}</p>
             </div>
@@ -186,17 +191,17 @@ export function PinListPanel({
                     className="p-1 rounded hover:bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
                     aria-label="Remove pin"
                   >
-                    <X className="h-3 w-3 text-zinc-500" />
+                    <X className="h-3 w-3 text-zinc-400" />
                   </button>
                 </div>
-                {p.desc && <p className="text-xs text-zinc-500 line-clamp-1 mb-1">{p.desc}</p>}
-                <p className="text-[10px] text-zinc-600 font-mono line-clamp-2">{p.content.slice(0, 120)}{p.content.length > 120 ? '…' : ''}</p>
+                {p.desc && <p className="text-xs text-zinc-400 line-clamp-1 mb-1">{p.desc}</p>}
+                <p className="text-[10px] text-zinc-400 font-mono line-clamp-2">{p.content.slice(0, 120)}{p.content.length > 120 ? '…' : ''}</p>
               </div>
             ))
           )}
         </div>
 
-        <footer className="p-3 border-t border-white/10 text-xs text-zinc-600 text-center">
+        <footer className="p-3 border-t border-white/10 text-xs text-zinc-400 text-center">
           Pins stored locally (localStorage). Clear browser data to reset.
         </footer>
       </aside>
@@ -213,7 +218,7 @@ export function PinBadge({ count, onClick }: { count: number; onClick: () => voi
       aria-label="Open pinned items"
       title="Pinned items"
     >
-      <Pin className={cn("h-5 w-5", count > 0 ? "text-amber-400" : "text-zinc-500")} />
+      <Pin className={cn("h-5 w-5", count > 0 ? "text-amber-400" : "text-zinc-400")} />
       {count > 0 && (
         <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-amber-500 text-black text-[10px] font-bold flex items-center justify-center">
           {count > 99 ? '99+' : count}
