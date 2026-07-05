@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactElement } from "react";
 import { Menu, X, Search, Zap } from "lucide-react";
 import { SECTIONS, search, type SearchItem } from "@/lib/wiki-data";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ import { FieldGuideSection } from "@/components/wiki/section-field-guide";
 import { CopyButton } from "@/components/wiki/copy-button";
 import { usePins, PinBadge, PinListPanel } from "@/components/wiki/pin-list";
 
-const SECTION_COMPONENTS: Record<string, () => JSX.Element> = {
+const SECTION_COMPONENTS: Record<string, () => ReactElement> = {
   activate: ActivateSection,
   build: BuildSection,
   validate: ValidateSection,

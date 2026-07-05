@@ -60,6 +60,7 @@ import ANIMAL_GUIDE from "@/data/enriched/animal-guide.json";
 import MOTION_STACK_COMBOS from "@/data/enriched/motion-stack-combos.json";
 import FOUNDATIONAL_CORES from "@/data/enriched/foundational-cores.json";
 import COMPONENT_SWAP_GUIDE from "@/data/enriched/component-swap-guide.json";
+import SKILLS_LEADERBOARD from "@/data/enriched/skills-leaderboard-data.json";
 
 // ── Types (loose — the source data is dynamic) ──────────────────────────────
 type AnyRecord = Record<string, any>;
@@ -84,7 +85,7 @@ export const data = {
   META: META as AnyRecord,
   ENH: ENH as AnyRecord[],
   WEB_VARS: WEB_VARS as AnyRecord[],
-  DOLPHIN_C: DOLPHIN_C as AnyRecord[],
+  DOLPHIN_C: DOLPHIN_C as string[],
   JSON_GLOBAL: JSON_GLOBAL as string,
   JSON_T: JSON_T as AnyRecord[],
   JSON_MX: JSON_MX as AnyRecord[],
@@ -121,6 +122,7 @@ export const data = {
   MOTION_STACK_COMBOS: MOTION_STACK_COMBOS as AnyRecord[],
   FOUNDATIONAL_CORES: FOUNDATIONAL_CORES as AnyRecord[],
   COMPONENT_SWAP_GUIDE: COMPONENT_SWAP_GUIDE as AnyRecord[],
+  SKILLS_LEADERBOARD: SKILLS_LEADERBOARD as AnyRecord[],
 };
 
 // ── Sidebar section catalog ─────────────────────────────────────────────────
@@ -164,7 +166,7 @@ export interface SearchItem {
 function push(arr: SearchItem[], section: string, items: AnyRecord[], fieldMap: { id?: string; label: string[]; desc?: string[]; content: string[]; tags?: string[] }) {
   const sec = SECTIONS.find(s => s.id === section)!;
   for (const it of items) {
-    const label = fieldMap.label.map(f => it[f] ?? "").filter(Boolean).join(" · ");
+    const label = fieldMap.label.map(f => it[f] ?? "").filter(Boolean).filter(Boolean).join(" · ");
     const desc = (fieldMap.desc ?? []).map(f => it[f] ?? "").filter(Boolean).join(" ");
     const content = fieldMap.content.map(f => it[f] ?? "").filter(Boolean).join("\n\n");
     const tags = (fieldMap.tags ?? []).flatMap(f => Array.isArray(it[f]) ? it[f] : (it[f] ? [it[f]] : []));
@@ -180,30 +182,30 @@ function push(arr: SearchItem[], section: string, items: AnyRecord[], fieldMap: 
 
 function buildSearchIndex(): SearchItem[] {
   const idx: SearchItem[] = [];
-  push(idx, "activate", data.MODS, { label: ["label"], desc: ["desc"], content: ["content"], tags: ["cat"] });
-  push(idx, "activate", data.TASKS, { label: ["label"], desc: ["desc"], content: ["content"], tags: ["cat"] });
+  push(idx, "activate", data.MODS, { label: ["mod"], desc: ["tip"], content: ["mod"], tags: ["cat"] });
+  push(idx, "activate", data.TASKS, { label: ["mod"], desc: ["tip"], content: ["mod"], tags: ["cat"] });
   push(idx, "activate", data.TMPLS, { label: ["label"], desc: ["desc"], content: ["content"], tags: ["cat", "group"] });
-  push(idx, "activate", data.BRANDS, { label: ["name", "id"], desc: ["desc"], content: ["prompt"], tags: ["id"] });
+  push(idx, "activate", data.BRANDS, { label: ["label", "id"], desc: ["uc"], content: ["prompt"], tags: ["id"] });
   push(idx, "activate", [{ id: "master", label: "Master System Prompt", content: data.MASTER }], { label: ["label"], content: ["content"] });
   push(idx, "activate", [{ id: "advocate", label: "Advocate Mode", content: data.ADVOCATE }], { label: ["label"], content: ["content"] });
 
-  push(idx, "build", data.ANIMALS, { label: ["name"], desc: ["role"], content: ["prompt"], tags: ["name"] });
-  push(idx, "build", data.CHAINS, { label: ["name"], desc: ["desc"], content: ["combined"] });
-  push(idx, "build", data.VOCAB, { label: ["term"], desc: ["def"], content: ["copy"], tags: ["cat"] });
+  push(idx, "build", data.ANIMALS, { label: ["name"], desc: ["mode"], content: ["prompt"], tags: ["name"] });
+  push(idx, "build", data.CHAINS, { label: ["goal"], desc: ["best"], content: ["c"] });
+  push(idx, "build", data.VOCAB, { label: ["t"], desc: ["d"], content: ["adv"], tags: ["cat"] });
   push(idx, "build", data.COMBOS, { label: ["combo"], desc: ["best"], content: ["els", "psych"] });
   push(idx, "build", data.TYPO, { label: ["d"], desc: ["b"], content: ["m"] });
-  push(idx, "build", data.ENH, { label: ["name"], desc: ["when"], content: ["snippet"], tags: ["cat"] });
+  push(idx, "build", data.ENH, { label: ["label"], desc: ["when"], content: ["content"], tags: ["cat"] });
 
   push(idx, "validate", data.SWAPS, { label: ["bad"], desc: ["good"], content: ["good", "tip"], tags: ["level"] });
-  push(idx, "validate", data.LINT, { label: ["rule"], desc: ["why"], content: ["fix"], tags: ["cat"] });
+  push(idx, "validate", data.LINT, { label: ["check"], desc: ["fix"], content: ["fix"], tags: ["seg"] });
 
   push(idx, "playbook", data.WF, { label: ["title"], desc: ["purpose"], content: ["out"], tags: ["cat", "best"] });
 
-  push(idx, "monetize", data.TOP10_PROMPTS, { label: ["title"], desc: ["when"], content: ["prompt"], tags: ["cat"] });
-  push(idx, "monetize", data.SAAS_TEMPLATES, { label: ["name"], desc: ["desc"], content: ["stack", "diff"], tags: ["cat"] });
+  push(idx, "monetize", data.TOP10_PROMPTS, { label: ["title"], desc: ["why"], content: ["prompt"], tags: ["cat"] });
+  push(idx, "monetize", data.SAAS_TEMPLATES, { label: ["title"], desc: ["niche"], content: ["stack", "why"], tags: ["cat"] });
   push(idx, "monetize", data.MONETIZE_RECIPES, { label: ["label"], desc: ["stack"], content: ["prompt"], tags: ["cat"] });
-  push(idx, "monetize", data.MONETIZE_FW, { label: ["name"], desc: ["desc"], content: ["framework"], tags: ["cat"] });
-  push(idx, "monetize", data.AUTOMATION_WORKFLOWS, { label: ["name"], desc: ["trigger"], content: ["flow"], tags: ["cat"] });
+  push(idx, "monetize", data.MONETIZE_FW, { label: ["label"], desc: ["desc"], content: ["prompt"], tags: ["cat"] });
+  push(idx, "monetize", data.AUTOMATION_WORKFLOWS, { label: ["label"], desc: ["trigger"], content: ["prompt"], tags: ["tool"] });
 
   push(idx, "skills", data.SKILL_STACKS, { label: ["name"], desc: ["thesis"], content: ["why", "use"], tags: ["stack"] });
   push(idx, "ecosystem", data.ECOSYSTEM_BLUEPRINTS, { label: ["name"], desc: ["desc"], content: ["blueprint"], tags: ["layer"] });

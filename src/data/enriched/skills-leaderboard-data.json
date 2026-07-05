@@ -1,0 +1,168 @@
+[
+  {
+    "id": "leaderboard-trending",
+    "title": "Trending Skills (24h)",
+    "source": "skills.sh/trending",
+    "description": "Top skills by 24-hour install growth. Updated live from skills.sh. AI media generation dominates (video/image/music), with content/marketing and agent workflow skills rounding out the top.",
+    "skills": [
+      { "rank": 1, "name": "ai-video-generation", "source": "halt-catch-fire/skills", "installs": "21.7K", "category": "AI Media", "use": "Generate AI videos from text/image prompts" },
+      { "rank": 6, "name": "find-skills", "source": "vercel-labs/skills", "installs": "13.5K", "category": "Meta", "use": "Search and discover skills across registries" },
+      { "rank": 7, "name": "viral-hooks", "source": "vyralcontent/content-skills", "installs": "8.1K", "category": "Content", "use": "Generate viral content hooks for social media" },
+      { "rank": 14, "name": "gpt-image-edit", "source": "agentspace-so/runcomfy-agent-skills", "installs": "6.1K", "category": "AI Media", "use": "Edit images with GPT-powered models" },
+      { "rank": 40, "name": "find-skills", "source": "agentspace-so/skills", "installs": "5.7K", "category": "Meta", "use": "Alternative find-skills (agentspace fork)" },
+      { "rank": 41, "name": "relight", "source": "agentspace-so/runcomfy-agent-skills", "installs": "5.7K", "category": "AI Media", "use": "Relight images with AI — change lighting direction" },
+      { "rank": 42, "name": "image-edit", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "General-purpose AI image editing" },
+      { "rank": 43, "name": "nano-banana-2", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "Google Nano Banana 2 image model" },
+      { "rank": 44, "name": "video-edit", "source": "doany-ai/skills", "installs": "5.7K", "category": "AI Media", "use": "AI-powered video editing" },
+      { "rank": 45, "name": "kling-3-0", "source": "agentspace-so/runcomfy-agent-skills", "installs": "5.7K", "category": "AI Media", "use": "Kling 3.0 video generation model" },
+      { "rank": 46, "name": "flux-kontext", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "Flux Kontext context-aware image generation" },
+      { "rank": 47, "name": "ace-step", "source": "doany-ai/skills", "installs": "5.7K", "category": "AI Media", "use": "AI music generation (ACE-Step model)" },
+      { "rank": 48, "name": "ai-video-generation", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "Alternative AI video gen (runcomfy)" },
+      { "rank": 49, "name": "video-inpainting", "source": "doany-ai/skills", "installs": "5.7K", "category": "AI Media", "use": "Fill/repair video regions with AI" },
+      { "rank": 50, "name": "wan-2-7", "source": "doany-ai/skills", "installs": "5.7K", "category": "AI Media", "use": "Wan 2.7 video generation model" },
+      { "rank": 51, "name": "seedance-v2", "source": "agentspace-so/runcomfy-agent-skills", "installs": "5.7K", "category": "AI Media", "use": "Seedance v2 dance/motion video gen" },
+      { "rank": 52, "name": "seedance-v2", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "Alternative seedance (runcomfy)" },
+      { "rank": 53, "name": "ai-image-generation", "source": "doany-ai/skills", "installs": "5.7K", "category": "AI Media", "use": "General AI image generation" },
+      { "rank": 54, "name": "controlnet-pose", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "ControlNet pose-guided image generation" },
+      { "rank": 55, "name": "video-outpainting", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "Extend video beyond original frame" },
+      { "rank": 56, "name": "nano-banana-edit", "source": "doany-ai/skills", "installs": "5.7K", "category": "AI Media", "use": "Edit images with Nano Banana model" },
+      { "rank": 57, "name": "video-extend", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "Extend video duration with AI" },
+      { "rank": 58, "name": "face-swap", "source": "runcomfy-com/skills", "installs": "5.7K", "category": "AI Media", "use": "AI face swap in images/video" },
+      { "rank": 59, "name": "grill-me", "source": "mattpocock/skills", "installs": "5.6K", "category": "Content", "use": "Grill/roast your code for quality" },
+      { "rank": 60, "name": "runcomfy-cli", "source": "doany-ai/skills", "installs": "5.6K", "category": "AI Media", "use": "CLI for ComfyUI workflows" },
+      { "rank": 61, "name": "flux-2-klein", "source": "doany-ai/skills", "installs": "5.6K", "category": "AI Media", "use": "Flux 2 Klein image model" },
+      { "rank": 62, "name": "kling-3-0", "source": "runcomfy-com/skills", "installs": "5.6K", "category": "AI Media", "use": "Alternative Kling (runcomfy)" },
+      { "rank": 63, "name": "relight", "source": "runcomfy-com/skills", "installs": "5.6K", "category": "AI Media", "use": "Alternative relight (runcomfy)" },
+      { "rank": 64, "name": "image-to-video", "source": "doany-ai/skills", "installs": "5.6K", "category": "AI Media", "use": "Convert still images to video" },
+      { "rank": 70, "name": "ai-video-generation", "source": "doany-ai/skills", "installs": "5.6K", "category": "AI Media", "use": "Alternative AI video gen (doany)" },
+      { "rank": 74, "name": "ai-image-generation", "source": "runcomfy-com/skills", "installs": "5.6K", "category": "AI Media", "use": "Alternative AI image gen (runcomfy)" },
+      { "rank": 75, "name": "agentspace", "source": "agentspace-so/skills", "installs": "5.6K", "category": "Agent", "use": "Agentspace agent orchestration framework" },
+      { "rank": 76, "name": "gpt-image-2", "source": "runcomfy-com/skills", "installs": "5.5K", "category": "AI Media", "use": "GPT Image 2 model" },
+      { "rank": 77, "name": "video-extend", "source": "doany-ai/skills", "installs": "5.5K", "category": "AI Media", "use": "Alternative video extend (doany)" }
+    ]
+  },
+  {
+    "id": "leaderboard-alltime",
+    "title": "All-Time Top Skills",
+    "source": "skills.sh (all-time leaderboard)",
+    "description": "Top skills by total install count (all-time). find-skills dominates at 2.3M installs — the #1 skill every agent needs. Frontend design and agent-browser round out the top 5.",
+    "skills": [
+      { "rank": 1, "name": "find-skills", "source": "vercel-labs/skills", "installs": "2.3M", "category": "Meta", "use": "Search and discover skills — the gateway skill" },
+      { "rank": 2, "name": "frontend-design", "source": "anthropics/skills", "installs": "623K", "category": "Design", "use": "Frontend design patterns + best practices" },
+      { "rank": 3, "name": "vercel-react-best-practices", "source": "vercel-labs/skills", "installs": "560K", "category": "Dev", "use": "React/Next.js best practices from Vercel" },
+      { "rank": 4, "name": "agent-browser", "source": "vercel-labs/agent-browser", "installs": "510K", "category": "Agent", "use": "Headless browser automation for agents" },
+      { "rank": 5, "name": "grill-me", "source": "mattpocock/skills", "installs": "451K", "category": "Content", "use": "Roast/grill code for quality" },
+      { "rank": 6, "name": "web-design-guidelines", "source": "vercel-labs/agent-skills", "installs": "436K", "category": "Design", "use": "Web design guidelines + accessibility" },
+      { "rank": 7, "name": "microsoft-foundry", "source": "microsoft/skills", "installs": "380K", "category": "Dev", "use": "Microsoft Foundry dev patterns" },
+      { "rank": 8, "name": "brainstorming", "source": "obra/superpowers", "installs": "258K", "category": "Agent", "use": "Structured brainstorming methodology" },
+      { "rank": 9, "name": "writing-plans", "source": "obra/superpowers", "installs": "169K", "category": "Agent", "use": "Write detailed implementation plans" },
+      { "rank": 10, "name": "executing-plans", "source": "obra/superpowers", "installs": "140K", "category": "Agent", "use": "Execute plans step-by-step" }
+    ]
+  },
+  {
+    "id": "top-combos",
+    "title": "Top Skill Combinations (by synergy)",
+    "source": "curated from skills.sh data",
+    "description": "Curated 3-5 skill stacks with the highest synergy. Each combo includes the rationale, the stack, and the use case. Rated 1-10 based on install overlap, complementary function, and real-world viability.",
+    "combos": [
+      {
+        "name": "Agent Discovery Stack",
+        "score": 10,
+        "skills": ["find-skills (2.3M)", "agent-browser (510K)", "brainstorming (258K)"],
+        "rationale": "find-skills discovers capabilities, agent-browser executes web tasks, brainstorming generates the strategy. The canonical agent loop: search → plan → execute.",
+        "use_case": "Any agentic workflow that needs to find and use new capabilities dynamically"
+      },
+      {
+        "name": "Frontend Polish Stack",
+        "score": 9,
+        "skills": ["frontend-design (623K)", "vercel-react-best-practices (560K)", "web-design-guidelines (436K)", "grill-me (451K)"],
+        "rationale": "frontend-design supplies patterns, vercel-react-best-practices enforces framework discipline, web-design-guidelines covers accessibility, grill-me quality-gates the output. End-to-end frontend quality pipeline.",
+        "use_case": "Shipping production React/Next.js apps with design + a11y discipline"
+      },
+      {
+        "name": "AI Media Production Stack",
+        "score": 8,
+        "skills": ["ai-video-generation (21.7K)", "gpt-image-edit (6.1K)", "ace-step (5.7K)", "video-edit (5.7K)"],
+        "rationale": "Video gen + image edit + music gen + video edit = full media pipeline. All trending in top 100. Dominates skills.sh trending because AI media is the hottest 2026 use case.",
+        "use_case": "Content creation, marketing, social media, product demos"
+      },
+      {
+        "name": "Superpowers Agent Stack",
+        "score": 9,
+        "skills": ["brainstorming (258K)", "writing-plans (169K)", "executing-plans (140K)"],
+        "rationale": "The obra/superpowers trilogy: brainstorm → plan → execute. Designed to work together. 567K combined installs — the most popular agent methodology stack.",
+        "use_case": "Complex multi-step projects requiring structured planning + execution"
+      },
+      {
+        "name": "Content Virality Stack",
+        "score": 7,
+        "skills": ["viral-hooks (8.1K)", "grill-me (451K)", "ai-video-generation (21.7K)"],
+        "rationale": "viral-hooks generates hooks, ai-video-generation creates the visual, grill-me quality-gates the final output. Content creation from hook to publish.",
+        "use_case": "Social media content, YouTube, TikTok, Reels"
+      },
+      {
+        "name": "Fullstack Dev Stack",
+        "score": 10,
+        "skills": ["find-skills (2.3M)", "vercel-react-best-practices (560K)", "frontend-design (623K)", "grill-me (451K)"],
+        "rationale": "Discovery + framework + design + quality. The ship-it stack for agencies and solo devs. 3.9M combined installs — the highest-volume combo on skills.sh.",
+        "use_case": "Building and shipping production web apps"
+      }
+    ]
+  },
+  {
+    "id": "top-design",
+    "title": "Top Design Skills",
+    "source": "skills.sh (design category)",
+    "description": "The highest-rated and most-installed design skills. frontend-design (623K) from Anthropic leads, with Vercel's web-design-guidelines as the accessibility companion.",
+    "skills": [
+      { "rank": 1, "name": "frontend-design", "source": "anthropics/skills", "installs": "623K", "category": "Design", "use": "Official Anthropic frontend design patterns. Color systems, typography, spacing, component composition." },
+      { "rank": 2, "name": "web-design-guidelines", "source": "vercel-labs/agent-skills", "installs": "436K", "category": "Design", "use": "Accessibility (WCAG), responsive design, UX patterns. The a11y companion to frontend-design." },
+      { "rank": 3, "name": "vercel-react-best-practices", "source": "vercel-labs/skills", "installs": "560K", "category": "Dev", "use": "React/Next.js patterns — Server Components, Suspense, data fetching. The framework layer under design." },
+      { "rank": 4, "name": "microsoft-foundry", "source": "microsoft/skills", "installs": "380K", "category": "Dev", "use": "Microsoft's design-to-code patterns. Enterprise-grade component systems." },
+      { "rank": 5, "name": "grill-me", "source": "mattpocock/skills", "installs": "451K", "category": "Quality", "use": "Roast code for quality — catches design debt, accessibility issues, anti-patterns." }
+    ]
+  },
+  {
+    "id": "top-stacks-recommended",
+    "title": "Top Stacks by Recommendation",
+    "source": "curated from skills.sh + field-guide research",
+    "description": "Recommended skill stacks for specific project types. Each stack is pre-vetted for compatibility and covers the full workflow from discovery to deployment.",
+    "stacks": [
+      {
+        "name": "Next.js SaaS Starter",
+        "recommendation_score": 10,
+        "stack": ["find-skills", "vercel-react-best-practices", "frontend-design", "grill-me"],
+        "why": "Discovery + framework + design + quality gate. 3.9M combined installs. The highest-volume, lowest-risk stack for shipping a Next.js SaaS.",
+        "best_for": "Indie SaaS, agency client work, MVP → production"
+      },
+      {
+        "name": "Agentic AI Workflow",
+        "recommendation_score": 10,
+        "stack": ["find-skills", "agent-browser", "brainstorming", "writing-plans", "executing-plans"],
+        "why": "Full agent loop: discover → browse → brainstorm → plan → execute. 3.2M combined installs. The superpowers trilogy (brainstorming + writing-plans + executing-plans) is the most-installed agent methodology.",
+        "best_for": "AI agents, automation, research, content generation"
+      },
+      {
+        "name": "AI Content Factory",
+        "recommendation_score": 8,
+        "stack": ["viral-hooks", "ai-video-generation", "gpt-image-edit", "ace-step", "grill-me"],
+        "why": "Hook + video + image + music + quality gate. Full content pipeline. 44K combined installs — smaller but fastest-growing category on skills.sh.",
+        "best_for": "Social media, YouTube, TikTok, content marketing"
+      },
+      {
+        "name": "Enterprise Frontend",
+        "recommendation_score": 9,
+        "stack": ["frontend-design", "web-design-guidelines", "microsoft-foundry", "vercel-react-best-practices"],
+        "why": "Design + a11y + enterprise patterns + framework. 2M combined installs. The enterprise-grade stack for regulated industries.",
+        "best_for": "Enterprise, healthcare, finance, government"
+      },
+      {
+        "name": "Solo Dev Ship-It",
+        "recommendation_score": 9,
+        "stack": ["find-skills", "grill-me"],
+        "why": "Just 2 skills, 2.7M combined installs. find-skills to discover what you need, grill-me to catch mistakes. Minimum viable stack.",
+        "best_for": "Solo devs, hackathons, prototypes"
+      }
+    ]
+  }
+]
