@@ -2,14 +2,14 @@
 
 > **The complete interactive knowledge base for AI practitioners.** 400+ copy-ready prompts, 7 animal reasoning modes, 20 synergy-rated design combos, 30 motion-stack combinations, live 21st.dev component registry, curated skill stacks, monetization recipes, and ecosystem blueprints. Mobile-first. Built with Next.js 16.
 
-[![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://promptc-os-ai-prompt-wiki.vercel.app)
+[![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://my-project-theta-azure.vercel.app)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind CSS 4](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Live](https://img.shields.io/badge/LIVE-promptc--os-4DFFFF)](https://promptc-os-ai-prompt-wiki.vercel.app)
+[![Live](https://img.shields.io/badge/LIVE-promptc--os-4DFFFF)](https://my-project-theta-azure.vercel.app)
 
-**🌐 Live:** [marktantongco.github.io/promptc-os-ai-prompt-wiki](https://marktantongco.github.io/promptc-os-ai-prompt-wiki/) (GitHub Pages) · **Vercel:** [promptc-os-ai-prompt-wiki.vercel.app](https://promptc-os-ai-prompt-wiki-markys-projects-b6633e43.vercel.app) · **Source:** [github.com/marktantongco/promptc-os-ai-prompt-wiki](https://github.com/marktantongco/promptc-os-ai-prompt-wiki)
+**🌐 Live:** [marktantongco.github.io/promptc-os-ai-prompt-wiki](https://marktantongco.github.io/promptc-os-ai-prompt-wiki/) (GitHub Pages) · **Vercel:** [my-project-theta-azure.vercel.app](https://my-project-theta-azure.vercel.app) · **Source:** [github.com/marktantongco/promptc-os-ai-prompt-wiki](https://github.com/marktantongco/promptc-os-ai-prompt-wiki)
 
 ---
 
@@ -249,7 +249,7 @@ MIT — see [LICENSE](LICENSE)
 
 ## 🔗 Links
 
-- **Live Demo:** [promptc-os-ai-prompt-wiki.vercel.app](https://promptc-os-ai-prompt-wiki.vercel.app)
+- **Live Demo:** [my-project-theta-azure.vercel.app](https://my-project-theta-azure.vercel.app)
 - **GitHub:** [github.com/marktantongco/promptc-os-ai-prompt-wiki](https://github.com/marktantongco/promptc-os-ai-prompt-wiki)
 - **Original promptc OS:** [github.com/marktantongco/promptc](https://github.com/marktantongco/promptc)
 - **Skill-Stack Field Guide:** [skill-stack-field-guide.vercel.app](https://skill-stack-field-guide.vercel.app)
